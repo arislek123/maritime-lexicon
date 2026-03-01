@@ -2545,12 +2545,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Technical'
   },
   {
-    id: 'auxiliary-engine',
-    title: 'Auxiliary Engine',
-    description: 'An engine used for purposes other than main propulsion, such as generating electricity.',
-    category: 'Technical'
-  },
-  {
     id: 'awash',
     title: 'Awash',
     description: 'Level with or slightly below the surface of the water.',
@@ -2591,12 +2585,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Bailer',
     description: 'A device used to remove water from a boat.',
     category: 'Safety'
-  },
-  {
-    id: 'ballast-tank',
-    title: 'Ballast Tank',
-    description: 'A compartment within a boat, ship, or other floating structure that holds water.',
-    category: 'Vessel Parts'
   },
   {
     id: 'barge',
@@ -2773,12 +2761,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'bilge-pump',
-    title: 'Bilge Pump',
-    description: 'A pump used to remove water from the bilge.',
-    category: 'Technical'
-  },
-  {
     id: 'bilge-water',
     title: 'Bilge Water',
     description: 'Water that collects in the lowest part of a ship\'s hull.',
@@ -2789,12 +2771,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Bill of Health',
     description: 'A certificate given to a ship stating the health conditions of the port of departure.',
     category: 'Regulations'
-  },
-  {
-    id: 'bill-of-lading',
-    title: 'Bill of Lading',
-    description: 'A detailed list of a shipment of goods in the form of a receipt given by the carrier to the person consigning the goods.',
-    category: 'Cargo'
   },
   {
     id: 'bill-of-sale',
@@ -2819,12 +2795,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Black Gang',
     description: 'A slang term for the engine room crew on a steamship.',
     category: 'History'
-  },
-  {
-    id: 'block',
-    title: 'Block',
-    description: 'A pulley used on a ship.',
-    category: 'Vessel Parts'
   },
   {
     id: 'block-and-tackle',
@@ -2863,12 +2833,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Safety'
   },
   {
-    id: 'boatswain-pipe',
-    title: 'Boatswain\'s Pipe',
-    description: 'A whistle used to signal orders to the crew.',
-    category: 'History'
-  },
-  {
     id: 'bobstay',
     title: 'Bobstay',
     description: 'A stay that holds the bowsprit down against the upward pull of the forestay.',
@@ -2879,12 +2843,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Body Plan',
     description: 'A drawing showing the transverse sections of a ship\'s hull.',
     category: 'Technical'
-  },
-  {
-    id: 'bollard',
-    title: 'Bollard',
-    description: 'A short, thick post on a ship or quay used for securing mooring lines.',
-    category: 'Vessel Parts'
   },
   {
     id: 'bollard-pull',
@@ -2908,12 +2866,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     id: 'booby-hatch',
     title: 'Booby Hatch',
     description: 'A small hatch with a sliding cover, used for access to the crew\'s quarters.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'boom',
-    title: 'Boom',
-    description: 'A spar used to extend the foot of a sail.',
     category: 'Vessel Parts'
   },
   {
@@ -2963,12 +2915,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Bowline',
     description: 'A versatile knot used to form a fixed loop at the end of a rope.',
     category: 'Terminology'
-  },
-  {
-    id: 'bowsprit',
-    title: 'Bowsprit',
-    description: 'A spar extending forward from the bow of a sailing vessel.',
-    category: 'Vessel Parts'
   },
   {
     id: 'box-hauling',
@@ -3073,12 +3019,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Cargo'
   },
   {
-    id: 'bulwark',
-    title: 'Bulwark',
-    description: 'The extension of a ship\'s side above the level of the deck.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'bumboat',
     title: 'Bumboat',
     description: 'A small boat used to sell provisions to ships in port.',
@@ -3089,18 +3029,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Bumpkin',
     description: 'A short spar extending from the hull to provide a lead for a rope.',
     category: 'Vessel Parts'
-  },
-  {
-    id: 'bunker',
-    title: 'Bunker',
-    description: 'A compartment used for storing fuel.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'bunkering',
-    title: 'Bunkering',
-    description: 'The process of supplying fuel to a ship.',
-    category: 'Operations'
   },
   {
     id: 'bunt',
@@ -3154,18 +3082,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     id: 'by-the-board',
     title: 'By the Board',
     description: 'To go overboard; to be lost or discarded.',
-    category: 'Terminology'
-  },
-  {
-    id: 'cabin',
-    title: 'Cabin',
-    description: 'A room on a ship used for living or sleeping.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'cable',
-    title: 'Cable',
-    description: 'A heavy rope or chain; also a unit of distance equal to one-tenth of a nautical mile.',
     category: 'Terminology'
   },
   {
@@ -3227,12 +3143,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Capsize',
     description: 'To overturn a vessel in the water.',
     category: 'Terminology'
-  },
-  {
-    id: 'capstan',
-    title: 'Capstan',
-    description: 'A vertical-axle rotating machine used to apply force to mooring lines or anchor chains.',
-    category: 'Vessel Parts'
   },
   {
     id: 'captain-of-the-port',
@@ -3331,18 +3241,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Navigation'
   },
   {
-    id: 'center-of-buoyancy',
-    title: 'Center of Buoyancy',
-    description: 'The point through which the upward force of buoyancy acts.',
-    category: 'Technical'
-  },
-  {
-    id: 'center-of-gravity',
-    title: 'Center of Gravity',
-    description: 'The point through which the force of gravity acts on a vessel.',
-    category: 'Technical'
-  },
-  {
     id: 'center-of-lateral-resistance',
     title: 'Center of Lateral Resistance',
     description: 'The point through which the lateral force of the water acts on the hull.',
@@ -3403,12 +3301,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'charter-party',
-    title: 'Charter Party',
-    description: 'A contract for the hire of a ship.',
-    category: 'Regulations'
-  },
-  {
     id: 'check',
     title: 'Check',
     description: 'To ease off a rope slowly.',
@@ -3451,12 +3343,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'classification-society',
-    title: 'Classification Society',
-    description: 'An organization that establishes and maintains technical standards for ships.',
-    category: 'Regulations'
-  },
-  {
     id: 'claw-off',
     title: 'Claw Off',
     description: 'To sail away from a lee shore in a storm.',
@@ -3473,12 +3359,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Clear',
     description: 'To leave a port after completing all formalities.',
     category: 'Operations'
-  },
-  {
-    id: 'cleat',
-    title: 'Cleat',
-    description: 'A T-shaped fitting used for securing ropes.',
-    category: 'Vessel Parts'
   },
   {
     id: 'clew',
@@ -3523,12 +3403,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'coaming',
-    title: 'Coaming',
-    description: 'A raised border around a hatch to prevent water from entering.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'coast-pilot',
     title: 'Coast Pilot',
     description: 'A series of books providing detailed information for navigation along a coast.',
@@ -3539,18 +3413,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Coastal Navigation',
     description: 'Navigation within sight of land.',
     category: 'Navigation'
-  },
-  {
-    id: 'cockpit',
-    title: 'Cockpit',
-    description: 'A depressed area in the deck of a small vessel, usually aft, from which it is steered.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'cofferdam',
-    title: 'Cofferdam',
-    description: 'A narrow void space between two bulkheads used to prevent leakage between compartments.',
-    category: 'Vessel Parts'
   },
   {
     id: 'coil',
@@ -3605,12 +3467,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Commodity Rate',
     description: 'A freight rate applicable to a specific commodity.',
     category: 'Cargo'
-  },
-  {
-    id: 'companionway',
-    title: 'Companionway',
-    description: 'A stairway or ladder leading from one deck to another.',
-    category: 'Vessel Parts'
   },
   {
     id: 'compass-card',
@@ -3727,12 +3583,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Technical'
   },
   {
-    id: 'coxswain',
-    title: 'Coxswain',
-    description: 'The person in charge of a small boat.',
-    category: 'Crew'
-  },
-  {
     id: 'crab',
     title: 'Crab',
     description: 'To move sideways through the water.',
@@ -3743,12 +3593,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Cradle',
     description: 'A framework used to support a vessel on land.',
     category: 'Operations'
-  },
-  {
-    id: 'crane',
-    title: 'Crane',
-    description: 'A machine used for hoisting heavy loads.',
-    category: 'Technical'
   },
   {
     id: 'crank',
@@ -3797,12 +3641,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Crow-foot',
     description: 'A system of small lines used to suspend an awning.',
     category: 'History'
-  },
-  {
-    id: 'crow-nest',
-    title: 'Crow\'s Nest',
-    description: 'A platform high on a mast used for observation.',
-    category: 'Vessel Parts'
   },
   {
     id: 'cruise-ship',
@@ -3865,12 +3703,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'davit',
-    title: 'Davit',
-    description: 'A crane-like device used for hoisting lifeboats.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'davy-jones-locker',
     title: 'Davy Jones\' Locker',
     description: 'An idiom for the bottom of the sea.',
@@ -3925,12 +3757,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Technical'
   },
   {
-    id: 'deadweight-tonnage',
-    title: 'Deadweight Tonnage',
-    description: 'A measure of a ship\'s carrying capacity.',
-    category: 'Technical'
-  },
-  {
     id: 'deadwood',
     title: 'Deadwood',
     description: 'Solid timber built into the bow or stern of a wooden vessel.',
@@ -3979,12 +3805,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Cargo'
   },
   {
-    id: 'demurrage',
-    title: 'Demurrage',
-    description: 'A charge for delaying a ship beyond the agreed time.',
-    category: 'Cargo'
-  },
-  {
     id: 'departure',
     title: 'Departure',
     description: 'The distance a vessel travels east or west.',
@@ -3995,12 +3815,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Derelict',
     description: 'A vessel abandoned at sea.',
     category: 'Terminology'
-  },
-  {
-    id: 'derrick',
-    title: 'Derrick',
-    description: 'A device used for hoisting cargo.',
-    category: 'Technical'
   },
   {
     id: 'destroyer',
@@ -4033,12 +3847,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Technical'
   },
   {
-    id: 'dinghy',
-    title: 'Dinghy',
-    description: 'A small boat used as a tender.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'dip',
     title: 'Dip',
     description: 'To lower a flag halfway and then raise it again as a salute.',
@@ -4055,12 +3863,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Dirk',
     description: 'A short dagger formerly worn by midshipmen.',
     category: 'History'
-  },
-  {
-    id: 'displacement',
-    title: 'Displacement',
-    description: 'The weight of the water displaced by a ship.',
-    category: 'Technical'
   },
   {
     id: 'displacement-tonnage',
@@ -4099,12 +3901,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Technical'
   },
   {
-    id: 'dog-watch',
-    title: 'Dog Watch',
-    description: 'A short watch period, usually two hours long.',
-    category: 'History'
-  },
-  {
     id: 'dog-vane',
     title: 'Dog-vane',
     description: 'A small weather vane made of feathers or light material.',
@@ -4127,12 +3923,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Dory',
     description: 'A small, flat-bottomed fishing boat.',
     category: 'History'
-  },
-  {
-    id: 'double-bottom',
-    title: 'Double Bottom',
-    description: 'The watertight space between the inner and outer hulls of a ship.',
-    category: 'Vessel Parts'
   },
   {
     id: 'doubling',
@@ -4243,12 +4033,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'dunnage',
-    title: 'Dunnage',
-    description: 'Material used to protect cargo from damage.',
-    category: 'Cargo'
-  },
-  {
     id: 'dutchman-log',
     title: 'Dutchman\'s Log',
     description: 'A method of finding a ship\'s speed by timing a floating object.',
@@ -4303,12 +4087,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Operations'
   },
   {
-    id: 'emergency-position-indicating-radio-beacon',
-    title: 'EPIRB',
-    description: 'A device used to signal a vessel\'s position in an emergency.',
-    category: 'Safety'
-  },
-  {
     id: 'end-for-end',
     title: 'End-for-end',
     description: 'To reverse the position of a rope or spar.',
@@ -4325,12 +4103,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Engine Order Telegraph',
     description: 'A device used to communicate speed orders from the bridge to the engine room.',
     category: 'Technical'
-  },
-  {
-    id: 'ensign',
-    title: 'Ensign',
-    description: 'The national flag flown by a ship.',
-    category: 'Terminology'
   },
   {
     id: 'entrance',
@@ -4405,12 +4177,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Terminology'
   },
   {
-    id: 'fair-lead',
-    title: 'Fairlead',
-    description: 'A fitting used to guide a rope in a specific direction.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'fairway',
     title: 'Fairway',
     description: 'A navigable channel in a river or harbor.',
@@ -4453,12 +4219,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'fathom',
-    title: 'Fathom',
-    description: 'A unit of length equal to six feet, used to measure the depth of water.',
-    category: 'Terminology'
-  },
-  {
     id: 'fathometer',
     title: 'Fathometer',
     description: 'A device used to measure the depth of water.',
@@ -4474,12 +4234,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     id: 'felloes',
     title: 'Felloes',
     description: 'The segments of the rim of a ship\'s wheel.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'fender',
-    title: 'Fender',
-    description: 'A cushion used to protect a ship\'s hull from damage.',
     category: 'Vessel Parts'
   },
   {
@@ -4531,12 +4285,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Terminology'
   },
   {
-    id: 'figurehead',
-    title: 'Figurehead',
-    description: 'A carved wooden figure at the bow of a ship.',
-    category: 'History'
-  },
-  {
     id: 'filler',
     title: 'Filler',
     description: 'A piece of wood used to fill a gap in a ship\'s structure.',
@@ -4559,12 +4307,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Fire Control',
     description: 'The system used to direct the fire of a ship\'s guns.',
     category: 'History'
-  },
-  {
-    id: 'fire-main',
-    title: 'Fire Main',
-    description: 'The system of pipes used to carry water for firefighting.',
-    category: 'Safety'
   },
   {
     id: 'first-mate',
@@ -4649,12 +4391,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Floor',
     description: 'A transverse structural member at the bottom of a ship\'s hull.',
     category: 'Vessel Parts'
-  },
-  {
-    id: 'flotsam',
-    title: 'Flotsam',
-    description: 'Floating wreckage from a ship.',
-    category: 'Terminology'
   },
   {
     id: 'fluke',
@@ -4744,12 +4480,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     id: 'fore-cabin',
     title: 'Fore-cabin',
     description: 'A cabin located in the forward part of a ship.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'fore-castle',
-    title: 'Forecastle',
-    description: 'The forward part of the upper deck.',
     category: 'Vessel Parts'
   },
   {
@@ -4849,12 +4579,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'foul',
-    title: 'Foul',
-    description: 'To become entangled or obstructed.',
-    category: 'Terminology'
-  },
-  {
     id: 'foul-anchor',
     title: 'Foul Anchor',
     description: 'An anchor with the chain wound around it.',
@@ -4867,12 +4591,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Environment'
   },
   {
-    id: 'founder',
-    title: 'Founder',
-    description: 'To sink due to filling with water.',
-    category: 'Terminology'
-  },
-  {
     id: 'frame',
     title: 'Frame',
     description: 'A transverse structural member of a ship\'s hull.',
@@ -4882,12 +4600,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     id: 'frap',
     title: 'Frap',
     description: 'To bind together with ropes.',
-    category: 'Terminology'
-  },
-  {
-    id: 'freeboard',
-    title: 'Freeboard',
-    description: 'The distance from the waterline to the upper deck.',
     category: 'Terminology'
   },
   {
@@ -4939,12 +4651,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'gaff',
-    title: 'Gaff',
-    description: 'A spar used to extend the upper edge of a fore-and-aft sail.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'gaff-topsail',
     title: 'Gaff Topsail',
     description: 'A triangular sail set above the gaff.',
@@ -4975,12 +4681,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'galley',
-    title: 'Galley',
-    description: 'The kitchen on a ship.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'galley-slave',
     title: 'Galley Slave',
     description: 'A person forced to row in a galley.',
@@ -4996,12 +4696,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     id: 'gang-plank',
     title: 'Gangplank',
     description: 'A portable bridge used for boarding or leaving a ship.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'gangway',
-    title: 'Gangway',
-    description: 'An opening in the ship\'s side for boarding.',
     category: 'Vessel Parts'
   },
   {
@@ -5029,22 +4723,10 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Terminology'
   },
   {
-    id: 'general-average',
-    title: 'General Average',
-    description: 'A legal principle of maritime law according to which all parties in a sea venture proportionally share any losses resulting from a voluntary sacrifice of part of the ship or cargo to save the whole in an emergency.',
-    category: 'Regulations'
-  },
-  {
     id: 'general-cargo',
     title: 'General Cargo',
     description: 'Cargo consisting of various goods packed in different ways.',
     category: 'Cargo'
-  },
-  {
-    id: 'gimbals',
-    title: 'Gimbals',
-    description: 'A support that allows an object to remain horizontal regardless of the motion of the ship.',
-    category: 'Technical'
   },
   {
     id: 'gipsy',
@@ -5137,12 +4819,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'gross-tonnage',
-    title: 'Gross Tonnage',
-    description: 'A measure of the total internal volume of a ship.',
-    category: 'Technical'
-  },
-  {
     id: 'ground-tackle',
     title: 'Ground Tackle',
     description: 'A general term for anchors and chains.',
@@ -5191,12 +4867,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'gunwale',
-    title: 'Gunwale',
-    description: 'The upper edge of a ship\'s side.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'guy',
     title: 'Guy',
     description: 'A rope used to steady or guide a spar.',
@@ -5243,12 +4913,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Half-mast',
     description: 'The position of a flag halfway down the mast as a sign of mourning.',
     category: 'Terminology'
-  },
-  {
-    id: 'halyard',
-    title: 'Halyard',
-    description: 'A rope used for hoisting a sail or flag.',
-    category: 'Vessel Parts'
   },
   {
     id: 'hammock',
@@ -5335,12 +4999,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'hatch-cover',
-    title: 'Hatch Cover',
-    description: 'A watertight cover for a hatch.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'haul',
     title: 'Haul',
     description: 'To pull on a rope.',
@@ -5362,12 +5020,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     id: 'hawse-pipe',
     title: 'Hawse-pipe',
     description: 'A metal pipe lining a hawse-hole.',
-    category: 'Vessel Parts'
-  },
-  {
-    id: 'hawser',
-    title: 'Hawser',
-    description: 'A heavy rope used for mooring or towing.',
     category: 'Vessel Parts'
   },
   {
@@ -5413,12 +5065,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Terminology'
   },
   {
-    id: 'heave',
-    title: 'Heave',
-    description: 'To pull or throw with force.',
-    category: 'Terminology'
-  },
-  {
     id: 'heave-short',
     title: 'Heave Short',
     description: 'To haul in the anchor chain until the ship is nearly over the anchor.',
@@ -5449,39 +5095,15 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'helm',
-    title: 'Helm',
-    description: 'The steering apparatus of a ship.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'helmsman',
     title: 'Helmsman',
     description: 'The person who steers the ship.',
     category: 'Crew'
   },
   {
-    id: 'high-seas',
-    title: 'High Seas',
-    description: 'The open ocean, outside the territorial waters of any country.',
-    category: 'Regulations'
-  },
-  {
-    id: 'hitch',
-    title: 'Hitch',
-    description: 'A knot used to secure a rope to an object.',
-    category: 'Terminology'
-  },
-  {
     id: 'hog',
     title: 'Hog',
     description: 'A vessel is hogged when its hull is strained so that the bow and stern are lower than the middle.',
-    category: 'Terminology'
-  },
-  {
-    id: 'hoist',
-    title: 'Hoist',
-    description: 'To lift or raise; also the vertical height of a flag.',
     category: 'Terminology'
   },
   {
@@ -5563,12 +5185,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'hull',
-    title: 'Hull',
-    description: 'The main body of a ship.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'hull-down',
     title: 'Hull-down',
     description: 'A vessel so far away that only its masts and superstructure are visible above the horizon.',
@@ -5647,12 +5263,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Navigation'
   },
   {
-    id: 'international-maritime-organization',
-    title: 'IMO',
-    description: 'A specialized agency of the United Nations responsible for regulating shipping.',
-    category: 'Regulations'
-  },
-  {
     id: 'iron-wind',
     title: 'Iron Wind',
     description: 'A slang term for a ship\'s engine.',
@@ -5701,12 +5311,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Vessel Parts'
   },
   {
-    id: 'jetsam',
-    title: 'Jetsam',
-    description: 'Goods thrown overboard to lighten a ship in distress.',
-    category: 'Terminology'
-  },
-  {
     id: 'jettison',
     title: 'Jettison',
     description: 'To throw cargo or equipment overboard.',
@@ -5725,12 +5329,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'jib',
-    title: 'Jib',
-    description: 'A triangular sail set forward of the foremost mast.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'jib-boom',
     title: 'Jib-boom',
     description: 'A spar extending forward from the bowsprit.',
@@ -5741,12 +5339,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     title: 'Jibe',
     description: 'To swing the stern of a sailing vessel across the wind.',
     category: 'Navigation'
-  },
-  {
-    id: 'jigger',
-    title: 'Jigger',
-    description: 'The small aft mast of a ketch or yawl; also a small tackle.',
-    category: 'Vessel Parts'
   },
   {
     id: 'jolly-boat',
@@ -5773,22 +5365,10 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Terminology'
   },
   {
-    id: 'kedge',
-    title: 'Kedge',
-    description: 'A small anchor used for moving a ship.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'kedging',
     title: 'Kedging',
     description: 'The act of moving a ship by hauling on a kedge anchor.',
     category: 'History'
-  },
-  {
-    id: 'keel',
-    title: 'Keel',
-    description: 'The longitudinal structural member at the bottom of a ship\'s hull.',
-    category: 'Vessel Parts'
   },
   {
     id: 'keel-block',
@@ -5797,21 +5377,9 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Operations'
   },
   {
-    id: 'keelson',
-    title: 'Keelson',
-    description: 'A longitudinal structural member bolted on top of the keel.',
-    category: 'Vessel Parts'
-  },
-  {
     id: 'kentledge',
     title: 'Kentledge',
     description: 'Iron weights used as permanent ballast.',
-    category: 'History'
-  },
-  {
-    id: 'ketch',
-    title: 'Ketch',
-    description: 'A two-masted sailing vessel with the aft mast smaller and forward of the rudder post.',
     category: 'History'
   },
   {
@@ -5845,12 +5413,6 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'History'
   },
   {
-    id: 'knot',
-    title: 'Knot',
-    description: 'A unit of speed equal to one nautical mile per hour.',
-    category: 'Terminology'
-  },
-  {
     id: 'knuckle',
     title: 'Knuckle',
     description: 'A sharp change in the direction of a ship\'s hull.',
@@ -5881,9 +5443,3459 @@ export const maritimeTerms: MaritimeTerm[] = [
     category: 'Operations'
   },
   {
+    id: 'landfall',
+    title: 'Landfall',
+    description: 'The first sighting or reaching of land after a voyage across the sea.',
+    category: 'Navigation'
+  },
+  {
+    id: 'landmark',
+    title: 'Landmark',
+    description: 'A conspicuous object on land that serves as a guide for navigation.',
+    category: 'Navigation'
+  },
+  {
+    id: 'larboard',
+    title: 'Larboard',
+    description: 'An obsolete term for the port (left) side of a ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'lash',
+    title: 'Lash',
+    description: 'To secure or bind something with ropes or chains.',
+    category: 'Operations'
+  },
+  {
+    id: 'lashing',
+    title: 'Lashing',
+    description: 'The ropes or chains used to secure cargo or equipment.',
+    category: 'Cargo'
+  },
+  {
+    id: 'latitude',
+    title: 'Latitude',
+    description: 'The angular distance of a place north or south of the earth\'s equator.',
+    category: 'Navigation'
+  },
+  {
+    id: 'launch',
+    title: 'Launch',
+    description: 'To set a ship or boat afloat for the first time; also a type of small boat.',
+    category: 'Operations'
+  },
+  {
+    id: 'lay',
+    title: 'Lay',
+    description: 'To move or go in a specified direction (e.g., "lay aloft"); also the direction of the twist in a rope.',
+    category: 'Terminology'
+  },
+  {
+    id: 'lead-line',
+    title: 'Lead Line',
+    description: 'A line with a lead weight at the end, used for measuring the depth of water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'league',
+    title: 'League',
+    description: 'A unit of distance, usually equal to three nautical miles.',
+    category: 'Terminology'
+  },
+  {
+    id: 'lee-shore',
+    title: 'Lee Shore',
+    description: 'A shore toward which the wind is blowing, posing a danger to vessels.',
+    category: 'Environment'
+  },
+  {
+    id: 'length-overall',
+    title: 'Length Overall (LOA)',
+    description: 'The maximum length of a vessel\'s hull measured parallel to the waterline.',
+    category: 'Technical'
+  },
+  {
+    id: 'liberty',
+    title: 'Liberty',
+    description: 'Permission for a crew member to go ashore for a short period.',
+    category: 'Crew'
+  },
+  {
+    id: 'life-raft',
+    title: 'Life Raft',
+    description: 'An inflatable or rigid raft used for emergency evacuation from a ship.',
+    category: 'Safety'
+  },
+  {
+    id: 'lifeline',
+    title: 'Lifeline',
+    description: 'A line or rope used for safety, such as one thrown to someone in the water.',
+    category: 'Safety'
+  },
+  {
+    id: 'light-displacement',
+    title: 'Light Displacement',
+    description: 'The weight of a ship when it is empty of cargo, fuel, and stores.',
+    category: 'Technical'
+  },
+  {
+    id: 'lighter',
+    title: 'Lighter',
+    description: 'A large, flat-bottomed barge used for transporting cargo between ships and the shore.',
+    category: 'Cargo'
+  },
+  {
+    id: 'lighthouse',
+    title: 'Lighthouse',
+    description: 'A tower or structure with a powerful light to guide ships at night.',
+    category: 'Navigation'
+  },
+  {
+    id: 'limber-hole',
+    title: 'Limber Hole',
+    description: 'A hole in the bottom of a ship\'s frames to allow bilge water to flow to the pump.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'line',
+    title: 'Line',
+    description: 'A general term for any rope used on a ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'liner',
+    title: 'Liner',
+    description: 'A large passenger ship that travels on a regular route.',
+    category: 'Terminology'
+  },
+  {
+    id: 'list',
+    title: 'List',
+    description: 'The leaning of a ship to one side, usually caused by shifting cargo or water intake.',
+    category: 'Safety'
+  },
+  {
+    id: 'locker',
+    title: 'Locker',
+    description: 'A small storage compartment or chest on a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'longitude',
+    title: 'Longitude',
+    description: 'The angular distance of a place east or west of the prime meridian.',
+    category: 'Navigation'
+  },
+  {
+    id: 'lookout',
+    title: 'Lookout',
+    description: 'A crew member assigned to watch for other ships, land, or hazards.',
+    category: 'Safety'
+  },
+  {
+    id: 'loom',
+    title: 'Loom',
+    description: 'The appearance of a light or object above the horizon before it is directly visible.',
+    category: 'Navigation'
+  },
+  {
+    id: 'loose-footed',
+    title: 'Loose-footed',
+    description: 'A sail that is not attached to a boom along its lower edge.',
+    category: 'Terminology'
+  },
+  {
+    id: 'low-tide',
+    title: 'Low Tide',
+    description: 'The point at which the tide is at its lowest level.',
+    category: 'Environment'
+  },
+  {
+    id: 'lubber',
+    title: 'Lubber',
+    description: 'An inexperienced or clumsy sailor.',
+    category: 'Crew'
+  },
+  {
+    id: 'lubber-line',
+    title: 'Lubber Line',
+    description: 'A mark on a compass indicating the direction of the ship\'s bow.',
+    category: 'Navigation'
+  },
+  {
+    id: 'lugger',
+    title: 'Lugger',
+    description: 'A small sailing vessel with four-sided sails (lugsails).',
+    category: 'Terminology'
+  },
+  {
+    id: 'lull',
+    title: 'Lull',
+    description: 'A temporary period of calm or reduced wind during a storm.',
+    category: 'Environment'
+  },
+  {
+    id: 'lumber',
+    title: 'Lumber',
+    description: 'Timber or logs carried as cargo.',
+    category: 'Cargo'
+  },
+  {
+    id: 'lurch',
+    title: 'Lurch',
+    description: 'A sudden, heavy roll of a ship to one side.',
+    category: 'Terminology'
+  },
+  {
+    id: 'mackerel-sky',
+    title: 'Mackerel Sky',
+    description: 'A sky covered with small, white, fleecy clouds that resemble the scales of a mackerel; often indicates an approaching storm.',
+    category: 'Environment'
+  },
+  {
+    id: 'magnetic-bearing',
+    title: 'Magnetic Bearing',
+    description: 'The bearing of an object measured relative to magnetic north.',
+    category: 'Navigation'
+  },
+  {
+    id: 'magnetic-compass',
+    title: 'Magnetic Compass',
+    description: 'A navigation instrument that uses the earth\'s magnetic field to determine direction.',
+    category: 'Navigation'
+  },
+  {
+    id: 'magnetic-north',
+    title: 'Magnetic North',
+    description: 'The direction in which a compass needle points, toward the earth\'s magnetic north pole.',
+    category: 'Navigation'
+  },
+  {
+    id: 'main-deck',
+    title: 'Main Deck',
+    description: 'The highest continuous deck extending from bow to stern.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'mainmast',
+    title: 'Mainmast',
+    description: 'The principal mast of a ship, or the second mast in a vessel with three or more masts.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'mainsail',
+    title: 'Mainsail',
+    description: 'The largest and most important sail on the mainmast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'make-fast',
+    title: 'Make Fast',
+    description: 'To secure a rope or line to an object.',
+    category: 'Operations'
+  },
+  {
+    id: 'make-way',
+    title: 'Make Way',
+    description: 'To move through the water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'marina',
+    title: 'Marina',
+    description: 'A specially designed harbor with moorings for pleasure boats and small yachts.',
+    category: 'Operations'
+  },
+  {
+    id: 'marine',
+    title: 'Marine',
+    description: 'Relating to the sea, ships, or navigation.',
+    category: 'Terminology'
+  },
+  {
+    id: 'mariner',
+    title: 'Mariner',
+    description: 'A person who navigates or assists in the navigation of a ship; a sailor.',
+    category: 'Crew'
+  },
+  {
+    id: 'maritime',
+    title: 'Maritime',
+    description: 'Connected with the sea, especially in relation to seaborne trade or naval matters.',
+    category: 'Terminology'
+  },
+  {
+    id: 'masthead',
+    title: 'Masthead',
+    description: 'The top of a mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'mayday',
+    title: 'Mayday',
+    description: 'An international radio distress signal used by ships and aircraft.',
+    category: 'Safety'
+  },
+  {
+    id: 'mean-sea-level',
+    title: 'Mean Sea Level',
+    description: 'The average level of the surface of the sea, used as a reference point for measuring elevations.',
+    category: 'Environment'
+  },
+  {
+    id: 'merchant-marine',
+    title: 'Merchant Marine',
+    description: 'The fleet of ships that carries cargo and passengers for trade.',
+    category: 'Terminology'
+  },
+  {
+    id: 'messenger',
+    title: 'Messenger',
+    description: 'A light line used to pull a heavier rope or cable.',
+    category: 'Operations'
+  },
+  {
+    id: 'mizzenmast',
+    title: 'Mizzenmast',
+    description: 'The third mast from the bow in a vessel with three or more masts.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'monkey-fist',
+    title: 'Monkey\'s Fist',
+    description: 'A type of knot used to weight the end of a line so it can be thrown more easily.',
+    category: 'Terminology'
+  },
+  {
+    id: 'moor',
+    title: 'Moor',
+    description: 'To secure a ship or boat in a particular place by means of anchors or lines.',
+    category: 'Operations'
+  },
+  {
+    id: 'moulded-breadth',
+    title: 'Moulded Breadth',
+    description: 'The maximum breadth of a ship measured to the outside of the frames.',
+    category: 'Technical'
+  },
+  {
+    id: 'moulded-depth',
+    title: 'Moulded Depth',
+    description: 'The vertical distance from the top of the keel to the top of the upper deck beam at the side.',
+    category: 'Technical'
+  },
+  {
+    id: 'mud-pilot',
+    title: 'Mud Pilot',
+    description: 'A pilot who specializes in navigating shallow or muddy waters, such as rivers or estuaries.',
+    category: 'Crew'
+  },
+  {
+    id: 'narrows',
+    title: 'Narrows',
+    description: 'A narrow part of a strait, river, or other waterway.',
+    category: 'Environment'
+  },
+  {
+    id: 'nautical',
+    title: 'Nautical',
+    description: 'Relating to sailors, ships, or navigation.',
+    category: 'Terminology'
+  },
+  {
+    id: 'nautical-chart',
+    title: 'Nautical Chart',
+    description: 'A map used by mariners to navigate the sea, showing water depths, hazards, and aids to navigation.',
+    category: 'Navigation'
+  },
+  {
+    id: 'naval',
+    title: 'Naval',
+    description: 'Relating to a navy or warships.',
+    category: 'Terminology'
+  },
+  {
+    id: 'navigate',
+    title: 'Navigate',
+    description: 'To plan and direct the course of a ship or other craft.',
+    category: 'Navigation'
+  },
+  {
+    id: 'navigation',
+    title: 'Navigation',
+    description: 'The process or activity of accurately ascertaining one\'s position and planning and following a route.',
+    category: 'Navigation'
+  },
+  {
+    id: 'net-tonnage',
+    title: 'Net Tonnage',
+    description: 'A measure of the useful capacity of a ship, calculated by subtracting the space occupied by crew, machinery, and fuel from the gross tonnage.',
+    category: 'Technical'
+  },
+  {
+    id: 'night-watch',
+    title: 'Night Watch',
+    description: 'The period of duty on a ship during the night.',
+    category: 'Crew'
+  },
+  {
+    id: 'nipper',
+    title: 'Nipper',
+    description: 'A short length of rope used to bind a cable to a messenger.',
+    category: 'Operations'
+  },
+  {
+    id: 'no-mans-land',
+    title: 'No Man\'s Land',
+    description: 'A part of a ship where no one is allowed to go, or a space between two decks.',
+    category: 'Terminology'
+  },
+  {
+    id: 'nun-buoy',
+    title: 'Nun Buoy',
+    description: 'A conical buoy used as a navigational aid, usually painted red and marking the right side of a channel when entering from seaward.',
+    category: 'Navigation'
+  },
+  {
+    id: 'oar',
+    title: 'Oar',
+    description: 'A pole with a flat blade, used for rowing or steering a boat.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'oarlock',
+    title: 'Oarlock',
+    description: 'A device on the gunwale of a boat that holds an oar in place during rowing.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'off-the-wind',
+    title: 'Off the Wind',
+    description: 'Sailing with the wind blowing from behind or from the side.',
+    category: 'Navigation'
+  },
+  {
+    id: 'officer',
+    title: 'Officer',
+    description: 'A person holding a position of authority on a ship.',
+    category: 'Crew'
+  },
+  {
+    id: 'offshore',
+    title: 'Offshore',
+    description: 'At a distance from the shore.',
+    category: 'Environment'
+  },
+  {
+    id: 'oil-tanker',
+    title: 'Oil Tanker',
+    description: 'A ship designed to carry large quantities of oil in bulk.',
+    category: 'Terminology'
+  },
+  {
+    id: 'on-the-wind',
+    title: 'On the Wind',
+    description: 'Sailing as close to the direction of the wind as possible.',
+    category: 'Navigation'
+  },
+  {
+    id: 'outhaul',
+    title: 'Outhaul',
+    description: 'A line used to pull the corner of a sail toward the end of a boom or spar.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'overboard',
+    title: 'Overboard',
+    description: 'Over the side of a ship into the water.',
+    category: 'Safety'
+  },
+  {
+    id: 'overhaul',
+    title: 'Overhaul',
+    description: 'To examine and repair a ship or its equipment; also to overtake another vessel.',
+    category: 'Operations'
+  },
+  {
+    id: 'overhead',
+    title: 'Overhead',
+    description: 'The ceiling of a compartment on a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'packet',
+    title: 'Packet',
+    description: 'A ship that travels on a regular route carrying mail, passengers, and cargo.',
+    category: 'Terminology'
+  },
+  {
+    id: 'pantry',
+    title: 'Pantry',
+    description: 'A small room on a ship where food and tableware are kept.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'part',
+    title: 'Part',
+    description: 'To break, as in a rope or cable.',
+    category: 'Terminology'
+  },
+  {
+    id: 'pass-a-line',
+    title: 'Pass a Line',
+    description: 'To throw or carry a rope from one ship or object to another.',
+    category: 'Operations'
+  },
+  {
+    id: 'passenger',
+    title: 'Passenger',
+    description: 'A person traveling on a ship who is not a member of the crew.',
+    category: 'Terminology'
+  },
+  {
+    id: 'patent-anchor',
+    title: 'Patent Anchor',
+    description: 'A modern type of anchor designed for better holding power and easier handling.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'patent-log',
+    title: 'Patent Log',
+    description: 'A mechanical device used to measure a ship\'s speed through the water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'pay',
+    title: 'Pay',
+    description: 'To fill the seams of a wooden ship with pitch or tar.',
+    category: 'Operations'
+  },
+  {
+    id: 'pay-off',
+    title: 'Pay Off',
+    description: 'To turn a ship\'s head away from the wind.',
+    category: 'Navigation'
+  },
+  {
+    id: 'pay-out',
+    title: 'Pay Out',
+    description: 'To slacken or let out a rope or cable.',
+    category: 'Operations'
+  },
+  {
+    id: 'peak',
+    title: 'Peak',
+    description: 'The upper, after corner of a gaff sail; also the narrow part of a ship\'s hull at the bow or stern.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'pelorus',
+    title: 'Pelorus',
+    description: 'A navigational instrument used for taking bearings, consisting of a circular plate marked with degrees.',
+    category: 'Navigation'
+  },
+  {
+    id: 'pendant',
+    title: 'Pendant',
+    description: 'A short length of rope with a block or thimble at one end, used for various purposes.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'pile',
+    title: 'Pile',
+    description: 'A heavy post driven into the bed of a body of water to support a pier or other structure.',
+    category: 'Operations'
+  },
+  {
+    id: 'pilot',
+    title: 'Pilot',
+    description: 'A person with local knowledge who assists in navigating ships into and out of harbors.',
+    category: 'Crew'
+  },
+  {
+    id: 'pilot-boat',
+    title: 'Pilot Boat',
+    description: 'A small, fast boat used to transport pilots to and from ships.',
+    category: 'Operations'
+  },
+  {
+    id: 'pilot-house',
+    title: 'Pilot House',
+    description: 'An enclosed space on a ship from which it is steered and navigated.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'pipe',
+    title: 'Pipe',
+    description: 'To summon the crew with a boatswain\'s whistle.',
+    category: 'Operations'
+  },
+  {
+    id: 'piracy',
+    title: 'Piracy',
+    description: 'The act of attacking and robbing ships at sea.',
+    category: 'History'
+  },
+  {
+    id: 'pirate',
+    title: 'Pirate',
+    description: 'A person who commits piracy.',
+    category: 'History'
+  },
+  {
+    id: 'pitching',
+    title: 'Pitching',
+    description: 'The act of a ship rocking fore and aft.',
+    category: 'Terminology'
+  },
+  {
+    id: 'plimsoll-mark',
+    title: 'Plimsoll Mark',
+    description: 'Another name for the load line, named after Samuel Plimsoll.',
+    category: 'Regulations'
+  },
+  {
+    id: 'plot',
+    title: 'Plot',
+    description: 'To mark a ship\'s position and course on a chart.',
+    category: 'Navigation'
+  },
+  {
+    id: 'point',
+    title: 'Point',
+    description: 'One of the 32 divisions of a compass card, equal to 11.25 degrees.',
+    category: 'Navigation'
+  },
+  {
+    id: 'pontoon',
+    title: 'Pontoon',
+    description: 'A flat-bottomed boat or floating structure used to support a bridge or other platform.',
+    category: 'Operations'
+  },
+  {
+    id: 'poop-deck',
+    title: 'Poop Deck',
+    description: 'A short deck at the stern of a ship, above the main deck.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'port-of-entry',
+    title: 'Port of Entry',
+    description: 'A port where travelers and cargo can legally enter a country.',
+    category: 'Operations'
+  },
+  {
+    id: 'position',
+    title: 'Position',
+    description: 'The location of a ship, usually expressed in latitude and longitude.',
+    category: 'Navigation'
+  },
+  {
+    id: 'pratique',
+    title: 'Pratique',
+    description: 'Permission for a ship to enter a port after being cleared by health officials.',
+    category: 'Regulations'
+  },
+  {
+    id: 'press-gang',
+    title: 'Press Gang',
+    description: 'A group of men used to force people into naval service.',
+    category: 'History'
+  },
+  {
+    id: 'preventer',
+    title: 'Preventer',
+    description: 'An extra rope or line used to provide additional support or safety.',
+    category: 'Safety'
+  },
+  {
+    id: 'pricker',
+    title: 'Pricker',
+    description: 'A small marlinspike used for light work.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'prime-meridian',
+    title: 'Prime Meridian',
+    description: 'The meridian of 0 degrees longitude, passing through Greenwich, England.',
+    category: 'Navigation'
+  },
+  {
+    id: 'privateer',
+    title: 'Privateer',
+    description: 'An armed ship owned and officered by private individuals holding a government commission and authorized for use in war.',
+    category: 'History'
+  },
+  {
+    id: 'privileged-vessel',
+    title: 'Privileged Vessel',
+    description: 'The vessel that has the right of way in a crossing or overtaking situation.',
+    category: 'Regulations'
+  },
+  {
+    id: 'provisions',
+    title: 'Provisions',
+    description: 'Food and other supplies carried on a ship for the use of the crew and passengers.',
+    category: 'Operations'
+  },
+  {
+    id: 'pump',
+    title: 'Pump',
+    description: 'A device used to remove water from a ship\'s bilge or to move other liquids.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'punt',
+    title: 'Punt',
+    description: 'A small, flat-bottomed boat with square ends, usually propelled with a pole.',
+    category: 'Terminology'
+  },
+  {
+    id: 'purser',
+    title: 'Purser',
+    description: 'The officer on a ship responsible for accounts, provisions, and other administrative duties.',
+    category: 'Crew'
+  },
+  {
+    id: 'quadrant',
+    title: 'Quadrant',
+    description: 'An early navigational instrument used for measuring the altitude of celestial bodies.',
+    category: 'Navigation'
+  },
+  {
+    id: 'quarantine',
+    title: 'Quarantine',
+    description: 'A period of isolation for a ship and its crew to prevent the spread of disease.',
+    category: 'Regulations'
+  },
+  {
+    id: 'quarter',
+    title: 'Quarter',
+    description: 'The part of a ship\'s side near the stern.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'quartermaster',
+    title: 'Quartermaster',
+    description: 'A petty officer responsible for steering a ship and assisting the navigator.',
+    category: 'Crew'
+  },
+  {
+    id: 'quayside',
+    title: 'Quayside',
+    description: 'The area alongside a quay.',
+    category: 'Operations'
+  },
+  {
+    id: 'quick-flashing-light',
+    title: 'Quick Flashing Light',
+    description: 'A navigational light that flashes at a rate of 60 or more flashes per minute.',
+    category: 'Navigation'
+  },
+  {
+    id: 'race',
+    title: 'Race',
+    description: 'A strong, rapid current of water, often caused by the tide passing through a narrow channel.',
+    category: 'Environment'
+  },
+  {
+    id: 'raft',
+    title: 'Raft',
+    description: 'A flat structure, usually made of logs or barrels, used as a floating platform.',
+    category: 'Terminology'
+  },
+  {
+    id: 'rail',
+    title: 'Rail',
+    description: 'The fence-like structure around the deck of a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'rake',
+    title: 'Rake',
+    description: 'The inclination of a mast, bow, or stern from the vertical.',
+    category: 'Technical'
+  },
+  {
+    id: 'ram',
+    title: 'Ram',
+    description: 'A heavy, pointed structure on the bow of a warship used for striking and sinking enemy vessels.',
+    category: 'History'
+  },
+  {
+    id: 'range',
+    title: 'Range',
+    description: 'The distance to an object; also two objects in line that indicate a specific direction.',
+    category: 'Navigation'
+  },
+  {
+    id: 'range-lights',
+    title: 'Range Lights',
+    description: 'Two lights at different heights that, when aligned, indicate the centerline of a channel.',
+    category: 'Navigation'
+  },
+  {
+    id: 'rattle-down',
+    title: 'Rattle Down',
+    description: 'To tie ratlines to the shrouds.',
+    category: 'Operations'
+  },
+  {
+    id: 'reach',
+    title: 'Reach',
+    description: 'A straight stretch of water between two bends in a river or channel.',
+    category: 'Environment'
+  },
+  {
+    id: 'reaching',
+    title: 'Reaching',
+    description: 'Sailing with the wind blowing from the side.',
+    category: 'Navigation'
+  },
+  {
+    id: 'ready-about',
+    title: 'Ready About',
+    description: 'An order to the crew to prepare for tacking.',
+    category: 'Operations'
+  },
+  {
+    id: 'reef-knot',
+    title: 'Reef Knot',
+    description: 'A simple knot used for tying together two ropes of equal thickness.',
+    category: 'Terminology'
+  },
+  {
+    id: 'reef-point',
+    title: 'Reef Point',
+    description: 'One of the short lengths of rope used to tie down a reefed sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'register-tonnage',
+    title: 'Register Tonnage',
+    description: 'The tonnage of a ship as recorded in its official registration documents.',
+    category: 'Technical'
+  },
+  {
+    id: 'registry',
+    title: 'Registry',
+    description: 'The official record of a ship\'s ownership and nationality.',
+    category: 'Regulations'
+  },
+  {
+    id: 'relative-bearing',
+    title: 'Relative Bearing',
+    description: 'The bearing of an object measured relative to the ship\'s bow.',
+    category: 'Navigation'
+  },
+  {
+    id: 'render',
+    title: 'Render',
+    description: 'To pass a rope through a block freely.',
+    category: 'Operations'
+  },
+  {
+    id: 'revenue-cutter',
+    title: 'Revenue Cutter',
+    description: 'A small, fast ship used by a government to prevent smuggling and enforce customs laws.',
+    category: 'History'
+  },
+  {
+    id: 'rhumb-line',
+    title: 'Rhumb Line',
+    description: 'A line on a chart that crosses all meridians at the same angle, representing a constant course.',
+    category: 'Navigation'
+  },
+  {
+    id: 'rib',
+    title: 'Rib',
+    description: 'One of the curved frames that form the skeleton of a ship\'s hull.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'ride',
+    title: 'Ride',
+    description: 'To lie at anchor.',
+    category: 'Operations'
+  },
+  {
+    id: 'rig',
+    title: 'Rig',
+    description: 'The arrangement of a ship\'s masts, sails, and rigging.',
+    category: 'Terminology'
+  },
+  {
+    id: 'right',
+    title: 'Right',
+    description: 'To return a ship to an upright position after it has listed or capsized.',
+    category: 'Safety'
+  },
+  {
+    id: 'ring-bolt',
+    title: 'Ring Bolt',
+    description: 'A bolt with a ring at one end, used for securing ropes or other objects.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'rip-tide',
+    title: 'Rip Tide',
+    description: 'A strong, narrow current of water flowing away from the shore.',
+    category: 'Environment'
+  },
+  {
+    id: 'rise',
+    title: 'Rise',
+    description: 'The increase in the level of the tide.',
+    category: 'Environment'
+  },
+  {
+    id: 'roach',
+    title: 'Roach',
+    description: 'The curved part of the edge of a sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'robands',
+    title: 'Robands',
+    description: 'Small ropes used to tie the head of a sail to a yard.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'rogue-wave',
+    title: 'Rogue Wave',
+    description: 'An unusually large and dangerous wave that occurs unexpectedly.',
+    category: 'Environment'
+  },
+  {
+    id: 'rolling',
+    title: 'Rolling',
+    description: 'The act of a ship rocking from side to side.',
+    category: 'Terminology'
+  },
+  {
+    id: 'rope',
+    title: 'Rope',
+    description: 'A strong, thick cord made of twisted strands of fiber or wire.',
+    category: 'Terminology'
+  },
+  {
+    id: 'row',
+    title: 'Row',
+    description: 'To propel a boat with oars.',
+    category: 'Operations'
+  },
+  {
+    id: 'rowlock',
+    title: 'Rowlock',
+    description: 'Another name for an oarlock.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'royal',
+    title: 'Royal',
+    description: 'A small sail set above the topgallant sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'rudder-post',
+    title: 'Rudder Post',
+    description: 'The vertical post to which a rudder is attached.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'rules-of-the-road',
+    title: 'Rules of the Road',
+    description: 'The international regulations for preventing collisions at sea.',
+    category: 'Regulations'
+  },
+  {
+    id: 'run',
+    title: 'Run',
+    description: 'To sail with the wind blowing from behind; also the distance traveled by a ship in a specific period.',
+    category: 'Navigation'
+  },
+  {
+    id: 'running',
+    title: 'Running',
+    description: 'Sailing with the wind blowing from behind.',
+    category: 'Navigation'
+  },
+  {
+    id: 'running-lights',
+    title: 'Running Lights',
+    description: 'The lights required to be shown by a ship at night or in restricted visibility.',
+    category: 'Regulations'
+  },
+  {
+    id: 'safety-valve',
+    title: 'Safety Valve',
+    description: 'A valve that automatically opens to release pressure from a boiler or other vessel when it exceeds a safe limit.',
+    category: 'Technical'
+  },
+  {
+    id: 'sagging',
+    title: 'Sagging',
+    description: 'The condition of a ship when the middle part of the hull is lower than the ends, usually caused by improper loading or heavy seas.',
+    category: 'Technical'
+  },
+  {
+    id: 'sail',
+    title: 'Sail',
+    description: 'A piece of fabric attached to a mast and rigging, used to catch the wind and propel a vessel.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'sailing-vessel',
+    title: 'Sailing Vessel',
+    description: 'A ship or boat propelled primarily by sails.',
+    category: 'Terminology'
+  },
+  {
+    id: 'scantlings',
+    title: 'Scantlings',
+    description: 'The dimensions of the structural parts of a ship, such as frames and plating.',
+    category: 'Technical'
+  },
+  {
+    id: 'screw',
+    title: 'Screw',
+    description: 'Another name for a ship\'s propeller.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'sea-anchor',
+    title: 'Sea Anchor',
+    description: 'A device, usually made of canvas, used to slow a ship\'s drift and keep its head to the wind in a storm.',
+    category: 'Safety'
+  },
+  {
+    id: 'sea-breeze',
+    title: 'Sea Breeze',
+    description: 'A breeze blowing from the sea toward the land.',
+    category: 'Environment'
+  },
+  {
+    id: 'sea-chest',
+    title: 'Sea Chest',
+    description: 'A sailor\'s storage chest; also an intake in the hull for seawater.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'sea-level',
+    title: 'Sea Level',
+    description: 'The level of the surface of the sea.',
+    category: 'Environment'
+  },
+  {
+    id: 'sea-room',
+    title: 'Sea Room',
+    description: 'A safe distance from the shore or other hazards.',
+    category: 'Safety'
+  },
+  {
+    id: 'seaboard',
+    title: 'Seaboard',
+    description: 'The region along a coast.',
+    category: 'Environment'
+  },
+  {
+    id: 'seacock',
+    title: 'Seacock',
+    description: 'A valve in the hull of a ship that can be opened to admit seawater or closed to prevent it.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'seafarer',
+    title: 'Seafarer',
+    description: 'A person who travels by sea; a mariner.',
+    category: 'Crew'
+  },
+  {
+    id: 'seagoing',
+    title: 'Seagoing',
+    description: 'Designed or fit for travel on the open sea.',
+    category: 'Terminology'
+  },
+  {
+    id: 'seaman',
+    title: 'Seaman',
+    description: 'A person who works on a ship; a sailor.',
+    category: 'Crew'
+  },
+  {
+    id: 'seamanship',
+    title: 'Seamanship',
+    description: 'The skill and knowledge required for the safe and efficient operation of a ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'seaworthy',
+    title: 'Seaworthy',
+    description: 'The condition of a ship being fit for a voyage at sea.',
+    category: 'Safety'
+  },
+  {
+    id: 'shackle',
+    title: 'Shackle',
+    description: 'A U-shaped metal link with a pin, used for connecting chains or ropes.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'shaft',
+    title: 'Shaft',
+    description: 'The rotating rod that connects a ship\'s engine to its propeller.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'shell-plating',
+    title: 'Shell Plating',
+    description: 'The outer skin of a ship\'s hull, usually made of steel plates.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'ship',
+    title: 'Ship',
+    description: 'A large seagoing vessel.',
+    category: 'Terminology'
+  },
+  {
+    id: 'ship-of-the-line',
+    title: 'Ship of the Line',
+    description: 'A large, heavily armed warship used in naval battles.',
+    category: 'History'
+  },
+  {
+    id: 'shipmate',
+    title: 'Shipmate',
+    description: 'A fellow member of a ship\'s crew.',
+    category: 'Crew'
+  },
+  {
+    id: 'shipping',
+    title: 'Shipping',
+    description: 'The business of transporting goods by ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'shipwreck',
+    title: 'Shipwreck',
+    description: 'The destruction or loss of a ship at sea; also the remains of a sunken ship.',
+    category: 'History'
+  },
+  {
+    id: 'shipwright',
+    title: 'Shipwright',
+    description: 'A person who builds or repairs ships.',
+    category: 'Crew'
+  },
+  {
+    id: 'shipyard',
+    title: 'Shipyard',
+    description: 'A place where ships are built or repaired.',
+    category: 'Operations'
+  },
+  {
+    id: 'shoal',
+    title: 'Shoal',
+    description: 'A shallow part of a body of water, often posing a hazard to navigation.',
+    category: 'Environment'
+  },
+  {
+    id: 'shore',
+    title: 'Shore',
+    description: 'The land along the edge of a body of water.',
+    category: 'Environment'
+  },
+  {
+    id: 'side-lights',
+    title: 'Side Lights',
+    description: 'The red (port) and green (starboard) lights shown by a ship at night.',
+    category: 'Regulations'
+  },
+  {
+    id: 'skipper',
+    title: 'Skipper',
+    description: 'The captain or master of a ship or boat.',
+    category: 'Crew'
+  },
+  {
+    id: 'sky-sail',
+    title: 'Sky Sail',
+    description: 'A small sail set above the royal sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'slack-water',
+    title: 'Slack Water',
+    description: 'The period of calm water between the ebb and flow of the tide.',
+    category: 'Environment'
+  },
+  {
+    id: 'slop-chest',
+    title: 'Slop Chest',
+    description: 'A store on a ship where clothing and other supplies are sold to the crew.',
+    category: 'Operations'
+  },
+  {
+    id: 'snub',
+    title: 'Snub',
+    description: 'To suddenly stop a rope or cable from running out.',
+    category: 'Operations'
+  },
+  {
+    id: 'solstice',
+    title: 'Solstice',
+    description: 'The time of year when the sun is at its greatest distance from the celestial equator.',
+    category: 'Environment'
+  },
+  {
+    id: 'sonar',
+    title: 'Sonar',
+    description: 'A system for detecting objects underwater using sound waves.',
+    category: 'Navigation'
+  },
+  {
+    id: 'sos',
+    title: 'SOS',
+    description: 'An international distress signal, usually sent by radio.',
+    category: 'Safety'
+  },
+  {
+    id: 'sound',
+    title: 'Sound',
+    description: 'To measure the depth of water; also a narrow body of water connecting two larger ones.',
+    category: 'Terminology'
+  },
+  {
+    id: 'sounding',
+    title: 'Sounding',
+    description: 'The measurement of the depth of water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'south-pole',
+    title: 'South Pole',
+    description: 'The southernmost point on the earth.',
+    category: 'Environment'
+  },
+  {
+    id: 'span',
+    title: 'Span',
+    description: 'A rope or chain stretched between two points to support a block or other object.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'spoil-ground',
+    title: 'Spoil Ground',
+    description: 'An area of the sea where dredged material is deposited.',
+    category: 'Environment'
+  },
+  {
+    id: 'sponson',
+    title: 'Sponson',
+    description: 'A projection from the side of a ship used to support a gun, paddle wheel, or other structure.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'spritsail',
+    title: 'Spritsail',
+    description: 'A sail supported by a sprit.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'square-rigged',
+    title: 'Square-rigged',
+    description: 'A vessel with square sails set across the masts.',
+    category: 'Terminology'
+  },
+  {
+    id: 'standing-rigging',
+    title: 'Standing Rigging',
+    description: 'The part of a ship\'s rigging used to support the masts.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'statute-mile',
+    title: 'Statute Mile',
+    description: 'A unit of distance equal to 5,280 feet.',
+    category: 'Terminology'
+  },
+  {
+    id: 'steer',
+    title: 'Steer',
+    description: 'To direct the course of a ship or boat.',
+    category: 'Navigation'
+  },
+  {
+    id: 'steerage',
+    title: 'Steerage',
+    description: 'The part of a ship providing the cheapest accommodations for passengers.',
+    category: 'Terminology'
+  },
+  {
+    id: 'steersman',
+    title: 'Steersman',
+    description: 'A person who steers a ship or boat.',
+    category: 'Crew'
+  },
+  {
+    id: 'step',
+    title: 'Step',
+    description: 'The block or socket in which the foot of a mast is placed.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'stern-post',
+    title: 'Stern Post',
+    description: 'The vertical post at the stern of a ship to which the rudder is attached.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'sternway',
+    title: 'Sternway',
+    description: 'The backward motion of a ship.',
+    category: 'Navigation'
+  },
+  {
+    id: 'stock',
+    title: 'Stock',
+    description: 'The crossbar of an anchor.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'stop',
+    title: 'Stop',
+    description: 'A short length of rope used to tie a sail when it is furled.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'stow',
+    title: 'Stow',
+    description: 'To pack or arrange cargo or equipment in a ship.',
+    category: 'Operations'
+  },
+  {
+    id: 'stowage',
+    title: 'Stowage',
+    description: 'The act of stowing; also the space available for stowing.',
+    category: 'Cargo'
+  },
+  {
+    id: 'strait',
+    title: 'Strait',
+    description: 'A narrow body of water connecting two larger ones.',
+    category: 'Environment'
+  },
+  {
+    id: 'strand',
+    title: 'Strand',
+    description: 'To run a ship aground; also one of the twisted parts of a rope.',
+    category: 'Terminology'
+  },
+  {
+    id: 'stream',
+    title: 'Stream',
+    description: 'A current of water.',
+    category: 'Environment'
+  },
+  {
+    id: 'strike',
+    title: 'Strike',
+    description: 'To lower a sail, flag, or mast.',
+    category: 'Operations'
+  },
+  {
+    id: 'surf',
+    title: 'Surf',
+    description: 'The waves breaking on a shore or reef.',
+    category: 'Environment'
+  },
+  {
+    id: 'surge',
+    title: 'Surge',
+    description: 'A sudden, powerful forward or upward movement of water.',
+    category: 'Environment'
+  },
+  {
+    id: 'survey',
+    title: 'Survey',
+    description: 'An official examination of a ship to determine its condition.',
+    category: 'Regulations'
+  },
+  {
+    id: 'swab',
+    title: 'Swab',
+    description: 'A mop used for cleaning the deck of a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'sway',
+    title: 'Sway',
+    description: 'To hoist or raise something.',
+    category: 'Operations'
+  },
+  {
+    id: 'swell',
+    title: 'Swell',
+    description: 'A series of long, regular waves on the surface of the sea.',
+    category: 'Environment'
+  },
+  {
+    id: 'tacking',
+    title: 'Tacking',
+    description: 'The act of changing direction by turning the bow through the wind.',
+    category: 'Navigation'
+  },
+  {
+    id: 'tar',
+    title: 'Tar',
+    description: 'A dark, sticky substance used for preserving wood and rope; also a nickname for a sailor.',
+    category: 'Terminology'
+  },
+  {
+    id: 'taut',
+    title: 'Taut',
+    description: 'Pulled tight.',
+    category: 'Terminology'
+  },
+  {
+    id: 'tender',
+    title: 'Tender',
+    description: 'A small boat used to transport people and supplies to and from a larger ship; also a vessel that is easily tilted.',
+    category: 'Terminology'
+  },
+  {
+    id: 'tide',
+    title: 'Tide',
+    description: 'The periodic rise and fall of the level of the sea.',
+    category: 'Environment'
+  },
+  {
+    id: 'tide-table',
+    title: 'Tide Table',
+    description: 'A table showing the times and heights of high and low water at a particular place.',
+    category: 'Navigation'
+  },
+  {
+    id: 'tonnage',
+    title: 'Tonnage',
+    description: 'A measure of the size or capacity of a ship.',
+    category: 'Technical'
+  },
+  {
+    id: 'top',
+    title: 'Top',
+    description: 'A platform at the head of a lower mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'topgallant',
+    title: 'Topgallant',
+    description: 'The mast and sail above the topmast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'topmast',
+    title: 'Topmast',
+    description: 'The mast above the lower mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'topsail',
+    title: 'Topsail',
+    description: 'The sail set on a topmast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'tow',
+    title: 'Tow',
+    description: 'To pull a ship or boat through the water with a rope or cable.',
+    category: 'Operations'
+  },
+  {
+    id: 'towline',
+    title: 'Towline',
+    description: 'The rope or cable used for towing.',
+    category: 'Operations'
+  },
+  {
+    id: 'trade-winds',
+    title: 'Trade Winds',
+    description: 'The steady winds that blow toward the equator from the northeast and southeast.',
+    category: 'Environment'
+  },
+  {
+    id: 'tramp',
+    title: 'Tramp',
+    description: 'A ship that does not travel on a regular route but carries cargo wherever it is needed.',
+    category: 'Terminology'
+  },
+  {
+    id: 'trough',
+    title: 'Trough',
+    description: 'The low point between two waves.',
+    category: 'Environment'
+  },
+  {
+    id: 'truck',
+    title: 'Truck',
+    description: 'A small wooden cap at the top of a mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'tug',
+    title: 'Tug',
+    description: 'A small, powerful boat used for towing and maneuvering larger ships.',
+    category: 'Terminology'
+  },
+  {
+    id: 'turn',
+    title: 'Turn',
+    description: 'To change the direction of a ship.',
+    category: 'Navigation'
+  },
+  {
+    id: 'unbend',
+    title: 'Unbend',
+    description: 'To untie or remove a sail from its yard or boom.',
+    category: 'Operations'
+  },
+  {
+    id: 'underway',
+    title: 'Underway',
+    description: 'The state of a ship when it is not at anchor or made fast to the shore.',
+    category: 'Navigation'
+  },
+  {
+    id: 'unmoor',
+    title: 'Unmoor',
+    description: 'To release a ship from its moorings.',
+    category: 'Operations'
+  },
+  {
+    id: 'unship',
+    title: 'Unship',
+    description: 'To remove an object from its proper place on a ship.',
+    category: 'Operations'
+  },
+  {
+    id: 'up-anchor',
+    title: 'Up Anchor',
+    description: 'The order to raise the anchor.',
+    category: 'Operations'
+  },
+  {
+    id: 'veer',
+    title: 'Veer',
+    description: 'To change direction, as in the wind; also to let out more rope or cable.',
+    category: 'Terminology'
+  },
+  {
+    id: 'vessel',
+    title: 'Vessel',
+    description: 'A general term for any ship or boat.',
+    category: 'Terminology'
+  },
+  {
+    id: 'victuals',
+    title: 'Victuals',
+    description: 'Food and other provisions.',
+    category: 'Operations'
+  },
+  {
+    id: 'wardroom',
+    title: 'Wardroom',
+    description: 'The messroom and living area for officers on a warship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'watch',
+    title: 'Watch',
+    description: 'A period of duty on a ship; also the group of crew members on duty.',
+    category: 'Crew'
+  },
+  {
+    id: 'waterline',
+    title: 'Waterline',
+    description: 'The line along the hull of a ship where it meets the surface of the water.',
+    category: 'Technical'
+  },
+  {
+    id: 'way',
+    title: 'Way',
+    description: 'The motion of a ship through the water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'weather',
+    title: 'Weather',
+    description: 'The state of the atmosphere; also the side of a ship toward the wind.',
+    category: 'Environment'
+  },
+  {
+    id: 'weather-side',
+    title: 'Weather Side',
+    description: 'The side of a ship toward the wind.',
+    category: 'Environment'
+  },
+  {
+    id: 'weigh-anchor',
+    title: 'Weigh Anchor',
+    description: 'To raise the anchor from the bottom.',
+    category: 'Operations'
+  },
+  {
+    id: 'wheel',
+    title: 'Wheel',
+    description: 'The device used to steer a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'wheelhouse',
+    title: 'Wheelhouse',
+    description: 'Another name for a pilot house.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'wherry',
+    title: 'Wherry',
+    description: 'A light rowing boat used for carrying passengers on rivers and in harbors.',
+    category: 'Terminology'
+  },
+  {
+    id: 'whip',
+    title: 'Whip',
+    description: 'A simple tackle consisting of a single rope and block.',
+    category: 'Technical'
+  },
+  {
+    id: 'whistle',
+    title: 'Whistle',
+    description: 'A device used for making sound signals.',
+    category: 'Safety'
+  },
+  {
+    id: 'wind',
+    title: 'Wind',
+    description: 'The movement of air.',
+    category: 'Environment'
+  },
+  {
+    id: 'work',
+    title: 'Work',
+    description: 'To move or operate a ship or its equipment.',
+    category: 'Operations'
+  },
+  {
+    id: 'wreck',
+    title: 'Wreck',
+    description: 'The remains of a destroyed ship.',
+    category: 'History'
+  },
+  {
+    id: 'yacht',
+    title: 'Yacht',
+    description: 'A vessel used for pleasure or racing.',
+    category: 'Terminology'
+  },
+  {
+    id: 'zenith',
+    title: 'Zenith',
+    description: 'The point in the sky directly above an observer.',
+    category: 'Environment'
+  },
+  {
+    id: 'zodiac',
+    title: 'Zodiac',
+    description: 'A type of inflatable boat; also the belt of the heavens divided into twelve signs.',
+    category: 'Terminology'
+  },
+  {
+    id: 'all-hands-on-deck',
+    title: 'All hands on deck',
+    description: 'A command for all crew members to come to the deck.',
+    category: 'Crew'
+  },
+  {
+    id: 'anchor-aweigh',
+    title: 'Anchor aweigh',
+    description: 'Said of an anchor when it has just been lifted from the sea floor.',
+    category: 'Operations'
+  },
+  {
+    id: 'articles-of-war',
+    title: 'Articles of War',
+    description: 'Regulations governing the conduct of naval personnel.',
+    category: 'Regulations'
+  },
+  {
+    id: 'bale-out',
+    title: 'Bale out',
+    description: 'To remove water from a boat using a bucket or other container.',
+    category: 'Operations'
+  },
+  {
+    id: 'ballast-keel',
+    title: 'Ballast keel',
+    description: 'A heavy keel used to provide stability to a sailing vessel.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'barbette',
+    title: 'Barbette',
+    description: 'A protective circular armor support for a heavy gun turret.',
+    category: 'History'
+  },
+  {
+    id: 'barkentine',
+    title: 'Barkentine',
+    description: 'A sailing vessel with three or more masts, square-rigged on the foremast.',
+    category: 'Terminology'
+  },
+  {
+    id: 'beam-reach',
+    title: 'Beam reach',
+    description: 'Sailing with the wind coming directly across the side of the boat.',
+    category: 'Navigation'
+  },
+  {
+    id: 'bear-down',
+    title: 'Bear down',
+    description: 'To approach a vessel from windward.',
+    category: 'Navigation'
+  },
+  {
+    id: 'bearing-away',
+    title: 'Bearing away',
+    description: 'Turning the boat away from the wind.',
+    category: 'Navigation'
+  },
+  {
+    id: 'beating-to-windward',
+    title: 'Beating to windward',
+    description: 'Sailing as close to the wind as possible.',
+    category: 'Navigation'
+  },
+  {
+    id: 'below-decks',
+    title: 'Below decks',
+    description: 'The area of a ship beneath the main deck.',
+    category: 'Terminology'
+  },
+  {
+    id: 'bend-on',
+    title: 'Bend on',
+    description: 'To fasten a sail to a yard, boom, or stay.',
+    category: 'Operations'
+  },
+  {
+    id: 'bermudan-rig',
+    title: 'Bermudan rig',
+    description: 'A configuration of mast and sails for a sailing vessel.',
+    category: 'Terminology'
+  },
+  {
+    id: 'berthage',
+    title: 'Berthage',
+    description: 'The charge for a vessel to occupy a berth.',
+    category: 'Operations'
+  },
+  {
+    id: 'bitts',
+    title: 'Bitts',
+    description: 'Strong wooden or metal posts on a ship\'s deck for securing lines.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'black-jack',
+    title: 'Black jack',
+    description: 'A pirate flag, typically black with a white skull and crossbones.',
+    category: 'History'
+  },
+  {
+    id: 'blade',
+    title: 'Blade',
+    description: 'The flat part of an oar or propeller.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'boarding',
+    title: 'Boarding',
+    description: 'The act of entering a ship, often by force.',
+    category: 'Operations'
+  },
+  {
+    id: 'boatswains-pipe',
+    title: 'Boatswain\'s pipe',
+    description: 'A high-pitched whistle used by a boatswain to give commands.',
+    category: 'Crew'
+  },
+  {
+    id: 'bone-in-her-teeth',
+    title: 'Bone in her teeth',
+    description: 'A phrase describing a ship moving fast enough to create a white bow wave.',
+    category: 'Terminology'
+  },
+  {
+    id: 'boot-top',
+    title: 'Boot-top',
+    description: 'The area of a ship\'s hull between the light and load waterlines.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'bowline-knot',
+    title: 'Bowline knot',
+    description: 'A versatile knot used to form a fixed loop at the end of a rope.',
+    category: 'Terminology'
+  },
+  {
+    id: 'bring-to',
+    title: 'Bring to',
+    description: 'To stop a ship\'s progress by bringing her into the wind.',
+    category: 'Operations'
+  },
+  {
+    id: 'broach-to',
+    title: 'Broach to',
+    description: 'To swing broadside to the wind and waves, often dangerously.',
+    category: 'Operations'
+  },
+  {
+    id: 'bullseye',
+    title: 'Bullseye',
+    description: 'A small, round wooden or metal block without a sheave.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'bunting',
+    title: 'Bunting',
+    description: 'Thin fabric used for making flags.',
+    category: 'Terminology'
+  },
+  {
+    id: 'burgee-flag',
+    title: 'Burgee flag',
+    description: 'A distinguishing flag of a yacht club.',
+    category: 'Terminology'
+  },
+  {
+    id: 'butt',
+    title: 'Butt',
+    description: 'The end of a plank where it meets another.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'by the head',
+    title: 'By the head',
+    description: 'A ship is by the head when her draft forward is greater than her draft aft.',
+    category: 'Terminology'
+  },
+  {
+    id: 'by the lee',
+    title: 'By the lee',
+    description: 'Sailing with the wind coming over the same side as the boom.',
+    category: 'Navigation'
+  },
+  {
+    id: 'by the stern',
+    title: 'By the stern',
+    description: 'A ship is by the stern when her draft aft is greater than her draft forward.',
+    category: 'Terminology'
+  },
+  {
+    id: 'cable-length',
+    title: 'Cable length',
+    description: 'A unit of maritime distance, usually about 100 fathoms.',
+    category: 'Terminology'
+  },
+  {
+    id: 'cable-tier',
+    title: 'Cable tier',
+    description: 'The place where cables are stowed on a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'canoe',
+    title: 'Canoe',
+    description: 'A narrow, lightweight boat typically pointed at both ends.',
+    category: 'Terminology'
+  },
+  {
+    id: 'cap',
+    title: 'Cap',
+    description: 'A block of wood used to secure the head of a mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'captain',
+    title: 'Captain',
+    description: 'The person in command of a ship.',
+    category: 'Crew'
+  },
+  {
+    id: 'captain-of-the-head',
+    title: 'Captain of the head',
+    description: 'A crew member responsible for cleaning the ship\'s toilets.',
+    category: 'Crew'
+  },
+  {
+    id: 'careening',
+    title: 'Careening',
+    description: 'Tilting a ship on its side to clean or repair the hull.',
+    category: 'Operations'
+  },
+  {
+    id: 'carline',
+    title: 'Carline',
+    description: 'A short longitudinal timber supporting a ship\'s deck.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'carpenter',
+    title: 'Carpenter',
+    description: 'A crew member responsible for maintaining the ship\'s woodwork.',
+    category: 'Crew'
+  },
+  {
+    id: 'carrick-bend',
+    title: 'Carrick bend',
+    description: 'A knot used for joining two heavy ropes.',
+    category: 'Terminology'
+  },
+  {
+    id: 'carry-away',
+    title: 'Carry away',
+    description: 'To break or lose a spar or sail.',
+    category: 'Operations'
+  },
+  {
+    id: 'carry-on',
+    title: 'Carry on',
+    description: 'To continue sailing with all sails set despite increasing wind.',
+    category: 'Operations'
+  },
+  {
+    id: 'cast-away',
+    title: 'Cast away',
+    description: 'To be shipwrecked or abandoned.',
+    category: 'History'
+  },
+  {
+    id: 'cat-o-nine-tails',
+    title: 'Cat-o\'-nine-tails',
+    description: 'A multi-tailed whip used for punishment on ships.',
+    category: 'History'
+  },
+  {
+    id: 'catspaw',
+    title: 'Catspaw',
+    description: 'A light breeze that ruffles the surface of the water.',
+    category: 'Environment'
+  },
+  {
+    id: 'chain-shot',
+    title: 'Chain shot',
+    description: 'Two cannonballs joined by a chain, used to damage rigging.',
+    category: 'History'
+  },
+  {
+    id: 'chart-house',
+    title: 'Chart house',
+    description: 'A room on a ship where nautical charts are kept and studied.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'charter',
+    title: 'Charter',
+    description: 'The hiring of a ship for a specific voyage or period.',
+    category: 'Operations'
+  },
+  {
+    id: 'cheeks',
+    title: 'Cheeks',
+    description: 'The side pieces of a block or the sides of a mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'chock-a-block',
+    title: 'Chock-a-block',
+    description: 'When a tackle is pulled so tight that the two blocks meet.',
+    category: 'Terminology'
+  },
+  {
+    id: 'clawing-off',
+    title: 'Clawing off',
+    description: 'Beating to windward to avoid being driven onto a lee shore.',
+    category: 'Navigation'
+  },
+  {
+    id: 'clew-garnet',
+    title: 'Clew garnet',
+    description: 'A tackle used to haul up the clew of a square sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'clinometer',
+    title: 'Clinometer',
+    description: 'An instrument used to measure the angle of a ship\'s list or heel.',
+    category: 'Technical'
+  },
+  {
+    id: 'coffer',
+    title: 'Coffer',
+    description: 'A watertight structure used for underwater repairs.',
+    category: 'Technical'
+  },
+  {
+    id: 'commodore',
+    title: 'Commodore',
+    description: 'A naval officer of high rank, above a captain but below a rear admiral.',
+    category: 'Crew'
+  },
+  {
+    id: 'companion',
+    title: 'Companion',
+    description: 'A covering over a hatchway or staircase.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'composite-ship',
+    title: 'Composite ship',
+    description: 'A ship with an iron or steel frame and wooden planking.',
+    category: 'History'
+  },
+  {
+    id: 'con',
+    title: 'Con',
+    description: 'To direct the steering of a ship.',
+    category: 'Operations'
+  },
+  {
+    id: 'consort',
+    title: 'Consort',
+    description: 'A ship sailing in company with another.',
+    category: 'History'
+  },
+  {
+    id: 'container',
+    title: 'Container',
+    description: 'A large standardized metal box for transporting cargo.',
+    category: 'Cargo'
+  },
+  {
+    id: 'corsair',
+    title: 'Corsair',
+    description: 'A pirate or privateer, especially one from the Barbary Coast.',
+    category: 'History'
+  },
+  {
+    id: 'cowl',
+    title: 'Cowl',
+    description: 'A hood-shaped covering for a ventilator.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'craft',
+    title: 'Craft',
+    description: 'A general term for any boat or ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'creek',
+    title: 'Creek',
+    description: 'A small stream or a narrow inlet of the sea.',
+    category: 'Environment'
+  },
+  {
+    id: 'crimp',
+    title: 'Crimp',
+    description: 'A person who tricks or coerces men into service as sailors.',
+    category: 'History'
+  },
+  {
+    id: 'crossjack',
+    title: 'Crossjack',
+    description: 'The lower yard on the mizzenmast of a square-rigged ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'crosstrees',
+    title: 'Crosstrees',
+    description: 'Horizontal timbers at the head of a mast to support the topmast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'crows-nest',
+    title: 'Crow\'s nest',
+    description: 'A small platform high on a mast for a lookout.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'cruise',
+    title: 'Cruise',
+    description: 'A voyage for pleasure or for patrolling a particular area.',
+    category: 'Operations'
+  },
+  {
+    id: 'cruiser',
+    title: 'Cruiser',
+    description: 'A fast, medium-sized warship.',
+    category: 'History'
+  },
+  {
+    id: 'culvert',
+    title: 'Culvert',
+    description: 'A tunnel carrying a stream or open drain under a road or railroad.',
+    category: 'Environment'
+  },
+  {
+    id: 'cunner',
+    title: 'Cunner',
+    description: 'A small, flat-bottomed boat used for fishing.',
+    category: 'Terminology'
+  },
+  {
+    id: 'custom-house',
+    title: 'Custom house',
+    description: 'A building where customs duties are collected.',
+    category: 'Regulations'
+  },
+  {
+    id: 'cut-of-his-jib',
+    title: 'Cut of his jib',
+    description: 'A phrase referring to a person\'s appearance or character.',
+    category: 'Terminology'
+  },
+  {
+    id: 'dayboard',
+    title: 'Dayboard',
+    description: 'A daytime navigational marker.',
+    category: 'Navigation'
+  },
+  {
+    id: 'dead-in-the-water',
+    title: 'Dead in the water',
+    description: 'A ship that is stopped and has no way on her.',
+    category: 'Terminology'
+  },
+  {
+    id: 'dead-weight',
+    title: 'Dead weight',
+    description: 'The total weight a ship can carry, including cargo, fuel, and stores.',
+    category: 'Terminology'
+  },
+  {
+    id: 'deck',
+    title: 'Deck',
+    description: 'A floor or platform on a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'deck-hand',
+    title: 'Deck hand',
+    description: 'A crew member who performs manual labor on the deck.',
+    category: 'Crew'
+  },
+  {
+    id: 'deep',
+    title: 'Deep',
+    description: 'A measurement of depth, usually in fathoms.',
+    category: 'Terminology'
+  },
+  {
+    id: 'deep-sea-lead',
+    title: 'Deep sea lead',
+    description: 'A heavy lead used for measuring great depths.',
+    category: 'Navigation'
+  },
+  {
+    id: 'devil-to-pay',
+    title: 'Devil to pay',
+    description: 'A phrase referring to a difficult task, originally related to caulking a ship\'s seam.',
+    category: 'Terminology'
+  },
+  {
+    id: 'dipping-the-lug',
+    title: 'Dipping the lug',
+    description: 'A maneuver in a lug-rigged boat to move the sail to the other side of the mast.',
+    category: 'Navigation'
+  },
+  {
+    id: 'direction-finder',
+    title: 'Direction finder',
+    description: 'A radio receiver used to determine the direction of a transmitter.',
+    category: 'Navigation'
+  },
+  {
+    id: 'disembark',
+    title: 'Disembark',
+    description: 'To leave a ship or boat.',
+    category: 'Operations'
+  },
+  {
+    id: 'dismast',
+    title: 'Dismast',
+    description: 'To break or remove the masts of a ship.',
+    category: 'Operations'
+  },
+  {
+    id: 'ditty-box',
+    title: 'Ditty box',
+    description: 'A small box used by sailors for keeping personal items.',
+    category: 'Crew'
+  },
+  {
+    id: 'division',
+    title: 'Division',
+    description: 'A group of ships or a section of a ship\'s crew.',
+    category: 'Crew'
+  },
+  {
+    id: 'dockyard',
+    title: 'Dockyard',
+    description: 'A place where ships are built, repaired, and maintained.',
+    category: 'Operations'
+  },
+  {
+    id: 'doghouse',
+    title: 'Doghouse',
+    description: 'A small raised part of a cabin top providing more headroom.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'dogvane',
+    title: 'Dogvane',
+    description: 'A small weather vane made of feathers or light material.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'dolphin-striker',
+    title: 'Dolphin striker',
+    description: 'A short vertical spar under the bowsprit.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'double-up',
+    title: 'Double up',
+    description: 'To increase the number of mooring lines for security.',
+    category: 'Operations'
+  },
+  {
+    id: 'douse',
+    title: 'Douse',
+    description: 'To lower or lower a sail quickly.',
+    category: 'Operations'
+  },
+  {
+    id: 'downwind',
+    title: 'Downwind',
+    description: 'In the direction that the wind is blowing.',
+    category: 'Navigation'
+  },
+  {
+    id: 'drain',
+    title: 'Drain',
+    description: 'A pipe or channel for carrying off water.',
+    category: 'Technical'
+  },
+  {
+    id: 'dress-ship',
+    title: 'Dress ship',
+    description: 'To display flags in honor of a special occasion.',
+    category: 'Operations'
+  },
+  {
+    id: 'drift',
+    title: 'Drift',
+    description: 'The speed of a current or the distance a ship is moved by it.',
+    category: 'Navigation'
+  },
+  {
+    id: 'dromon',
+    title: 'Dromon',
+    description: 'A type of galley and the most important warship of the Byzantine navy.',
+    category: 'History'
+  },
+  {
+    id: 'dugout',
+    title: 'Dugout',
+    description: 'A boat made by hollowing out a log.',
+    category: 'History'
+  },
+  {
+    id: 'earing',
+    title: 'Earing',
+    description: 'A short rope used to fasten the corner of a sail to a yard or boom.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'easting',
+    title: 'Easting',
+    description: 'The distance traveled eastward.',
+    category: 'Navigation'
+  },
+  {
+    id: 'echo-sounding',
+    title: 'Echo sounding',
+    description: 'A method of measuring the depth of water using sound waves.',
+    category: 'Navigation'
+  },
+  {
+    id: 'entry',
+    title: 'Entry',
+    description: 'The shape of the bow of a ship below the waterline.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'escort',
+    title: 'Escort',
+    description: 'A ship or group of ships accompanying another for protection.',
+    category: 'Operations'
+  },
+  {
+    id: 'estuary',
+    title: 'Estuary',
+    description: 'The tidal mouth of a large river.',
+    category: 'Environment'
+  },
+  {
+    id: 'eye-bolt',
+    title: 'Eye bolt',
+    description: 'A bolt with a loop at one end.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'eyes-of-the-ship',
+    title: 'Eyes of the ship',
+    description: 'The foremost part of the bow.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'fag-end',
+    title: 'Fag end',
+    description: 'The untwisted end of a rope.',
+    category: 'Terminology'
+  },
+  {
+    id: 'fair',
+    title: 'Fair',
+    description: 'A favorable wind or tide.',
+    category: 'Environment'
+  },
+  {
+    id: 'false-keel',
+    title: 'False keel',
+    description: 'An extra keel attached to the main keel for protection.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'fancy-work',
+    title: 'Fancy work',
+    description: 'Decorative ropework on a ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'fashion-pieces',
+    title: 'Fashion pieces',
+    description: 'The timbers that form the shape of a ship\'s stern.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'fay',
+    title: 'Fay',
+    description: 'To join two pieces of timber together closely.',
+    category: 'Operations'
+  },
+  {
+    id: 'feel-the-way',
+    title: 'Feel the way',
+    description: 'To proceed slowly and carefully in shallow or unknown water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'fiddlehead',
+    title: 'Fiddlehead',
+    description: 'A decorative carving at the bow of a ship, similar to a scroll.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'fill',
+    title: 'Fill',
+    description: 'To trim the sails so that they catch the wind.',
+    category: 'Operations'
+  },
+  {
+    id: 'fin',
+    title: 'Fin',
+    description: 'A fixed or movable surface used for stability or steering.',
+    category: 'Technical'
+  },
+  {
+    id: 'fire-ship',
+    title: 'Fire ship',
+    description: 'A ship filled with combustibles and set adrift to destroy enemy vessels.',
+    category: 'History'
+  },
+  {
+    id: 'fishery',
+    title: 'Fishery',
+    description: 'An area where fish are caught for commercial purposes.',
+    category: 'Environment'
+  },
+  {
+    id: 'fitting-out',
+    title: 'Fitting out',
+    description: 'The process of equipping a ship for a voyage.',
+    category: 'Operations'
+  },
+  {
+    id: 'flag',
+    title: 'Flag',
+    description: 'A piece of cloth with a distinctive design used as a symbol or signal.',
+    category: 'Terminology'
+  },
+  {
+    id: 'flat',
+    title: 'Flat',
+    description: 'A large, flat-bottomed boat.',
+    category: 'Terminology'
+  },
+  {
+    id: 'flatten-in',
+    title: 'Flatten in',
+    description: 'To pull the sheets of a sail tight to bring it closer to the centerline.',
+    category: 'Operations'
+  },
+  {
+    id: 'flemish',
+    title: 'Flemish',
+    description: 'To coil a rope in a flat, spiral pattern on the deck.',
+    category: 'Operations'
+  },
+  {
+    id: 'flinders-bar',
+    title: 'Flinder\'s bar',
+    description: 'A soft iron bar used to correct a magnetic compass.',
+    category: 'Navigation'
+  },
+  {
+    id: 'float',
+    title: 'Float',
+    description: 'To rest on the surface of a liquid without sinking.',
+    category: 'Terminology'
+  },
+  {
+    id: 'flood',
+    title: 'Flood',
+    description: 'The rising tide.',
+    category: 'Environment'
+  },
+  {
+    id: 'foam',
+    title: 'Foam',
+    description: 'A mass of small bubbles formed on the surface of the sea.',
+    category: 'Environment'
+  },
+  {
+    id: 'fog-horn',
+    title: 'Fog horn',
+    description: 'A device used to make a loud sound to warn ships in fog.',
+    category: 'Safety'
+  },
+  {
+    id: 'footrope',
+    title: 'Footrope',
+    description: 'A rope hanging under a yard for sailors to stand on.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'fore',
+    title: 'Fore',
+    description: 'At or toward the front of a ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'fore-and-aft-rig',
+    title: 'Fore-and-aft rig',
+    description: 'A rig where the sails are set along the centerline of the ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'forebitter',
+    title: 'Forebitter',
+    description: 'A song sung by sailors in the forecastle.',
+    category: 'History'
+  },
+  {
+    id: 'forefoot',
+    title: 'Forefoot',
+    description: 'The point where the stem of a ship meets the keel.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'foreland',
+    title: 'Foreland',
+    description: 'A cape or promontory.',
+    category: 'Environment'
+  },
+  {
+    id: 'foremast',
+    title: 'Foremast',
+    description: 'The mast nearest the bow of a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'forepeak',
+    title: 'Forepeak',
+    description: 'The compartment in the foremost part of a ship\'s hull.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'foretopmast',
+    title: 'Foretopmast',
+    description: 'The mast above the foremast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'forge-ahead',
+    title: 'Forge ahead',
+    description: 'To move forward steadily, especially with difficulty.',
+    category: 'Operations'
+  },
+  {
+    id: 'foul-ground',
+    title: 'Foul ground',
+    description: 'An area of the sea floor that is dangerous for anchoring.',
+    category: 'Navigation'
+  },
+  {
+    id: 'fourth-mate',
+    title: 'Fourth mate',
+    description: 'A junior deck officer on a merchant ship.',
+    category: 'Crew'
+  },
+  {
+    id: 'fox',
+    title: 'Fox',
+    description: 'A short piece of rope made by twisting together several rope yarns.',
+    category: 'Terminology'
+  },
+  {
+    id: 'free',
+    title: 'Free',
+    description: 'Sailing with the wind coming from behind the beam.',
+    category: 'Navigation'
+  },
+  {
+    id: 'freighter',
+    title: 'Freighter',
+    description: 'A ship designed to carry cargo.',
+    category: 'Terminology'
+  },
+  {
+    id: 'fresh-water',
+    title: 'Fresh water',
+    description: 'Water that is not salty.',
+    category: 'Environment'
+  },
+  {
+    id: 'freshen',
+    title: 'Freshen',
+    description: 'To increase in strength, as in the wind.',
+    category: 'Environment'
+  },
+  {
+    id: 'gaff-topsail',
+    title: 'Gaff-topsail',
+    description: 'A triangular sail set above a gaff sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'galliot',
+    title: 'Galliot',
+    description: 'A small, fast sailing vessel with two masts.',
+    category: 'History'
+  },
+  {
+    id: 'gam',
+    title: 'Gam',
+    description: 'A social meeting between two or more ships at sea.',
+    category: 'History'
+  },
+  {
+    id: 'gantline',
+    title: 'Gantline',
+    description: 'A rope used for hoisting a person or object to a high place.',
+    category: 'Operations'
+  },
+  {
+    id: 'gate',
+    title: 'Gate',
+    description: 'A structure used to control the flow of water in a dock or canal.',
+    category: 'Technical'
+  },
+  {
+    id: 'general-quarters',
+    title: 'General quarters',
+    description: 'The command for all crew members to go to their battle stations.',
+    category: 'Operations'
+  },
+  {
+    id: 'gob-line',
+    title: 'Gob line',
+    description: 'A rope used to pull down the center of a sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'gondola',
+    title: 'Gondola',
+    description: 'A long, narrow boat used on the canals of Venice.',
+    category: 'Terminology'
+  },
+  {
+    id: 'goose-neck',
+    title: 'Goose-neck',
+    description: 'A metal joint connecting a boom to a mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'goose-wing',
+    title: 'Goose-wing',
+    description: 'A method of sailing downwind with the sails set on opposite sides.',
+    category: 'Navigation'
+  },
+  {
+    id: 'gores',
+    title: 'Gores',
+    description: 'Triangular pieces of cloth added to a sail to give it shape.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'grafting',
+    title: 'Grafting',
+    description: 'A decorative covering for a rope made by weaving small lines together.',
+    category: 'Terminology'
+  },
+  {
+    id: 'gratings',
+    title: 'Gratings',
+    description: 'A wooden or metal lattice used to cover hatchways or provide a platform.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'graving',
+    title: 'Graving',
+    description: 'Cleaning a ship\'s bottom by burning off old paint and marine growth.',
+    category: 'Operations'
+  },
+  {
+    id: 'gripe',
+    title: 'Gripe',
+    description: 'To tend to turn toward the wind when sailing.',
+    category: 'Navigation'
+  },
+  {
+    id: 'ground',
+    title: 'Ground',
+    description: 'The sea floor.',
+    category: 'Environment'
+  },
+  {
+    id: 'ground-swell',
+    title: 'Ground swell',
+    description: 'A long, deep wave caused by a distant storm.',
+    category: 'Environment'
+  },
+  {
+    id: 'guess-warp',
+    title: 'Guess warp',
+    description: 'A rope used to pull a boat alongside a ship.',
+    category: 'Operations'
+  },
+  {
+    id: 'guineaman',
+    title: 'Guineaman',
+    description: 'A ship used in the slave trade between Africa and the Americas.',
+    category: 'History'
+  },
+  {
+    id: 'gulf',
+    title: 'Gulf',
+    description: 'A large part of the ocean partially enclosed by land.',
+    category: 'Environment'
+  },
+  {
+    id: 'gun-room',
+    title: 'Gun-room',
+    description: 'The living area for junior officers on a warship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'gybe',
+    title: 'Gybe',
+    description: 'To change the direction of a sailing vessel by turning the stern through the wind.',
+    category: 'Navigation'
+  },
+  {
+    id: 'hand-over-hand',
+    title: 'Hand over hand',
+    description: 'To pull on a rope by moving one hand over the other quickly.',
+    category: 'Operations'
+  },
+  {
+    id: 'handsomely',
+    title: 'Handsomely',
+    description: 'To do something slowly and carefully.',
+    category: 'Terminology'
+  },
+  {
+    id: 'handy-billy',
+    title: 'Handy billy',
+    description: 'A small, portable tackle used for various purposes on a ship.',
+    category: 'Technical'
+  },
+  {
+    id: 'hang',
+    title: 'Hang',
+    description: 'To remain in a particular position or state.',
+    category: 'Terminology'
+  },
+  {
+    id: 'harbor',
+    title: 'Harbor',
+    description: 'A sheltered area of water where ships can anchor or dock.',
+    category: 'Environment'
+  },
+  {
+    id: 'hard',
+    title: 'Hard',
+    description: 'To the fullest extent, as in \'hard a-port.\'',
+    category: 'Terminology'
+  },
+  {
+    id: 'hard-a-lee',
+    title: 'Hard a-lee',
+    description: 'A command to put the helm all the way to the leeward side.',
+    category: 'Navigation'
+  },
+  {
+    id: 'hard-a-port',
+    title: 'Hard a-port',
+    description: 'A command to turn the helm all the way to the port side.',
+    category: 'Navigation'
+  },
+  {
+    id: 'hard-a-starboard',
+    title: 'Hard a-starboard',
+    description: 'A command to turn the helm all the way to the starboard side.',
+    category: 'Navigation'
+  },
+  {
+    id: 'hard-a-weather',
+    title: 'Hard a-weather',
+    description: 'A command to put the helm all the way to the windward side.',
+    category: 'Navigation'
+  },
+  {
+    id: 'harness-cask',
+    title: 'Harness cask',
+    description: 'A large tub used for storing salted meat on a ship.',
+    category: 'History'
+  },
+  {
+    id: 'harness-hitch',
+    title: 'Harness hitch',
+    description: 'A knot used to form a loop in the middle of a rope.',
+    category: 'Terminology'
+  },
+  {
+    id: 'harpings',
+    title: 'Harpings',
+    description: 'The foremost part of the wales of a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'hatchway',
+    title: 'Hatchway',
+    description: 'An opening in a ship\'s deck providing access to the hold.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'head-reach',
+    title: 'Head-reach',
+    description: 'The distance a ship continues to move through the water after the sails are lowered.',
+    category: 'Navigation'
+  },
+  {
+    id: 'head-sea',
+    title: 'Head-sea',
+    description: 'A sea where the waves are coming from directly ahead of the ship.',
+    category: 'Environment'
+  },
+  {
+    id: 'heave-in',
+    title: 'Heave in',
+    description: 'To pull in a rope or cable.',
+    category: 'Operations'
+  },
+  {
+    id: 'heaver',
+    title: 'Heaver',
+    description: 'A short wooden bar used as a lever.',
+    category: 'Technical'
+  },
+  {
+    id: 'high-and-dry',
+    title: 'High and dry',
+    description: 'A ship that is completely out of the water, often after running aground.',
+    category: 'Terminology'
+  },
+  {
+    id: 'high-water',
+    title: 'High water',
+    description: 'The highest level reached by the tide.',
+    category: 'Environment'
+  },
+  {
+    id: 'hogged',
+    title: 'Hogged',
+    description: 'A ship whose hull has been strained so that the bow and stern are lower than the middle.',
+    category: 'Technical'
+  },
+  {
+    id: 'hold-water',
+    title: 'Hold water',
+    description: 'To stop a boat by holding the oars in the water.',
+    category: 'Operations'
+  },
+  {
+    id: 'hollystone',
+    title: 'Hollystone',
+    description: 'A piece of sandstone used for scrubbing the wooden decks of a ship.',
+    category: 'History'
+  },
+  {
+    id: 'hood',
+    title: 'Hood',
+    description: 'A covering for a companionway or other opening on a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'hook',
+    title: 'Hook',
+    description: 'A curved piece of metal used for catching or holding something.',
+    category: 'Terminology'
+  },
+  {
+    id: 'horn',
+    title: 'Horn',
+    description: 'A device used for making a loud sound signal.',
+    category: 'Safety'
+  },
+  {
+    id: 'horse',
+    title: 'Horse',
+    description: 'A horizontal bar or rope used for various purposes on a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'hug',
+    title: 'Hug',
+    description: 'To keep close to something, as in \'hugging the shore.\'',
+    category: 'Navigation'
+  },
+  {
+    id: 'hull-down',
+    title: 'Hull down',
+    description: 'A ship that is so far away that only its masts and superstructure are visible above the horizon.',
+    category: 'Terminology'
+  },
+  {
+    id: 'hunter',
+    title: 'Hunter',
+    description: 'A ship used for hunting whales or other marine animals.',
+    category: 'History'
+  },
+  {
+    id: 'idle',
+    title: 'Idle',
+    description: 'A ship that is not in use or is waiting for orders.',
+    category: 'Terminology'
+  },
+  {
+    id: 'ingle',
+    title: 'Ingle',
+    description: 'A small fire or fireplace on a ship.',
+    category: 'History'
+  },
+  {
+    id: 'inner-jib',
+    title: 'Inner jib',
+    description: 'A triangular sail set between the forestay and the outer jib.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'intercostal',
+    title: 'Intercostal',
+    description: 'A structural member of a ship\'s hull that fits between the frames.',
+    category: 'Technical'
+  },
+  {
+    id: 'irish-pennant',
+    title: 'Irish pennant',
+    description: 'A loose rope end or a piece of clothing hanging from the rigging.',
+    category: 'Terminology'
+  },
+  {
+    id: 'ironbound',
+    title: 'Ironbound',
+    description: 'A rocky coast with no safe harbors.',
+    category: 'Environment'
+  },
+  {
+    id: 'irons',
+    title: 'Irons',
+    description: 'A sailing vessel is in irons when it is pointed into the wind and cannot move.',
+    category: 'Navigation'
+  },
+  {
+    id: 'jackass-barque',
+    title: 'Jackass-barque',
+    description: 'A four-masted vessel, square-rigged on the two fore masts and fore-and-aft rigged on the two after masts.',
+    category: 'History'
+  },
+  {
+    id: 'jacobs-ladder',
+    title: 'Jacob\'s ladder',
+    description: 'A flexible hanging ladder made of rope or chain with wooden or metal rungs.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'jars',
+    title: 'Jars',
+    description: 'Vibrations or shocks felt on a ship, often caused by the engines or heavy seas.',
+    category: 'Technical'
+  },
+  {
+    id: 'jaws',
+    title: 'Jaws',
+    description: 'The forked end of a gaff or boom that fits around a mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'jib-sheet',
+    title: 'Jib-sheet',
+    description: 'A rope used to control the position of a jib sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'jib-stay',
+    title: 'Jib-stay',
+    description: 'A stay on which a jib sail is set.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'jigger-mast',
+    title: 'Jigger-mast',
+    description: 'The fourth mast on a ship with four or more masts.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'jorum',
+    title: 'Jorum',
+    description: 'A large drinking bowl or its contents, often used by sailors.',
+    category: 'History'
+  },
+  {
+    id: 'jury-mast',
+    title: 'Jury-mast',
+    description: 'A temporary mast erected to replace one that has been lost.',
+    category: 'Operations'
+  },
+  {
+    id: 'keelhaul',
+    title: 'Keelhaul',
+    description: 'A former naval punishment where a person was dragged under the keel of a ship.',
+    category: 'History'
+  },
+  {
+    id: 'kelp',
+    title: 'Kelp',
+    description: 'Large brown seaweed that grows in shallow water.',
+    category: 'Environment'
+  },
+  {
+    id: 'kick',
+    title: 'Kick',
+    description: 'The sudden movement of a ship\'s stern when the rudder is turned.',
+    category: 'Technical'
+  },
+  {
+    id: 'king-spoke',
+    title: 'King-spoke',
+    description: 'The spoke of a steering wheel that is upright when the rudder is centered.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'kink',
+    title: 'Kink',
+    description: 'A twist or loop in a rope or cable.',
+    category: 'Terminology'
+  },
+  {
+    id: 'lacing',
+    title: 'Lacing',
+    description: 'A small line used to fasten a sail to a spar or stay.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'laid-up',
+    title: 'Laid up',
+    description: 'A ship that is out of service for repairs or because of a lack of work.',
+    category: 'Terminology'
+  },
+  {
     id: 'land-breeze',
-    title: 'Land Breeze',
+    title: 'Land-breeze',
     description: 'A breeze blowing from the land toward the sea.',
     category: 'Environment'
+  },
+  {
+    id: 'landlocked',
+    title: 'Landlocked',
+    description: 'An area of water almost entirely surrounded by land.',
+    category: 'Environment'
+  },
+  {
+    id: 'lanyards',
+    title: 'Lanyards',
+    description: 'Short ropes used for securing or tightening something.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'large',
+    title: 'Large',
+    description: 'Sailing with the wind coming from behind the beam.',
+    category: 'Navigation'
+  },
+  {
+    id: 'lasking',
+    title: 'Lasking',
+    description: 'Sailing with the wind on the quarter.',
+    category: 'Navigation'
+  },
+  {
+    id: 'lateen-sail',
+    title: 'Lateen sail',
+    description: 'A triangular sail set on a long yard at an angle to the mast.',
+    category: 'History'
+  },
+  {
+    id: 'lay-days',
+    title: 'Lay days',
+    description: 'The time allowed for loading or unloading a ship.',
+    category: 'Regulations'
+  },
+  {
+    id: 'lay-out',
+    title: 'Lay out',
+    description: 'To move out along a yard to work on a sail.',
+    category: 'Operations'
+  },
+  {
+    id: 'lay-to',
+    title: 'Lay to',
+    description: 'To bring a ship into the wind and hold her there.',
+    category: 'Operations'
+  },
+  {
+    id: 'leach',
+    title: 'Leach',
+    description: 'The after edge of a sail.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'lead',
+    title: 'Lead',
+    description: 'A heavy weight used for measuring the depth of water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'lead-line',
+    title: 'Lead-line',
+    description: 'A line with a lead weight attached, used for measuring depth.',
+    category: 'Navigation'
+  },
+  {
+    id: 'leak',
+    title: 'Leak',
+    description: 'An opening in a ship\'s hull that allows water to enter.',
+    category: 'Terminology'
+  },
+  {
+    id: 'ledges',
+    title: 'Ledges',
+    description: 'Small structural members of a ship\'s deck.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'lee-board',
+    title: 'Lee-board',
+    description: 'A board lowered into the water on the leeward side of a boat to reduce leeway.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'lee-shore',
+    title: 'Lee-shore',
+    description: 'A shore toward which the wind is blowing.',
+    category: 'Environment'
+  },
+  {
+    id: 'lee-side',
+    title: 'Lee-side',
+    description: 'The side of a ship or object that is sheltered from the wind.',
+    category: 'Terminology'
+  },
+  {
+    id: 'lee-tide',
+    title: 'Lee-tide',
+    description: 'A tide that is flowing in the same direction as the wind.',
+    category: 'Environment'
+  },
+  {
+    id: 'leg',
+    title: 'Leg',
+    description: 'A single stage of a journey or a single tack in a sailing race.',
+    category: 'Navigation'
+  },
+  {
+    id: 'length-overall',
+    title: 'Length overall',
+    description: 'The total length of a ship\'s hull.',
+    category: 'Technical'
+  },
+  {
+    id: 'let-fall',
+    title: 'Let fall',
+    description: 'A command to drop a sail from its yard.',
+    category: 'Operations'
+  },
+  {
+    id: 'let-go-and-haul',
+    title: 'Let go and haul',
+    description: 'A command used when tacking a square-rigged ship.',
+    category: 'Operations'
+  },
+  {
+    id: 'lie-to',
+    title: 'Lie to',
+    description: 'To remain in one place while facing the wind.',
+    category: 'Operations'
+  },
+  {
+    id: 'life-belt',
+    title: 'Life-belt',
+    description: 'A buoyant belt worn to keep a person afloat in the water.',
+    category: 'Safety'
+  },
+  {
+    id: 'life-boat',
+    title: 'Life-boat',
+    description: 'A small boat carried on a ship for use in an emergency.',
+    category: 'Safety'
+  },
+  {
+    id: 'life-buoy',
+    title: 'Life-buoy',
+    description: 'A buoyant ring used for rescuing people from the water.',
+    category: 'Safety'
+  },
+  {
+    id: 'lift',
+    title: 'Lift',
+    description: 'A rope used to support or raise a yard.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'lighterage',
+    title: 'Lighterage',
+    description: 'The charge for using a lighter to load or unload a ship.',
+    category: 'Operations'
+  },
+  {
+    id: 'limber-hole',
+    title: 'Limber-hole',
+    description: 'A hole in a ship\'s frame that allows water to flow to the bilge.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'lizard',
+    title: 'Lizard',
+    description: 'A short piece of rope with a thimble or eye at one end.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'lloyds',
+    title: 'Lloyd\'s',
+    description: 'A famous insurance market and classification society based in London.',
+    category: 'Regulations'
+  },
+  {
+    id: 'load-line',
+    title: 'Load-line',
+    description: 'A mark on a ship\'s hull showing the maximum depth to which it can be safely loaded.',
+    category: 'Regulations'
+  },
+  {
+    id: 'log-board',
+    title: 'Log-board',
+    description: 'A board used for recording the ship\'s speed and distance traveled.',
+    category: 'Navigation'
+  },
+  {
+    id: 'log-book',
+    title: 'Log-book',
+    description: 'An official record of a ship\'s voyage and activities.',
+    category: 'Navigation'
+  },
+  {
+    id: 'log-line',
+    title: 'Log-line',
+    description: 'A line used with a log to measure a ship\'s speed.',
+    category: 'Navigation'
+  },
+  {
+    id: 'loggerhead',
+    title: 'Loggerhead',
+    description: 'A heavy piece of iron or wood used for various purposes on a ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'long-boat',
+    title: 'Long-boat',
+    description: 'The largest boat carried on a ship.',
+    category: 'History'
+  },
+  {
+    id: 'loof',
+    title: 'Loof',
+    description: 'The part of a ship\'s bow where it begins to curve toward the stem.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'look-out',
+    title: 'Look-out',
+    description: 'A crew member assigned to watch for other ships, land, or hazards.',
+    category: 'Crew'
+  },
+  {
+    id: 'loose',
+    title: 'Loose',
+    description: 'To unfurl or release a sail.',
+    category: 'Operations'
+  },
+  {
+    id: 'low-water',
+    title: 'Low water',
+    description: 'The lowest level reached by the tide.',
+    category: 'Environment'
+  },
+  {
+    id: 'lubbers-hole',
+    title: 'Lubber\'s hole',
+    description: 'An opening in a mast platform for sailors who are afraid to climb the shrouds.',
+    category: 'Terminology'
+  },
+  {
+    id: 'lubbers-line',
+    title: 'Lubber\'s line',
+    description: 'A line on a compass showing the direction of the ship\'s head.',
+    category: 'Navigation'
+  },
+  {
+    id: 'luff-tackle',
+    title: 'Luff-tackle',
+    description: 'A small tackle consisting of a double and a single block.',
+    category: 'Technical'
+  },
+  {
+    id: 'lug-sail',
+    title: 'Lug-sail',
+    description: 'A four-sided sail set on a yard that hangs at an angle to the mast.',
+    category: 'Terminology'
+  },
+  {
+    id: 'lying-to',
+    title: 'Lying to',
+    description: 'The state of a ship when it is held facing the wind.',
+    category: 'Operations'
+  },
+  {
+    id: 'mackinaw-boat',
+    title: 'Mackinaw boat',
+    description: 'A type of flat-bottomed boat used on the Great Lakes.',
+    category: 'History'
+  },
+  {
+    id: 'main',
+    title: 'Main',
+    description: 'The largest or most important part of something, as in the \'main mast.\'',
+    category: 'Terminology'
+  },
+  {
+    id: 'main-deck',
+    title: 'Main-deck',
+    description: 'The principal deck of a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'main-mast',
+    title: 'Main-mast',
+    description: 'The principal mast of a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'main-sail',
+    title: 'Main-sail',
+    description: 'The principal sail of a ship.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'main-stay',
+    title: 'Main-stay',
+    description: 'The stay that supports the mainmast from the front.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'main-top',
+    title: 'Main-top',
+    description: 'The platform at the head of the mainmast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'make',
+    title: 'Make',
+    description: 'To reach or arrive at a particular place.',
+    category: 'Navigation'
+  },
+  {
+    id: 'make-foul',
+    title: 'Make foul',
+    description: 'To cause a rope or anchor to become tangled.',
+    category: 'Operations'
+  },
+  {
+    id: 'make-sail',
+    title: 'Make sail',
+    description: 'To set or increase the amount of sail.',
+    category: 'Operations'
+  },
+  {
+    id: 'make-water',
+    title: 'Make water',
+    description: 'To leak.',
+    category: 'Terminology'
+  },
+  {
+    id: 'making-way',
+    title: 'Making way',
+    description: 'Moving through the water.',
+    category: 'Navigation'
+  },
+  {
+    id: 'mallet',
+    title: 'Mallet',
+    description: 'A wooden hammer used for various purposes on a ship.',
+    category: 'Technical'
+  },
+  {
+    id: 'man',
+    title: 'Man',
+    description: 'To provide a ship or boat with a crew.',
+    category: 'Crew'
+  },
+  {
+    id: 'man-of-war',
+    title: 'Man-of-war',
+    description: 'A large, heavily armed warship.',
+    category: 'History'
+  },
+  {
+    id: 'man-ropes',
+    title: 'Man-ropes',
+    description: 'Ropes used as handrails on a ship\'s ladder or gangway.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'marline-spike',
+    title: 'Marline-spike',
+    description: 'A pointed metal tool used for separating the strands of a rope.',
+    category: 'Technical'
+  },
+  {
+    id: 'maroon',
+    title: 'Maroon',
+    description: 'To abandon a person on a deserted island or coast.',
+    category: 'History'
+  },
+  {
+    id: 'marry',
+    title: 'Marry',
+    description: 'To join two ropes together by interweaving their strands.',
+    category: 'Operations'
+  },
+  {
+    id: 'martingale',
+    title: 'Martingale',
+    description: 'A rope or chain used to hold down a bowsprit.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'mast-head',
+    title: 'Mast-head',
+    description: 'The top of a mast.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'mat',
+    title: 'Mat',
+    description: 'A piece of woven material used for protection or decoration on a ship.',
+    category: 'Terminology'
+  },
+  {
+    id: 'maul',
+    title: 'Maul',
+    description: 'A heavy hammer used for driving spikes or bolts.',
+    category: 'Technical'
+  },
+  {
+    id: 'messroom',
+    title: 'Messroom',
+    description: 'The area on a ship where the crew eats.',
+    category: 'Vessel Parts'
+  },
+  {
+    id: 'metacentre',
+    title: 'Metacentre',
+    description: 'The point of intersection of the vertical line through the center of buoyancy of a floating body.',
+    category: 'Technical'
+  },
+  {
+    id: 'mile',
+    title: 'Mile',
+    description: 'A unit of distance, usually a nautical mile in maritime contexts.',
+    category: 'Terminology'
+  },
+  {
+    id: 'missing-stays',
+    title: 'Missing stays',
+    description: 'Failing to tack because the ship loses its way when pointed into the wind.',
+    category: 'Navigation'
+  },
+  {
+    id: 'mizzen-mast',
+    title: 'Mizzen-mast',
+    description: 'The mast nearest the stern of a ship with three or more masts.',
+    category: 'Vessel Parts'
   }
 ];

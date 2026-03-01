@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Anchor, Ship, Navigation, BookOpen, Menu, X, ArrowLeft, Info, Compass, Waves, FileText, ShieldCheck, Cpu, Leaf, Box, Users } from 'lucide-react';
+import { Search, Anchor, Ship, Navigation, BookOpen, Menu, X, ArrowLeft, Info, Compass, Waves, FileText, ShieldCheck, Cpu, Leaf, Box, Users, History, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { maritimeTerms, type MaritimeTerm } from './data/maritimeTerms';
+import { maritimeHistoryEvents } from './data/maritimeHistory';
 import { linkify } from './utils/linkify';
 
 function cn(...inputs: ClassValue[]) {
@@ -18,6 +19,7 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(false);
   const [showLegal, setShowLegal] = useState(false);
   const [legalTab, setLegalTab] = useState<'terms' | 'privacy' | 'disclaimer' | 'cookies'>('disclaimer');
+  const [showHistory, setShowHistory] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -44,7 +46,10 @@ export default function App() {
 
   const filteredTerms = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
-    if (!query) return maritimeTerms.sort((a, b) => a.title.localeCompare(b.title));
+    
+    if (!query) {
+      return [...maritimeTerms].sort((a, b) => a.title.localeCompare(b.title));
+    }
     
     return maritimeTerms.filter(term => 
       term.title.toLowerCase().includes(query) || 
@@ -89,6 +94,17 @@ export default function App() {
   };
 
   const categories = Array.from(new Set(maritimeTerms.map(t => t.category)));
+
+  const today = useMemo(() => new Date(), []);
+  const formattedDate = useMemo(() => {
+    return today.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+  }, [today]);
+
+  const todayEvents = useMemo(() => {
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    return maritimeHistoryEvents.filter(e => e.month === month && e.day === day);
+  }, [today]);
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
@@ -391,6 +407,36 @@ export default function App() {
                 <p className="text-slate-500 max-w-md mx-auto mb-8 leading-relaxed">
                   Explore the vast world of nautical terminology. Select a term from the index or search for specific maritime concepts.
                 </p>
+
+                {/* On This Day Section - Compact Version */}
+                {todayEvents.length > 0 && (
+                  <button 
+                    onClick={() => setShowHistory(true)}
+                    className="w-full max-w-md mb-12 group"
+                  >
+                    <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all flex items-center gap-4 text-left overflow-hidden relative">
+                      <div className="absolute top-0 right-0 p-2 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <History size={40} />
+                      </div>
+                      <div className="bg-amber-100 p-2.5 rounded-xl text-amber-600 group-hover:scale-110 transition-transform">
+                        <Calendar size={20} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Today in History</h3>
+                          <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">{formattedDate}</span>
+                        </div>
+                        <p className="text-sm font-bold text-slate-900 truncate group-hover:text-amber-700 transition-colors">
+                          {todayEvents[0].title}
+                        </p>
+                      </div>
+                      <div className="text-slate-300 group-hover:text-amber-400 transition-colors">
+                        <ArrowLeft size={16} className="rotate-180" />
+                      </div>
+                    </div>
+                  </button>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
                   {[
                     { icon: <Ship size={20} />, label: "Vessel Parts", color: "bg-emerald-50 text-emerald-600" },
@@ -602,6 +648,73 @@ export default function App() {
                   className="px-6 py-2.5 bg-blue-600 text-white rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20 active:scale-95"
                 >
                   Understood
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* History Modal */}
+      <AnimatePresence>
+        {showHistory && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowHistory(false)}
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-2xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
+            >
+              <div className="p-8 border-b border-slate-100 flex items-center justify-between bg-amber-50/50">
+                <div className="flex items-center gap-4">
+                  <div className="bg-amber-100 p-3 rounded-2xl text-amber-600">
+                    <History size={24} />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-slate-900">Maritime History</h2>
+                    <p className="text-xs font-bold text-amber-600 uppercase tracking-widest">On This Day: {formattedDate}</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setShowHistory(false)}
+                  className="p-2 hover:bg-white rounded-xl transition-colors text-slate-400 hover:text-slate-600 shadow-sm"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <div className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+                <div className="space-y-8">
+                  {todayEvents.map((event) => (
+                    <div key={event.id} className="relative pl-8 border-l-2 border-amber-100 pb-2 last:pb-0">
+                      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow-sm" />
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-sm font-black text-amber-600 bg-amber-50 px-2 py-1 rounded-lg">
+                          {event.year}
+                        </span>
+                        <h3 className="text-xl font-bold text-slate-900">{event.title}</h3>
+                      </div>
+                      <p className="text-slate-600 leading-relaxed text-lg font-light italic">
+                        {event.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="p-6 bg-slate-50 border-t border-slate-100 flex justify-end">
+                <button 
+                  onClick={() => setShowHistory(false)}
+                  className="px-6 py-2.5 bg-amber-600 text-white rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-amber-700 transition-all shadow-lg shadow-amber-500/20 active:scale-95"
+                >
+                  Close History
                 </button>
               </div>
             </motion.div>
