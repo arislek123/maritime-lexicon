@@ -65,6 +65,22 @@ export const maritimeHistoryEvents: MaritimeHistoryEvent[] = [
     description: 'The "Cornhusker State" joined the Union. Its river systems, particularly the Missouri, have been vital for inland maritime trade.'
   },
   {
+    id: 'h11',
+    month: 3,
+    day: 5,
+    year: 1946,
+    title: 'Iron Curtain Speech',
+    description: 'Winston Churchill delivered his famous "Iron Curtain" speech in Fulton, Missouri. While political, it signaled the start of the Cold War, which heavily influenced global maritime strategy and naval deployments for decades.'
+  },
+  {
+    id: 'h12',
+    month: 3,
+    day: 5,
+    year: 1912,
+    title: 'Italian Air Force Uses Airships',
+    description: 'During the Italo-Turkish War, the Italian military became the first to use airships for maritime reconnaissance and bombing missions, marking a new era in naval warfare.'
+  },
+  {
     id: 'h4',
     month: 4,
     day: 15,
