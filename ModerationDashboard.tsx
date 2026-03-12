@@ -1,217 +1,144 @@
-
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  History, Calendar, ChevronRight, ChevronLeft, 
-  Anchor, Shield, Compass, Clock, MapPin, 
-  Search, Info, BookOpen, Waves
-} from 'lucide-react';
-import { cn } from '../lib/utils';
-import { MARITIME_HISTORY, MaritimeEvent, getEventsForDay } from '../data/maritimeHistory';
+import { useNavigate } from 'react-router-dom';
+import { Info, ArrowRight } from 'lucide-react';
 
-const MONTHS = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+interface Hotspot {
+  id: string;
+  name: string;
+  slug: string;
+  x: number;
+  y: number;
+  description: string;
+}
+
+const hotspots: Hotspot[] = [
+  { id: 'bow', name: 'Bow', slug: 'bow', x: 82, y: 65, description: 'The forward part of the hull of a ship or boat.' },
+  { id: 'stern', name: 'Stern', slug: 'stern', x: 18, y: 65, description: 'The back or aft-most part of a ship or boat.' },
+  { id: 'bridge', name: 'Bridge', slug: 'bridge', x: 42, y: 45, description: 'The room or platform from which the ship can be commanded.' },
+  { id: 'hull', name: 'Hull', slug: 'hull', x: 50, y: 72, description: 'The watertight body of a ship or boat.' },
+  { id: 'keel', name: 'Keel', slug: 'keel', x: 50, y: 88, description: 'The longitudinal structure along the centerline at the bottom of a vessel\'s hull.' },
+  { id: 'propeller', name: 'Propeller', slug: 'propeller', x: 12, y: 82, description: 'A type of fan that transmits power by converting rotational motion into thrust.' },
+  { id: 'rudder', name: 'Rudder', slug: 'rudder', x: 8, y: 78, description: 'A primary control surface used to steer a ship.' },
+  { id: 'mast', name: 'Mast', slug: 'mast', x: 48, y: 30, description: 'A tall upright post on a ship or boat, which can carry sails or support rigging.' },
+  { id: 'anchor', name: 'Anchor', slug: 'anchor', x: 78, y: 78, description: 'A device, normally made of metal, used to secure a vessel to the bed of a body of water.' },
 ];
 
-export const MaritimeHistoryTimeline: React.FC = () => {
-  const [selectedMonth, setSelectedMonth] = useState<number>(new Date().getMonth());
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const monthEvents = useMemo(() => {
-    const events: MaritimeEvent[] = [];
-    const daysInMonth = new Date(2024, selectedMonth + 1, 0).getDate();
-    
-    for (let day = 1; day <= daysInMonth; day++) {
-      const dayEvents = getEventsForDay(selectedMonth + 1, day);
-      events.push(...dayEvents);
-    }
-
-    return events;
-  }, [selectedMonth]);
-
-  const filteredEvents = useMemo(() => {
-    if (!searchQuery.trim()) return monthEvents;
-    const q = searchQuery.toLowerCase();
-    return monthEvents.filter(e => 
-      e.title.toLowerCase().includes(q) || 
-      e.description.toLowerCase().includes(q)
-    );
-  }, [monthEvents, searchQuery]);
-
-  const getCategoryStyles = (cat: string) => {
-    switch (cat) {
-      case 'discovery': return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20';
-      case 'disaster': return 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20';
-      case 'innovation': return 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20';
-      case 'war': return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20';
-      default: return 'bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20';
-    }
-  };
+export const VesselDiagram: React.FC = () => {
+  const [activeHotspot, setActiveHotspot] = useState<Hotspot | null>(null);
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#020617] py-12 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <header className="mb-12 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-600/10 text-blue-600 dark:text-blue-400 rounded-full text-xs font-bold uppercase tracking-widest">
-              <History size={14} />
-              Maritime Almanac
-            </div>
-            <h1 className="text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-              Chronicles of <span className="text-blue-600">the Deep</span>
-            </h1>
-            <p className="text-slate-500 dark:text-slate-400 max-w-xl text-lg">
-              Explore pivotal maritime events organized by the calendar year. Discover discoveries, disasters, and innovations that shaped the seas.
-            </p>
-          </div>
+    <div className="space-y-8">
+      <div className="text-center space-y-2">
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Interactive Vessel Diagram</h2>
+        <p className="text-slate-500 dark:text-slate-400">Click on the markers to explore the anatomy of a ship.</p>
+      </div>
 
-          <div className="relative w-full md:w-80">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-            <input 
-              type="text"
-              placeholder="Search history..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm focus:ring-2 focus:ring-blue-500/20 outline-none transition-all dark:text-white"
-            />
-          </div>
-        </header>
+      <div className="relative aspect-[21/9] bg-slate-100 dark:bg-slate-900 rounded-3xl border-2 border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner group">
+        {/* Stylized Ship SVG */}
+        <svg 
+          viewBox="0 0 100 100" 
+          className="w-full h-full p-8 text-slate-400 dark:text-slate-600 transition-colors duration-500"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          {/* Hull Profile */}
+          <path 
+            d="M10,60 L80,60 Q95,60 90,85 L15,85 Q10,85 10,60" 
+            fill="currentColor" 
+            className="transition-colors"
+          />
+          {/* Superstructure / Bridge */}
+          <path 
+            d="M30,60 L30,40 L55,40 L55,60 Z" 
+            fill="currentColor" 
+            opacity="0.9"
+          />
+          <path 
+            d="M35,40 L35,30 L50,30 L50,40 Z" 
+            fill="currentColor" 
+            opacity="0.7"
+          />
+          {/* Mast */}
+          <line x1="42" y1="15" x2="42" y2="30" stroke="currentColor" strokeWidth="1" />
+          <line x1="38" y1="20" x2="46" y2="20" stroke="currentColor" strokeWidth="0.5" />
+          
+          {/* Funnel */}
+          <rect x="20" y="45" width="8" height="15" fill="currentColor" opacity="0.8" />
+          
+          {/* Waterline */}
+          <path 
+            d="M0,80 L100,80" 
+            stroke="blue" 
+            strokeWidth="0.5" 
+            strokeOpacity="0.3"
+            strokeDasharray="2 2"
+          />
+        </svg>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Month Selector Sidebar */}
-          <aside className="lg:col-span-3 space-y-6">
-            <div className="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm">
-              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-6 px-2">Select Month</h3>
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
-                {MONTHS.map((month, idx) => (
-                  <button
-                    key={month}
-                    onClick={() => setSelectedMonth(idx)}
-                    className={cn(
-                      "flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-bold transition-all group",
-                      selectedMonth === idx 
-                        ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20" 
-                        : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
-                    )}
-                  >
-                    <span className="flex items-center gap-3">
-                      <span className={cn(
-                        "w-6 h-6 rounded-lg flex items-center justify-center text-[10px]",
-                        selectedMonth === idx ? "bg-white/20" : "bg-slate-100 dark:bg-slate-800"
-                      )}>
-                        {idx + 1}
-                      </span>
-                      {month}
-                    </span>
-                    <ChevronRight size={16} className={cn(
-                      "transition-transform",
-                      selectedMonth === idx ? "translate-x-0 opacity-100" : "translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
-                    )} />
-                  </button>
-                ))}
+        {/* Hotspots */}
+        {hotspots.map((spot) => (
+          <button
+            key={spot.id}
+            onClick={() => setActiveHotspot(spot)}
+            className={`absolute w-6 h-6 -ml-3 -mt-3 rounded-full border-2 border-white shadow-lg transition-all duration-300 flex items-center justify-center
+              ${activeHotspot?.id === spot.id 
+                ? 'bg-blue-600 scale-125 z-20' 
+                : 'bg-blue-500 hover:bg-blue-600 hover:scale-110 z-10'
+              }`}
+            style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
+          >
+            <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+          </button>
+        ))}
+
+        {/* Hotspot Info Overlay */}
+        <AnimatePresence>
+          {activeHotspot && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              className="absolute top-6 right-6 w-72 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-5 space-y-4 z-30"
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">{activeHotspot.name}</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {activeHotspot.description}
+                  </p>
+                </div>
+                <div className="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-xl text-blue-600 dark:text-blue-400">
+                  <Info size={18} />
+                </div>
               </div>
-            </div>
+              <button
+                onClick={() => navigate(`/term/${activeHotspot.slug}/`)}
+                className="w-full py-2.5 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 group"
+              >
+                Learn More
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
-            {/* Quick Stats */}
-            <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20 relative overflow-hidden">
-              <Waves className="absolute -bottom-4 -right-4 w-32 h-32 opacity-10 rotate-12" />
-              <h4 className="text-xs font-black uppercase tracking-widest mb-2 opacity-80">Month Summary</h4>
-              <div className="text-4xl font-black mb-1">{monthEvents.length}</div>
-              <p className="text-sm font-medium opacity-80">Recorded events in {MONTHS[selectedMonth]}</p>
-            </div>
-          </aside>
-
-          {/* Events List */}
-          <main className="lg:col-span-9">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-black text-slate-900 dark:text-white flex items-center gap-4">
-                <span className="text-blue-600">{MONTHS[selectedMonth]}</span>
-                <span className="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700" />
-                <span className="text-slate-400 dark:text-slate-600">Events</span>
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              <AnimatePresence mode="wait">
-                {filteredEvents.length > 0 ? (
-                  <motion.div
-                    key={selectedMonth + searchQuery}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="space-y-6"
-                  >
-                    {filteredEvents.map((event, idx) => (
-                      <div 
-                        key={`${event.date}-${event.year}-${idx}`}
-                        className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-blue-500/30 transition-all group relative overflow-hidden"
-                      >
-                        <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
-                          <History size={120} />
-                        </div>
-
-                        <div className="flex flex-col md:flex-row md:items-start gap-8">
-                          {/* Date Column */}
-                          <div className="flex-shrink-0 flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-1">
-                            <div className="text-3xl font-black text-blue-600 uppercase tracking-tighter">
-                              {MONTHS[parseInt(event.date.split('-')[0]) - 1]} {parseInt(event.date.split('-')[1])}
-                            </div>
-                            <div className="text-xl font-bold text-slate-400 dark:text-slate-600">
-                              {event.year}
-                            </div>
-                          </div>
-
-                          {/* Content Column */}
-                          <div className="flex-1 space-y-4">
-                            <div className={cn(
-                              "inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[10px] font-black uppercase tracking-widest",
-                              getCategoryStyles(event.category)
-                            )}>
-                              {event.category}
-                            </div>
-                            
-                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
-                              {event.title}
-                            </h3>
-                            
-                            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-light">
-                              {event.description}
-                            </p>
-
-                            <div className="pt-4 flex items-center gap-6 text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest">
-                              <span className="flex items-center gap-2">
-                                <MapPin size={14} />
-                                Global Waters
-                              </span>
-                              <span className="flex items-center gap-2">
-                                <Clock size={14} />
-                                Historical Record
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-center py-24 bg-white dark:bg-slate-900 rounded-[3rem] border border-dashed border-slate-200 dark:border-slate-800"
-                  >
-                    <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-300">
-                      <Search size={32} />
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">No events found</h3>
-                    <p className="text-slate-500 dark:text-slate-400">Try selecting a different month or clearing your search.</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </main>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {hotspots.map((spot) => (
+          <button
+            key={spot.id}
+            onClick={() => setActiveHotspot(spot)}
+            className={`p-4 rounded-2xl border-2 transition-all text-left flex items-center justify-between group
+              ${activeHotspot?.id === spot.id 
+                ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500 text-blue-700 dark:text-blue-400' 
+                : 'bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 text-slate-600 dark:text-slate-400'
+              }`}
+          >
+            <span className="font-semibold">{spot.name}</span>
+            <ArrowRight size={16} className={`opacity-0 group-hover:opacity-100 transition-all ${activeHotspot?.id === spot.id ? 'opacity-100 translate-x-0' : '-translate-x-2'}`} />
+          </button>
+        ))}
       </div>
     </div>
   );

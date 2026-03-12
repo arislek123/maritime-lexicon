@@ -1,20 +1,88 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { 
+  onAuthStateChanged, 
+  User, 
+  signOut, 
+  signInWithPopup, 
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile
+} from 'firebase/auth';
+import { auth, db } from './firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
-# Run and deploy your AI Studio app
+interface AuthContextType {
+  user: User | null;
+  isAdmin: boolean;
+  loading: boolean;
+  loginWithGoogle: () => Promise<void>;
+  logout: () => Promise<void>;
+}
 
-This contains everything you need to run your app locally.
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-View your app in AI Studio: https://ai.studio/apps/379883b9-0a7f-4bb1-8e8d-8ebd21a4ab6b
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-## Run Locally
+  useEffect(() => {
+    try {
+      const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+        setUser(currentUser);
+        if (currentUser) {
+          try {
+            // Check if user is admin
+            const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+            if (userDoc.exists()) {
+              setIsAdmin(userDoc.data().role === 'admin');
+            } else {
+              // Create user doc if it doesn't exist
+              const isFirstAdmin = currentUser.email === import.meta.env.VITE_ADMIN_EMAIL;
+              await setDoc(doc(db, 'users', currentUser.uid), {
+                email: currentUser.email,
+                role: isFirstAdmin ? 'admin' : 'user',
+                createdAt: new Date().toISOString()
+              });
+              setIsAdmin(isFirstAdmin);
+            }
+          } catch (err) {
+            console.error('Error fetching user doc:', err);
+          }
+        } else {
+          setIsAdmin(false);
+        }
+        setLoading(false);
+      });
 
-**Prerequisites:**  Node.js
+      return () => unsubscribe();
+    } catch (err) {
+      console.error('Firebase Auth error:', err);
+      setLoading(false);
+    }
+  }, []);
 
+  const loginWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider);
+  };
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+  const logout = async () => {
+    await signOut(auth);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, isAdmin, loading, loginWithGoogle, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};

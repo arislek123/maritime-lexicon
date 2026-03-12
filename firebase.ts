@@ -1,403 +1,763 @@
+import React, { useId, useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 
-export interface MaritimeEvent {
-  date: string; // MM-DD
-  year: number;
-  title: string;
-  description: string;
-  category: 'discovery' | 'disaster' | 'innovation' | 'war' | 'other';
+interface MachineryDiagramProps {
+  id: string;
+  name: string;
+  short: string;
+  icon: string;
+  color: string;
+  status: 'running' | 'standby' | 'maintenance' | 'alarm';
+  rawCat: string;
+  size?: 'sm' | 'lg';
 }
 
-export const MARITIME_HISTORY: Record<string, MaritimeEvent[]> = {
-  "01-01": [{ date: "01-01", year: 1818, title: "Black Ball Line Begins", description: "The first scheduled transatlantic passenger service begins from New York.", category: "innovation" }],
-  "01-02": [{ date: "01-02", year: 1900, title: "Open Door Policy", description: "The U.S. announces the Open Door Policy to promote equal trade with China.", category: "other" }],
-  "01-03": [{ date: "01-03", year: 1777, title: "Battle of Princeton", description: "Naval forces support Washington's troops in the American Revolutionary War.", category: "war" }],
-  "01-04": [{ date: "01-04", year: 1915, title: "Coast Guard Act", description: "The U.S. Coast Guard is officially formed by merging the Revenue Cutter Service and Life-Saving Service.", category: "innovation" }],
-  "01-05": [{ date: "01-05", year: 1922, title: "Shackleton's Death", description: "Explorer Ernest Shackleton dies of a heart attack at South Georgia Island.", category: "discovery" }],
-  "01-06": [{ date: "01-06", year: 1912, title: "New Mexico Statehood", description: "Though landlocked, the state's admission influenced western maritime trade routes.", category: "other" }],
-  "01-07": [{ date: "01-07", year: 1782, title: "Bank of North America", description: "The first commercial bank in the U.S. opens, funding early maritime trade.", category: "innovation" }],
-  "01-08": [{ date: "01-08", year: 1815, title: "Battle of New Orleans", description: "British naval forces are defeated in the final major battle of the War of 1812.", category: "war" }],
-  "01-09": [{ date: "01-09", year: 1788, title: "Connecticut Ratification", description: "The state ratifies the Constitution, securing federal control over maritime commerce.", category: "other" }],
-  "01-10": [{ date: "01-10", year: 1912, title: "RMS Titanic Sea Trials", description: "The Titanic begins its first sea trials in Belfast.", category: "innovation" }],
-  "01-11": [{ date: "01-11", year: 1755, title: "Alexander Hamilton Born", description: "The founder of the U.S. Coast Guard (Revenue Cutter Service) is born in the Caribbean.", category: "innovation" }],
-  "01-12": [{ date: "01-12", year: 1943, title: "Battle of Rennell Island", description: "A major naval engagement in the Solomon Islands during WWII.", category: "war" }],
-  "01-13": [{ date: "01-13", year: 2012, title: "Costa Concordia Disaster", description: "The cruise ship Costa Concordia hits rocks and capsizes off Giglio Island, Italy.", category: "disaster" }],
-  "01-14": [{ date: "01-14", year: 1784, title: "Treaty of Paris Ratified", description: "The treaty ending the Revolutionary War is ratified, defining U.S. maritime boundaries.", category: "other" }],
-  "01-15": [{ date: "01-15", year: 1815, title: "USS President Captured", description: "The American frigate is captured by a British squadron during the War of 1812.", category: "war" }],
-  "01-16": [{ date: "01-16", year: 1780, title: "Battle of Cape St. Vincent", description: "A British fleet under Admiral Rodney defeats a Spanish squadron.", category: "war" }],
-  "01-17": [{ date: "01-17", year: 1773, title: "Crossing the Antarctic Circle", description: "Captain James Cook's Resolution becomes the first ship to cross the Antarctic Circle.", category: "discovery" }],
-  "01-18": [{ date: "01-18", year: 1778, title: "Discovery of Hawaii", description: "Captain James Cook reaches the Hawaiian Islands, naming them the Sandwich Islands.", category: "discovery" }],
-  "01-19": [{ date: "01-19", year: 1840, title: "Wilkes Reaches Antarctica", description: "The United States Exploring Expedition led by Charles Wilkes sights Antarctica.", category: "discovery" }],
-  "01-20": [{ date: "01-20", year: 1942, title: "Wannsee Conference", description: "While not maritime, the logistics discussed impacted global shipping and naval movements.", category: "other" }],
-  "01-21": [{ date: "01-21", year: 1954, title: "USS Nautilus Launched", description: "The world's first nuclear-powered submarine is launched at Groton, Connecticut.", category: "innovation" }],
-  "01-22": [{ date: "01-22", year: 1879, title: "Battle of Isandlwana", description: "Naval brigades support British forces in the Anglo-Zulu War.", category: "war" }],
-  "01-23": [{ date: "01-23", year: 1960, title: "Trieste Reaches Bottom", description: "The bathyscaphe Trieste reaches the bottom of the Mariana Trench (10,911m).", category: "discovery" }],
-  "01-24": [{ date: "01-24", year: 1915, title: "Battle of Dogger Bank", description: "A naval battle between British and German battlecruiser squadrons in WWI.", category: "war" }],
-  "01-25": [{ date: "01-25", year: 1942, title: "Thailand Declares War", description: "Impacts naval strategy in the Gulf of Thailand and South China Sea.", category: "war" }],
-  "01-26": [{ date: "01-26", year: 1788, title: "First Fleet Arrives", description: "The British First Fleet arrives at Port Jackson, founding the colony of New South Wales.", category: "discovery" }],
-  "01-27": [{ date: "01-27", year: 1888, title: "National Geographic Society", description: "Founded in Washington D.C., it would fund countless maritime explorations.", category: "other" }],
-  "01-28": [{ date: "01-28", year: 1986, title: "Challenger Disaster", description: "While space-related, the recovery efforts were a massive maritime operation.", category: "other" }],
-  "01-29": [{ date: "01-29", year: 1856, title: "Victoria Cross Instituted", description: "The highest British military award, often given for naval valor.", category: "other" }],
-  "01-30": [{ date: "01-30", year: 1945, title: "Wilhelm Gustloff Sinking", description: "The deadliest maritime disaster in history; over 9,000 die when the ship is torpedoed.", category: "disaster" }],
-  "01-31": [{ date: "01-31", year: 1917, title: "Unrestricted Submarine Warfare", description: "Germany announces it will sink all ships in war zones, leading the U.S. toward WWI.", category: "war" }],
-  "02-01": [{ date: "02-01", year: 1793, title: "France Declares War", description: "France declares war on Great Britain and the Netherlands, starting a long naval conflict.", category: "war" }],
-  "02-02": [{ date: "02-02", year: 1848, title: "Treaty of Guadalupe Hidalgo", description: "Ends the Mexican-American War, giving the U.S. key Pacific ports like San Francisco.", category: "other" }],
-  "02-03": [{ date: "02-03", year: 1917, title: "SS Housatonic Sunk", description: "The sinking of this American ship by a U-boat leads to the breaking of diplomatic ties.", category: "war" }],
-  "02-04": [{ date: "02-04", year: 1789, title: "Washington Elected", description: "The first President, who would sign the first U.S. maritime laws.", category: "other" }],
-  "02-05": [{ date: "02-05", year: 1918, title: "SS Tuscania Sunk", description: "The first ship carrying American troops to Europe is sunk by a U-boat.", category: "war" }],
-  "02-06": [{ date: "02-06", year: 1840, title: "Treaty of Waitangi", description: "Signed in New Zealand, defining maritime rights between the British and Maori.", category: "other" }],
-  "02-07": [{ date: "02-07", year: 1855, title: "Treaty of Shimoda", description: "Opens Japanese ports to Russian trade and defines maritime borders.", category: "other" }],
-  "02-08": [{ date: "02-08", year: 1904, title: "Battle of Port Arthur", description: "A surprise Japanese naval attack on the Russian fleet starts the Russo-Japanese War.", category: "war" }],
-  "02-09": [{ date: "02-09", year: 1799, title: "USS Constellation vs L'Insurgente", description: "A major victory for the U.S. Navy during the Quasi-War with France.", category: "war" }],
-  "02-10": [{ date: "02-10", year: 1763, title: "Treaty of Paris", description: "Ends the Seven Years' War, drastically changing colonial maritime control.", category: "other" }],
-  "02-11": [{ date: "02-11", year: 1861, title: "Lighthouse Act", description: "U.S. Congress passes legislation to improve coastal navigation aids.", category: "innovation" }],
-  "02-12": [{ date: "02-12", year: 1942, title: "Channel Dash", description: "German capital ships Scharnhorst, Gneisenau, and Prinz Eugen escape through the English Channel.", category: "war" }],
-  "02-13": [{ date: "02-13", year: 1791, title: "Revenue Cutter Service", description: "Alexander Hamilton's Revenue Marine begins patrolling the U.S. coast.", category: "innovation" }],
-  "02-14": [{ date: "02-14", year: 1779, title: "Death of Captain Cook", description: "The famous explorer is killed in a skirmish with Native Hawaiians at Kealakekua Bay.", category: "discovery" }],
-  "02-15": [{ date: "02-15", year: 1898, title: "Sinking of the USS Maine", description: "The battleship Maine explodes in Havana Harbor, leading to the Spanish-American War.", category: "disaster" }],
-  "02-16": [{ date: "02-16", year: 1804, title: "Burning of the Philadelphia", description: "Stephen Decatur leads a daring raid to burn the captured frigate Philadelphia in Tripoli.", category: "war" }],
-  "02-17": [{ date: "02-17", year: 1864, title: "H.L. Hunley Attack", description: "The Confederate submarine Hunley becomes the first submarine to sink an enemy ship in combat.", category: "innovation" }],
-  "02-18": [{ date: "02-18", year: 1952, title: "SS Pendleton Rescue", description: "The Coast Guard performs a heroic rescue of the crew of the split tanker SS Pendleton.", category: "disaster" }],
-  "02-19": [{ date: "02-19", year: 1942, title: "Bombing of Darwin", description: "Japanese aircraft launch a massive air raid on the Australian port of Darwin.", category: "war" }],
-  "02-20": [{ date: "02-20", year: 1815, title: "USS Constitution Victory", description: "Old Ironsides defeats the British ships HMS Cyane and HMS Levant.", category: "war" }],
-  "02-21": [{ date: "02-21", year: 1916, title: "Battle of Verdun", description: "While a land battle, it strained maritime logistics and naval blockades in the Atlantic.", category: "war" }],
-  "02-22": [{ date: "02-22", year: 1732, title: "George Washington Born", description: "The future president's birth influenced the eventual creation of the U.S. Navy.", category: "other" }],
-  "02-23": [{ date: "02-23", year: 1945, title: "Raising the Flag on Iwo Jima", description: "U.S. Marines raise the flag after a massive amphibious assault.", category: "war" }],
-  "02-24": [{ date: "02-24", year: 1813, title: "USS Hornet vs HMS Peacock", description: "The American sloop-of-war Hornet sinks the British brig Peacock.", category: "war" }],
-  "02-25": [{ date: "02-25", year: 1942, title: "Battle of the Los Angeles", description: "A rumored air raid over LA leads to massive anti-aircraft fire over the coast.", category: "other" }],
-  "02-26": [{ date: "02-26", year: 1815, title: "Napoleon Escapes Elba", description: "Napoleon's escape by sea triggers the Hundred Days campaign.", category: "other" }],
-  "02-27": [{ date: "02-27", year: 1942, title: "Battle of the Java Sea", description: "A disastrous defeat for the Allied ABDA naval force against the Japanese.", category: "war" }],
-  "02-28": [{ date: "02-28", year: 1844, title: "USS Princeton Disaster", description: "A 'Peacemaker' gun explodes during a demonstration, killing several high-ranking officials.", category: "disaster" }],
-  "02-29": [{ date: "02-29", year: 1940, title: "Leap Year Naval Patrols", description: "Extra day of patrols in the North Atlantic during the early stages of WWII.", category: "other" }],
-  
-  // March
-  "03-01": [{ date: "03-01", year: 1867, title: "Nebraska Statehood", description: "Impacted the development of river-based maritime trade in the Midwest.", category: "other" }],
-  "03-02": [{ date: "03-02", year: 1899, title: "Mount Rainier National Park", description: "Preserved coastal areas and influenced Pacific Northwest maritime tourism.", category: "other" }],
-  "03-03": [{ date: "03-03", year: 1845, title: "Florida Statehood", description: "Florida joins the Union, bringing thousands of miles of coastline under U.S. control.", category: "other" }],
-  "03-04": [{ date: "03-04", year: 1776, title: "Raid on Nassau", description: "The first amphibious landing by the Continental Marines and Navy.", category: "war" }],
-  "03-05": [{ date: "03-05", year: 1946, title: "Iron Curtain Speech", description: "Churchill's speech defined the Cold War, which shaped naval strategy for decades.", category: "other" }],
-  "03-06": [{ date: "03-06", year: 1836, title: "Fall of the Alamo", description: "While inland, the conflict influenced Gulf of Mexico naval blockades.", category: "war" }],
-  "03-07": [{ date: "03-07", year: 1936, title: "Remilitarization of the Rhineland", description: "A key step toward WWII, impacting Atlantic and North Sea naval security.", category: "other" }],
-  "03-08": [{ date: "03-08", year: 1862, title: "CSS Virginia Attacks", description: "The ironclad CSS Virginia sinks two Union wooden ships at Hampton Roads.", category: "war" }],
-  "03-09": [{ date: "03-09", year: 1862, title: "Battle of the Monitor and Merrimack", description: "The first battle between ironclad warships, changing naval warfare forever.", category: "war" }],
-  "03-10": [{ date: "03-10", year: 1945, title: "Firebombing of Tokyo", description: "Naval aviation and blockades were critical to the logistics of this campaign.", category: "war" }],
-  "03-11": [{ date: "03-11", year: 1861, title: "CSS Virginia Launched", description: "The ironclad CSS Virginia is launched after being rebuilt from the USS Merrimack.", category: "innovation" }],
-  "03-12": [{ date: "03-12", year: 1942, title: "MacArthur Leaves Corregidor", description: "General MacArthur escapes the Philippines by PT boat to Australia.", category: "war" }],
-  "03-13": [{ date: "03-13", year: 1881, title: "USS Jeannette Crushed", description: "The exploration ship USS Jeannette is crushed by ice in the Arctic Ocean.", category: "discovery" }],
-  "03-14": [{ date: "03-14", year: 1945, title: "HMS Venturer Victory", description: "HMS Venturer sinks U-864 while both are submerged, a historical first.", category: "war" }],
-  "03-15": [{ date: "03-15", year: 1917, title: "HMS E49 Sunk", description: "The British submarine HMS E49 hits a mine and sinks in the Shetland Islands.", category: "war" }],
-  "03-16": [{ date: "03-16", year: 1978, title: "Amoco Cadiz Disaster", description: "The oil tanker Amoco Cadiz runs aground off Brittany, causing a massive spill.", category: "disaster" }],
-  "03-17": [{ date: "03-17", year: 1958, title: "USS Skate Surfaces", description: "USS Skate becomes the first submarine to surface at the North Pole.", category: "innovation" }],
-  "03-18": [{ date: "03-18", year: 1967, title: "Torrey Canyon Spill", description: "The supertanker Torrey Canyon hits rocks off Cornwall, spilling 120,000 tons of oil.", category: "disaster" }],
-  "03-19": [{ date: "03-19", year: 1945, title: "USS Franklin Attacked", description: "The aircraft carrier USS Franklin is severely damaged by a Japanese air attack.", category: "war" }],
-  "03-20": [{ date: "03-20", year: 1922, title: "USS Langley Commissioned", description: "The USS Langley (CV-1) is commissioned as the first U.S. aircraft carrier.", category: "innovation" }],
-  "03-21": [{ date: "03-21", year: 1918, title: "German Spring Offensive", description: "The offensive begins, heavily impacting North Sea naval operations in WWI.", category: "war" }],
-  "03-22": [{ date: "03-22", year: 1794, title: "Naval Act of 1794", description: "U.S. Congress authorizes the creation of the United States Navy.", category: "innovation" }],
-  "03-23": [{ date: "03-23", year: 2021, title: "Ever Given Blocks Suez", description: "The container ship Ever Given runs aground, blocking the Suez Canal for six days.", category: "disaster" }],
-  "03-24": [{ date: "03-24", year: 1989, title: "Exxon Valdez Oil Spill", description: "The tanker Exxon Valdez runs aground in Prince William Sound, Alaska.", category: "disaster" }],
-  "03-25": [{ date: "03-25", year: 1813, title: "USS Essex Capture", description: "The American frigate USS Essex captures the British whaler Nereyda.", category: "war" }],
-  "03-26": [{ date: "03-26", year: 1945, title: "Battle of Iwo Jima Ends", description: "The bloody amphibious campaign concludes with a U.S. victory.", category: "war" }],
-  "03-27": [{ date: "03-27", year: 1794, title: "Six Frigates Authorized", description: "Construction of the original six frigates of the U.S. Navy is authorized.", category: "innovation" }],
-  "03-28": [{ date: "03-28", year: 1942, title: "St Nazaire Raid", description: "Operation Chariot, a daring British naval raid on the French port of St Nazaire.", category: "war" }],
-  "03-29": [{ date: "03-29", year: 1847, title: "Siege of Veracruz Ends", description: "U.S. forces capture the Mexican port after a major amphibious landing.", category: "war" }],
-  "03-30": [{ date: "03-30", year: 1867, title: "Alaska Purchase", description: "The U.S. buys Alaska from Russia, expanding its Pacific maritime reach.", category: "other" }],
-  "03-31": [{ date: "03-31", year: 1909, title: "Titanic Construction Begins", description: "The keel of the RMS Titanic is laid at the Harland and Wolff shipyard.", category: "innovation" }],
+const MachineryDiagram: React.FC<MachineryDiagramProps> = ({ id, name, short, icon, color, status, rawCat, size = 'lg' }) => {
+  const uniqueId = useId().replace(/:/g, '');
+  const isRunning = status === 'running';
+  const isAlarm = status === 'alarm';
+  const isSm = size === 'sm';
 
-  // April
-  "04-01": [{ date: "04-01", year: 1945, title: "Battle of Okinawa", description: "The largest amphibious assault in the Pacific Theater of WWII begins.", category: "war" }],
-  "04-02": [{ date: "04-02", year: 1801, title: "Battle of Copenhagen", description: "Admiral Nelson wins a decisive victory over the Danish fleet.", category: "war" }],
-  "04-03": [{ date: "04-03", year: 1942, title: "Assault on Bataan", description: "Japanese forces begin their final assault on the Bataan Peninsula.", category: "war" }],
-  "04-04": [{ date: "04-04", year: 1581, title: "Francis Drake Knighted", description: "Drake is knighted by Queen Elizabeth I aboard the Golden Hind.", category: "discovery" }],
-  "04-05": [{ date: "04-05", year: 1942, title: "Easter Sunday Raid", description: "Japanese carrier forces attack British naval bases in Ceylon (Sri Lanka).", category: "war" }],
-  "04-06": [{ date: "04-06", year: 1909, title: "North Pole Reached", description: "Robert Peary claims to have reached the North Pole by sled and ship.", category: "discovery" }],
-  "04-07": [{ date: "04-07", year: 1945, title: "Sinking of the Yamato", description: "The world's largest battleship is sunk by U.S. carrier aircraft.", category: "war" }],
-  "04-08": [{ date: "04-08", year: 1940, title: "HMS Glowworm Rams Hipper", description: "The British destroyer Glowworm rams the German cruiser Admiral Hipper.", category: "war" }],
-  "04-09": [{ date: "04-09", year: 1940, title: "Invasion of Norway", description: "Germany launches Operation Weserübung, invading Norway by sea.", category: "war" }],
-  "04-10": [{ date: "04-10", year: 1912, title: "Titanic Sets Sail", description: "The RMS Titanic departs Southampton on its ill-fated maiden voyage.", category: "innovation" }],
-  "04-11": [{ date: "04-11", year: 1945, title: "USS Missouri Kamikaze", description: "The battleship USS Missouri is struck by a kamikaze aircraft.", category: "war" }],
-  "04-12": [{ date: "04-12", year: 1861, title: "Fort Sumter Attacked", description: "The American Civil War begins with the bombardment of the coastal fort.", category: "war" }],
-  "04-13": [{ date: "04-13", year: 1940, title: "Second Battle of Narvik", description: "British naval forces destroy several German destroyers in Norway.", category: "war" }],
-  "04-14": [{ date: "04-14", year: 1912, title: "RMS Titanic Hits Iceberg", description: "The world's most famous maritime disaster begins as the Titanic strikes an iceberg.", category: "disaster" }],
-  "04-15": [{ date: "04-15", year: 1912, title: "RMS Titanic Sinks", description: "The Titanic sinks at 2:20 AM, leading to the loss of over 1,500 lives.", category: "disaster" }],
-  "04-16": [{ date: "04-16", year: 1945, title: "Sinking of the Goya", description: "The German transport Goya is sunk by a Soviet submarine; over 6,000 die.", category: "disaster" }],
-  "04-17": [{ date: "04-17", year: 1961, title: "Bay of Pigs Invasion", description: "The CIA-backed amphibious invasion of Cuba begins.", category: "war" }],
-  "04-18": [{ date: "04-18", year: 1942, title: "Doolittle Raid", description: "U.S. bombers launch from the USS Hornet for a surprise raid on Tokyo.", category: "war" }],
-  "04-19": [{ date: "04-19", year: 1775, title: "Lexington and Concord", description: "The start of the American Revolution impacts coastal supply lines.", category: "war" }],
-  "04-20": [{ date: "04-20", year: 1914, title: "Panama Canal Test", description: "The first test transit of the Panama Canal is successfully completed.", category: "innovation" }],
-  "04-21": [{ date: "04-21", year: 1519, title: "Cortés Arrives in Mexico", description: "Hernán Cortés lands at Veracruz, beginning the conquest of Mexico.", category: "discovery" }],
-  "04-22": [{ date: "04-22", year: 1838, title: "Sirius Crosses Atlantic", description: "The Sirius becomes the first steamship to cross the Atlantic under steam power.", category: "innovation" }],
-  "04-23": [{ date: "04-23", year: 1918, title: "Zeebrugge Raid", description: "British naval forces attempt to block the German U-boat port at Zeebrugge.", category: "war" }],
-  "04-24": [{ date: "04-24", year: 1862, title: "Farragut Runs the Forts", description: "Admiral Farragut's fleet passes the forts guarding New Orleans.", category: "war" }],
-  "04-25": [{ date: "04-25", year: 1915, title: "Gallipoli Landings", description: "Allied forces begin their amphibious assault on the Gallipoli Peninsula.", category: "war" }],
-  "04-26": [{ date: "04-26", year: 1956, title: "Ideal X Sets Sail", description: "The Ideal X carries the first shipping containers, revolutionizing trade.", category: "innovation" }],
-  "04-27": [{ date: "04-27", year: 1865, title: "Sultana Disaster", description: "The steamboat Sultana explodes on the Mississippi; over 1,100 die.", category: "disaster" }],
-  "04-28": [{ date: "04-28", year: 1789, title: "Mutiny on the Bounty", description: "Fletcher Christian leads a mutiny against Captain William Bligh.", category: "other" }],
-  "04-29": [{ date: "04-29", year: 1770, title: "Cook Lands at Botany Bay", description: "Captain James Cook makes his first landing in Australia.", category: "discovery" }],
-  "04-30": [{ date: "04-30", year: 1943, title: "Operation Mincemeat", description: "The British plant a corpse with false papers to deceive the Axis.", category: "war" }],
+  // Animation time state
+  const [t, setT] = useState(0);
 
-  // May
-  "05-01": [{ date: "05-01", year: 1898, title: "Battle of Manila Bay", description: "Commodore Dewey destroys the Spanish Pacific squadron in the Philippines.", category: "war" }],
-  "05-02": [{ date: "05-02", year: 1945, title: "Surrender in Italy", description: "German forces in Italy surrender, ending major Mediterranean naval operations.", category: "war" }],
-  "05-03": [{ date: "05-03", year: 1945, title: "Sinking of the Cap Arcona", description: "The German ship Cap Arcona is sunk by the RAF; thousands of prisoners die.", category: "disaster" }],
-  "05-04": [{ date: "05-04", year: 1942, title: "Battle of the Coral Sea", description: "The first carrier-vs-carrier naval battle in history begins.", category: "war" }],
-  "05-05": [{ date: "05-05", year: 1821, title: "Napoleon Dies on St. Helena", description: "The exiled emperor dies on the remote Atlantic island.", category: "other" }],
-  "05-06": [{ date: "05-06", year: 1937, title: "Hindenburg Disaster", description: "The airship Hindenburg burns; maritime recovery teams assist at the site.", category: "other" }],
-  "05-07": [{ date: "05-07", year: 1915, title: "Sinking of the Lusitania", description: "A German U-boat torpedoes the British ocean liner Lusitania.", category: "war" }],
-  "05-08": [{ date: "05-08", year: 1945, title: "V-E Day", description: "Victory in Europe is declared, ending the naval war in the Atlantic.", category: "war" }],
-  "05-09": [{ date: "05-09", year: 1941, title: "Capture of U-110", description: "HMS Bulldog captures the German U-boat and its Enigma machine.", category: "war" }],
-  "05-10": [{ date: "05-10", year: 1940, title: "Churchill Becomes PM", description: "Winston Churchill takes office as Britain's wartime leader.", category: "other" }],
-  "05-11": [{ date: "05-11", year: 1945, title: "USS Bunker Hill Hit", description: "The aircraft carrier is severely damaged by two kamikaze attacks.", category: "war" }],
-  "05-12": [{ date: "05-12", year: 1944, title: "Sinking of U-1202", description: "The German U-boat is sunk by Allied naval forces.", category: "war" }],
-  "05-13": [{ date: "05-13", year: 1787, title: "First Fleet Departs", description: "The First Fleet leaves Portsmouth to found a colony in Australia.", category: "discovery" }],
-  "05-14": [{ date: "05-14", year: 1804, title: "Lewis and Clark Begin", description: "The expedition begins its journey up the Missouri River.", category: "discovery" }],
-  "05-15": [{ date: "05-15", year: 1918, title: "First Airmail Service", description: "The U.S. begins regular airmail, impacting maritime communications.", category: "innovation" }],
-  "05-16": [{ date: "05-16", year: 1943, title: "Operation Chastise", description: "The Dambusters raid impacts German industrial and coastal logistics.", category: "war" }],
-  "05-17": [{ date: "05-17", year: 1987, title: "USS Stark Attacked", description: "The frigate is hit by two Exocet missiles in the Persian Gulf.", category: "war" }],
-  "05-18": [{ date: "05-18", year: 1941, title: "Bismarck Sets Sail", description: "The German battleship Bismarck begins Operation Rheinübung.", category: "war" }],
-  "05-19": [{ date: "05-19", year: 1536, title: "Anne Boleyn Executed", description: "The execution impacts English royal and maritime trade politics.", category: "other" }],
-  "05-20": [{ date: "05-20", year: 1498, title: "Da Gama Reaches India", description: "Vasco da Gama arrives at Calicut, opening the sea route to the East.", category: "discovery" }],
-  "05-21": [{ date: "05-21", year: 1881, title: "American Red Cross", description: "Founded by Clara Barton, providing maritime disaster relief.", category: "other" }],
-  "05-22": [{ date: "05-22", year: 1819, title: "SS Savannah Departs", description: "The first steam-assisted ship begins its crossing of the Atlantic.", category: "innovation" }],
-  "05-23": [{ date: "05-23", year: 1701, title: "Captain Kidd Executed", description: "The famous pirate is hanged at Execution Dock in London.", category: "other" }],
-  "05-24": [{ date: "05-24", year: 1941, title: "Battle of Denmark Strait", description: "The Bismarck sinks the HMS Hood in a dramatic naval engagement.", category: "war" }],
-  "05-25": [{ date: "05-25", year: 1982, title: "HMS Coventry Sunk", description: "The British destroyer is sunk during the Falklands War.", category: "war" }],
-  "05-26": [{ date: "05-26", year: 1941, title: "Bismarck Spotted", description: "A Catalina flying boat locates the Bismarck after it went missing.", category: "war" }],
-  "05-27": [{ date: "05-27", year: 1941, title: "Sinking of the Bismarck", description: "The German battleship is sunk by the British Royal Navy.", category: "war" }],
-  "05-28": [{ date: "05-28", year: 1905, title: "Battle of Tsushima Ends", description: "Japan's decisive victory over the Russian Baltic Fleet concludes.", category: "war" }],
-  "05-29": [{ date: "05-29", year: 1914, title: "Empress of Ireland Sinks", description: "The ocean liner sinks in the St. Lawrence River; 1,012 die.", category: "disaster" }],
-  "05-30": [{ date: "05-30", year: 1940, title: "Dunkirk Evacuation", description: "Operation Dynamo continues, rescuing Allied troops from France.", category: "war" }],
-  "05-31": [{ date: "05-31", year: 1916, title: "Battle of Jutland", description: "The largest naval battle of WWI between the British and German fleets.", category: "war" }],
+  useEffect(() => {
+    let frameId: number;
+    const tick = () => {
+      setT(prev => prev + 1);
+      frameId = requestAnimationFrame(tick);
+    };
+    if (isRunning || isAlarm) {
+      frameId = requestAnimationFrame(tick);
+    }
+    return () => cancelAnimationFrame(frameId);
+  }, [isRunning, isAlarm]);
 
-  // June
-  "06-01": [{ date: "06-01", year: 1794, title: "Glorious First of June", description: "A major naval battle between Great Britain and Revolutionary France.", category: "war" }],
-  "06-02": [{ date: "06-02", year: 1941, title: "Air Attack on Bismarck", description: "British carrier aircraft launch torpedo attacks on the Bismarck.", category: "war" }],
-  "06-03": [{ date: "06-03", year: 1942, title: "Dutch Harbor Attacked", description: "Japanese aircraft bomb the U.S. naval base in Alaska.", category: "war" }],
-  "06-04": [{ date: "06-04", year: 1942, title: "Battle of Midway", description: "The turning point of the Pacific War; the U.S. Navy sinks four Japanese carriers.", category: "war" }],
-  "06-05": [{ date: "06-05", year: 1967, title: "Suez Canal Closed", description: "The Six-Day War begins, leading to the long closure of the canal.", category: "other" }],
-  "06-06": [{ date: "06-06", year: 1944, title: "D-Day Landings", description: "The largest seaborne invasion in history begins on the beaches of Normandy.", category: "war" }],
-  "06-07": [{ date: "06-07", year: 1942, title: "Midway Victory", description: "The Battle of Midway concludes with a decisive American victory.", category: "war" }],
-  "06-08": [{ date: "06-08", year: 1940, title: "HMS Glorious Sunk", description: "The British carrier is sunk by German battleships off Norway.", category: "war" }],
-  "06-09": [{ date: "06-09", year: 1898, title: "Hong Kong Lease", description: "China leases the New Territories to Britain for 99 years.", category: "other" }],
-  "06-10": [{ date: "06-10", year: 1940, title: "Italy Declares War", description: "Italy enters WWII, opening the Mediterranean naval theater.", category: "war" }],
-  "06-11": [{ date: "06-11", year: 1770, title: "Endeavour Runs Aground", description: "Captain Cook's ship hits the Great Barrier Reef.", category: "discovery" }],
-  "06-12": [{ date: "06-12", year: 1942, title: "Anne Frank's Diary", description: "The diary begins, documenting life under occupation and maritime blockades.", category: "other" }],
-  "06-13": [{ date: "06-13", year: 1944, title: "First V-1 Attack", description: "Germany launches the first flying bomb against London.", category: "war" }],
-  "06-14": [{ date: "06-14", year: 1982, title: "Falklands War Ends", description: "Argentine forces surrender, concluding the South Atlantic conflict.", category: "war" }],
-  "06-15": [{ date: "06-15", year: 1904, title: "General Slocum Disaster", description: "The steamship burns in New York's East River; over 1,000 die.", category: "disaster" }],
-  "06-16": [{ date: "06-16", year: 1940, title: "Pétain Becomes PM", description: "Marshal Pétain takes power in France during the German invasion.", category: "other" }],
-  "06-17": [{ date: "06-17", year: 1940, title: "RMS Lancastria Sunk", description: "The troopship is sunk by German aircraft; over 3,000 die.", category: "disaster" }],
-  "06-18": [{ date: "06-18", year: 1812, title: "War of 1812 Begins", description: "The U.S. declares war on Britain over maritime rights and trade.", category: "war" }],
-  "06-19": [{ date: "06-19", year: 1864, title: "Kearsarge vs Alabama", description: "The USS Kearsarge sinks the Confederate raider CSS Alabama.", category: "war" }],
-  "06-20": [{ date: "06-20", year: 1944, title: "Philippine Sea Victory", description: "The 'Great Marianas Turkey Shoot' concludes with a U.S. victory.", category: "war" }],
-  "06-21": [{ date: "06-21", year: 1919, title: "Scuttling at Scapa Flow", description: "The German High Seas Fleet is scuttled by its own crews.", category: "war" }],
-  "06-22": [{ date: "06-22", year: 1941, title: "Operation Barbarossa", description: "Germany invades the Soviet Union, shifting naval focus to the Baltic.", category: "war" }],
-  "06-23": [{ date: "06-23", year: 1894, title: "IOC Founded", description: "The International Olympic Committee is established in Paris.", category: "other" }],
-  "06-24": [{ date: "06-24", year: 1497, title: "Cabot Lands in America", description: "John Cabot reaches the coast of North America (Newfoundland).", category: "discovery" }],
-  "06-25": [{ date: "06-25", year: 1950, title: "Korean War Begins", description: "North Korean forces invade the South, starting a major naval conflict.", category: "war" }],
-  "06-26": [{ date: "06-26", year: 1959, title: "St. Lawrence Seaway", description: "The seaway is officially opened, connecting the Great Lakes to the Atlantic.", category: "innovation" }],
-  "06-27": [{ date: "06-27", year: 1905, title: "Potemkin Mutiny", description: "Crews of the Russian battleship Potemkin mutiny against their officers.", category: "war" }],
-  "06-28": [{ date: "06-28", year: 1914, title: "Sarajevo Assassination", description: "The assassination of Archduke Franz Ferdinand triggers WWI.", category: "other" }],
-  "06-29": [{ date: "06-29", year: 1613, title: "Globe Theatre Burns", description: "The famous theatre burns down during a performance of Henry VIII.", category: "other" }],
-  "06-30": [{ date: "06-30", year: 1921, title: "Lord Fisher Dies", description: "The British naval reformer and 'father of the Dreadnought' passes away.", category: "other" }],
+  const a = t * 0.08;
+  const dtick = t;
 
-  // July
-  "07-01": [{ date: "07-01", year: 1946, title: "Operation Crossroads", description: "The first post-war nuclear tests on a fleet of target ships at Bikini Atoll.", category: "innovation" }],
-  "07-02": [{ date: "07-02", year: 1937, title: "Earhart Disappears", description: "Amelia Earhart vanishes over the Pacific; a massive naval search follows.", category: "other" }],
-  "07-03": [{ date: "07-03", year: 1863, title: "Gettysburg Ends", description: "The battle concludes, impacting coastal logistics and Union naval strategy.", category: "other" }],
-  "07-04": [{ date: "07-04", year: 1776, title: "Declaration of Independence", description: "The U.S. declares independence, triggering a long naval war with Britain.", category: "other" }],
-  "07-05": [{ date: "07-05", year: 1943, title: "Battle of Kursk", description: "The massive land battle begins, with naval diversions in the Mediterranean.", category: "war" }],
-  "07-06": [{ date: "07-06", year: 1943, title: "Battle of Kula Gulf", description: "A night naval engagement between U.S. and Japanese forces.", category: "war" }],
-  "07-07": [{ date: "07-07", year: 1937, title: "Marco Polo Bridge Incident", description: "Starts the Second Sino-Japanese War, impacting Pacific naval power.", category: "war" }],
-  "07-08": [{ date: "07-08", year: 1853, title: "Commodore Perry in Japan", description: "Perry's 'Black Ships' arrive in Edo Bay, opening Japan to the West.", category: "discovery" }],
-  "07-09": [{ date: "07-09", year: 1943, title: "Invasion of Sicily", description: "Operation Husky begins with a massive Allied amphibious assault.", category: "war" }],
-  "07-10": [{ date: "07-10", year: 1940, title: "Battle of Britain Begins", description: "The air campaign begins, impacting English Channel naval operations.", category: "war" }],
-  "07-11": [{ date: "07-11", year: 1943, title: "Battle of Kolombangara", description: "A naval battle in the Solomon Islands during WWII.", category: "war" }],
-  "07-12": [{ date: "07-12", year: 1943, title: "Battle of Prokhorovka", description: "One of the largest tank battles, with maritime supply lines under strain.", category: "war" }],
-  "07-13": [{ date: "07-13", year: 1943, title: "Battle of Enogai Inlet", description: "Allied forces engage Japanese troops in a coastal conflict.", category: "war" }],
-  "07-14": [{ date: "07-14", year: 1789, title: "Bastille Day", description: "The French Revolution begins, drastically changing naval politics.", category: "other" }],
-  "07-15": [{ date: "07-15", year: 1945, title: "USS Indianapolis Departs", description: "The cruiser leaves San Francisco with atomic bomb components.", category: "war" }],
-  "07-16": [{ date: "07-16", year: 1945, title: "Trinity Test", description: "The first nuclear explosion occurs, forever changing naval warfare.", category: "innovation" }],
-  "07-17": [{ date: "07-17", year: 1944, title: "Port Chicago Disaster", description: "A massive explosion at a naval ammunition depot kills 320 people.", category: "disaster" }],
-  "07-18": [{ date: "07-18", year: 1944, title: "Tojo Resigns", description: "The Japanese PM resigns after the loss of Saipan, impacting naval strategy.", category: "other" }],
-  "07-19": [{ date: "07-19", year: 1545, title: "Mary Rose Sinks", description: "Henry VIII's flagship sinks during a battle with the French fleet.", category: "disaster" }],
-  "07-20": [{ date: "07-20", year: 1969, title: "Apollo 11 Moon Landing", description: "The moon landing occurs; maritime teams handle the Pacific recovery.", category: "other" }],
-  "07-21": [{ date: "07-21", year: 1798, title: "Battle of the Pyramids", description: "Napoleon's victory in Egypt, with Nelson's fleet patrolling nearby.", category: "war" }],
-  "07-22": [{ date: "07-22", year: 1943, title: "Palermo Captured", description: "Patton's forces capture the Sicilian port with amphibious support.", category: "war" }],
-  "07-23": [{ date: "07-23", year: 1952, title: "Egyptian Revolution", description: "The revolution begins, eventually leading to the Suez Crisis.", category: "other" }],
-  "07-24": [{ date: "07-24", year: 1944, title: "Battle of Tinian", description: "U.S. Marines land on Tinian in a major amphibious operation.", category: "war" }],
-  "07-25": [{ date: "07-25", year: 1956, title: "Andrea Doria Sinks", description: "The Italian liner sinks after colliding with the Stockholm off Nantucket.", category: "disaster" }],
-  "07-26": [{ date: "07-26", year: 1956, title: "Suez Crisis", description: "Egypt nationalizes the Suez Canal, leading to a major international maritime conflict.", category: "other" }],
-  "07-27": [{ date: "07-27", year: 1953, title: "Korean War Armistice", description: "The armistice is signed, ending three years of intense naval warfare.", category: "other" }],
-  "07-28": [{ date: "07-28", year: 1945, title: "Sinking of the Hyūga", description: "The Japanese battleship is sunk in its home waters by U.S. aircraft.", category: "war" }],
-  "07-29": [{ date: "07-29", year: 1588, title: "Battle of Gravelines", description: "The Spanish Armada is defeated by the English fleet.", category: "war" }],
-  "07-30": [{ date: "07-30", year: 1945, title: "USS Indianapolis Sunk", description: "The cruiser is sunk by a Japanese submarine; only 316 of 1,195 survive.", category: "disaster" }],
-  "07-31": [{ date: "07-31", year: 1917, title: "Passchendaele Begins", description: "The massive WWI offensive begins, straining maritime logistics.", category: "war" }],
+  const renderDiagram = () => {
+    // Porting logic from the HTML file
+    
+    if (id === 'main-engine') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f4ff"/>
+          <rect x="28" y="140" width="274" height="18" rx="3" fill="#dce3f5" stroke="#94a3b8" strokeWidth="1.5"/>
+          <rect x="28" y="18" width="264" height="16" rx="3" fill="#fef9c3" stroke="#eab308" strokeWidth="1" opacity="0.7"/>
+          <text x="80" y="29" fontSize="7" fill="#78350f" fontFamily="monospace">EXHAUST MANIFOLD</text>
+          {[0,1,2,3,4,5].map((i) => {
+            const phase = i * 1.047;
+            const py = 85 + Math.sin(a * 2 + phase) * 24;
+            const crx = 47 + i * 42;
+            const crankY = 148;
+            return (
+              <g key={i}>
+                <rect x={crx} y="36" width="26" height="58" rx="3" fill="#e8eef8" stroke="#94a3b8" strokeWidth="1.5"/>
+                <rect x={crx + 2} y={py} width="22" height="14" rx="2" fill="#f97316" opacity="0.88"/>
+                <line x1={crx + 13} y1={py + 14} x2={crx + 13} y2={crankY} stroke="#64748b" strokeWidth="2"/>
+                <circle cx={crx + 13} cy={crankY} r="4" fill="#374151"/>
+              </g>
+            );
+          })}
+          <circle cx="330" cy="92" r="40" fill="#e8eef8" stroke="#94a3b8" strokeWidth="2"/>
+          <circle cx="330" cy="92" r="26" fill="#f0f4ff" stroke="#aab0c8"/>
+          {[0,60,120,180,240,300].map((d) => {
+            const r = (d + a * 57.3 * 1.6) * Math.PI / 180;
+            return <line key={d} x1={330 + 14 * Math.cos(r)} y1={92 + 14 * Math.sin(r)} x2={330 + 30 * Math.cos(r)} y2={92 + 30 * Math.sin(r)} stroke="#f97316" strokeWidth="3.5" strokeLinecap="round"/>;
+          })}
+          <circle cx="330" cy="92" r="8" fill="#1e293b"/>
+          <circle cx="330" cy="48" r="22" fill="#e8eef8" stroke="#2563eb" strokeWidth="1.5"/>
+          {[0,45,90,135,180,225,270,315].map((d) => {
+            const r = (d + a * 57.3 * 2.2) * Math.PI / 180;
+            return <line key={d} x1={330 + 8 * Math.cos(r)} y1={48 + 8 * Math.sin(r)} x2={330 + 17 * Math.cos(r)} y2={48 + 17 * Math.sin(r)} stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/>;
+          })}
+          <text x="330" y="79" textAnchor="middle" fontSize="7" fill="#2563eb" fontFamily="monospace">TC</text>
+          <text x="165" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">MAN B&amp;W 6S80ME-C — 2-STROKE CROSSHEAD DIESEL</text>
+        </svg>
+      );
+    }
 
-  // August
-  "08-01": [{ date: "08-01", year: 1798, title: "Battle of the Nile", description: "Admiral Nelson destroys the French fleet at Aboukir Bay.", category: "war" }],
-  "08-02": [{ date: "08-02", year: 1943, title: "PT-109 Sunk", description: "JFK's PT boat is rammed and sunk by a Japanese destroyer.", category: "war" }],
-  "08-03": [{ date: "08-03", year: 1492, title: "Columbus Sets Sail", description: "Christopher Columbus sets sail from Spain on his first voyage.", category: "discovery" }],
-  "08-04": [{ date: "08-04", year: 1790, title: "U.S. Coast Guard Founded", description: "The Revenue Marine is established by Alexander Hamilton.", category: "innovation" }],
-  "08-05": [{ date: "08-05", year: 1864, title: "Battle of Mobile Bay", description: "Admiral Farragut wins a major victory for the Union Navy.", category: "war" }],
-  "08-06": [{ date: "08-06", year: 1945, title: "Hiroshima Bombing", description: "The first atomic bomb is dropped, leading to the end of the naval war.", category: "war" }],
-  "08-07": [{ date: "08-07", year: 1942, title: "Guadalcanal Landings", description: "U.S. Marines begin the first major Allied offensive in the Pacific.", category: "war" }],
-  "08-08": [{ date: "08-08", year: 1945, title: "USSR Declares War", description: "The Soviet Union enters the war against Japan, impacting Pacific strategy.", category: "war" }],
-  "08-09": [{ date: "08-09", year: 1945, title: "Nagasaki Bombing", description: "The second atomic bomb is dropped on Japan.", category: "war" }],
-  "08-10": [{ date: "08-10", year: 1628, title: "Vasa Sinks", description: "The Swedish warship Vasa sinks on its maiden voyage in Stockholm harbor.", category: "disaster" }],
-  "08-11": [{ date: "08-11", year: 1942, title: "HMS Eagle Sunk", description: "The British carrier is sunk by a German U-boat in the Mediterranean.", category: "war" }],
-  "08-12": [{ date: "08-12", year: 2000, title: "Kursk Submarine Disaster", description: "The Russian nuclear submarine Kursk sinks in the Barents Sea.", category: "disaster" }],
-  "08-13": [{ date: "08-13", year: 1942, title: "Operation Pedestal", description: "A critical Allied convoy reaches Malta despite heavy losses.", category: "war" }],
-  "08-14": [{ date: "08-14", year: 1945, title: "V-J Day", description: "Japan surrenders, ending the greatest naval conflict in history.", category: "war" }],
-  "08-15": [{ date: "08-15", year: 1914, title: "Panama Canal Opens", description: "The first ship passes through the Panama Canal, revolutionizing global trade.", category: "innovation" }],
-  "08-16": [{ date: "08-16", year: 1858, title: "Transatlantic Cable", description: "The first telegraph message is sent across the Atlantic by cable.", category: "innovation" }],
-  "08-17": [{ date: "08-17", year: 1943, title: "Operation Double Strike", description: "A major Allied air raid impacts German coastal and industrial sites.", category: "war" }],
-  "08-18": [{ date: "08-18", year: 1838, title: "Wilkes Expedition Begins", description: "The U.S. Exploring Expedition sets sail to chart the Pacific.", category: "discovery" }],
-  "08-19": [{ date: "08-19", year: 1812, title: "Constitution vs Guerriere", description: "The USS Constitution earns the nickname 'Old Ironsides'.", category: "war" }],
-  "08-20": [{ date: "08-20", year: 1940, title: "The Few Speech", description: "Churchill honors the RAF, with naval forces guarding the Channel.", category: "other" }],
-  "08-21": [{ date: "08-21", year: 1959, title: "Hawaii Statehood", description: "Hawaii becomes the 50th state, expanding U.S. maritime territory.", category: "other" }],
-  "08-22": [{ date: "08-22", year: 1770, title: "Cook Claims Australia", description: "Captain James Cook claims the eastern coast of Australia for Britain.", category: "discovery" }],
-  "08-23": [{ date: "08-23", year: 1939, title: "Nazi-Soviet Pact", description: "The non-aggression pact is signed, clearing the way for WWII.", category: "other" }],
-  "08-24": [{ date: "08-24", year: 1572, title: "St. Bartholomew's Day", description: "The massacre begins, impacting French naval and political stability.", category: "other" }],
-  "08-25": [{ date: "08-25", year: 1944, title: "Liberation of Paris", description: "Paris is liberated, with Allied naval forces securing the French coast.", category: "war" }],
-  "08-26": [{ date: "08-26", year: 1883, title: "Krakatoa Eruption", description: "The massive eruption causes tsunamis that kill over 36,000 people.", category: "disaster" }],
-  "08-27": [{ date: "08-27", year: 1896, title: "Anglo-Zanzibar War", description: "The shortest war in history ends after a 38-minute naval bombardment.", category: "war" }],
-  "08-28": [{ date: "08-28", year: 1914, title: "Battle of Heligoland Bight", description: "The first major naval battle of WWI between Britain and Germany.", category: "war" }],
-  "08-29": [{ date: "08-29", year: 1782, title: "HMS Royal George Sinks", description: "The British ship sinks at Spithead; over 800 people are lost.", category: "disaster" }],
-  "08-30": [{ date: "08-30", year: 1945, title: "Occupation of Japan", description: "U.S. forces begin the occupation of Japan after the surrender.", category: "war" }],
-  "08-31": [{ date: "08-31", year: 1888, title: "First Ripper Victim", description: "Mary Ann Nichols is found, beginning the Whitechapel murders.", category: "other" }],
+    if (id === 'aux-engine' || id === 'aux-gen-2') {
+      const genRot = a * 57.3 * 0.55;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f6ff"/>
+          <rect x="10" y="78" width="204" height="72" rx="5" fill="#e8eef8" stroke="#94a3b8" strokeWidth="2"/>
+          {[0,1,2,3,4,5,6,7,8].map((i) => {
+            const py = 70 + Math.sin(a * 2 + i * 0.7) * 14;
+            return (
+              <g key={i}>
+                <rect x={24 + i * 28} y="42" width="20" height="36" rx="2" fill="#e8eef8" stroke="#94a3b8" strokeWidth="1.5"/>
+                <rect x={27 + i * 28} y={py} width="14" height="10" rx="2" fill="#2563eb" opacity="0.8"/>
+              </g>
+            );
+          })}
+          <text x="107" y="168" textAnchor="middle" fontSize="7" fill="#1e40af" fontFamily="monospace">WÄRTSILÄ 9L32 — 4-STROKE DIESEL</text>
+          <rect x="212" y="64" width="16" height="56" rx="4" fill="#64748b"/>
+          <rect x="228" y="60" width="140" height="96" rx="8" fill="#eef3ff" stroke="#6366f1" strokeWidth="2"/>
+          <circle cx="298" cy="108" r="36" fill="#e0e7ff" stroke="#6366f1" strokeWidth="1.5"/>
+          {[0,45,90,135,180,225,270,315].map((d) => {
+            const r = (d + genRot) * Math.PI / 180;
+            return <line key={d} x1={298 + 10 * Math.cos(r)} y1={108 + 10 * Math.sin(r)} x2={298 + 29 * Math.cos(r)} y2={108 + 29 * Math.sin(r)} stroke="#6366f1" strokeWidth="2.5"/>;
+          })}
+          <circle cx="298" cy="108" r="9" fill="#4338ca"/>
+          <text x="298" y="112" textAnchor="middle" fontSize="12" fill="#4338ca" fontFamily="monospace">~</text>
+          <path d="M 350 68 L 340 84 L 348 84 L 336 106 L 352 80 L 344 80 Z" fill="#fbbf24"/>
+          <text x="298" y="170" textAnchor="middle" fontSize="8" fill="#78350f" fontFamily="monospace">3,240 kW — 450V / 60Hz</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">AUXILIARY DIESEL GENERATOR — CONSTANT 750 RPM</text>
+        </svg>
+      );
+    }
 
-  // September
-  "09-01": [{ date: "09-01", year: 1939, title: "Germany Invades Poland", description: "The invasion triggers WWII, immediately impacting Baltic naval operations.", category: "war" }],
-  "09-02": [{ date: "09-02", year: 1945, title: "WWII Ends", description: "Japan signs the surrender documents aboard the USS Missouri in Tokyo Bay.", category: "war" }],
-  "09-03": [{ date: "09-03", year: 1939, title: "Britain Declares War", description: "Britain and France declare war on Germany, starting the Battle of the Atlantic.", category: "war" }],
-  "09-04": [{ date: "09-04", year: 1941, title: "USS Greer Incident", description: "The destroyer Greer is attacked by a U-boat, the first U.S. naval action of WWII.", category: "war" }],
-  "09-05": [{ date: "09-05", year: 1905, title: "Treaty of Portsmouth", description: "The treaty ends the Russo-Japanese War, mediated by Teddy Roosevelt.", category: "other" }],
-  "09-06": [{ date: "09-06", year: 1522, title: "Victoria Returns", description: "Magellan's ship Victoria returns to Spain, completing the first circumnavigation.", category: "discovery" }],
-  "09-07": [{ date: "09-07", year: 1776, title: "Turtle Submarine Attack", description: "The first combat submarine, the Turtle, attempts to attach a bomb to HMS Eagle.", category: "innovation" }],
-  "09-08": [{ date: "09-08", year: 1900, title: "Galveston Hurricane", description: "The deadliest natural disaster in U.S. history strikes the Texas port city.", category: "disaster" }],
-  "09-09": [{ date: "09-09", year: 1943, title: "Salerno Landings", description: "Operation Avalanche begins with Allied amphibious landings in Italy.", category: "war" }],
-  "09-10": [{ date: "09-10", year: 1813, title: "Battle of Lake Erie", description: "Oliver Hazard Perry wins a decisive victory over the British fleet.", category: "war" }],
-  "09-11": [{ date: "09-11", year: 1814, title: "Battle of Plattsburgh", description: "A major American naval victory on Lake Champlain during the War of 1812.", category: "war" }],
-  "09-12": [{ date: "09-12", year: 1942, title: "Laconia Incident", description: "A U-boat sinks the RMS Laconia and attempts to rescue survivors.", category: "disaster" }],
-  "09-13": [{ date: "09-13", year: 1814, title: "Bombardment of Fort McHenry", description: "British ships shell the fort, inspiring 'The Star-Spangled Banner'.", category: "war" }],
-  "09-14": [{ date: "09-14", year: 1812, title: "Fire of Moscow", description: "The fire begins, drastically impacting European maritime trade routes.", category: "other" }],
-  "09-15": [{ date: "09-15", year: 1950, title: "Inchon Landings", description: "General MacArthur leads a daring amphibious assault during the Korean War.", category: "war" }],
-  "09-16": [{ date: "09-16", year: 1620, title: "Mayflower Sets Sail", description: "The Pilgrims depart Plymouth, England, for the New World.", category: "discovery" }],
-  "09-17": [{ date: "09-17", year: 1862, title: "Battle of Antietam", description: "The bloodiest day in U.S. history impacts the coastal blockade strategy.", category: "war" }],
-  "09-18": [{ date: "09-18", year: 1947, title: "U.S. Air Force Founded", description: "The Air Force is established, changing the nature of naval aviation.", category: "innovation" }],
-  "09-19": [{ date: "09-19", year: 1944, title: "Battle of Peleliu", description: "U.S. Marines land on Peleliu in a costly amphibious campaign.", category: "war" }],
-  "09-20": [{ date: "09-20", year: 1519, title: "Magellan's Circumnavigation", description: "Ferdinand Magellan sets sail to find a western route to the Spice Islands.", category: "discovery" }],
-  "09-21": [{ date: "09-21", year: 1938, title: "Great New England Hurricane", description: "A massive storm causes catastrophic damage to the Northeast coast.", category: "disaster" }],
-  "09-22": [{ date: "09-22", year: 1914, title: "U-9 Triple Sinking", description: "A single German U-boat sinks three British cruisers in one hour.", category: "war" }],
-  "09-23": [{ date: "09-23", year: 1779, title: "Bonhomme Richard Victory", description: "John Paul Jones defeats the HMS Serapis in a legendary battle.", category: "war" }],
-  "09-24": [{ date: "09-24", year: 1960, title: "USS Enterprise Launched", description: "The world's first nuclear-powered aircraft carrier is launched.", category: "innovation" }],
-  "09-25": [{ date: "09-25", year: 1513, title: "Balboa Reaches Pacific", description: "Vasco Núñez de Balboa becomes the first European to see the Pacific from the East.", category: "discovery" }],
-  "09-26": [{ date: "09-26", year: 1944, title: "Battle of Anguar", description: "U.S. forces land on Anguar in the Palau Islands.", category: "war" }],
-  "09-27": [{ date: "09-27", year: 1941, title: "First Liberty Ship", description: "The SS Patrick Henry is launched, beginning the massive shipbuilding program.", category: "innovation" }],
-  "09-28": [{ date: "09-28", year: 1066, title: "William the Conqueror Lands", description: "The Norman invasion of England begins with a cross-channel landing.", category: "war" }],
-  "09-29": [{ date: "09-29", year: 1758, title: "Lord Nelson Born", description: "The future hero of Trafalgar is born in Norfolk, England.", category: "other" }],
-  "09-30": [{ date: "09-30", year: 1954, title: "USS Nautilus Commissioned", description: "The world's first nuclear submarine enters active service.", category: "innovation" }],
+    if (id === 'boiler') {
+      const ff = 0.5 + Math.sin(a * 3) * 0.3 + Math.cos(a * 5) * 0.2;
+      const sy = 12 - Math.abs(Math.sin(a * 2)) * 8;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fff5f5"/>
+          <ellipse cx="190" cy="40" rx="90" ry="15" fill="#fde8e8" stroke="#f87171" strokeWidth="1.5"/>
+          <rect x="100" y="40" width="180" height="134" fill="#fde8e8" stroke="#f87171" strokeWidth="1.5"/>
+          <ellipse cx="190" cy="174" rx="90" ry="14" fill="#f8d5d5" stroke="#e08080"/>
+          <line x1="102" y1="108" x2="278" y2="108" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="5,3"/>
+          <text x="114" y="104" fontSize="7" fill="#2563eb" fontFamily="monospace">WATER LEVEL</text>
+          {[0,1,2,3,4,5,6,7].map((i) => <line key={i} x1={116 + i * 20} y1="50" x2={116 + i * 20} y2="106" stroke="#f87171" strokeWidth="2.5" opacity="0.65"/>)}
+          <rect x="104" y="42" width="172" height="64" fill="#bfdbfe" opacity="0.2"/>
+          <rect x="178" y="8" width="24" height="30" rx="3" fill="#dbeafe" stroke="#3b82f6" strokeWidth="1.5"/>
+          {[0,1,2].map((i) => <circle key={i} cx={183 + i * 7} cy={sy - i * 4} r={3 + i} fill="#93c5fd" opacity={0.5 - i * 0.12}/>)}
+          <ellipse cx="190" cy="180" rx="14" ry="5" fill="#dc2626" opacity="0.55"/>
+          <ellipse cx="190" cy={172 + Math.sin(a * 4) * 3} rx={10 + Math.cos(a * 5) * 3} ry={13 + Math.sin(a * 4) * 3} fill="#ea7018" opacity={ff}/>
+          <ellipse cx="190 + Math.sin(a * 3) * 2" cy={168 + Math.sin(a * 3) * 2} rx={6 + Math.cos(a * 4) * 2} ry={10 + Math.sin(a * 2) * 2} fill="#fbbf24" opacity={ff * 0.8}/>
+          <circle cx="130" cy="172" r="17" fill="white" stroke="#374151" strokeWidth="1.5"/>
+          <line x1="130" y1="172" x2={130 + 11 * Math.cos(-0.8 + Math.sin(a * 0.3) * 0.1)} y2={172 + 11 * Math.sin(-0.8 + Math.sin(a * 0.3) * 0.1)} stroke="#dc2626" strokeWidth="2"/>
+          <text x="130" y="175" textAnchor="middle" fontSize="5.5" fill="#374151" fontFamily="monospace">7 BAR</text>
+          <circle cx="250" cy="172" r="17" fill="white" stroke="#374151" strokeWidth="1.5"/>
+          <line x1="250" y1="172" x2={250 + 11 * Math.cos(-0.5 + Math.sin(a * 0.2) * 0.1)} y2={172 + 11 * Math.sin(-0.5 + Math.sin(a * 0.2) * 0.1)} stroke="#dc2626" strokeWidth="2"/>
+          <text x="250" y="175" textAnchor="middle" fontSize="5.5" fill="#374151" fontFamily="monospace">175°C</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">COMPOSITE OIL-FIRED / EGB BOILER — 7 BAR STEAM</text>
+        </svg>
+      );
+    }
 
-  // October
-  "10-01": [{ date: "10-01", year: 1943, title: "Capture of Naples", description: "Allied forces capture the vital Italian port city.", category: "war" }],
-  "10-02": [{ date: "10-02", year: 1942, title: "Curacoa Sinking", description: "The cruiser HMS Curacoa is accidentally sliced in half by the RMS Queen Mary.", category: "disaster" }],
-  "10-03": [{ date: "10-03", year: 1942, title: "First V-2 Launch", description: "The first successful rocket launch, paving the way for naval missile tech.", category: "innovation" }],
-  "10-04": [{ date: "10-04", year: 1957, title: "Sputnik 1 Launched", description: "The first satellite impacts global maritime navigation and communication.", category: "innovation" }],
-  "10-05": [{ date: "10-05", year: 1813, title: "Battle of the Thames", description: "A major U.S. victory in the War of 1812, impacting Great Lakes control.", category: "war" }],
-  "10-06": [{ date: "10-06", year: 1973, title: "Yom Kippur War Begins", description: "The conflict impacts Suez Canal traffic and Mediterranean security.", category: "war" }],
-  "10-07": [{ date: "10-07", year: 1571, title: "Battle of Lepanto", description: "A massive galley battle where the Holy League defeats the Ottoman fleet.", category: "war" }],
-  "10-08": [{ date: "10-08", year: 1871, title: "Great Chicago Fire", description: "The fire destroys much of the city, impacting Great Lakes shipping.", category: "disaster" }],
-  "10-09": [{ date: "10-09", year: 1000, title: "Leif Erikson in Vinland", description: "The Norse explorer reaches North America centuries before Columbus.", category: "discovery" }],
-  "10-10": [{ date: "10-10", year: 1845, title: "Naval Academy Founded", description: "The U.S. Naval Academy is established at Annapolis, Maryland.", category: "innovation" }],
-  "10-11": [{ date: "10-11", year: 1776, title: "Battle of Valcour Island", description: "Benedict Arnold's fleet delays the British on Lake Champlain.", category: "war" }],
-  "10-12": [{ date: "10-12", year: 1492, title: "Columbus Reaches Bahamas", description: "Christopher Columbus makes his first landfall in the New World.", category: "discovery" }],
-  "10-13": [{ date: "10-13", year: 1775, title: "U.S. Navy Established", description: "The Continental Congress authorizes the purchase of two armed vessels.", category: "innovation" }],
-  "10-14": [{ date: "10-14", year: 1066, title: "Battle of Hastings", description: "The Norman conquest of England is secured after the cross-channel invasion.", category: "war" }],
-  "10-15": [{ date: "10-15", year: 1917, title: "USS Cassin Torpedoed", description: "The destroyer is hit by a U-boat, showing the danger of the Atlantic war.", category: "war" }],
-  "10-16": [{ date: "10-16", year: 1941, title: "USS Kearney Torpedoed", description: "A U-boat attacks the destroyer Kearney before the U.S. officially enters WWII.", category: "war" }],
-  "10-17": [{ date: "10-17", year: 1944, title: "Leyte Gulf Preliminaries", description: "U.S. forces begin operations leading to the largest naval battle in history.", category: "war" }],
-  "10-18": [{ date: "10-18", year: 1851, title: "Moby-Dick Published", description: "Herman Melville's masterpiece of maritime literature is released.", category: "other" }],
-  "10-19": [{ date: "10-19", year: 1781, title: "Siege of Yorktown Ends", description: "British surrender is forced by a French naval blockade.", category: "war" }],
-  "10-20": [{ date: "10-20", year: 1827, title: "Battle of Navarino", description: "The last major naval battle fought entirely with sailing ships.", category: "war" }],
-  "10-21": [{ date: "10-21", year: 1805, title: "Battle of Trafalgar", description: "Admiral Lord Nelson defeats the combined French and Spanish fleets.", category: "war" }],
-  "10-22": [{ date: "10-22", year: 1707, title: "Scilly Naval Disaster", description: "Four British ships are lost due to navigation errors, leading to the Longitude Act.", category: "disaster" }],
-  "10-23": [{ date: "10-23", year: 1944, title: "Battle of Sibuyan Sea", description: "The first phase of the Battle of Leyte Gulf begins.", category: "war" }],
-  "10-24": [{ date: "10-24", year: 1944, title: "Battle of Leyte Gulf", description: "The largest naval battle in history begins in the Philippines.", category: "war" }],
-  "10-25": [{ date: "10-25", year: 1812, title: "USS United States Victory", description: "Stephen Decatur captures the HMS Macedonian.", category: "war" }],
-  "10-26": [{ date: "10-26", year: 1825, title: "Erie Canal Opens", description: "The canal connects the Great Lakes to the Atlantic Ocean.", category: "innovation" }],
-  "10-27": [{ date: "10-27", year: 1775, title: "Marine Corps Authorized", description: "The Continental Congress authorizes the creation of the Marine Corps.", category: "innovation" }],
-  "10-28": [{ date: "10-28", year: 1886, title: "Statue of Liberty Dedicated", description: "The iconic maritime landmark is officially unveiled in New York Harbor.", category: "other" }],
-  "10-29": [{ date: "10-29", year: 1929, title: "Black Tuesday", description: "The stock market crash triggers a global depression and trade collapse.", category: "other" }],
-  "10-30": [{ date: "10-30", year: 1941, title: "USS Reuben James Sunk", description: "The first U.S. Navy ship lost to enemy action in WWII.", category: "disaster" }],
-  "10-31": [{ date: "10-31", year: 1941, title: "Reuben James Disaster", description: "The sinking of the Reuben James shocks the American public.", category: "war" }],
+    if (id === 'purifier' || id === 'lo-purifier') {
+      const spin = a * 57.3 * 4.5;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f7fdf0"/>
+          <rect x="140" y="14" width="100" height="158" rx="6" fill="#ecfccb" stroke="#84cc16" strokeWidth="2"/>
+          {[0,1,2,3,4,5,6,7].map((i) => <ellipse key={i} cx="190" cy={36 + i * 11} rx={38 - i * 3} ry="5" fill={i % 2 === 0 ? '#d9f99d' : '#ecfccb'} stroke="#84cc16" strokeWidth="1" opacity="0.9"/>)}
+          <circle cx={190 + 28 * Math.cos(spin * Math.PI / 180)} cy={90 + 8 * Math.sin(spin * Math.PI / 180)} r="3" fill="#65a30d" opacity="0.85"/>
+          <rect x="148" y="142" width="84" height="20" rx="3" fill="#fbbf24" stroke="#d97706"/>
+          <text x="190" y="155" textAnchor="middle" fontSize="7" fill="#78350f" fontFamily="monospace">SLUDGE SPACE</text>
+          <rect x="164" y="164" width="52" height="22" rx="3" fill="#dbeafe" stroke="#3b82f6" strokeWidth="1.5"/>
+          <text x="190" y="178" textAnchor="middle" fontSize="7.5" fill="#1d4ed8" fontFamily="monospace">MOTOR</text>
+          <line x1="190" y1="97" x2="190" y2="164" stroke="#9ca3af" strokeWidth="3.5"/>
+          <defs>
+            <marker id={`ap1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f97316"/></marker>
+            <marker id={`ap2-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#65a30d"/></marker>
+            <marker id={`ap3-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0284c7"/></marker>
+          </defs>
+          <path d="M 72 72 L 142 72" stroke="#f97316" strokeWidth="2" markerEnd={`url(#ap1-${uniqueId})`}/>
+          <text x="8" y="66" fontSize="7" fill="#f97316" fontFamily="monospace">HFO IN</text>
+          <text x="8" y="78" fontSize="6" fill="#f97316" fontFamily="monospace">98°C heated</text>
+          <path d="M 238 46 L 308 46" stroke="#65a30d" strokeWidth="2" markerEnd={`url(#ap2-${uniqueId})`}/>
+          <text x="310" y="49" fontSize="7" fill="#65a30d" fontFamily="monospace">CLEAN OIL</text>
+          <path d="M 238 92 L 308 92" stroke="#0284c7" strokeWidth="2" markerEnd={`url(#ap3-${uniqueId})`}/>
+          <text x="310" y="95" fontSize="7" fill="#0284c7" fontFamily="monospace">WATER OUT</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">ALFA LAVAL FOPX — DISC-STACK CENTRIFUGE PURIFIER</text>
+        </svg>
+      );
+    }
 
-  // November
-  "11-01": [{ date: "11-01", year: 1914, title: "Battle of Coronel", description: "A German squadron defeats a British force off the coast of Chile.", category: "war" }],
-  "11-02": [{ date: "11-02", year: 1943, title: "Battle of Empress Augusta Bay", description: "A night naval battle between U.S. and Japanese forces in the Solomons.", category: "war" }],
-  "11-03": [{ date: "11-03", year: 1942, title: "Tassafaronga Preliminaries", description: "Naval movements begin leading to a major night engagement.", category: "war" }],
-  "11-04": [{ date: "11-04", year: 1922, title: "Tutankhamun's Tomb Found", description: "The discovery impacts maritime archaeology and historical trade studies.", category: "other" }],
-  "11-05": [{ date: "11-05", year: 1862, title: "Alabama Captures Wales", description: "The Confederate raider CSS Alabama captures the merchant ship T.B. Wales.", category: "war" }],
-  "11-06": [{ date: "11-06", year: 1865, title: "Shenandoah Surrenders", description: "The CSS Shenandoah surrenders in Liverpool, the last Confederate unit to do so.", category: "war" }],
-  "11-07": [{ date: "11-07", year: 1944, title: "FDR Elected to 4th Term", description: "Roosevelt's re-election ensures continuity in U.S. naval strategy.", category: "other" }],
-  "11-08": [{ date: "11-08", year: 1942, title: "Operation Torch", description: "Allied forces launch a massive amphibious invasion of North Africa.", category: "war" }],
-  "11-09": [{ date: "11-09", year: 1914, title: "Emden Destroyed", description: "The German cruiser SMS Emden is destroyed by the HMAS Sydney.", category: "war" }],
-  "11-10": [{ date: "11-10", year: 1775, title: "Marine Corps Birthday", description: "The Continental Congress authorizes the creation of the Marine Corps.", category: "innovation" }],
-  "11-11": [{ date: "11-11", year: 1918, title: "Armistice Day", description: "WWI ends, concluding the first great modern naval conflict.", category: "war" }],
-  "11-12": [{ date: "11-12", year: 1942, title: "Battle of Guadalcanal", description: "The decisive naval battle for the Solomon Islands begins.", category: "war" }],
-  "11-13": [{ date: "11-13", year: 1942, title: "Sinking of the Juneau", description: "The cruiser is sunk; all five Sullivan brothers are lost.", category: "disaster" }],
-  "11-14": [{ date: "11-14", year: 1942, title: "Guadalcanal Second Night", description: "The naval engagement continues with heavy losses on both sides.", category: "war" }],
-  "11-15": [{ date: "11-15", year: 1942, title: "Guadalcanal Victory", description: "The naval battle ends with a strategic U.S. victory.", category: "war" }],
-  "11-16": [{ date: "11-16", year: 1776, title: "First Foreign Salute", description: "The U.S. flag receives its first official salute from a foreign power in St. Eustatius.", category: "other" }],
-  "11-17": [{ date: "11-17", year: 1869, title: "Suez Canal Opens", description: "The canal is officially opened, revolutionizing global maritime trade.", category: "innovation" }],
-  "11-18": [{ date: "11-18", year: 1943, title: "Battle of Berlin Begins", description: "The air campaign impacts German coastal logistics and industry.", category: "war" }],
-  "11-19": [{ date: "11-19", year: 1941, title: "Sydney vs Kormoran", description: "The Australian cruiser and German raider sink each other off Western Australia.", category: "war" }],
-  "11-20": [{ date: "11-20", year: 1820, title: "The Essex Sinking", description: "The whaleship Essex is rammed and sunk by a sperm whale.", category: "disaster" }],
-  "11-21": [{ date: "11-21", year: 1916, title: "HMHS Britannic Sinks", description: "The sister ship of the Titanic sinks after hitting a mine in the Aegean Sea.", category: "disaster" }],
-  "11-22": [{ date: "11-22", year: 1718, title: "Blackbeard Killed", description: "The famous pirate is killed in a battle off Ocracoke Island.", category: "war" }],
-  "11-23": [{ date: "11-23", year: 1943, title: "Battle of Tarawa Ends", description: "The bloody amphibious campaign in the Gilbert Islands concludes.", category: "war" }],
-  "11-24": [{ date: "11-24", year: 1944, title: "First Saipan B-29 Raid", description: "Bombers launch from Saipan for the first raid on Tokyo.", category: "war" }],
-  "11-25": [{ date: "11-25", year: 1941, title: "HMS Barham Sunk", description: "The British battleship is sunk by a German U-boat in the Mediterranean.", category: "disaster" }],
-  "11-26": [{ date: "11-26", year: 1941, title: "Pearl Harbor Force Departs", description: "The Japanese task force leaves the Kuril Islands for Hawaii.", category: "war" }],
-  "11-27": [{ date: "11-27", year: 1942, title: "French Fleet Scuttled", description: "The French fleet is scuttled at Toulon to prevent capture by Germany.", category: "war" }],
-  "11-28": [{ date: "11-28", year: 1520, title: "Magellan Enters Pacific", description: "Ferdinand Magellan's fleet enters the Pacific Ocean from the Strait of Magellan.", category: "discovery" }],
-  "11-29": [{ date: "11-29", year: 1944, title: "Shinano Sunk", description: "The world's largest aircraft carrier is sunk by the USS Archerfish.", category: "war" }],
-  "11-30": [{ date: "11-30", year: 1942, title: "Battle of Tassafaronga", description: "A night naval engagement off Guadalcanal results in heavy U.S. losses.", category: "war" }],
+    if (id === 'compressor') {
+      const p1 = 88 + Math.sin(a * 2) * 24;
+      const p2 = 96 + Math.sin(a * 2 + Math.PI) * 20;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f5f3ff"/>
+          <rect x="14" y="60" width="84" height="100" rx="5" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="2"/>
+          <text x="56" y="56" textAnchor="middle" fontSize="8" fill="#7c3aed" fontFamily="monospace">LP STAGE</text>
+          <rect x="20" y={p1} width="72" height="18" rx="3" fill="#8b5cf6" opacity="0.65"/>
+          <text x="56" y="174" textAnchor="middle" fontSize="7" fill="#7c3aed" fontFamily="monospace">~7 bar</text>
+          <rect x="116" y="74" width="66" height="68" rx="5" fill="#e0e7ff" stroke="#6366f1" strokeWidth="1.5"/>
+          <text x="149" y="70" textAnchor="middle" fontSize="7" fill="#4f46e5" fontFamily="monospace">INTERCOOLER</text>
+          {[0,1,2,3,4].map((i) => <line key={i} x1="120" y1={84 + i * 11} x2="178" y2={84 + i * 11} stroke="#818cf8" strokeWidth="1.5"/>)}
+          <rect x="198" y="72" width="70" height="88" rx="5" fill="#ede9fe" stroke="#a78bfa" strokeWidth="2"/>
+          <text x="233" y="68" textAnchor="middle" fontSize="8" fill="#7c3aed" fontFamily="monospace">HP STAGE</text>
+          <rect x="204" y={p2} width="58" height="16" rx="3" fill="#c084fc" opacity="0.7"/>
+          <text x="233" y="174" textAnchor="middle" fontSize="7" fill="#7c3aed" fontFamily="monospace">~30 bar</text>
+          <rect x="282" y="36" width="60" height="140" rx="28" fill="#f3e8ff" stroke="#d97706" strokeWidth="2"/>
+          <text x="312" y="112" textAnchor="middle" fontSize="8" fill="#d97706" fontFamily="monospace">30</text>
+          <text x="312" y="124" textAnchor="middle" fontSize="8" fill="#d97706" fontFamily="monospace">BAR</text>
+          <circle cx="312" cy="30" r="16" fill="#fff" stroke="#d97706" strokeWidth="2"/>
+          <line x1="312" y1="30" x2={312 + 10 * Math.cos(-2.4 + Math.sin(a) * 0.3)} y2={30 + 10 * Math.sin(-2.4 + Math.sin(a) * 0.3)} stroke="#dc2626" strokeWidth="2"/>
+          <defs>
+            <marker id={`acp0-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7c3aed"/></marker>
+            <marker id={`acp1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d97706"/></marker>
+          </defs>
+          <path d="M 10 110 L 14 110" stroke="#7c3aed" strokeWidth="2" markerEnd={`url(#acp0-${uniqueId})`}/>
+          <text x="0" y="104" fontSize="6" fill="#7c3aed" fontFamily="monospace">ATM</text>
+          <path d="M 98 110 L 116 110" stroke="#6366f1" strokeWidth="2" markerEnd={`url(#acp0-${uniqueId})`}/>
+          <path d="M 182 110 L 198 110" stroke="#a78bfa" strokeWidth="2" markerEnd={`url(#acp0-${uniqueId})`}/>
+          <path d="M 268 110 L 282 110" stroke="#d97706" strokeWidth="2" markerEnd={`url(#acp1-${uniqueId})`}/>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">2-STAGE RECIPROCATING AIR COMPRESSOR — 30 BAR</text>
+        </svg>
+      );
+    }
 
-  // December
-  "12-01": [{ date: "12-01", year: 1824, title: "Election of 1824", description: "The disputed election impacts future naval and maritime policy.", category: "other" }],
-  "12-02": [{ date: "12-02", year: 1823, title: "Monroe Doctrine", description: "The doctrine is announced, defining U.S. maritime interests in the Americas.", category: "other" }],
-  "12-03": [{ date: "12-03", year: 1775, title: "Grand Union Flag Raised", description: "The first U.S. naval flag is raised aboard the USS Alfred.", category: "innovation" }],
-  "12-04": [{ date: "12-04", year: 1872, title: "Mary Celeste Found", description: "The merchant ship is found abandoned and drifting in the Atlantic.", category: "disaster" }],
-  "12-05": [{ date: "12-05", year: 1945, title: "Flight 19 Disappears", description: "Five Navy bombers vanish in the Bermuda Triangle during a training flight.", category: "disaster" }],
-  "12-06": [{ date: "12-06", year: 1917, title: "Halifax Explosion", description: "A massive explosion in Halifax harbor kills over 2,000 people.", category: "disaster" }],
-  "12-07": [{ date: "12-07", year: 1941, title: "Attack on Pearl Harbor", description: "Japan launches a surprise naval and air attack on the U.S. Pacific Fleet.", category: "war" }],
-  "12-08": [{ date: "12-08", year: 1941, title: "U.S. Declares War", description: "The United States officially enters WWII against Japan.", category: "war" }],
-  "12-09": [{ date: "12-09", year: 1941, title: "Gilbert Islands Invasion", description: "Japanese forces land on the Gilbert Islands.", category: "war" }],
-  "12-10": [{ date: "12-10", year: 1941, title: "Force Z Destroyed", description: "HMS Prince of Wales and HMS Repulse are sunk by Japanese aircraft.", category: "war" }],
-  "12-11": [{ date: "12-11", year: 1941, title: "Germany Declares War", description: "Germany and Italy declare war on the United States.", category: "war" }],
-  "12-12": [{ date: "12-12", year: 1937, title: "Panay Incident", description: "Japanese aircraft attack and sink the U.S. gunboat Panay in China.", category: "war" }],
-  "12-13": [{ date: "12-13", year: 1939, title: "Battle of the River Plate", description: "The first major naval battle of WWII begins off South America.", category: "war" }],
-  "12-14": [{ date: "12-14", year: 1911, title: "Amundsen Reaches South Pole", description: "The maritime-supported expedition reaches the South Pole.", category: "discovery" }],
-  "12-15": [{ date: "12-15", year: 1944, title: "Invasion of Mindoro", description: "U.S. forces begin the amphibious assault on Mindoro in the Philippines.", category: "war" }],
-  "12-16": [{ date: "12-16", year: 1907, title: "Great White Fleet Sails", description: "The U.S. fleet begins its world cruise to demonstrate naval power.", category: "innovation" }],
-  "12-17": [{ date: "12-17", year: 1939, title: "Graf Spee Scuttled", description: "The German pocket battleship Admiral Graf Spee is scuttled.", category: "war" }],
-  "12-18": [{ date: "12-18", year: 1944, title: "Typhoon Cobra", description: "A massive typhoon hits the U.S. Third Fleet, sinking three destroyers.", category: "disaster" }],
-  "12-19": [{ date: "12-19", year: 1941, title: "Raid on Alexandria", description: "Italian frogmen sink two British battleships in Alexandria harbor.", category: "war" }],
-  "12-20": [{ date: "12-20", year: 1803, title: "Louisiana Purchase Transfer", description: "The U.S. takes possession of the territory, expanding its maritime reach.", category: "other" }],
-  "12-21": [{ date: "12-21", year: 1620, title: "Pilgrims Land at Plymouth", description: "The Mayflower passengers land at Plymouth Rock.", category: "discovery" }],
-  "12-22": [{ date: "12-22", year: 1775, title: "Hopkins Appointed", description: "Esek Hopkins is named Commander-in-Chief of the Continental Navy.", category: "innovation" }],
-  "12-23": [{ date: "12-23", year: 1968, title: "USS Pueblo Captured", description: "The U.S. intelligence ship is captured by North Korea.", category: "war" }],
-  "12-24": [{ date: "12-24", year: 1814, title: "Treaty of Ghent", description: "The treaty ending the War of 1812 is signed.", category: "other" }],
-  "12-25": [{ date: "12-25", year: 1776, title: "Washington Crosses Delaware", description: "The famous crossing begins a major offensive in the Revolution.", category: "war" }],
-  "12-26": [{ date: "12-26", year: 1943, title: "Battle of the North Cape", description: "The German battleship Scharnhorst is sunk by the Royal Navy.", category: "war" }],
-  "12-27": [{ date: "12-27", year: 1831, title: "HMS Beagle Departs", description: "The ship sets sail with Charles Darwin on its second voyage.", category: "discovery" }],
-  "12-28": [{ date: "12-28", year: 1846, title: "Iowa Statehood", description: "Iowa joins the Union, impacting Mississippi River trade.", category: "other" }],
-  "12-29": [{ date: "12-29", year: 1812, title: "Constitution vs Java", description: "The USS Constitution defeats the British frigate HMS Java.", category: "war" }],
-  "12-30": [{ date: "12-30", year: 1862, title: "USS Monitor Sinks", description: "The famous ironclad sinks in a storm off Cape Hatteras.", category: "disaster" }],
-  "12-31": [{ date: "12-31", year: 1862, title: "Battle of Stones River", description: "The battle begins, impacting coastal logistics and supply lines.", category: "war" }]
+    if (id === 'fwg') {
+      const evap = 0.4 + Math.sin(a * 2) * 0.3;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0fdf4"/>
+          <ellipse cx="190" cy="46" rx="90" ry="16" fill="#d1fae5" stroke="#10b981" strokeWidth="1.5"/>
+          <rect x="100" y="46" width="180" height="82" fill="#d1fae5" stroke="#10b981" strokeWidth="1.5"/>
+          <ellipse cx="190" cy="128" rx="90" ry="16" fill="#a7f3d0" stroke="#059669"/>
+          <rect x="102" y={88 + Math.sin(a * 0.8) * 4} width="176" height="38" fill="#6ee7b7" opacity="0.4"/>
+          {[0,1,2,3,4].map((i) => {
+            const bx = 122 + i * 34;
+            const by = 88 - ((a * 20 + i * 30) % 46);
+            return <circle key={i} cx={bx} cy={by} r={2 + i % 3} fill="#10b981" opacity={by > 58 ? evap : 0}/>;
+          })}
+          <defs>
+            <marker id={`af1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ef4444"/></marker>
+            <marker id={`af2-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#06b6d4"/></marker>
+            <marker id={`af3-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3b82f6"/></marker>
+          </defs>
+          <path d="M 10 90 L 100 80" stroke="#ef4444" strokeWidth="2.5" markerEnd={`url(#af1-${uniqueId})`}/>
+          <text x="2" y="84" fontSize="7" fill="#dc2626" fontFamily="monospace">HT JCW</text>
+          <text x="2" y="96" fontSize="7" fill="#dc2626" fontFamily="monospace">82°C</text>
+          <path d="M 10 120 L 100 115" stroke="#06b6d4" strokeWidth="2" markerEnd={`url(#af2-${uniqueId})`}/>
+          <text x="2" y="114" fontSize="7" fill="#0891b2" fontFamily="monospace">SW FEED</text>
+          <rect x="288" y="36" width="78" height="60" rx="5" fill="#cffafe" stroke="#06b6d4" strokeWidth="2"/>
+          <text x="327" y="60" textAnchor="middle" fontSize="7" fill="#0891b2" fontFamily="monospace">CONDENSER</text>
+          {[0,1,2].map((i) => <line key={i} x1="292" y1={50 + i * 14} x2="362" y2={50 + i * 14} stroke="#7dd3fc" strokeWidth="1.5"/>)}
+          <path d="M 280 150 L 358 150" stroke="#3b82f6" strokeWidth="2.5" markerEnd={`url(#af3-${uniqueId})`}/>
+          <text x="320" y="165" textAnchor="middle" fontSize="7" fill="#1d4ed8" fontFamily="monospace">FW OUT</text>
+          <rect x="152" y="148" width="80" height="30" rx="5" fill="#ede9fe" stroke="#8b5cf6"/>
+          <text x="192" y="167" textAnchor="middle" fontSize="7" fill="#6d28d9" fontFamily="monospace">VACUUM PUMP</text>
+          <rect x="8" y="148" width="100" height="30" rx="4" fill="#d1fae5" stroke="#10b981"/>
+          <text x="58" y="166" textAnchor="middle" fontSize="7" fill="#065f46" fontFamily="monospace">25 t/day</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">FRESH WATER GENERATOR — VACUUM EVAPORATOR 25 t/day</text>
+        </svg>
+      );
+    }
+
+    if (id === 'sw-pump') {
+      const rot = a * 57.3 * 1.3;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f9ff"/>
+          <circle cx="180" cy="104" r="66" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2.5"/>
+          <circle cx="180" cy="104" r="52" fill="#f0faff" stroke="#7dd3fc"/>
+          {[0,36,72,108,144,180,216,252,288,324].map((d) => {
+            const r = (d + rot) * Math.PI / 180;
+            return <path key={d} d={`M ${180 + 14 * Math.cos(r)} ${104 + 14 * Math.sin(r)} L ${180 + 47 * Math.cos(r + 0.35)} ${104 + 47 * Math.sin(r + 0.35)}`} stroke="#0369a1" strokeWidth="2.5" strokeLinecap="round"/>;
+          })}
+          <circle cx="180" cy="104" r="13" fill="#e0f2fe" stroke="#0369a1" strokeWidth="2"/>
+          <circle cx="180" cy="104" r="6" fill="#0369a1"/>
+          <rect x="166" y="10" width="36" height="42" rx="4" fill="#dbeafe" stroke="#0369a1" strokeWidth="2"/>
+          <text x="184" y="29" textAnchor="middle" fontSize="6.5" fill="#0369a1" fontFamily="monospace">DISCH.</text>
+          <text x="184" y="41" textAnchor="middle" fontSize="7" fill="#0369a1" fontFamily="monospace">600m³/h</text>
+          <rect x="8" y="90" width="90" height="28" rx="4" fill="#cffafe" stroke="#06b6d4" strokeWidth="2"/>
+          <text x="53" y="108" textAnchor="middle" fontSize="7" fill="#0891b2" fontFamily="monospace">FROM SEA CHEST</text>
+          <path d="M 98 104 L 114 104" stroke="#06b6d4" strokeWidth="2.5" markerEnd={`url(#asw0-${uniqueId})`}/>
+          <rect x="272" y="68" width="96" height="72" rx="6" fill="#dbeafe" stroke="#2563eb" strokeWidth="2"/>
+          <text x="320" y="96" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">440V</text>
+          <text x="320" y="110" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">MOTOR</text>
+          <rect x="246" y="100" width="26" height="8" rx="2" fill="#64748b"/>
+          <circle cx="180" cy="178" r="16" fill="white" stroke="#374151" strokeWidth="1.5"/>
+          <line x1="180" y1="178" x2={180 + 11 * Math.cos(-0.9 + Math.sin(a * 0.3) * 0.1)} y2={178 + 11 * Math.sin(-0.9 + Math.sin(a * 0.3) * 0.1)} stroke="#dc2626" strokeWidth="2"/>
+          <text x="180" y="181" textAnchor="middle" fontSize="5" fill="#374151" fontFamily="monospace">3.5 BAR</text>
+          <defs><marker id={`asw0-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0369a1"/></marker></defs>
+          <text x="190" y="196" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">SEA WATER CENTRIFUGAL PUMP — 600 m³/h 440V MOTOR</text>
+        </svg>
+      );
+    }
+
+    if (id === 'steering-gear') {
+      const ram = Math.sin(a * 0.8) * 16;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fdf4ff"/>
+          <rect x="14" y="50" width="72" height="100" rx="5" fill="#ede9fe" stroke="#c084fc" strokeWidth="1.5"/>
+          <text x="50" y="102" textAnchor="middle" fontSize="7.5" fill="#9333ea" fontFamily="monospace">PUMP P</text>
+          <text x="50" y="115" textAnchor="middle" fontSize="7" fill="#9333ea" fontFamily="monospace">11 kW</text>
+          <rect x="294" y="50" width="72" height="100" rx="5" fill="#ede9fe" stroke="#c084fc" strokeWidth="1.5"/>
+          <text x="330" y="102" textAnchor="middle" fontSize="7.5" fill="#9333ea" fontFamily="monospace">PUMP S</text>
+          <text x="330" y="115" textAnchor="middle" fontSize="7" fill="#9333ea" fontFamily="monospace">11 kW</text>
+          {[[108,60],[226,60],[108,142],[226,142]].map((v,i) => {
+            const ext = Math.sin(a + (i < 2 ? 0 : Math.PI)) * 14;
+            return (
+              <g key={i}>
+                <rect x={v[0]} y={v[1]} width="28" height="62" rx="4" fill="#f3e8ff" stroke="#c084fc" strokeWidth="1.5"/>
+                <rect x={v[0] + 4} y={i < 2 ? v[1] + 10 + ext : v[1] + 32 - ext} width="20" height="14" rx="3" fill="#9333ea" opacity="0.55"/>
+              </g>
+            );
+          })}
+          <line x1="120" y1="172" x2="228" y2="172" stroke="#ca9b0a" strokeWidth="6" strokeLinecap="round"/>
+          <circle cx="174" cy="172" r="12" fill="#ca9b0a" stroke="#92400e" strokeWidth="1.5"/>
+          <rect x="166" y="165" width="18" height="14" rx="3" fill="#dce3f5" stroke="#2563eb" strokeWidth="1.5"/>
+          <line x1="138" y1="28" x2="242" y2="28" stroke="#c084fc" strokeWidth="1.5"/>
+          <rect x="152" y="12" width="76" height="20" rx="4" fill="#ede9fe" stroke="#c084fc"/>
+          <text x="190" y="25" textAnchor="middle" fontSize="7.5" fill="#9333ea" fontFamily="monospace">OIL RESERVOIR</text>
+          <rect x="280" y="10" width="90" height="36" rx="5" fill="#0f172a" stroke="#6366f1"/>
+          <text x="325" y="24" textAnchor="middle" fontSize="7" fill="#a5b4fc" fontFamily="monospace">RUDDER ANGLE</text>
+          <text x="325" y="38" textAnchor="middle" fontSize="11" fill="#c4b5fd" fontFamily="monospace">{Math.round(ram)}°</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">4-RAM HYDRAULIC STEERING GEAR — RAPSON SLIDE</text>
+        </svg>
+      );
+    }
+
+    if (id === 'air-cooler') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f8ff"/>
+          <rect x="14" y="66" width="68" height="68" rx="6" fill="#fee2e2" stroke="#dc2626" strokeWidth="1.5"/>
+          <text x="48" y="60" textAnchor="middle" fontSize="8" fill="#991b1b" fontFamily="monospace">FROM TC</text>
+          <text x="48" y="92" textAnchor="middle" fontSize="13">🌀</text>
+          <text x="48" y="114" textAnchor="middle" fontSize="8" fill="#dc2626" fontFamily="monospace">~200°C</text>
+          <rect x="100" y="28" width="180" height="144" rx="10" fill="#e0f2fe" stroke="#0369a1" strokeWidth="2"/>
+          <text x="190" y="22" textAnchor="middle" fontSize="9" fill="#075985" fontFamily="monospace">SCAVENGE AIR COOLER</text>
+          {[0,1,2,3,4,5,6,7,8,9].map((i) => {
+            const y = 40 + i * 12;
+            const clr = i < 5 ? '#f97316' : '#0891b2';
+            return (
+              <g key={i}>
+                <line x1="106" y1={y} x2="274" y2={y} stroke={clr} strokeWidth="3" opacity="0.5"/>
+                <circle cx={112 + i * 16} cy={y} r="3" fill={clr} opacity="0.5"/>
+              </g>
+            );
+          })}
+          <rect x="108" y="154" width="72" height="16" rx="3" fill="#bae6fd" stroke="#0369a1"/>
+          <text x="144" y="165" textAnchor="middle" fontSize="7" fill="#075985" fontFamily="monospace">LT WATER IN</text>
+          <rect x="200" y="154" width="72" height="16" rx="3" fill="#bae6fd" stroke="#0369a1"/>
+          <text x="236" y="165" textAnchor="middle" fontSize="7" fill="#075985" fontFamily="monospace">LT WATER OUT</text>
+          <line x1="190" y1="172" x2="190" y2="188" stroke="#6b7280" strokeWidth="1.5" strokeDasharray="3,2"/>
+          <text x="190" y="196" textAnchor="middle" fontSize="7" fill="#6b7280" fontFamily="monospace">CONDENSATE DRAIN</text>
+          <rect x="298" y="66" width="68" height="68" rx="6" fill="#dcfce7" stroke="#059669" strokeWidth="1.5"/>
+          <text x="332" y="60" textAnchor="middle" fontSize="8" fill="#065f46" fontFamily="monospace">TO SCAV.</text>
+          <text x="332" y="72" textAnchor="middle" fontSize="7" fill="#065f46" fontFamily="monospace">RECEIVER</text>
+          <text x="332" y="105" textAnchor="middle" fontSize="8" fill="#059669" fontFamily="monospace">35–50°C</text>
+          <defs>
+            <marker id={`ard-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#dc2626"/></marker>
+            <marker id={`arge-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#059669"/></marker>
+          </defs>
+          <line x1="82" y1="100" x2="98" y2="100" stroke="#dc2626" strokeWidth="2.5" markerEnd={`url(#ard-${uniqueId})`}/>
+          <line x1="280" y1="100" x2="296" y2="100" stroke="#059669" strokeWidth="2.5" markerEnd={`url(#arge-${uniqueId})`}/>
+        </svg>
+      );
+    }
+
+    if (id === 'turbocharger') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fdf4ff"/>
+          <rect x="14" y="60" width="62" height="80" rx="6" fill="#fee2e2" stroke="#dc2626" strokeWidth="1.5"/>
+          <text x="45" y="54" textAnchor="middle" fontSize="7" fill="#991b1b" fontFamily="monospace">EXHAUST GAS</text>
+          <text x="45" y="100" textAnchor="middle" fontSize="11">🔥</text>
+          <text x="45" y="120" textAnchor="middle" fontSize="8" fill="#dc2626" fontFamily="monospace">400–500°C</text>
+          <circle cx="134" cy="100" r="52" fill="#fce7f3" stroke="#e879f9" strokeWidth="2"/>
+          <circle cx="134" cy="100" r="36" fill="#fdf4ff" stroke="#d946ef" strokeWidth="1.5"/>
+          {[0,30,60,90,120,150,180,210,240,270,300,330].map((d) => {
+            const r = (d + a * 57.3 * 2) * Math.PI / 180;
+            return <path key={d} d={`M ${134 + 14 * Math.cos(r)} ${100 + 14 * Math.sin(r)} Q ${134 + 28 * Math.cos((r + 0.3))} ${100 + 28 * Math.sin((r + 0.3))} ${134 + 34 * Math.cos(r + 0.15)} ${100 + 34 * Math.sin(r + 0.15)}`} stroke="#e879f9" strokeWidth="2" fill="none" strokeLinecap="round"/>;
+          })}
+          <circle cx="134" cy="100" r="8" fill="#e879f9" opacity="0.8"/>
+          <text x="134" y="162" textAnchor="middle" fontSize="8" fill="#7c3aed" fontFamily="monospace">TURBINE</text>
+          <line x1="186" y1="100" x2="194" y2="100" stroke="#6b7280" strokeWidth="5"/>
+          <text x="190" y="116" textAnchor="middle" fontSize="7" fill="#6b7280" fontFamily="monospace">SHAFT</text>
+          <circle cx="246" cy="100" r="52" fill="#ede9fe" stroke="#7c3aed" strokeWidth="2"/>
+          <circle cx="246" cy="100" r="36" fill="#f5f3ff" stroke="#8b5cf6" strokeWidth="1.5"/>
+          {[0,30,60,90,120,150,180,210,240,270,300,330].map((d) => {
+            const r = (d + a * 57.3 * 2) * Math.PI / 180;
+            return <path key={d} d={`M ${246 + 14 * Math.cos(r)} ${100 + 14 * Math.sin(r)} Q ${246 + 28 * Math.cos((r + 0.3))} ${100 + 28 * Math.sin((r + 0.3))} ${246 + 34 * Math.cos(r + 0.15)} ${100 + 34 * Math.sin(r + 0.15)}`} stroke="#7c3aed" strokeWidth="2" fill="none" strokeLinecap="round"/>;
+          })}
+          <circle cx="246" cy="100" r="8" fill="#7c3aed" opacity="0.8"/>
+          <text x="246" y="162" textAnchor="middle" fontSize="8" fill="#7c3aed" fontFamily="monospace">COMPRESSOR</text>
+          <rect x="76" y="82" width="22" height="36" rx="4" fill="#fecaca" stroke="#dc2626"/>
+          <line x1="87" y1="100" x2="82" y2="100" stroke="#dc2626" strokeWidth="2.5"/>
+          <rect x="284" y="60" width="62" height="80" rx="6" fill="#dcfce7" stroke="#059669" strokeWidth="1.5"/>
+          <text x="315" y="54" textAnchor="middle" fontSize="7" fill="#065f46" fontFamily="monospace">COMP. AIR OUT</text>
+          <text x="315" y="120" textAnchor="middle" fontSize="8" fill="#059669" fontFamily="monospace">3.5–5 bar</text>
+          <line x1="298" y1="100" x2="284" y2="100" stroke="#059669" strokeWidth="2.5"/>
+          <line x1="246" y1="152" x2="246" y2="174" stroke="#7c3aed" strokeWidth="2"/>
+          <rect x="210" y="174" width="72" height="16" rx="3" fill="#ede9fe" stroke="#7c3aed"/>
+          <text x="246" y="185" textAnchor="middle" fontSize="7" fill="#4f46e5" fontFamily="monospace">FRESH AIR INLET</text>
+          <text x="190" y="196" textAnchor="middle" fontSize="9" fill="#4b5568" fontFamily="monospace" letterSpacing="1">EXHAUST GAS TURBINE ↔ COMPRESSOR — COMMON SHAFT</text>
+        </svg>
+      );
+    }
+
+    if (id === 'incinerator') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fff7ed"/>
+          <path d="M 120 40 L 260 40 L 280 160 L 100 160 Z" fill="#ffedd5" stroke="#ea580c" strokeWidth="2"/>
+          <text x="190" y="32" textAnchor="middle" fontSize="10" fill="#9a3412" fontFamily="monospace">COMBUSTION CHAMBER</text>
+          <rect x="140" y="60" width="100" height="60" rx="4" fill="#0f172a" stroke="#f97316"/>
+          <text x="190" y="95" textAnchor="middle" fontSize="14" fill="#fb923c" fontFamily="monospace">{isRunning ? '852°C' : '25°C'}</text>
+          <path d="M 160 120 Q 190 100 220 120" stroke="#ef4444" strokeWidth="3" opacity={isRunning ? 1 : 0.2}>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1s" repeatCount="indefinite" />
+          </path>
+          <rect x="280" y="60" width="60" height="40" rx="4" fill="#ffedd5" stroke="#ea580c" strokeWidth="2"/>
+          <text x="310" y="52" textAnchor="middle" fontSize="8" fill="#9a3412" fontFamily="monospace">SLUDGE PUMP</text>
+          <path d="M 190 40 L 190 10 L 370 10" stroke="#475569" strokeWidth="4" strokeDasharray="8,4"/>
+          <text x="300" y="25" fontSize="8" fill="#475569" fontFamily="monospace">EXHAUST STACK</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">SHIPBOARD INCINERATOR — SLUDGE & SOLID WASTE</text>
+        </svg>
+      );
+    }
+
+    if (id === 'sewage') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0fdf4"/>
+          <rect x="40" y="40" width="100" height="120" rx="8" fill="#dcfce7" stroke="#16a34a" strokeWidth="2"/>
+          <text x="90" y="32" textAnchor="middle" fontSize="8" fill="#166534" fontFamily="monospace">AERATION TANK</text>
+          {[0,1,2,3,4,5].map(i => (
+            <circle key={i} cx={60 + Math.random() * 60} cy={60 + Math.random() * 80} r="3" fill="#86efac" opacity="0.6">
+              <animate attributeName="cy" values="140;60" dur={`${2 + Math.random() * 2}s`} repeatCount="indefinite" />
+            </circle>
+          ))}
+          <rect x="160" y="40" width="80" height="120" rx="8" fill="#dcfce7" stroke="#16a34a" strokeWidth="2"/>
+          <text x="200" y="32" textAnchor="middle" fontSize="8" fill="#166534" fontFamily="monospace">SETTLING TANK</text>
+          <line x1="160" y1="100" x2="240" y2="100" stroke="#16a34a" strokeWidth="1" strokeDasharray="4,2"/>
+          <rect x="260" y="60" width="80" height="80" rx="4" fill="#dcfce7" stroke="#16a34a" strokeWidth="2"/>
+          <text x="300" y="52" textAnchor="middle" fontSize="8" fill="#166534" fontFamily="monospace">CHLORINATION</text>
+          <circle cx="300" cy="100" r="20" fill="none" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="2,2"/>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">SEWAGE TREATMENT PLANT — BIOLOGICAL OXIDATION</text>
+        </svg>
+      );
+    }
+
+    if (id === 'oily-water') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0fdfa"/>
+          <rect x="40" y="40" width="100" height="120" rx="8" fill="#ccfbf1" stroke="#0d9488" strokeWidth="2"/>
+          <text x="90" y="32" textAnchor="middle" fontSize="8" fill="#0f766e" fontFamily="monospace">STAGE 1 - GRAVITY</text>
+          <line x1="40" y1="100" x2="140" y2="100" stroke="#0d9488" strokeWidth="1" strokeDasharray="4,2"/>
+          <rect x="180" y="40" width="80" height="120" rx="8" fill="#ccfbf1" stroke="#0d9488" strokeWidth="2"/>
+          <text x="220" y="32" textAnchor="middle" fontSize="8" fill="#0f766e" fontFamily="monospace">STAGE 2 - COALESCER</text>
+          {[0,1,2,3].map(i => <rect key={i} x="195" y={55 + i * 25} width="50" height="15" rx="2" fill="#5eead4" opacity="0.6"/>)}
+          <rect x="300" y="60" width="60" height="80" rx="4" fill="#0f172a" stroke="#14b8a6"/>
+          <text x="330" y="52" textAnchor="middle" fontSize="8" fill="#14b8a6" fontFamily="monospace">OCM</text>
+          <text x="330" y="105" textAnchor="middle" fontSize="12" fill="#2dd4bf" fontFamily="monospace">{isRunning ? Math.floor(2 + Math.random() * 3) : 0}</text>
+          <text x="330" y="120" textAnchor="middle" fontSize="7" fill="#2dd4bf" fontFamily="monospace">PPM</text>
+          <path d="M 140 100 L 180 100" stroke="#0d9488" strokeWidth="2" markerEnd={`url(#ao1-${uniqueId})`}/>
+          <path d="M 260 100 L 300 100" stroke="#0d9488" strokeWidth="2" markerEnd={`url(#ao1-${uniqueId})`}/>
+          <path d="M 330 140 L 330 180 L 370 180" stroke="#0d9488" strokeWidth="2" markerEnd={`url(#ao1-${uniqueId})`}/>
+          <text x="350" y="175" fontSize="7" fill="#0d9488" fontFamily="monospace">OVERBOARD</text>
+          <defs><marker id={`ao1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0d9488"/></marker></defs>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">OILY WATER SEPARATOR — 15 PPM BILGE SEPARATOR</text>
+        </svg>
+      );
+    }
+
+    if (id === 'emergency-gen') {
+      const genRot = a * 57.3 * 0.8;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fffbeb"/>
+          <rect x="40" y="60" width="120" height="80" rx="6" fill="#fef3c7" stroke="#d97706" strokeWidth="2"/>
+          <text x="100" y="52" textAnchor="middle" fontSize="8" fill="#b45309" fontFamily="monospace">DIESEL ENGINE</text>
+          <rect x="160" y="75" width="100" height="50" rx="4" fill="#fef3c7" stroke="#d97706" strokeWidth="2"/>
+          <text x="210" y="70" textAnchor="middle" fontSize="8" fill="#b45309" fontFamily="monospace">ALTERNATOR</text>
+          <circle cx="210" cy="100" r="20" fill="#fde68a" stroke="#d97706" strokeWidth="1.5"/>
+          {[0,90,180,270].map(d => {
+            const r = (d + genRot) * Math.PI / 180;
+            return <line key={d} x1={210 + 5 * Math.cos(r)} y1={100 + 5 * Math.sin(r)} x2={210 + 18 * Math.cos(r)} y2={100 + 18 * Math.sin(r)} stroke="#d97706" strokeWidth="2"/>;
+          })}
+          <rect x="280" y="40" width="80" height="120" rx="4" fill="#1e293b" stroke="#fbbf24"/>
+          <text x="320" y="32" textAnchor="middle" fontSize="8" fill="#fbbf24" fontFamily="monospace">EMERGENCY SWITCHBOARD</text>
+          <rect x="290" y="55" width="60" height="10" rx="2" fill="#ef4444" opacity={isRunning ? 1 : 0.3}/>
+          <text x="320" y="63" textAnchor="middle" fontSize="6" fill="white" fontFamily="monospace">MAIN BUS FAIL</text>
+          <rect x="290" y="75" width="60" height="10" rx="2" fill="#10b981" opacity={isRunning ? 1 : 0.3}/>
+          <text x="320" y="83" textAnchor="middle" fontSize="6" fill="white" fontFamily="monospace">EMERGENCY BUS ON</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">EMERGENCY DIESEL GENERATOR — 500 kW / 440 V</text>
+        </svg>
+      );
+    }
+
+    if (id === 'fuel-system') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fff7ed"/>
+          <rect x="20" y="40" width="60" height="120" rx="4" fill="#ffedd5" stroke="#c2410c" strokeWidth="2"/>
+          <text x="50" y="32" textAnchor="middle" fontSize="8" fill="#9a3412" fontFamily="monospace">BOOSTER PUMPS</text>
+          <rect x="100" y="40" width="80" height="120" rx="4" fill="#ffedd5" stroke="#c2410c" strokeWidth="2"/>
+          <text x="140" y="32" textAnchor="middle" fontSize="8" fill="#9a3412" fontFamily="monospace">HFO HEATER</text>
+          {[0,1,2,3].map(i => <line key={i} x1="110" y1={60 + i * 25} x2="170" y2={60 + i * 25} stroke="#ea580c" strokeWidth="2" opacity="0.6"/>)}
+          <rect x="200" y="40" width="60" height="120" rx="4" fill="#0f172a" stroke="#f97316"/>
+          <text x="230" y="32" textAnchor="middle" fontSize="8" fill="#f97316" fontFamily="monospace">VISCO-CONTROL</text>
+          <text x="230" y="100" textAnchor="middle" fontSize="12" fill="#fb923c" fontFamily="monospace">{isRunning ? '14.2' : '0.0'}</text>
+          <text x="230" y="115" textAnchor="middle" fontSize="7" fill="#fb923c" fontFamily="monospace">cSt</text>
+          <rect x="280" y="40" width="80" height="120" rx="4" fill="#ffedd5" stroke="#c2410c" strokeWidth="2"/>
+          <text x="320" y="32" textAnchor="middle" fontSize="8" fill="#9a3412" fontFamily="monospace">AUTO-FILTER</text>
+          <circle cx="320" cy="100" r="25" fill="none" stroke="#c2410c" strokeWidth="1.5" strokeDasharray="4,2"/>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">FUEL OIL CONDITIONING MODULE — 13–17 cSt CONTROL</text>
+        </svg>
+      );
+    }
+
+    if (id === 'lo-system') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fffbeb"/>
+          <rect x="20" y="140" width="340" height="40" rx="4" fill="#fef3c7" stroke="#d97706" strokeWidth="2"/>
+          <text x="190" y="165" textAnchor="middle" fontSize="10" fill="#b45309" fontFamily="monospace">MAIN ENGINE SUMP - 25,000 L</text>
+          <rect x="40" y="40" width="60" height="80" rx="4" fill="#fef3c7" stroke="#d97706" strokeWidth="2"/>
+          <text x="70" y="32" textAnchor="middle" fontSize="8" fill="#b45309" fontFamily="monospace">MAIN LO PUMP</text>
+          <rect x="120" y="40" width="100" height="80" rx="4" fill="#fef3c7" stroke="#d97706" strokeWidth="2"/>
+          <text x="170" y="32" textAnchor="middle" fontSize="8" fill="#b45309" fontFamily="monospace">LO COOLER</text>
+          {[0,1,2].map(i => <line key={i} x1="130" y1={60 + i * 20} x2="210" y2={60 + i * 20} stroke="#3b82f6" strokeWidth="2" opacity="0.4"/>)}
+          <rect x="240" y="40" width="100" height="80" rx="4" fill="#fef3c7" stroke="#d97706" strokeWidth="2"/>
+          <text x="290" y="32" textAnchor="middle" fontSize="8" fill="#b45309" fontFamily="monospace">AUTO-FILTER</text>
+          <circle cx="290" cy="80" r="20" fill="none" stroke="#d97706" strokeWidth="1.5" strokeDasharray="4,2"/>
+          <path d="M 70 140 L 70 120" stroke="#d97706" strokeWidth="2" markerEnd={`url(#alo1-${uniqueId})`}/>
+          <path d="M 100 80 L 120 80" stroke="#d97706" strokeWidth="2" markerEnd={`url(#alo1-${uniqueId})`}/>
+          <path d="M 220 80 L 240 80" stroke="#d97706" strokeWidth="2" markerEnd={`url(#alo1-${uniqueId})`}/>
+          <path d="M 340 80 L 370 80 L 370 140" stroke="#d97706" strokeWidth="2" markerEnd={`url(#alo1-${uniqueId})`}/>
+          <defs><marker id={`alo1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d97706"/></marker></defs>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">LUBE OIL SYSTEM — SAE 30 FORCED CIRCULATION</text>
+        </svg>
+      );
+    }
+
+    if (id === 'cooling-system') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#eff6ff"/>
+          <rect x="100" y="40" width="180" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2"/>
+          <text x="190" y="32" textAnchor="middle" fontSize="10" fill="#1e40af" fontFamily="monospace">CENTRAL COOLER (PLATE TYPE)</text>
+          {[0,1,2,3,4,5,6,7,8].map(i => <line key={i} x1={110 + i * 20} y1="45" x2={110 + i * 20} y2="155" stroke="#3b82f6" strokeWidth="1" opacity="0.5"/>)}
+          <path d="M 20 60 L 100 60" stroke="#ef4444" strokeWidth="3" markerEnd={`url(#ac1-${uniqueId})`}/>
+          <text x="40" y="55" fontSize="8" fill="#dc2626" fontFamily="monospace">HT JCW IN (82°C)</text>
+          <path d="M 100 140 L 20 140" stroke="#3b82f6" strokeWidth="3" markerEnd={`url(#ac2-${uniqueId})`}/>
+          <text x="40" y="135" fontSize="8" fill="#2563eb" fontFamily="monospace">LT FW OUT (35°C)</text>
+          <path d="M 360 60 L 280 60" stroke="#0891b2" strokeWidth="3" markerEnd={`url(#ac3-${uniqueId})`}/>
+          <text x="300" y="55" fontSize="8" fill="#0891b2" fontFamily="monospace">SW IN (28°C)</text>
+          <path d="M 280 140 L 360 140" stroke="#0891b2" strokeWidth="3" markerEnd={`url(#ac3-${uniqueId})`}/>
+          <text x="300" y="135" fontSize="8" fill="#0891b2" fontFamily="monospace">SW OUT (32°C)</text>
+          <defs>
+            <marker id={`ac1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ef4444"/></marker>
+            <marker id={`ac2-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3b82f6"/></marker>
+            <marker id={`ac3-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0891b2"/></marker>
+          </defs>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">CENTRAL COOLING SYSTEM — HT/LT FRESHWATER CIRCUITS</text>
+        </svg>
+      );
+    }
+
+    if (id === 'ballast-pump') {
+      const rot = a * 57.3 * 0.8;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f9ff"/>
+          <circle cx="150" cy="100" r="70" fill="#e0f2fe" stroke="#2563eb" strokeWidth="3"/>
+          <circle cx="150" cy="100" r="55" fill="#f0faff" stroke="#60a5fa"/>
+          {[0,45,90,135,180,225,270,315].map(d => {
+            const r = (d + rot) * Math.PI / 180;
+            return <path key={d} d={`M ${150 + 15 * Math.cos(r)} ${100 + 15 * Math.sin(r)} L ${150 + 50 * Math.cos(r + 0.4)} ${100 + 50 * Math.sin(r + 0.4)}`} stroke="#1d4ed8" strokeWidth="3" strokeLinecap="round" fill="none"/>;
+          })}
+          <rect x="260" y="50" width="100" height="100" rx="8" fill="#dbeafe" stroke="#1d4ed8" strokeWidth="2"/>
+          <text x="310" y="42" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">MOTOR (400 kW)</text>
+          <circle cx="310" cy="100" r="30" fill="#bfdbfe" stroke="#1d4ed8" strokeWidth="1.5"/>
+          <text x="310" y="105" textAnchor="middle" fontSize="10" fill="#1e40af" fontFamily="monospace">~</text>
+          <line x1="220" y1="100" x2="260" y2="100" stroke="#64748b" strokeWidth="6" strokeLinecap="round"/>
+          <text x="150" y="185" textAnchor="middle" fontSize="10" fill="#1e40af" fontFamily="monospace">800 m³/h</text>
+          <text x="190" y="196" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">CENTRIFUGAL BALLAST PUMP — HIGH-FLOW / LOW-HEAD</text>
+        </svg>
+      );
+    }
+
+    if (id === 'sea-chest') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f9ff"/>
+          <path d="M 20 20 L 20 180 L 100 180 L 100 20 Z" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2"/>
+          <text x="60" y="15" textAnchor="middle" fontSize="8" fill="#0369a1" fontFamily="monospace">SEA CHEST</text>
+          {[0,1,2,3,4,5,6,7,8,9].map(i => <line key={i} x1="15" y1={30 + i * 15} x2="25" y2={30 + i * 15} stroke="#0284c7" strokeWidth="2"/>)}
+          <rect x="140" y="60" width="80" height="80" rx="4" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2"/>
+          <text x="180" y="52" textAnchor="middle" fontSize="8" fill="#0369a1" fontFamily="monospace">STRAINER</text>
+          <circle cx="180" cy="100" r="30" fill="none" stroke="#0284c7" strokeWidth="1" strokeDasharray="2,2"/>
+          <rect x="260" y="70" width="40" height="60" rx="2" fill="#0f172a" stroke="#38bdf8"/>
+          <text x="280" y="62" textAnchor="middle" fontSize="8" fill="#38bdf8" fontFamily="monospace">KINGSTON VALVE</text>
+          <path d="M 100 100 L 140 100" stroke="#0284c7" strokeWidth="3" markerEnd={`url(#asc1-${uniqueId})`}/>
+          <path d="M 220 100 L 260 100" stroke="#0284c7" strokeWidth="3" markerEnd={`url(#asc1-${uniqueId})`}/>
+          <path d="M 300 100 L 370 100" stroke="#0284c7" strokeWidth="3" markerEnd={`url(#asc1-${uniqueId})`}/>
+          <defs><marker id={`asc1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0284c7"/></marker></defs>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">SEA CHEST & KINGSTON VALVES — HULL SEAWATER INLET</text>
+        </svg>
+      );
+    }
+
+    if (id === 'bilge-system') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f8fafc"/>
+          <path d="M 40 160 L 140 160 L 120 180 L 60 180 Z" fill="#e2e8f0" stroke="#64748b" strokeWidth="2"/>
+          <text x="90" y="152" textAnchor="middle" fontSize="8" fill="#475569" fontFamily="monospace">BILGE WELL</text>
+          <rect x="75" y="165" width="30" height="10" fill="#94a3b8" opacity="0.5"/>
+          <text x="90" y="173" textAnchor="middle" fontSize="5" fill="#1e293b" fontFamily="monospace">STRUM BOX</text>
+          <rect x="180" y="60" width="60" height="60" rx="30" fill="#f1f5f9" stroke="#475569" strokeWidth="2"/>
+          <text x="210" y="52" textAnchor="middle" fontSize="8" fill="#475569" fontFamily="monospace">BILGE PUMP</text>
+          <path d="M 90 160 L 90 90 L 180 90" stroke="#475569" strokeWidth="2" fill="none" markerEnd={`url(#ab1-${uniqueId})`}/>
+          <path d="M 240 90 L 300 90" stroke="#475569" strokeWidth="2" markerEnd={`url(#ab1-${uniqueId})`}/>
+          <rect x="300" y="70" width="60" height="40" rx="4" fill="#f1f5f9" stroke="#059669" strokeWidth="1.5"/>
+          <text x="330" y="62" textAnchor="middle" fontSize="7" fill="#059669" fontFamily="monospace">TO OWS</text>
+          <defs><marker id={`ab1-${uniqueId}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#475569"/></marker></defs>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">BILGE SYSTEM — BILGE WELLS & MAIN RING PIPE</text>
+        </svg>
+      );
+    }
+
+    if (id === 'firemain') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#fef2f2"/>
+          <rect x="40" y="60" width="80" height="80" rx="40" fill="#fee2e2" stroke="#dc2626" strokeWidth="2.5"/>
+          <text x="80" y="52" textAnchor="middle" fontSize="8" fill="#991b1b" fontFamily="monospace">FIRE PUMP 1</text>
+          <rect x="140" y="60" width="80" height="80" rx="40" fill="#fee2e2" stroke="#dc2626" strokeWidth="2.5"/>
+          <text x="180" y="52" textAnchor="middle" fontSize="8" fill="#991b1b" fontFamily="monospace">FIRE PUMP 2</text>
+          <path d="M 80 140 L 80 160 L 340 160" stroke="#dc2626" strokeWidth="3" fill="none"/>
+          <path d="M 180 140 L 180 160" stroke="#dc2626" strokeWidth="3"/>
+          <rect x="340" y="145" width="20" height="30" fill="#dc2626" rx="2"/>
+          <text x="350" y="140" textAnchor="middle" fontSize="8" fill="#dc2626" fontFamily="monospace">HYDRANT</text>
+          <path d="M 360 160 L 380 160" stroke="#dc2626" strokeWidth="3" strokeDasharray="4,2"/>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">FIRE MAIN SYSTEM — SOLAS COMPLIANT SEAWATER MAIN</text>
+        </svg>
+      );
+    }
+
+    if (id === 'co2-system') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f8fafc"/>
+          {[0,1,2,3,4,5,6,7,8,9].map(i => (
+            <g key={i}>
+              <rect x={30 + i * 32} y="40" width="24" height="100" rx="12" fill="#cbd5e1" stroke="#475569" strokeWidth="1.5"/>
+              <rect x={38 + i * 32} y="34" width="8" height="6" fill="#475569"/>
+            </g>
+          ))}
+          <line x1="30" y1="30" x2="350" y2="30" stroke="#475569" strokeWidth="3"/>
+          <text x="190" y="22" textAnchor="middle" fontSize="8" fill="#475569" fontFamily="monospace">CO2 CYLINDER BANK - TOTAL FLOODING</text>
+          <rect x="150" y="150" width="80" height="30" rx="4" fill="#ef4444" stroke="#991b1b"/>
+          <text x="190" y="168" textAnchor="middle" fontSize="8" fill="white" fontFamily="monospace" fontWeight="bold">RELEASE CABINET</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">FIXED CO2 FIRE SYSTEM — ENGINE ROOM PROTECTION</text>
+        </svg>
+      );
+    }
+
+    if (id === 'ias') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#0f172a"/>
+          <rect x="40" y="30" width="140" height="100" rx="4" fill="#1e293b" stroke="#334155" strokeWidth="2"/>
+          <rect x="50" y="40" width="120" height="80" fill="#020617" stroke="#1e293b"/>
+          <path d="M 60 100 L 80 70 L 100 90 L 120 60 L 140 80 L 160 50" stroke="#3b82f6" strokeWidth="1.5" fill="none"/>
+          <rect x="200" y="30" width="140" height="100" rx="4" fill="#1e293b" stroke="#334155" strokeWidth="2"/>
+          <rect x="210" y="40" width="120" height="80" fill="#020617" stroke="#1e293b"/>
+          <circle cx="270" cy="80" r="30" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="10,5"/>
+          <rect x="40" y="140" width="300" height="40" rx="4" fill="#1e293b" stroke="#334155"/>
+          {[0,1,2,3,4,5,6,7].map(i => <rect key={i} x={55 + i * 35} y="150" width="25" height="20" rx="2" fill="#334155"/>)}
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#94a3b8" fontFamily="monospace" letterSpacing="1">INTEGRATED AUTOMATION SYSTEM — ECR OPERATOR STATION</text>
+        </svg>
+      );
+    }
+
+    if (id === 'domestic') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f9ff"/>
+          <rect x="40" y="40" width="80" height="120" rx="40" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2"/>
+          <text x="80" y="32" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">HYDROPHORE</text>
+          <line x1="40" y1="100" x2="120" y2="100" stroke="#3b82f6" strokeWidth="1" strokeDasharray="4,2"/>
+          <text x="80" y="90" textAnchor="middle" fontSize="6" fill="#1e40af" fontFamily="monospace">AIR CUSHION</text>
+          <rect x="160" y="40" width="80" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2"/>
+          <text x="200" y="32" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">CALORIFIER</text>
+          <path d="M 170 150 Q 200 140 230 150" stroke="#ef4444" strokeWidth="2" fill="none"/>
+          <text x="200" y="140" textAnchor="middle" fontSize="6" fill="#dc2626" fontFamily="monospace">HEATER</text>
+          <rect x="280" y="60" width="60" height="80" rx="4" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2"/>
+          <text x="310" y="52" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">UV STERILIZER</text>
+          <circle cx="310" cy="100" r="15" fill="#818cf8" opacity="0.3"/>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">DOMESTIC WATER SYSTEM — HYDROPHORE & CALORIFIER</text>
+        </svg>
+      );
+    }
+
+    if (id === 'provision-ref') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f9ff"/>
+          <rect x="20" y="40" width="60" height="60" rx="30" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2"/>
+          <text x="50" y="32" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">COMPRESSOR</text>
+          <rect x="100" y="40" width="80" height="60" rx="4" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2"/>
+          <text x="140" y="32" textAnchor="middle" fontSize="8" fill="#1e40af" fontFamily="monospace">CONDENSER</text>
+          <rect x="200" y="40" width="160" height="120" rx="8" fill="#f8fafc" stroke="#94a3b8" strokeWidth="2"/>
+          <text x="280" y="32" textAnchor="middle" fontSize="8" fill="#475569" fontFamily="monospace">COLD ROOMS</text>
+          <rect x="210" y="50" width="65" height="45" rx="2" fill="#eff6ff" stroke="#3b82f6"/>
+          <text x="242" y="75" textAnchor="middle" fontSize="10" fill="#1e40af" fontFamily="monospace">-18°C</text>
+          <rect x="285" y="50" width="65" height="45" rx="2" fill="#eff6ff" stroke="#3b82f6"/>
+          <text x="317" y="75" textAnchor="middle" fontSize="10" fill="#1e40af" fontFamily="monospace">+4°C</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">PROVISION REFRIGERATION — VAPOUR COMPRESSION CYCLE</text>
+        </svg>
+      );
+    }
+
+    if (id === 'lifeboat') {
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f9ff"/>
+          <path d="M 100 120 Q 190 180 280 120 L 280 80 L 100 80 Z" fill="#f97316" stroke="#c2410c" strokeWidth="2"/>
+          <rect x="140" y="65" width="100" height="15" rx="7" fill="#f97316" stroke="#c2410c" strokeWidth="1.5"/>
+          <text x="190" y="115" textAnchor="middle" fontSize="12" fill="white" fontWeight="bold">LIFEBOAT</text>
+          <path d="M 80 40 L 100 80 M 300 40 L 280 80" stroke="#475569" strokeWidth="3"/>
+          <rect x="60" y="20" width="40" height="20" rx="4" fill="#64748b"/>
+          <rect x="280" y="20" width="40" height="20" rx="4" fill="#64748b"/>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">LIFEBOAT & DAVIT SYSTEM — SOLAS COMPLIANT LSA</text>
+        </svg>
+      );
+    }
+
+    if (id === 'shaft-prop') {
+      const propRot = a * 57.3 * 1.5;
+      return (
+        <svg viewBox="0 0 380 200" width="100%" height="100%">
+          <rect width="380" height="200" fill="#f0f9ff"/>
+          <rect x="20" y="90" width="240" height="20" fill="#94a3b8" stroke="#475569" strokeWidth="1.5"/>
+          <text x="140" y="85" textAnchor="middle" fontSize="8" fill="#475569" fontFamily="monospace">PROPELLER SHAFT</text>
+          <rect x="260" y="70" width="40" height="60" rx="4" fill="#64748b" stroke="#334155"/>
+          <text x="280" y="62" textAnchor="middle" fontSize="8" fill="#334155" fontFamily="monospace">STERN TUBE</text>
+          <g transform={`translate(340, 100) rotate(${propRot})`}>
+            {[0, 72, 144, 216, 288].map(d => (
+              <path key={d} d="M 0 0 Q 30 -40 60 0 Q 30 40 0 0" fill="#ca8a04" stroke="#854d0e" transform={`rotate(${d})`}/>
+            ))}
+            <circle cx="0" cy="0" r="10" fill="#854d0e"/>
+          </g>
+          <rect x="60" y="85" width="30" height="30" rx="4" fill="#64748b" stroke="#334155"/>
+          <text x="75" y="80" textAnchor="middle" fontSize="7" fill="#334155" fontFamily="monospace">THRUST BLOCK</text>
+          <text x="190" y="192" textAnchor="middle" fontSize="8" fill="#374151" fontFamily="monospace" letterSpacing="1">SHAFTING & PROPELLER — FIXED PITCH PROPULSION TRAIN</text>
+        </svg>
+      );
+    }
+    return (
+      <svg viewBox="0 0 380 200" width="100%" height="100%">
+        <rect width="380" height="200" fill="#f4f6f9"/>
+        <circle cx="190" cy="90" r={50 + Math.sin(a) * 3} fill={color + '22'} stroke={color} strokeWidth="2"/>
+        <text x="190" y="94" textAnchor="middle" fontSize="28" dominantBaseline="middle">{icon}</text>
+        <text x="190" y="158" textAnchor="middle" fontSize="11" fill="#374151" fontFamily="Inter,sans-serif" fontWeight="600">{name}</text>
+        <text x="190" y="173" textAnchor="middle" fontSize="8" fill="#8694a8" fontFamily="monospace">{short}</text>
+      </svg>
+    );
+  };
+
+  return (
+    <div className={`w-full h-full flex items-center justify-center relative overflow-hidden group/diag border border-white/5 ${isSm ? 'p-0' : ''}`}>
+      {renderDiagram()}
+    </div>
+  );
 };
 
-// Helper to get events for a specific day
-export const getEventsForDay = (month: number, day: number): MaritimeEvent[] => {
-  const key = `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-  return MARITIME_HISTORY[key] || [];
-};
+export default MachineryDiagram;
