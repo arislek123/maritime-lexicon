@@ -1,15 +1,27 @@
-/// <reference types="vite/client" />
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { AuthProvider } from './lib/AuthContext';
+import App from './App';
+import './index.css';
 
-interface ImportMetaEnv {
-  readonly VITE_FIREBASE_API_KEY: string
-  readonly VITE_FIREBASE_AUTH_DOMAIN: string
-  readonly VITE_FIREBASE_PROJECT_ID: string
-  readonly VITE_FIREBASE_STORAGE_BUCKET: string
-  readonly VITE_FIREBASE_MESSAGING_SENDER_ID: string
-  readonly VITE_FIREBASE_APP_ID: string
-  readonly VITE_ADMIN_EMAIL: string
-}
+const rootElement = document.getElementById('root')!;
 
-interface ImportMeta {
-  readonly env: ImportMetaEnv
+const Main = () => (
+  <React.StrictMode>
+    <HelmetProvider>
+      <BrowserRouter basename="/maritime-lexicon">
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </BrowserRouter>
+    </HelmetProvider>
+  </React.StrictMode>
+);
+
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(rootElement, <Main />);
+} else {
+  ReactDOM.createRoot(rootElement).render(<Main />);
 }

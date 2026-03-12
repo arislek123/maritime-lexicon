@@ -1,212 +1,218 @@
+
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  GraduationCap, 
-  CheckCircle2, 
-  Circle, 
-  ArrowRight, 
-  Trophy, 
-  Timer,
-  BookOpen,
-  ClipboardCheck,
-  Target
+  History, Calendar, ChevronRight, ChevronLeft, 
+  Anchor, Shield, Compass, Clock, MapPin, 
+  Search, Info, BookOpen, Waves
 } from 'lucide-react';
-import { MachinerySystem } from '../../data/machinery';
+import { cn } from '../lib/utils';
+import { MARITIME_HISTORY, MaritimeEvent, getEventsForDay } from '../data/maritimeHistory';
 
-interface AssessmentsProps {
-  machinery: MachinerySystem[];
-}
+const MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
-const Assessments: React.FC<AssessmentsProps> = ({ machinery }) => {
-  const [curView, setCurView] = useState<'list' | 'quiz'>('list');
-  const [selSystem, setSelSystem] = useState<MachinerySystem | null>(null);
-  const [score, setScore] = useState(0);
-  const [step, setStep] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
+export const MaritimeHistoryTimeline: React.FC = () => {
+  const [selectedMonth, setSelectedMonth] = useState<number>(new Date().getMonth());
+  const [searchQuery, setSearchQuery] = useState('');
 
-  // Generate mock questions based on machinery data
-  const questions = useMemo(() => {
-    if (!selSystem) return [];
-    return [
-      {
-        q: `What is the primary purpose of the ${selSystem.name}?`,
-        options: [selSystem.purpose, "To provide auxiliary lighting", "To manage ballast water", "To control deck cranes"],
-        correct: 0
-      },
-      {
-        q: `Which of these is a core component of the ${selSystem.name}?`,
-        options: ["Standard Anchor", selSystem.components[0], "VHF Radio", "Lifeboat Davit"],
-        correct: 1
-      },
-      {
-        q: `In watchkeeping, what is a critical parameter for the ${selSystem.name}?`,
-        options: ["Galley temperature", "Bridge visibility", selSystem.watchkeeping[0], "Anchor chain length"],
-        correct: 2
-      }
-    ];
-  }, [selSystem]);
-
-  const handleAnswer = (idx: number) => {
-    if (idx === questions[step].correct) setScore(s => s + 1);
+  const monthEvents = useMemo(() => {
+    const events: MaritimeEvent[] = [];
+    const daysInMonth = new Date(2024, selectedMonth + 1, 0).getDate();
     
-    if (step < questions.length - 1) {
-      setStep(s => s + 1);
-    } else {
-      setIsFinished(true);
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dayEvents = getEventsForDay(selectedMonth + 1, day);
+      events.push(...dayEvents);
+    }
+
+    return events;
+  }, [selectedMonth]);
+
+  const filteredEvents = useMemo(() => {
+    if (!searchQuery.trim()) return monthEvents;
+    const q = searchQuery.toLowerCase();
+    return monthEvents.filter(e => 
+      e.title.toLowerCase().includes(q) || 
+      e.description.toLowerCase().includes(q)
+    );
+  }, [monthEvents, searchQuery]);
+
+  const getCategoryStyles = (cat: string) => {
+    switch (cat) {
+      case 'discovery': return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20';
+      case 'disaster': return 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20';
+      case 'innovation': return 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20';
+      case 'war': return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20';
+      default: return 'bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20';
     }
   };
 
-  const resetQuiz = () => {
-    setCurView('list');
-    setSelSystem(null);
-    setScore(0);
-    setStep(0);
-    setIsFinished(false);
-  };
-
   return (
-    <div className="space-y-8">
-      {curView === 'list' ? (
-        <div className="space-y-8">
-          <div className="bg-white p-8 rounded-[32px] border border-[#e4e7ed] shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-16 bg-blue-600 rounded-3xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
-                <GraduationCap className="w-8 h-8" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-[#0f1724] mb-1">Technical Competency Assessments</h2>
-                <p className="text-sm text-[#8694a8]">Validate your knowledge of engine room systems and operational protocols.</p>
-              </div>
+    <div className="min-h-screen bg-slate-50 dark:bg-[#020617] py-12 px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <header className="mb-12 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-600/10 text-blue-600 dark:text-blue-400 rounded-full text-xs font-bold uppercase tracking-widest">
+              <History size={14} />
+              Maritime Almanac
             </div>
-            <div className="flex gap-4">
-              <div className="px-6 py-3 bg-[#f8f9fb] border border-[#e4e7ed] rounded-2xl text-center">
-                <div className="text-xs font-bold text-[#8694a8] uppercase tracking-widest mb-1">Completed</div>
-                <div className="text-xl font-bold text-[#0f1724]">12/78</div>
-              </div>
-              <div className="px-6 py-3 bg-[#f8f9fb] border border-[#e4e7ed] rounded-2xl text-center">
-                <div className="text-xs font-bold text-[#8694a8] uppercase tracking-widest mb-1">Avg. Score</div>
-                <div className="text-xl font-bold text-[#0f1724]">94%</div>
-              </div>
-            </div>
+            <h1 className="text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+              Chronicles of <span className="text-blue-600">the Deep</span>
+            </h1>
+            <p className="text-slate-500 dark:text-slate-400 max-w-xl text-lg">
+              Explore pivotal maritime events organized by the calendar year. Discover discoveries, disasters, and innovations that shaped the seas.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {machinery.slice(0, 9).map((m) => (
-              <div 
-                key={m.id}
-                className="bg-white rounded-[32px] border border-[#e4e7ed] p-8 hover:border-blue-300 hover:shadow-md transition-all group cursor-pointer"
-                onClick={() => { setSelSystem(m); setCurView('quiz'); }}
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-[#f8f9fb] border border-[#e4e7ed] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                    {m.icon}
-                  </div>
-                  <div className="flex items-center gap-1 text-emerald-500">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Passed</span>
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-[#0f1724] mb-2">{m.name}</h3>
-                <p className="text-xs text-[#8694a8] font-mono mb-6 uppercase tracking-wider">{m.cat}</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-[#8694a8] uppercase tracking-widest">
-                    <Timer className="w-3 h-3" /> 5 Mins
-                  </div>
-                  <div className="flex items-center gap-1 text-blue-600 text-xs font-bold">
-                    Start Assessment <ArrowRight className="w-3 h-3" />
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="relative w-full md:w-80">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+            <input 
+              type="text"
+              placeholder="Search history..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm focus:ring-2 focus:ring-blue-500/20 outline-none transition-all dark:text-white"
+            />
           </div>
-        </div>
-      ) : (
-        <div className="max-w-3xl mx-auto">
-          <AnimatePresence mode="wait">
-            {!isFinished ? (
-              <motion.div 
-                key="quiz-active"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                className="bg-white rounded-[40px] border border-[#e4e7ed] overflow-hidden shadow-2xl"
-              >
-                <div className="p-10 border-b border-[#e4e7ed] bg-[#f8f9fb] flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white rounded-2xl border border-[#e4e7ed] flex items-center justify-center text-2xl">
-                      {selSystem?.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-[#0f1724]">{selSystem?.name}</h3>
-                      <p className="text-[10px] text-[#8694a8] font-bold uppercase tracking-widest">Question {step + 1} of {questions.length}</p>
-                    </div>
-                  </div>
-                  <button onClick={resetQuiz} className="text-xs font-bold text-[#8694a8] hover:text-[#0f1724] uppercase tracking-widest">Exit</button>
-                </div>
+        </header>
 
-                <div className="p-12">
-                  <div className="mb-12">
-                    <h2 className="text-2xl font-bold text-[#0f1724] leading-tight mb-4">{questions[step].q}</h2>
-                    <div className="w-full h-1.5 bg-[#f0f2f6] rounded-full overflow-hidden">
-                      <motion.div 
-                        className="h-full bg-blue-600"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${((step + 1) / questions.length) * 100}%` }}
-                      />
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Month Selector Sidebar */}
+          <aside className="lg:col-span-3 space-y-6">
+            <div className="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm">
+              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-6 px-2">Select Month</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
+                {MONTHS.map((month, idx) => (
+                  <button
+                    key={month}
+                    onClick={() => setSelectedMonth(idx)}
+                    className={cn(
+                      "flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-bold transition-all group",
+                      selectedMonth === idx 
+                        ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20" 
+                        : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+                    )}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className={cn(
+                        "w-6 h-6 rounded-lg flex items-center justify-center text-[10px]",
+                        selectedMonth === idx ? "bg-white/20" : "bg-slate-100 dark:bg-slate-800"
+                      )}>
+                        {idx + 1}
+                      </span>
+                      {month}
+                    </span>
+                    <ChevronRight size={16} className={cn(
+                      "transition-transform",
+                      selectedMonth === idx ? "translate-x-0 opacity-100" : "translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
+                    )} />
+                  </button>
+                ))}
+              </div>
+            </div>
 
-                  <div className="grid gap-4">
-                    {questions[step].options.map((opt, i) => (
-                      <button
-                        key={i}
-                        onClick={() => handleAnswer(i)}
-                        className="p-6 rounded-2xl border border-[#e4e7ed] text-left hover:border-blue-600 hover:bg-blue-50/50 transition-all group flex items-center justify-between"
+            {/* Quick Stats */}
+            <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20 relative overflow-hidden">
+              <Waves className="absolute -bottom-4 -right-4 w-32 h-32 opacity-10 rotate-12" />
+              <h4 className="text-xs font-black uppercase tracking-widest mb-2 opacity-80">Month Summary</h4>
+              <div className="text-4xl font-black mb-1">{monthEvents.length}</div>
+              <p className="text-sm font-medium opacity-80">Recorded events in {MONTHS[selectedMonth]}</p>
+            </div>
+          </aside>
+
+          {/* Events List */}
+          <main className="lg:col-span-9">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-black text-slate-900 dark:text-white flex items-center gap-4">
+                <span className="text-blue-600">{MONTHS[selectedMonth]}</span>
+                <span className="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+                <span className="text-slate-400 dark:text-slate-600">Events</span>
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              <AnimatePresence mode="wait">
+                {filteredEvents.length > 0 ? (
+                  <motion.div
+                    key={selectedMonth + searchQuery}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="space-y-6"
+                  >
+                    {filteredEvents.map((event, idx) => (
+                      <div 
+                        key={`${event.date}-${event.year}-${idx}`}
+                        className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-blue-500/30 transition-all group relative overflow-hidden"
                       >
-                        <span className="text-sm font-medium text-[#4b5568] group-hover:text-[#0f1724]">{opt}</span>
-                        <Circle className="w-4 h-4 text-[#e4e7ed] group-hover:text-blue-600" />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div 
-                key="quiz-result"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-white rounded-[40px] border border-[#e4e7ed] p-16 text-center shadow-2xl"
-              >
-                <div className="w-24 h-24 bg-blue-600 rounded-[32px] flex items-center justify-center text-white mx-auto mb-8 shadow-xl shadow-blue-200">
-                  <Trophy className="w-12 h-12" />
-                </div>
-                <h2 className="text-3xl font-bold text-[#0f1724] mb-2">Assessment Complete!</h2>
-                <p className="text-[#8694a8] mb-12">You've successfully validated your technical knowledge for the {selSystem?.name}.</p>
-                
-                <div className="grid grid-cols-2 gap-6 mb-12">
-                  <div className="p-8 bg-[#f8f9fb] rounded-3xl border border-[#e4e7ed]">
-                    <div className="text-xs font-bold text-[#8694a8] uppercase tracking-widest mb-1">Your Score</div>
-                    <div className="text-4xl font-bold text-[#0f1724]">{Math.round((score / questions.length) * 100)}%</div>
-                  </div>
-                  <div className="p-8 bg-[#f8f9fb] rounded-3xl border border-[#e4e7ed]">
-                    <div className="text-xs font-bold text-[#8694a8] uppercase tracking-widest mb-1">Status</div>
-                    <div className="text-4xl font-bold text-emerald-600">PASSED</div>
-                  </div>
-                </div>
+                        <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
+                          <History size={120} />
+                        </div>
 
-                <button 
-                  onClick={resetQuiz}
-                  className="w-full py-5 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
-                >
-                  Return to Dashboard
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                        <div className="flex flex-col md:flex-row md:items-start gap-8">
+                          {/* Date Column */}
+                          <div className="flex-shrink-0 flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-1">
+                            <div className="text-3xl font-black text-blue-600 uppercase tracking-tighter">
+                              {MONTHS[parseInt(event.date.split('-')[0]) - 1]} {parseInt(event.date.split('-')[1])}
+                            </div>
+                            <div className="text-xl font-bold text-slate-400 dark:text-slate-600">
+                              {event.year}
+                            </div>
+                          </div>
+
+                          {/* Content Column */}
+                          <div className="flex-1 space-y-4">
+                            <div className={cn(
+                              "inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[10px] font-black uppercase tracking-widest",
+                              getCategoryStyles(event.category)
+                            )}>
+                              {event.category}
+                            </div>
+                            
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                              {event.title}
+                            </h3>
+                            
+                            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-light">
+                              {event.description}
+                            </p>
+
+                            <div className="pt-4 flex items-center gap-6 text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest">
+                              <span className="flex items-center gap-2">
+                                <MapPin size={14} />
+                                Global Waters
+                              </span>
+                              <span className="flex items-center gap-2">
+                                <Clock size={14} />
+                                Historical Record
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-center py-24 bg-white dark:bg-slate-900 rounded-[3rem] border border-dashed border-slate-200 dark:border-slate-800"
+                  >
+                    <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-300">
+                      <Search size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">No events found</h3>
+                    <p className="text-slate-500 dark:text-slate-400">Try selecting a different month or clearing your search.</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </main>
         </div>
-      )}
+      </div>
     </div>
   );
 };
-
-export default Assessments;
