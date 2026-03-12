@@ -16,7 +16,7 @@ import { MachinerySystem } from '../../data/machinery';
 interface AssessmentsProps {
   machinery: MachinerySystem[];
 }
-
+//
 const Assessments: React.FC<AssessmentsProps> = ({ machinery }) => {
   const [curView, setCurView] = useState<'list' | 'quiz'>('list');
   const [selSystem, setSelSystem] = useState<MachinerySystem | null>(null);
@@ -210,3 +210,17 @@ const Assessments: React.FC<AssessmentsProps> = ({ machinery }) => {
 };
 
 export default Assessments;
+
+// 
+
+<EnvironmentContext>
+This information is provided as context about user environment. Only consider it if it's relevant to the user request ignore it otherwise.
+
+<OPEN-EDITOR-FILES>
+No files are open
+</OPEN-EDITOR-FILES>
+
+<ACTIVE-EDITOR-FILE>
+No file is active in editor
+</ACTIVE-EDITOR-FILE>
+</EnvironmentContext>
