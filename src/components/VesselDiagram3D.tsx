@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { motion, AnimatePresence } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Anchor, Navigation, Box, Settings, Users, Coffee, 
   Layers, Brain, History, Info, X, Globe, ChevronDown,
@@ -17,6 +18,7 @@ interface HotspotData {
   cat: string;
   name: string;
   txt: string;
+  slug: string;
   sect?: string;
 }
 
@@ -25,91 +27,101 @@ const HOTSPOTS: HotspotData[] = [
   {
     ico: '📏', cat: 'LOAD LINE', name: 'Plimsoll Mark',
     txt: 'A symbol on the ship\'s hull that indicates the maximum depth to which the vessel may be safely loaded.',
+    slug: 'plimsoll-line',
     sect: 'hull'
   },
   {
     ico: '🟥', cat: 'CARGO HOLD', name: 'Hatch Covers',
     txt: 'Steel structures used to seal the cargo holds, ensuring the ship remains weathertight.',
+    slug: 'hatch-cover',
     sect: 'deck'
   },
   {
-    ico: '⚙', cat: 'MOORING', name: 'Electric Windlass',
+    ico: '⚙', cat: 'MOORING', name: 'Windlass',
     txt: 'A machine used on ships to let go and heave up the anchors and their chains.',
+    slug: 'windlass',
     sect: 'mooring'
   },
   {
     ico: '⚓', cat: 'ANCHORING', name: 'Bower Anchor',
     txt: 'The primary anchor carried at the bow of the ship for securing the vessel to the seabed.',
+    slug: 'anchor',
     sect: 'hull'
   },
   {
-    ico: '🌀', cat: 'MANOEUVRING', name: 'Bow Thruster',
+    ico: '⚓', cat: 'MANOEUVRING', name: 'Bow Thruster',
     txt: 'A propulsion device built into the bow to provide lateral thrust, aiding in maneuverability.',
+    slug: 'bow-thruster',
     sect: 'mooring'
-  },
-  {
-    ico: '🏗', cat: 'CARGO EQUIPMENT', name: 'Deck Crane',
-    txt: 'Onboard lifting equipment used for the autonomous loading and unloading of cargo.',
-    sect: 'cranes'
   },
   {
     ico: '🏭', cat: 'EXHAUST', name: 'Main Funnel',
     txt: 'A structure used to expel exhaust gases from the main and auxiliary engines.',
+    slug: 'funnel',
     sect: 'super'
   },
   {
     ico: '🏢', cat: 'SUPERSTRUCTURE', name: 'Accommodation Block',
     txt: 'The superstructure housing the crew\'s living quarters, offices, and the navigation bridge.',
+    slug: 'superstructure',
     sect: 'super'
   },
   {
     ico: '🛟', cat: 'LIFE-SAVING', name: 'SOLAS Lifeboat',
     txt: 'A rigid, enclosed vessel designed for the emergency evacuation of crew in life-threatening situations.',
+    slug: 'lifeboat',
     sect: 'super'
   },
   {
     ico: '⚙', cat: 'PROPULSION', name: 'Propeller & Rudder',
     txt: 'The propulsion and steering assembly that moves and directs the ship through the water.',
+    slug: 'propeller',
     sect: 'prop'
   },
   {
     ico: '⛽', cat: 'BUNKERING', name: 'Bunker Manifold',
     txt: 'The station where fuel and oil are transferred between the ship and a supply barge or shore facility.',
+    slug: 'bunker',
     sect: 'deck'
   },
   {
     ico: '🔢', cat: 'NAVIGATION', name: 'Draft Marks',
     txt: 'A series of numbers on the hull used to measure the vertical distance from the keel to the waterline.',
+    slug: 'draft',
     sect: 'hull'
   },
   {
     ico: '🪜', cat: 'ACCESS', name: 'Accommodation Ladder',
     txt: 'A retractable staircase on the ship\'s side used for boarding and disembarking.',
+    slug: 'accommodation-ladder',
     sect: 'deck'
   },
   {
     ico: '📡', cat: 'NAVIGATION', name: 'Radar Mast',
     txt: 'A vertical structure supporting radar scanners and antennas used for navigation and communication.',
+    slug: 'radar',
     sect: 'super'
   },
   {
     ico: '🚢', cat: 'DECK', name: 'Forecastle',
     txt: 'The forward part of the upper deck, typically raised, housing mooring equipment and stores.',
+    slug: 'forecastle',
     sect: 'deck'
   },
   {
     ico: '🛡️', cat: 'HULL', name: 'Bulwark',
     txt: 'An extension of the ship\'s side above the deck level, acting as a protective railing for crew.',
+    slug: 'bulwark',
     sect: 'hull'
   }
 ];
 
 export const VesselDiagram3D: React.FC = () => {
+  const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-  const [infoPanel, setInfoPanel] = useState<HotspotData | null>(null);
   const [tooltip, setTooltip] = useState<{ name: string; x: number; y: number } | null>(null);
   const [xray, setXray] = useState(false);
   const [currentView, setCurrentView] = useState('side');
@@ -223,10 +235,10 @@ export const VesselDiagram3D: React.FC = () => {
     shipRef.current = ship;
 
     const hullSec = [
-      [116, 0.1], [115, 0.4], [114, 0.9], [113, 1.6], [112, 2.5], [110, 3.8],
-      [108, 5.4], [106, 7.0], [104, 8.8], [102, 10.4], [100, 11.8], [96, 13.6],
-      [90, 15.0], [82, 15.8], [72, 16.0], [24, 16.0], [-24, 16.0], [-72, 16.0],
-      [-82, 15.6], [-90, 14.2], [-96, 11.5], [-99, 8.8], [-101, 6.5], [-102, 5.0],
+      [108, 0.1], [107, 0.4], [106, 0.9], [105, 1.6], [104, 2.5], [102, 3.8],
+      [100, 5.4], [98, 7.0], [96, 8.8], [94, 10.4], [92, 11.8], [88, 13.6],
+      [82, 15.0], [72, 15.8], [62, 16.0], [24, 16.0], [-24, 16.0], [-60, 16.0], [-72, 16.0],
+      [-82, 16.0], [-90, 16.0], [-100, 16.0], [-115, 16.0], [-125, 14.0], [-135, 10.0], [-142, 5.0], [-145, 1.0],
     ];
 
     // Hull Construction Helper
@@ -339,11 +351,11 @@ export const VesselDiagram3D: React.FC = () => {
     // Bulbous Bow
     const bulb = new THREE.Mesh(new THREE.SphereGeometry(4.2, 20, 20), mats.hullRed);
     bulb.scale.set(1.6, 0.88, 0.88);
-    bulb.position.set(112, -7.5, 0);
+    bulb.position.set(104, -7.5, 0);
     ship.add(bulb);
 
     // Hatches
-    const hatchX = [57, 28, 0, -28, -56];
+    const hatchX = [45, 16, -13, -42, -71];
     hatchX.forEach((hx) => {
       const coaming = new THREE.Mesh(new THREE.BoxGeometry(26, 2.2, 22), mats.coam);
       coaming.position.set(hx, 12.7, 0);
@@ -353,65 +365,91 @@ export const VesselDiagram3D: React.FC = () => {
       ship.add(cover);
     });
 
-    // Superstructure (Accommodation Block)
-    const superXStart = -68;
-    const superXEnd = -96;
+    // Superstructure (Accommodation Block - Redesigned for realism based on photo)
+    const superGroup = new THREE.Group();
+    superGroup.position.set(-105, 11.5, 0); // Set to 11.5 to have contact with deck
+    ship.add(superGroup);
+
+    // Foundation Plate (Dark separation)
+    const superBase = new THREE.Mesh(new THREE.BoxGeometry(34, 0.5, 30), mats.steelDk);
+    superBase.position.y = -0.25;
+    superGroup.add(superBase);
+
     const superLevels = [
-      { h: 4.8, y: 2.6, m: mats.superW, inset: 0.5 },
-      { h: 4.8, y: 7.5, m: mats.superW, inset: 1.5 },
-      { h: 4.8, y: 12.2, m: mats.superW, inset: 2.5 },
-      { h: 4.8, y: 16.9, m: mats.superLt, inset: 3.5 },
-      { h: 4.8, y: 21.6, m: mats.superLt, inset: 4.5 },
-      { h: 5.0, y: 26.2, m: mats.superW, inset: 5.5 }
+      { w: 32, d: 28, h: 5, y: 0, m: mats.superW },   // Main Deck level
+      { w: 28, d: 26, h: 5, y: 5, m: mats.superW },   // Level 2
+      { w: 24, d: 24, h: 5, y: 10, m: mats.superW },  // Level 3
+      { w: 20, d: 22, h: 5, y: 15, m: mats.superLt }, // Level 4
+      { w: 18, d: 20, h: 5, y: 20, m: mats.superLt }, // Level 5
+      { w: 16, d: 18, h: 6, y: 25, m: mats.superW }    // Bridge level
     ];
 
     superLevels.forEach((level, idx) => {
-      const superShape = new THREE.Shape();
-      const sSec = hullSec.filter(s => s[0] <= superXStart && s[0] >= superXEnd);
-      
-      superShape.moveTo(sSec[0][0], sSec[0][1] - level.inset);
-      for (let i = 1; i < sSec.length; i++) superShape.lineTo(sSec[i][0], sSec[i][1] - level.inset);
-      for (let i = sSec.length - 1; i >= 0; i--) superShape.lineTo(sSec[i][0], -sSec[i][1] + level.inset);
-      superShape.closePath();
+      // Main Block
+      const block = new THREE.Mesh(new THREE.BoxGeometry(level.w, level.h, level.d), level.m);
+      block.position.y = level.y + level.h / 2;
+      superGroup.add(block);
 
-      const superGeo = new THREE.ExtrudeGeometry(superShape, { depth: level.h, bevelEnabled: false });
-      const superMesh = new THREE.Mesh(superGeo, level.m);
-      superMesh.rotation.x = Math.PI / 2;
-      superMesh.position.y = 11 + level.y + level.h;
-      ship.add(superMesh);
+      // Red Deck Top (Walkway)
+      const deckTop = new THREE.Mesh(new THREE.BoxGeometry(level.w + 0.2, 0.1, level.d + 0.2), mats.superW);
+      deckTop.position.y = level.y + level.h;
+      superGroup.add(deckTop);
 
-      // Add Bridge Wings to the top level
+      // Simple Railings (White lines)
+      const railGeo = new THREE.BoxGeometry(level.w + 0.4, 0.8, 0.1);
+      const railF = new THREE.Mesh(railGeo, mats.white);
+      railF.position.set(0, level.y + level.h + 0.4, level.d / 2 + 0.1);
+      superGroup.add(railF);
+      const railA = railF.clone();
+      railA.position.z = -level.d / 2 - 0.1;
+      superGroup.add(railA);
+
+      // Bridge Wings
       if (idx === superLevels.length - 1) {
-        const wingGeo = new THREE.BoxGeometry(6, 4, 40);
+        const wingGeo = new THREE.BoxGeometry(6, 4, 42);
         const wings = new THREE.Mesh(wingGeo, level.m);
-        wings.position.set(-82, 11 + level.y + 2.5, 0);
-        ship.add(wings);
+        wings.position.y = level.y + 3;
+        superGroup.add(wings);
+        
+        const wingTop = new THREE.Mesh(new THREE.BoxGeometry(6.2, 0.1, 42.2), mats.superW);
+        wingTop.position.y = level.y + 5;
+        superGroup.add(wingTop);
       }
     });
 
-    // Funnel (Matching the image: Beige with Blue Band)
+    // Funnel (Redesigned: Tall, Tapered, Beige with Blue Band)
     const funnelGroup = new THREE.Group();
-    funnelGroup.position.set(-76, 38, 0);
-    ship.add(funnelGroup);
+    funnelGroup.position.set(-6, 15, 0); // Positioned on the aft part of the superstructure base
+    superGroup.add(funnelGroup);
     
-    const funnelBase = new THREE.Mesh(new THREE.CylinderGeometry(4.5, 6, 12, 4), mats.funnelBeige);
-    funnelBase.rotation.y = Math.PI / 4; // Square-ish
-    funnelBase.position.y = 6;
-    funnelGroup.add(funnelBase);
+    // Tapered Funnel Body
+    const funnelPoints = [];
+    funnelPoints.push(new THREE.Vector2(3.5, 0));
+    funnelPoints.push(new THREE.Vector2(3.0, 18));
+    funnelPoints.push(new THREE.Vector2(2.5, 22));
+    const funnelGeo = new THREE.LatheGeometry(funnelPoints, 4); // Square-ish taper
+    const funnelBody = new THREE.Mesh(funnelGeo, mats.funnelBeige);
+    funnelBody.rotation.y = Math.PI / 4;
+    funnelGroup.add(funnelBody);
 
-    const funnelBand = new THREE.Mesh(new THREE.CylinderGeometry(4.6, 5.2, 4, 4), mats.funnelBlue);
-    funnelBand.rotation.y = Math.PI / 4;
-    funnelBand.position.y = 10;
-    funnelGroup.add(funnelBand);
+    // Blue Band with Logo 'L'
+    const bandGeo = new THREE.CylinderGeometry(3.1, 3.2, 4, 4);
+    const band = new THREE.Mesh(bandGeo, mats.funnelBlue);
+    band.rotation.y = Math.PI / 4;
+    band.position.y = 12;
+    funnelGroup.add(band);
 
-    const funnelTop = new THREE.Mesh(new THREE.CylinderGeometry(4.2, 4.6, 4, 4), mats.funnelBeige);
-    funnelTop.rotation.y = Math.PI / 4;
-    funnelTop.position.y = 14;
-    funnelGroup.add(funnelTop);
-
-    const funnelCap = new THREE.Mesh(new THREE.BoxGeometry(8, 1, 8), mats.funnelBk);
-    funnelCap.position.y = 16.5;
+    // Black Top & Exhaust Pipes
+    const funnelCap = new THREE.Mesh(new THREE.BoxGeometry(5.5, 1.5, 5.5), mats.funnelBk);
+    funnelCap.position.y = 22.5;
     funnelGroup.add(funnelCap);
+
+    const pipeGeo = new THREE.CylinderGeometry(0.5, 0.5, 4, 8);
+    for (let i = 0; i < 3; i++) {
+      const pipe = new THREE.Mesh(pipeGeo, mats.funnelBk);
+      pipe.position.set((i - 1) * 1.2, 24, 0);
+      funnelGroup.add(pipe);
+    }
     
     // Smoke System
     const smokeGeo = new THREE.BufferGeometry();
@@ -425,12 +463,12 @@ export const VesselDiagram3D: React.FC = () => {
     smokeGeo.setAttribute('position', new THREE.BufferAttribute(smokePos, 3));
     const smokeMat = new THREE.PointsMaterial({ color: 0x888888, size: 1.6, transparent: true, opacity: 0.16, sizeAttenuation: true });
     const smoke = new THREE.Points(smokeGeo, smokeMat);
-    smoke.position.y = 22;
+    smoke.position.y = 26;
     funnelGroup.add(smoke);
 
     // Radar Scanners
     const radarGroup = new THREE.Group();
-    radarGroup.position.set(-82, 43, 0);
+    radarGroup.position.set(-95, 43, 0);
     ship.add(radarGroup);
     const radar1 = new THREE.Mesh(new THREE.BoxGeometry(6.5, 0.3, 1.3), mats.white);
     radar1.position.y = 5;
@@ -441,82 +479,97 @@ export const VesselDiagram3D: React.FC = () => {
 
     // Radar Mast
     const radarMast = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 1.2, 12, 8), mats.white);
-    radarMast.position.set(-82, 43, 0);
+    radarMast.position.set(-95, 43, 0);
     ship.add(radarMast);
+
+    // Deck Crane (White, Aft)
+    const craneGroup = new THREE.Group();
+    craneGroup.position.set(-135, 15.2, -10);
+    ship.add(craneGroup);
+    
+    const craneBase = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.5, 4, 12), mats.white);
+    craneGroup.add(craneBase);
+    
+    const craneArm = new THREE.Mesh(new THREE.BoxGeometry(12, 0.8, 0.8), mats.white);
+    craneArm.position.set(5, 3, 0);
+    craneArm.rotation.z = -0.3;
+    craneGroup.add(craneArm);
 
     // Free-fall Lifeboat (High-Fidelity Stern Ramp)
     const lifeboatRamp = new THREE.Group();
-    lifeboatRamp.position.set(-100, 11, 0);
+    lifeboatRamp.position.set(-132, 11.5, 0); // Moved to the very end of the deck
     ship.add(lifeboatRamp);
 
-    const rampAngle = -Math.PI / 6;
+    const rampAngle = Math.PI + Math.PI / 4; // 225 degrees (points aft and down)
     
-    // Ramp Structure
-    const rampBase = new THREE.Mesh(new THREE.BoxGeometry(14, 0.8, 4.5), mats.steelDk);
-    rampBase.rotation.z = rampAngle;
-    rampBase.position.set(-4, 6, 0);
-    lifeboatRamp.add(rampBase);
-
-    // Side Rails for the ramp
-    const railGeo = new THREE.BoxGeometry(14, 1.5, 0.2);
-    const railL = new THREE.Mesh(railGeo, mats.steel);
+    // Ramp Structure (White Steel Frame)
+    const rampMat = mats.white;
+    const lbFrameGeo = new THREE.BoxGeometry(16, 0.4, 0.4);
+    
+    // Main rails
+    const railL = new THREE.Mesh(lbFrameGeo, rampMat);
     railL.rotation.z = rampAngle;
-    railL.position.set(-4, 7, 2.2);
+    railL.position.set(4, 6, 2.5); // Adjusted X to keep it at the stern
     lifeboatRamp.add(railL);
     const railR = railL.clone();
-    railR.position.z = -2.2;
+    railR.position.z = -2.5;
     lifeboatRamp.add(railR);
 
-    // Detailed Lifeboat
+    // Vertical/Diagonal supports (A-frame look)
+    const supportGeo = new THREE.BoxGeometry(0.4, 12, 0.4);
+    const supL = new THREE.Mesh(supportGeo, rampMat);
+    supL.position.set(0, 6, 2.5);
+    supL.rotation.z = -0.2;
+    lifeboatRamp.add(supL);
+    const supR = supL.clone();
+    supR.position.z = -2.5;
+    lifeboatRamp.add(supR);
+
+    const supL2 = supL.clone();
+    supL2.position.set(8, 2, 2.5);
+    supL2.rotation.z = 0.4;
+    lifeboatRamp.add(supL2);
+    const supR2 = supL2.clone();
+    supR2.position.z = -2.5;
+    lifeboatRamp.add(supR2);
+
+    // Cross bars
+    for (let i = 0; i < 4; i++) {
+      const cross = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.3, 5), rampMat);
+      const t = i / 3;
+      cross.position.set(8 - t * 12, 2 + t * 8, 0);
+      cross.rotation.z = rampAngle;
+      lifeboatRamp.add(cross);
+    }
+
+    // Detailed Lifeboat (Red, angled down)
     const lifeboatGroup = new THREE.Group();
-    lifeboatGroup.rotation.z = rampAngle + Math.PI / 2;
-    lifeboatGroup.position.set(-4, 8.2, 0);
+    lifeboatGroup.rotation.z = rampAngle - Math.PI / 2; // Pointing along the ramp
+    lifeboatGroup.position.set(4, 8.5, 0);
     lifeboatRamp.add(lifeboatGroup);
 
-    // Lifeboat Hull (Tapered)
+    // Lifeboat Hull (Tapered, Red)
     const lbPoints = [];
     lbPoints.push(new THREE.Vector2(0, 0));
-    lbPoints.push(new THREE.Vector2(1.2, 0.5));
-    lbPoints.push(new THREE.Vector2(1.4, 3.5));
-    lbPoints.push(new THREE.Vector2(0.8, 4.5));
-    lbPoints.push(new THREE.Vector2(0, 4.8));
+    lbPoints.push(new THREE.Vector2(1.4, 0.8));
+    lbPoints.push(new THREE.Vector2(1.6, 4.5));
+    lbPoints.push(new THREE.Vector2(1.0, 5.5));
+    lbPoints.push(new THREE.Vector2(0, 6.0));
     const lbHullGeo = new THREE.LatheGeometry(lbPoints, 16);
-    const lbHull = new THREE.Mesh(lbHullGeo, new THREE.MeshStandardMaterial({ color: 0xff6600, roughness: 0.3 }));
-    lbHull.position.y = -2.4;
+    const lbHull = new THREE.Mesh(lbHullGeo, new THREE.MeshStandardMaterial({ color: 0xcc2200, roughness: 0.3 }));
+    lbHull.position.y = -3.0;
     lifeboatGroup.add(lbHull);
 
     // Lifeboat Windows (Cockpit)
-    const lbWindow = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.8, 1.8), mats.glass);
-    lbWindow.position.y = 1.2;
+    const lbWindow = new THREE.Mesh(new THREE.BoxGeometry(2.0, 1.0, 2.0), mats.glass);
+    lbWindow.position.y = 1.5;
     lifeboatGroup.add(lbWindow);
 
     // Small Propeller on Lifeboat
-    const lbProp = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.8, 8), mats.bronze);
+    const lbProp = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 1.0, 8), mats.bronze);
     lbProp.rotation.z = Math.PI / 2;
-    lbProp.position.y = -2.5;
+    lbProp.position.y = -3.2;
     lifeboatGroup.add(lbProp);
-
-    // Aft Mooring Winches (Windlasses at the stern)
-    const aftWinchPos = [
-      [-94, 11.5, 8], [-94, 11.5, -8],
-      [-104, 11.5, 6], [-104, 11.5, -6]
-    ];
-    aftWinchPos.forEach(([x, y, z]) => {
-      const winch = new THREE.Group();
-      winch.position.set(x, y, z);
-      ship.add(winch);
-      
-      const wDrum = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.8, 3, 12), mats.steelDk);
-      wDrum.rotation.z = Math.PI / 2;
-      winch.add(wDrum);
-      
-      const wFrame = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 0.5), mats.steelDk);
-      wFrame.position.z = 1.2;
-      winch.add(wFrame);
-      const wFrame2 = wFrame.clone();
-      wFrame2.position.z = -1.2;
-      winch.add(wFrame2);
-    });
 
     // Accommodation Ladder (Stowed on side)
     const makeLadder = (side: number) => {
@@ -552,7 +605,7 @@ export const VesselDiagram3D: React.FC = () => {
     // Side SOLAS Lifeboats on Davits
     const makeSideLifeboat = (side: number) => {
       const lbGroup = new THREE.Group();
-      lbGroup.position.set(-82, 21, 16.5 * side);
+      lbGroup.position.set(-105, 21, 16.5 * side);
       ship.add(lbGroup);
 
       // Davits (Gravity type)
@@ -581,7 +634,7 @@ export const VesselDiagram3D: React.FC = () => {
 
     // Propeller & Rudder
     const propGroup = new THREE.Group();
-    propGroup.position.set(-102, -5, 0);
+    propGroup.position.set(-145, -5, 0);
     ship.add(propGroup);
     
     // Hub & Boss Cap (Lathe for smoothness)
@@ -627,31 +680,31 @@ export const VesselDiagram3D: React.FC = () => {
     }
 
     const rudder = new THREE.Mesh(new THREE.BoxGeometry(8, 19, 1.4), mats.hullRed);
-    rudder.position.set(-109, -13.5, 0);
+    rudder.position.set(-152, -13.5, 0);
     ship.add(rudder);
 
     // Windlass (Ultra Detail)
     const windlassGroup = new THREE.Group();
-    windlassGroup.position.set(88, 15.2, 0);
+    windlassGroup.position.set(78, 15.2, 0);
     ship.add(windlassGroup);
     
-    const foundation = new THREE.Mesh(new THREE.BoxGeometry(9, 0.8, 19), mats.steelDk);
+    const foundation = new THREE.Mesh(new THREE.BoxGeometry(9, 0.8, 22), mats.steelDk);
     foundation.position.y = -0.4;
     windlassGroup.add(foundation);
 
-    const mainShaft = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 17, 16), mats.steelMid);
-    mainShaft.rotation.z = Math.PI / 2;
+    const mainShaft = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 20, 16), mats.steelMid);
+    mainShaft.rotation.x = Math.PI / 2;
     mainShaft.position.y = 3.5;
     windlassGroup.add(mainShaft);
 
     // Gypsies (Notched Wheels)
     const gypsyGeo = new THREE.CylinderGeometry(2.5, 2.5, 3.5, 12);
     const gypsyL = new THREE.Mesh(gypsyGeo, mats.steelDk);
-    gypsyL.rotation.z = Math.PI / 2;
-    gypsyL.position.set(3.8, 3.5, 0);
+    gypsyL.rotation.x = Math.PI / 2;
+    gypsyL.position.set(0, 3.5, 6.55);
     windlassGroup.add(gypsyL);
     const gypsyR = gypsyL.clone();
-    gypsyR.position.x = -3.8;
+    gypsyR.position.z = -6.55;
     windlassGroup.add(gypsyR);
     
     // Warping heads
@@ -660,23 +713,23 @@ export const VesselDiagram3D: React.FC = () => {
     const wPart2 = new THREE.Mesh(new THREE.CylinderGeometry(2.6, 2.2, 2.0, 16), mats.steelDk);
     wPart2.position.y = 1.75;
     warpHead.add(wPart1, wPart2);
-    warpHead.rotation.z = Math.PI / 2;
+    warpHead.rotation.x = Math.PI / 2;
     
     const warpL = warpHead.clone();
-    warpL.position.set(9.5, 3.5, 0);
+    warpL.position.set(0, 3.5, 10.5);
     windlassGroup.add(warpL);
     const warpR = warpHead.clone();
-    warpR.rotation.z = -Math.PI / 2;
-    warpR.position.set(-9.5, 3.5, 0);
+    warpR.rotation.x = -Math.PI / 2;
+    warpR.position.set(0, 3.5, -10.5);
     windlassGroup.add(warpR);
     
     // Heavy Frames
-    const frameGeo = new THREE.BoxGeometry(4.5, 8, 3);
+    const frameGeo = new THREE.BoxGeometry(4.5, 8, 2);
     const frameL = new THREE.Mesh(frameGeo, mats.steelDk);
-    frameL.position.set(0, 3.5, 7.5);
+    frameL.position.set(0, 3.5, 3.5);
     windlassGroup.add(frameL);
     const frameR = frameL.clone();
-    frameR.position.z = -7.5;
+    frameR.position.z = -3.5;
     windlassGroup.add(frameR);
     
     // Motor & Gearbox
@@ -684,7 +737,7 @@ export const VesselDiagram3D: React.FC = () => {
     motor.position.set(-5, 2.5, 0);
     windlassGroup.add(motor);
     const gearBox = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 3, 12), mats.steelDk);
-    gearBox.rotation.z = Math.PI / 2;
+    gearBox.rotation.x = Math.PI / 2;
     gearBox.position.set(-1.5, 3.5, 0);
     windlassGroup.add(gearBox);
 
@@ -701,58 +754,76 @@ export const VesselDiagram3D: React.FC = () => {
     // Chain Stoppers
     const stopperGeo = new THREE.BoxGeometry(4, 2.5, 5);
     const stopperL = new THREE.Mesh(stopperGeo, mats.steelDk);
-    stopperL.position.set(12, 1.2, 7.5);
+    stopperL.position.set(88, 16.4, 6.55);
     ship.add(stopperL);
     const stopperR = stopperL.clone();
-    stopperR.position.z = -7.5;
+    stopperR.position.z = -6.55;
     ship.add(stopperR);
 
     // Anchor Chain & Anchor
     const chainGroup = new THREE.Group();
     ship.add(chainGroup);
-    const chainLinkGeo = new THREE.TorusGeometry(0.7, 0.28, 10, 16);
-    for (let i = 0; i < 28; i++) {
+    const chainLinkGeo = new THREE.TorusGeometry(0.4, 0.15, 8, 12);
+    for (let i = 0; i < 24; i++) {
       const link = new THREE.Mesh(chainLinkGeo, mats.steelDk);
-      const t = i / 27;
-      const x = 88 + t * 18;
-      const y = 18.6 - t * 14.6;
-      const z = 7.5;
+      const t = i / 23;
+      // Route from windlass (78) through stopper (88) to hawse pipe (96)
+      const x = 78 + t * 18;
+      // Stay on deck (y=21.2 at gypsy top) until stopper (x=88, t=0.55), then drop to hawse (y=4)
+      let y, z;
+      if (t < 0.55) {
+        y = 21.2 - (t / 0.55) * 4.8; // Drop from 21.2 to 16.4
+        z = 6.55;
+      } else {
+        const t2 = (t - 0.55) / 0.45;
+        y = 16.4 - t2 * 12.4; // Drop from 16.4 to 4.0
+        z = 6.55 + t2 * 2.25; // From stopper (6.55) to hawse (8.8)
+      }
       link.position.set(x, y, z);
       link.rotation.y = Math.PI / 2;
       link.rotation.x = i % 2 === 0 ? 0 : Math.PI / 2;
       chainGroup.add(link);
       
       const linkPort = link.clone();
-      linkPort.position.z = -7.5;
+      linkPort.position.z = -z;
       chainGroup.add(linkPort);
     }
 
-    // Bower Anchors (Detailed Hall-type)
+    // Bower Anchors (Stockless pattern matching photo)
     const makeAnchor = (side: number) => {
       const anchor = new THREE.Group();
-      anchor.position.set(106, 3.5, 9.0 * side);
+      anchor.position.set(98, 3.5, 9.5 * side); 
       anchor.rotation.z = -0.35;
-      anchor.rotation.y = side === 1 ? 0 : Math.PI;
+      anchor.rotation.y = side === 1 ? -0.2 : Math.PI + 0.2; 
+      anchor.scale.set(0.25, 0.25, 0.25); 
       
-      const shank = new THREE.Mesh(new THREE.BoxGeometry(1.6, 12, 1.6), mats.steelDk);
+      // Shank (Long vertical part)
+      const shank = new THREE.Mesh(new THREE.BoxGeometry(1.2, 14, 1.2), mats.steelMid);
       anchor.add(shank);
       
-      const crown = new THREE.Mesh(new THREE.BoxGeometry(7, 3.5, 6), mats.steelDk);
-      crown.position.y = -6;
+      // Ring at the top
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(1.2, 0.3, 8, 24), mats.steelMid);
+      ring.position.y = 7.5;
+      anchor.add(ring);
+      
+      // Heavy Crown & Flukes (Stockless design)
+      const crown = new THREE.Mesh(new THREE.BoxGeometry(8, 4, 4), mats.steelMid);
+      crown.position.y = -7;
       anchor.add(crown);
-      
-      const flukeL = new THREE.Mesh(new THREE.BoxGeometry(1.8, 8, 5), mats.steelDk);
-      flukeL.position.set(3.5, -4.5, 0);
-      flukeL.rotation.z = 0.7;
+
+      const flukeGeo = new THREE.BoxGeometry(2, 8, 1);
+      const flukeL = new THREE.Mesh(flukeGeo, mats.steelMid);
+      flukeL.position.set(3, -5, 0);
+      flukeL.rotation.z = 0.3;
       anchor.add(flukeL);
-      
+
       const flukeR = flukeL.clone();
-      flukeR.position.x = -3.5;
-      flukeR.rotation.z = -0.7;
+      flukeR.position.x = -3;
+      flukeR.rotation.z = -0.3;
       anchor.add(flukeR);
       
-      const hawse = new THREE.Mesh(new THREE.TorusGeometry(3.0, 0.6, 8, 24), mats.hullBlk);
-      hawse.position.set(106, 4, 8.8 * side);
+      const hawse = new THREE.Mesh(new THREE.TorusGeometry(1.2, 0.3, 8, 24), mats.hullBlk);
+      hawse.position.set(96, 4, 8.8 * side);
       hawse.rotation.y = Math.PI / 2;
       ship.add(hawse);
       
@@ -793,7 +864,7 @@ export const VesselDiagram3D: React.FC = () => {
     
     const makeDraftMarks = (side: number) => {
       const g = new THREE.Group();
-      g.position.set(112, -5, 3.5 * side);
+      g.position.set(104, -5, 3.5 * side);
       
       for (let i = 0; i < 8; i++) {
         const line = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.2, 0.1), draftMat);
@@ -821,17 +892,16 @@ export const VesselDiagram3D: React.FC = () => {
     addHotspot(88, 16, 7, HOTSPOTS[2]);   // Windlass
     addHotspot(106, 4, 8, HOTSPOTS[3]);    // Anchor
     addHotspot(96, -2.5, 0, HOTSPOTS[4]); // Bow Thruster
-    addHotspot(43, 20, 0, HOTSPOTS[5]);   // Crane
-    addHotspot(-76, 40, 0, HOTSPOTS[6]);  // Funnel
-    addHotspot(-82, 25, 0, HOTSPOTS[7]);  // Superstructure
-    addHotspot(-82, 21, 15.5, HOTSPOTS[8]); // Lifeboat
-    addHotspot(-103, -4, 0, HOTSPOTS[9]); // Propeller
-    addHotspot(0, 12.5, 15, HOTSPOTS[10]); // Bunker
-    addHotspot(112, -2, 4, HOTSPOTS[11]); // Draft Marks Bow
-    addHotspot(-60, 5, 16.2, HOTSPOTS[12]); // Accommodation Ladder
-    addHotspot(-82, 48, 0, HOTSPOTS[13]); // Radar Mast
-    addHotspot(77, 14, 0, HOTSPOTS[14]); // Forecastle
-    addHotspot(0, 11.5, 16, HOTSPOTS[15]); // Bulwark
+    addHotspot(-111, 40, 0, HOTSPOTS[5]);  // Funnel
+    addHotspot(-105, 25, 0, HOTSPOTS[6]);  // Superstructure
+    addHotspot(-105, 21, 15.5, HOTSPOTS[7]); // Lifeboat
+    addHotspot(-115, -5, 0, HOTSPOTS[8]); // Propeller - Moved further back and down
+    addHotspot(0, 12.5, 15, HOTSPOTS[9]); // Bunker
+    addHotspot(112, -2, 4, HOTSPOTS[10]); // Draft Marks Bow
+    addHotspot(-60, 8, 16.2, HOTSPOTS[11]); // Accommodation Ladder - Moved slightly up
+    addHotspot(-95, 48, 0, HOTSPOTS[12]); // Radar Mast
+    addHotspot(77, 14, 0, HOTSPOTS[13]); // Forecastle
+    addHotspot(0, 11.5, 16, HOTSPOTS[14]); // Bulwark
 
     // --- INTERIOR (X-Ray) ---
     const interior = new THREE.Group();
@@ -885,7 +955,8 @@ export const VesselDiagram3D: React.FC = () => {
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(hotspotsRef.current);
       if (intersects.length > 0) {
-        setInfoPanel(intersects[0].object.userData as HotspotData);
+        const data = intersects[0].object.userData as HotspotData;
+        navigate(`/term/${data.slug}/`);
       }
     };
 
@@ -1038,7 +1109,15 @@ export const VesselDiagram3D: React.FC = () => {
       {/* Top HUD */}
       <div className="absolute top-0 left-0 right-0 p-8 flex justify-between items-start pointer-events-none z-10 bg-gradient-to-b from-[#030b14]/90 to-transparent">
         <div className="flex flex-col gap-1">
-          <h1 className="text-3xl font-black text-[#c89a3c] tracking-widest italic uppercase font-bebas">MV ATHENA</h1>
+          <div className="flex items-center gap-4 mb-1 pointer-events-auto">
+            <button 
+              onClick={() => navigate(-1)}
+              className="p-2 bg-[#c89a3c]/10 hover:bg-[#c89a3c]/20 text-[#c89a3c] rounded-lg transition-all border border-[#c89a3c]/20"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <h1 className="text-3xl font-black text-[#c89a3c] tracking-widest italic uppercase font-bebas">MV ATHENA</h1>
+          </div>
           <div className="flex items-center gap-4">
             <span className="text-[#a8c8e0]/40 text-[10px] font-bold uppercase tracking-[0.2em]">HANDYMAX BULK CARRIER · CLASS BV · FLAG LIBERIA</span>
           </div>
@@ -1069,51 +1148,6 @@ export const VesselDiagram3D: React.FC = () => {
             className="fixed z-[90] bg-[#030b14]/95 border border-[#c89a3c]/40 text-[#c89a3c] px-4 py-2 rounded text-[10px] font-black uppercase tracking-widest pointer-events-none shadow-2xl"
           >
             {tooltip.name}
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Info Panel */}
-      <AnimatePresence>
-        {infoPanel && (
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            className="absolute top-1/2 -translate-y-1/2 left-8 w-[320px] bg-[#030b14]/95 backdrop-blur-3xl border border-[#c89a3c]/20 rounded-xl shadow-2xl z-50 overflow-hidden"
-          >
-            <div className="p-6 border-b border-[#c89a3c]/10">
-              <div className="text-3xl mb-2">{infoPanel.ico}</div>
-              <div className="text-[10px] font-black text-[#c89a3c] uppercase tracking-[0.3em] mb-1">{infoPanel.cat}</div>
-              <h3 className="text-2xl font-black text-white leading-none italic uppercase tracking-tight font-bebas">{infoPanel.name}</h3>
-            </div>
-            
-            <div className="p-6">
-              <p className="text-xs text-[#7499b4] leading-relaxed mb-8">
-                {infoPanel.txt}
-              </p>
-
-              <div className="flex flex-col gap-3">
-                <button 
-                  onClick={() => {
-                    // Hypothetical link to lexicon or scroll to lexicon section
-                    const lexiconEl = document.getElementById('lexicon-section');
-                    if (lexiconEl) lexiconEl.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full py-3 bg-[#c89a3c]/5 hover:bg-[#c89a3c]/15 border border-[#c89a3c]/20 text-[#c89a3c] rounded text-[10px] font-black uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-2"
-                >
-                  <Compass size={12} />
-                  View in Lexicon
-                </button>
-                
-                <button 
-                  onClick={() => setInfoPanel(null)}
-                  className="w-full py-3 bg-slate-800/50 hover:bg-slate-800 border border-slate-700 text-slate-400 rounded text-[10px] font-black uppercase tracking-[0.2em] transition-all"
-                >
-                  [ CLOSE ]
-                </button>
-              </div>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>

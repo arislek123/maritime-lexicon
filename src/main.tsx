@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from './lib/AuthContext';
 import App from './App';
@@ -11,7 +11,7 @@ const rootElement = document.getElementById('root')!;
 const Main = () => (
   <React.StrictMode>
     <HelmetProvider>
-      <BrowserRouter basename="/maritime-lexicon/">
+      <BrowserRouter basename="/">
         <AuthProvider>
           <App />
         </AuthProvider>

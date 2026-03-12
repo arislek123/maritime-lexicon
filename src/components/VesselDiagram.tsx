@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { Info, ArrowRight } from 'lucide-react';
 
 interface Hotspot {

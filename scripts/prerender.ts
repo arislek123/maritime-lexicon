@@ -28,9 +28,10 @@ async function prerender() {
   const template = fs.readFileSync(toAbsolute('../dist/index.html'), 'utf-8');
 
   // 4. Define routes to prerender
+  // We limit this to the home page and top 100 terms to keep the build light
   const routesToPrerender = [
     '/',
-    ...terms.map(t => `/term/${t.slug}/`),
+    ...terms.slice(0, 100).map(t => `/term/${t.slug}/`),
   ];
 
   // 5. Prerender each route

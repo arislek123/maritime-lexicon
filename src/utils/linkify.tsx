@@ -1,12 +1,16 @@
 import React from 'react';
-import { maritimeTerms } from '../data/maritimeTerms';
+import { terms } from '../data/terms';
 
 export function linkify(text: string, onLinkClick: (id: string) => void): React.ReactNode[] {
   // Sort terms by length descending to match longer terms first (e.g., "Nautical Mile" before "Mile")
-  const sortedTerms = [...maritimeTerms].sort((a, b) => b.title.length - a.title.length);
+  const sortedTerms = [...terms].sort((a, b) => b.title.length - a.title.length);
   
   // Create a regex that matches any of the terms (case-insensitive)
-  const termPattern = sortedTerms.map(term => 
+  // We limit the number of terms to avoid regex overflow or extreme slowness
+  // Only use the top 1000 most common/important terms for linkification
+  const linkableTerms = sortedTerms.slice(0, 1000);
+  
+  const termPattern = linkableTerms.map(term => 
     term.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   ).join('|');
   
@@ -26,13 +30,13 @@ export function linkify(text: string, onLinkClick: (id: string) => void): React.
     }
 
     // Find the term ID for the matched text
-    const term = sortedTerms.find(t => t.title.toLowerCase() === matchedText.toLowerCase());
+    const term = linkableTerms.find(t => t.title.toLowerCase() === matchedText.toLowerCase());
     
     if (term) {
       parts.push(
         <button
-          key={`${term.id}-${matchIndex}`}
-          onClick={() => onLinkClick(term.id)}
+          key={`${term.slug}-${matchIndex}`}
+          onClick={() => onLinkClick(term.slug)}
           className="text-blue-600 hover:text-blue-800 underline decoration-blue-300 underline-offset-2 transition-colors cursor-pointer font-medium"
         >
           {matchedText}

@@ -46324,6 +46324,7266 @@ export const terms: Term[] = [
     "sources": [
       "Navigation Standards"
     ]
+  },
+  {
+    "id": "abaft",
+    "title": "Abaft",
+    "slug": "abaft",
+    "definition": "Toward the stern of a ship; behind or further back than a particular point.",
+    "category": "Terminology",
+    "context": "Used to describe relative position on a vessel.",
+    "relatedSlugs": ["aft", "stern", "astern"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "abeam",
+    "title": "Abeam",
+    "slug": "abeam",
+    "definition": "At right angles to the ship's keel or centerline.",
+    "category": "Navigation",
+    "context": "Used for reporting the position of objects relative to the ship.",
+    "relatedSlugs": ["port", "starboard", "bearing"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "able-seaman",
+    "title": "Able Seaman (AS)",
+    "slug": "able-seaman",
+    "definition": "A member of the deck department who is certified to perform all duties of a seaman.",
+    "category": "Crew",
+    "context": "A rank above ordinary seaman.",
+    "relatedSlugs": ["ordinary-seaman", "bosun", "deck-hand"],
+    "sources": ["STCW Convention"]
+  },
+  {
+    "id": "accommodation-ladder",
+    "title": "Accommodation Ladder",
+    "slug": "accommodation-ladder",
+    "definition": "A portable flight of steps down a ship's side to allow people to board from a pier or boat.",
+    "category": "Vessel Parts",
+    "context": "Used for safe embarkation and disembarkation.",
+    "relatedSlugs": ["gangway", "pilot-ladder", "embarkation"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "admiralty-law",
+    "title": "Admiralty Law",
+    "slug": "admiralty-law",
+    "definition": "The body of law that governs maritime questions and offenses.",
+    "category": "Regulations",
+    "context": "Also known as maritime law.",
+    "relatedSlugs": ["maritime-law", "imo", "unclos"],
+    "sources": ["Legal Standards"]
+  },
+  {
+    "id": "adrift",
+    "title": "Adrift",
+    "slug": "adrift",
+    "definition": "Floating without being steered or moored.",
+    "category": "Terminology",
+    "context": "Used to describe a vessel that has lost its power or moorings.",
+    "relatedSlugs": ["derelict", "abandoned", "mooring"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "aft-peak-tank",
+    "title": "Aft Peak Tank",
+    "slug": "aft-peak-tank",
+    "definition": "A tank located at the extreme after end of a ship, usually used for ballast or fresh water.",
+    "category": "Vessel Parts",
+    "context": "Used for trimming the vessel.",
+    "relatedSlugs": ["fore-peak-tank", "ballast-tank", "trim"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "after-deck",
+    "title": "After Deck",
+    "slug": "after-deck",
+    "definition": "The part of the deck located toward the stern of a ship.",
+    "category": "Vessel Parts",
+    "context": "Opposite of the fore deck.",
+    "relatedSlugs": ["fore-deck", "poop-deck", "stern"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "aground",
+    "title": "Aground",
+    "slug": "aground",
+    "definition": "Touching or resting on the bottom of a body of water.",
+    "category": "Terminology",
+    "context": "A dangerous situation for most vessels.",
+    "relatedSlugs": ["stranded", "shoal", "draft"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "ahead",
+    "title": "Ahead",
+    "slug": "ahead",
+    "definition": "In front of the ship; in the direction the ship is facing.",
+    "category": "Navigation",
+    "context": "Used for reporting objects or direction of travel.",
+    "relatedSlugs": ["astern", "bow", "forward"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "ahull",
+    "title": "Ahull",
+    "slug": "ahull",
+    "definition": "The position of a ship with all sails furled and the helm lashed to leeward in a storm.",
+    "category": "Operations",
+    "context": "A heavy weather tactic.",
+    "relatedSlugs": ["heave-to", "scudding", "storm"],
+    "sources": ["Seamanship Manual"]
+  },
+  {
+    "id": "air-cushion-vehicle",
+    "title": "Air Cushion Vehicle (ACV)",
+    "slug": "air-cushion-vehicle",
+    "definition": "A craft capable of traveling over land or water on a cushion of air.",
+    "category": "Technical",
+    "context": "Commonly known as a hovercraft.",
+    "relatedSlugs": ["hovercraft", "hydrofoil", "amphibious"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "all-hands-on-deck",
+    "title": "All Hands on Deck",
+    "slug": "all-hands-on-deck",
+    "definition": "A call for the entire crew to assemble on deck for an emergency or important task.",
+    "category": "Crew",
+    "context": "Used in critical situations.",
+    "relatedSlugs": ["crew", "emergency", "muster"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "aloe-rope",
+    "title": "Aloe Rope",
+    "slug": "aloe-rope",
+    "definition": "Rope made from the fibers of the aloe plant, known for its resistance to rot.",
+    "category": "Terminology",
+    "context": "Historical rigging material.",
+    "relatedSlugs": ["hemp-rope", "manila-rope", "rigging"],
+    "sources": ["History of Seamanship"]
+  },
+  {
+    "id": "alongside",
+    "title": "Alongside",
+    "slug": "alongside",
+    "definition": "Beside a pier, wharf, or another ship.",
+    "category": "Operations",
+    "context": "Used during mooring or cargo operations.",
+    "relatedSlugs": ["mooring", "berth", "pier"],
+    "sources": ["Port Operations"]
+  },
+  {
+    "id": "alphabet-flags",
+    "title": "Alphabet Flags",
+    "slug": "alphabet-flags",
+    "definition": "A set of signal flags used for communication between ships.",
+    "category": "Navigation",
+    "context": "Part of the International Code of Signals.",
+    "relatedSlugs": ["signal-flags", "ics", "semaphore"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "amidships",
+    "title": "Amidships",
+    "slug": "amidships",
+    "definition": "In or toward the middle of the ship.",
+    "category": "Terminology",
+    "context": "Used for both longitudinal and transverse center.",
+    "relatedSlugs": ["centerline", "beam", "waist"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "anchor-aweigh",
+    "title": "Anchor Aweigh",
+    "slug": "anchor-aweigh",
+    "definition": "The moment the anchor is lifted off the bottom.",
+    "category": "Operations",
+    "context": "The ship is then no longer moored to the bottom.",
+    "relatedSlugs": ["anchor", "weigh-anchor", "underway"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "anchor-ball",
+    "title": "Anchor Ball",
+    "slug": "anchor-ball",
+    "definition": "A black circular day shape displayed by a vessel at anchor.",
+    "category": "Navigation",
+    "context": "Required by COLREGs.",
+    "relatedSlugs": ["day-shape", "colregs", "anchor"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "anchor-buoy",
+    "title": "Anchor Buoy",
+    "slug": "anchor-buoy",
+    "definition": "A small buoy used to mark the position of a ship's anchor.",
+    "category": "Navigation",
+    "context": "Helps in locating the anchor if the cable breaks.",
+    "relatedSlugs": ["anchor", "buoy", "mooring"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "anchor-chain",
+    "title": "Anchor Chain",
+    "slug": "anchor-chain",
+    "definition": "The heavy chain that connects the anchor to the ship.",
+    "category": "Vessel Parts",
+    "context": "Stored in the chain locker.",
+    "relatedSlugs": ["anchor", "chain-locker", "windlass"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "anchor-light",
+    "title": "Anchor Light",
+    "slug": "anchor-light",
+    "definition": "A white light displayed by a vessel at anchor at night.",
+    "category": "Navigation",
+    "context": "Required for safety and visibility.",
+    "relatedSlugs": ["navigation-lights", "colregs", "anchor"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "anchor-watch",
+    "title": "Anchor Watch",
+    "slug": "anchor-watch",
+    "definition": "A crew member assigned to monitor the ship's position while at anchor.",
+    "category": "Crew",
+    "context": "Ensures the ship is not dragging its anchor.",
+    "relatedSlugs": ["watchkeeping", "anchor-dragging", "gps"],
+    "sources": ["Bridge Procedures"]
+  },
+  {
+    "id": "anchorage",
+    "title": "Anchorage",
+    "slug": "anchorage",
+    "definition": "A designated area where ships can safely anchor.",
+    "category": "Operations",
+    "context": "Marked on nautical charts.",
+    "relatedSlugs": ["anchor", "berth", "harbor"],
+    "sources": ["Navigation Charts"]
+  },
+  {
+    "id": "anemometer",
+    "title": "Anemometer",
+    "slug": "anemometer",
+    "definition": "An instrument used to measure wind speed.",
+    "category": "Technical",
+    "context": "Essential for weather monitoring.",
+    "relatedSlugs": ["wind-vane", "barometer", "weather"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "aneroid-barometer",
+    "title": "Aneroid Barometer",
+    "slug": "aneroid-barometer",
+    "definition": "An instrument used to measure atmospheric pressure without using liquid.",
+    "category": "Technical",
+    "context": "Used for predicting weather changes.",
+    "relatedSlugs": ["barometer", "pressure", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "angle-of-attack",
+    "title": "Angle of Attack",
+    "slug": "angle-of-attack",
+    "definition": "The angle between the chord line of an airfoil (like a sail or rudder) and the direction of the fluid flow.",
+    "category": "Technical",
+    "context": "Crucial for aerodynamic and hydrodynamic efficiency.",
+    "relatedSlugs": ["lift", "drag", "rudder"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "angle-of-heel",
+    "title": "Angle of Heel",
+    "slug": "angle-of-heel",
+    "definition": "The degree to which a vessel leans to one side.",
+    "category": "Terminology",
+    "context": "Caused by wind, waves, or shifting weight.",
+    "relatedSlugs": ["heel", "list", "stability"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "answering-pennant",
+    "title": "Answering Pennant",
+    "slug": "answering-pennant",
+    "definition": "A signal flag used to acknowledge a message or to indicate a decimal point.",
+    "category": "Navigation",
+    "context": "Part of the International Code of Signals.",
+    "relatedSlugs": ["signal-flags", "ics", "communication"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "anti-fouling-paint",
+    "title": "Anti-fouling Paint",
+    "slug": "anti-fouling-paint",
+    "definition": "Specialized coating applied to the hull to prevent the growth of marine organisms.",
+    "category": "Technical",
+    "context": "Reduces drag and fuel consumption.",
+    "relatedSlugs": ["hull", "dry-dock", "barnacles"],
+    "sources": ["Marine Engineering"]
+  },
+  {
+    "id": "apparent-wind",
+    "title": "Apparent Wind",
+    "slug": "apparent-wind",
+    "definition": "The wind experienced by a moving vessel, a combination of true wind and the wind created by the vessel's motion.",
+    "category": "Environment",
+    "context": "What the sailor feels and sails by.",
+    "relatedSlugs": ["true-wind", "relative-wind", "anemometer"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "apron",
+    "title": "Apron",
+    "slug": "apron",
+    "definition": "A structural member used to strengthen the stem of a wooden vessel.",
+    "category": "Vessel Parts",
+    "context": "Located behind the stem.",
+    "relatedSlugs": ["stem", "keel", "wooden-ship"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "archboard",
+    "title": "Archboard",
+    "slug": "archboard",
+    "definition": "The planking forming the upper part of the stern of a boat.",
+    "category": "Vessel Parts",
+    "context": "Often decorative.",
+    "relatedSlugs": ["stern", "transom", "taffrail"],
+    "sources": ["Boat Building"]
+  },
+  {
+    "id": "armament",
+    "title": "Armament",
+    "slug": "armament",
+    "definition": "The weapons and defensive systems of a warship.",
+    "category": "History",
+    "context": "Includes guns, missiles, and torpedoes.",
+    "relatedSlugs": ["warship", "turret", "broadside"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "arrival-notice",
+    "title": "Arrival Notice",
+    "slug": "arrival-notice",
+    "definition": "A document sent by a carrier to notify a party of a shipment's arrival.",
+    "category": "Cargo",
+    "context": "Used in logistics and supply chain.",
+    "relatedSlugs": ["cargo", "bill-of-lading", "manifest"],
+    "sources": ["Logistics Standards"]
+  },
+  {
+    "id": "articles-of-agreement",
+    "title": "Articles of Agreement",
+    "slug": "articles-of-agreement",
+    "definition": "The contract between the master and the crew of a ship.",
+    "category": "Regulations",
+    "context": "Outlines duties, wages, and conditions.",
+    "relatedSlugs": ["crew", "master", "maritime-law"],
+    "sources": ["Maritime Regulations"]
+  },
+  {
+    "id": "aspect-ratio",
+    "title": "Aspect Ratio",
+    "slug": "aspect-ratio",
+    "definition": "The ratio of the span of a sail or rudder to its chord.",
+    "category": "Technical",
+    "context": "Affects efficiency and performance.",
+    "relatedSlugs": ["sail", "rudder", "lift"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "astern",
+    "title": "Astern",
+    "slug": "astern",
+    "definition": "Behind the ship; in the direction opposite to the ship's heading.",
+    "category": "Navigation",
+    "context": "Used for reporting objects or direction of travel.",
+    "relatedSlugs": ["ahead", "stern", "aft"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "athwartships",
+    "title": "Athwartships",
+    "slug": "athwartships",
+    "definition": "Across the ship, from side to side.",
+    "category": "Terminology",
+    "context": "At right angles to the centerline.",
+    "relatedSlugs": ["amidships", "beam", "transverse"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "automatic-pilot",
+    "title": "Automatic Pilot",
+    "slug": "automatic-pilot",
+    "definition": "A device used to maintain a ship's course automatically.",
+    "category": "Technical",
+    "context": "Commonly known as an autopilot.",
+    "relatedSlugs": ["navigation", "gyro-compass", "steering"],
+    "sources": ["Bridge Equipment"]
+  },
+  {
+    "id": "awash",
+    "title": "Awash",
+    "slug": "awash",
+    "definition": "Level with or slightly below the surface of the water.",
+    "category": "Terminology",
+    "context": "Used to describe objects or decks covered by water.",
+    "relatedSlugs": ["submerged", "swamped", "waterline"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "back-and-fill",
+    "title": "Back and Fill",
+    "slug": "back-and-fill",
+    "definition": "A technique used to maneuver a sailing vessel in a narrow channel using the tide.",
+    "category": "Navigation",
+    "context": "Requires careful sail handling.",
+    "relatedSlugs": ["tacking", "maneuvering", "tide"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "backstay",
+    "title": "Backstay",
+    "slug": "backstay",
+    "definition": "A piece of standing rigging that supports the mast from aft.",
+    "category": "Vessel Parts",
+    "context": "Prevents the mast from falling forward.",
+    "relatedSlugs": ["forestay", "shrouds", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "backwash",
+    "title": "Backwash",
+    "slug": "backwash",
+    "definition": "Water thrown back by a propeller or the motion of a vessel.",
+    "category": "Terminology",
+    "context": "Can affect nearby vessels or structures.",
+    "relatedSlugs": ["wake", "wash", "propeller"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "baffling-winds",
+    "title": "Baffling Winds",
+    "slug": "baffling-winds",
+    "definition": "Winds that frequently shift direction and vary in intensity.",
+    "category": "Environment",
+    "context": "Difficult for sailing vessels.",
+    "relatedSlugs": ["wind", "variable-winds", "doldrums"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "baggywrinkle",
+    "title": "Baggywrinkle",
+    "slug": "baggywrinkle",
+    "definition": "Chafing gear made from old rope scraps to protect sails from wear.",
+    "category": "Vessel Parts",
+    "context": "Traditional sailing ship equipment.",
+    "relatedSlugs": ["chafing-gear", "rigging", "sail"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "bailer",
+    "title": "Bailer",
+    "slug": "bailer",
+    "definition": "A device used to remove water from a boat.",
+    "category": "Safety",
+    "context": "Essential for small boats.",
+    "relatedSlugs": ["bilge-pump", "bucket", "swamped"],
+    "sources": ["Safety Equipment"]
+  },
+  {
+    "id": "barge",
+    "title": "Barge",
+    "slug": "barge",
+    "definition": "A flat-bottomed boat, built mainly for river and canal transport of heavy goods.",
+    "category": "Cargo",
+    "context": "Often towed or pushed by a tug.",
+    "relatedSlugs": ["tug", "lighter", "canal"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "barometer",
+    "title": "Barometer",
+    "slug": "barometer",
+    "definition": "An instrument used to measure atmospheric pressure.",
+    "category": "Technical",
+    "context": "Used for weather forecasting.",
+    "relatedSlugs": ["aneroid-barometer", "pressure", "weather"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "barratry",
+    "title": "Barratry",
+    "slug": "barratry",
+    "definition": "An unlawful act or fraudulent breach of duty by a master or crew to the injury of the owner.",
+    "category": "Regulations",
+    "context": "A serious maritime offense.",
+    "relatedSlugs": ["maritime-law", "fraud", "mutiny"],
+    "sources": ["Legal Standards"]
+  },
+  {
+    "id": "batten",
+    "title": "Batten",
+    "slug": "batten",
+    "definition": "A thin strip of wood or plastic used to stiffen the leach of a sail.",
+    "category": "Vessel Parts",
+    "context": "Helps maintain sail shape.",
+    "relatedSlugs": ["sail", "leach", "roach"],
+    "sources": ["Sailmaking"]
+  },
+  {
+    "id": "batten-down",
+    "title": "Batten Down",
+    "slug": "batten-down",
+    "definition": "To secure hatches and other openings in preparation for a storm.",
+    "category": "Operations",
+    "context": "Ensures the ship is watertight.",
+    "relatedSlugs": ["hatch", "storm", "watertight"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "beacon",
+    "title": "Beacon",
+    "slug": "beacon",
+    "definition": "A fixed visual aid to navigation.",
+    "category": "Navigation",
+    "context": "Can be lighted or unlighted.",
+    "relatedSlugs": ["buoy", "lighthouse", "daymark"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "beam-ends",
+    "title": "Beam Ends",
+    "slug": "beam-ends",
+    "definition": "A vessel is on its beam ends when it has listed so far that its deck beams are nearly vertical.",
+    "category": "Terminology",
+    "context": "A critical situation near capsizing.",
+    "relatedSlugs": ["capsizing", "list", "stability"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "beam-sea",
+    "title": "Beam Sea",
+    "slug": "beam-sea",
+    "definition": "A sea directed at right angles to the ship's heading.",
+    "category": "Environment",
+    "context": "Causes heavy rolling.",
+    "relatedSlugs": ["rolling", "beam", "waves"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "beam-wind",
+    "title": "Beam Wind",
+    "slug": "beam-wind",
+    "definition": "A wind blowing at right angles to the ship's heading.",
+    "category": "Environment",
+    "context": "Ideal for many sailing vessels.",
+    "relatedSlugs": ["reaching", "beam", "wind"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "bear-away",
+    "title": "Bear Away",
+    "slug": "bear-away",
+    "definition": "To steer the vessel further away from the wind.",
+    "category": "Navigation",
+    "context": "Opposite of luffing up.",
+    "relatedSlugs": ["luff", "tacking", "wind"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "bear-up",
+    "title": "Bear Up",
+    "slug": "bear-up",
+    "definition": "To steer the vessel closer to the wind.",
+    "category": "Navigation",
+    "context": "Also known as heading up.",
+    "relatedSlugs": ["heading-up", "wind", "tacking"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "bearing-circle",
+    "title": "Bearing Circle",
+    "slug": "bearing-circle",
+    "definition": "A device placed over a compass to take bearings of distant objects.",
+    "category": "Technical",
+    "context": "Used for traditional navigation.",
+    "relatedSlugs": ["compass", "bearing", "navigation"],
+    "sources": ["Bridge Equipment"]
+  },
+  {
+    "id": "beat-to-quarters",
+    "title": "Beat to Quarters",
+    "slug": "beat-to-quarters",
+    "definition": "A signal for the crew to take their stations for battle.",
+    "category": "History",
+    "context": "Traditional naval command.",
+    "relatedSlugs": ["battle-stations", "warship", "crew"],
+    "sources": ["Naval Tradition"]
+  },
+  {
+    "id": "beating",
+    "title": "Beating",
+    "slug": "beating",
+    "definition": "Sailing toward the wind by making a series of tacks.",
+    "category": "Navigation",
+    "context": "Also known as sailing close-hauled.",
+    "relatedSlugs": ["tacking", "close-hauled", "windward"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "becalmed",
+    "title": "Becalmed",
+    "slug": "becalmed",
+    "definition": "A sailing vessel unable to move due to lack of wind.",
+    "category": "Terminology",
+    "context": "Frustrating situation for sailors.",
+    "relatedSlugs": ["doldrums", "wind", "sailing"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "becket",
+    "title": "Becket",
+    "slug": "becket",
+    "definition": "A loop of rope or a metal eye used for securing things.",
+    "category": "Vessel Parts",
+    "context": "Common in rigging and blocks.",
+    "relatedSlugs": ["block", "rigging", "eye"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "before-the-mast",
+    "title": "Before the Mast",
+    "slug": "before-the-mast",
+    "definition": "Serving as an ordinary seaman, whose quarters were in the forward part of the ship.",
+    "category": "History",
+    "context": "Refers to non-officer crew.",
+    "relatedSlugs": ["crew", "forecastle", "seaman"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "belaying-pin",
+    "title": "Belaying Pin",
+    "slug": "belaying-pin",
+    "definition": "A short wooden or metal rod used for securing lines.",
+    "category": "Vessel Parts",
+    "context": "Found on the fife rail.",
+    "relatedSlugs": ["fife-rail", "rigging", "cleat"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "bell-buoy",
+    "title": "Bell Buoy",
+    "slug": "bell-buoy",
+    "definition": "A buoy equipped with a bell that rings as it moves with the waves.",
+    "category": "Navigation",
+    "context": "Audible aid to navigation.",
+    "relatedSlugs": ["buoy", "fog-signal", "navigation"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "below",
+    "title": "Below",
+    "slug": "below",
+    "definition": "Beneath the deck; inside the ship.",
+    "category": "Terminology",
+    "context": "Used for direction on board.",
+    "relatedSlugs": ["deck", "cabin", "hold"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "bend",
+    "title": "Bend",
+    "slug": "bend",
+    "definition": "To fasten a sail to a spar or a rope to another rope.",
+    "category": "Terminology",
+    "context": "A type of knot.",
+    "relatedSlugs": ["knot", "hitch", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "beneaped",
+    "title": "Beneaped",
+    "slug": "beneaped",
+    "definition": "A vessel aground because the tide has fallen from its highest point during neap tides.",
+    "category": "Terminology",
+    "context": "Requires waiting for higher tides.",
+    "relatedSlugs": ["neap-tide", "aground", "tide"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "bergy-bit",
+    "title": "Bergy Bit",
+    "slug": "bergy-bit",
+    "definition": "A medium-sized piece of floating ice, smaller than an iceberg.",
+    "category": "Environment",
+    "context": "Hazardous to navigation.",
+    "relatedSlugs": ["iceberg", "growler", "ice-field"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "bermuda-rig",
+    "title": "Bermuda Rig",
+    "slug": "bermuda-rig",
+    "definition": "A configuration of sails with a triangular mainsail.",
+    "category": "Vessel Parts",
+    "context": "The most common modern sailing rig.",
+    "relatedSlugs": ["mainsail", "rigging", "sloop"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "berth-rate",
+    "title": "Berth Rate",
+    "slug": "berth-rate",
+    "definition": "The charge for using a berth in a port.",
+    "category": "Operations",
+    "context": "Part of port expenses.",
+    "relatedSlugs": ["berth", "port-dues", "mooring"],
+    "sources": ["Port Economics"]
+  },
+  {
+    "id": "best-bower-anchor",
+    "title": "Best Bower Anchor",
+    "slug": "best-bower-anchor",
+    "definition": "The larger of the two anchors carried at the bow.",
+    "category": "Vessel Parts",
+    "context": "Used for primary anchoring.",
+    "relatedSlugs": ["anchor", "bower-anchor", "kedge-anchor"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "between-decks",
+    "title": "Between Decks",
+    "slug": "between-decks",
+    "definition": "The space between two decks of a ship.",
+    "category": "Vessel Parts",
+    "context": "Often used for cargo or accommodation.",
+    "relatedSlugs": ["deck", "hold", "tween-deck"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "bibbs",
+    "title": "Bibbs",
+    "slug": "bibbs",
+    "definition": "Pieces of timber bolted to the hounds of a mast to support the trestle-trees.",
+    "category": "Vessel Parts",
+    "context": "Traditional mast construction.",
+    "relatedSlugs": ["mast", "trestle-trees", "hounds"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "bilge-keel",
+    "title": "Bilge Keel",
+    "slug": "bilge-keel",
+    "definition": "A pair of fins on the hull of a ship to reduce rolling.",
+    "category": "Vessel Parts",
+    "context": "Passive stabilization system.",
+    "relatedSlugs": ["keel", "rolling", "stabilizer"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "bilge-water",
+    "title": "Bilge Water",
+    "slug": "bilge-water",
+    "definition": "Water that collects in the lowest part of a ship's hull.",
+    "category": "Terminology",
+    "context": "Must be pumped out regularly.",
+    "relatedSlugs": ["bilge", "bilge-pump", "hull"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "bill-of-health",
+    "title": "Bill of Health",
+    "slug": "bill-of-health",
+    "definition": "A certificate given to a ship stating the health conditions of the port of departure.",
+    "category": "Regulations",
+    "context": "Used for quarantine purposes.",
+    "relatedSlugs": ["quarantine", "port-state-control", "health"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "bill-of-sale",
+    "title": "Bill of Sale",
+    "slug": "bill-of-sale",
+    "definition": "A legal document that transfers ownership of a vessel.",
+    "category": "Regulations",
+    "context": "Required for registration.",
+    "relatedSlugs": ["ownership", "registration", "vessel-title"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "binnacle-list",
+    "title": "Binnacle List",
+    "slug": "binnacle-list",
+    "definition": "A list of crew members who are excused from duty due to illness.",
+    "category": "Crew",
+    "context": "Traditional naval term.",
+    "relatedSlugs": ["sick-bay", "crew", "duty"],
+    "sources": ["Naval Tradition"]
+  },
+  {
+    "id": "bitter-end",
+    "title": "Bitter End",
+    "slug": "bitter-end",
+    "definition": "The last part of a rope or chain; the end secured to the bitts.",
+    "category": "Terminology",
+    "context": "Origin of the common idiom.",
+    "relatedSlugs": ["bitts", "anchor-chain", "rope"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "black-gang",
+    "title": "Black Gang",
+    "slug": "black-gang",
+    "definition": "A slang term for the engine room crew on a steamship.",
+    "category": "History",
+    "context": "Refers to the coal dust they worked in.",
+    "relatedSlugs": ["engine-room", "crew", "steamship"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "block-and-tackle",
+    "title": "Block and Tackle",
+    "slug": "block-and-tackle",
+    "definition": "A system of two or more pulleys with a rope or cable threaded between them.",
+    "category": "Technical",
+    "context": "Used for lifting heavy weights.",
+    "relatedSlugs": ["pulley", "mechanical-advantage", "rigging"],
+    "sources": ["Engineering Principles"]
+  },
+  {
+    "id": "blue-peter",
+    "title": "Blue Peter",
+    "slug": "blue-peter",
+    "definition": "A signal flag (the letter P) hoisted to indicate that a vessel is about to sail.",
+    "category": "Navigation",
+    "context": "Signals all crew to return to the ship.",
+    "relatedSlugs": ["signal-flags", "departure", "p-flag"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "board",
+    "title": "Board",
+    "slug": "board",
+    "definition": "To enter a ship; also the side of a ship.",
+    "category": "Operations",
+    "context": "Used in many maritime phrases.",
+    "relatedSlugs": ["embark", "starboard", "port"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "boat-hook",
+    "title": "Boat Hook",
+    "slug": "boat-hook",
+    "definition": "A pole with a hook and a blunt point at one end, used for fending off or pulling a boat.",
+    "category": "Vessel Parts",
+    "context": "Essential for small boat handling.",
+    "relatedSlugs": ["fending-off", "mooring", "pole"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "boatswain",
+    "title": "Boatswain",
+    "slug": "boatswain",
+    "definition": "The officer in charge of the hull, rigging, and sails.",
+    "category": "Crew",
+    "context": "Pronounced 'bosun'.",
+    "relatedSlugs": ["bosun", "deck-department", "crew"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "boatswain-chair",
+    "title": "Boatswain's Chair",
+    "slug": "boatswain-chair",
+    "definition": "A seat used to hoist a person aloft for work on the rigging or mast.",
+    "category": "Safety",
+    "context": "Requires careful securing.",
+    "relatedSlugs": ["aloft", "rigging", "safety-harness"],
+    "sources": ["Safety at Sea"]
+  },
+  {
+    "id": "bobstay",
+    "title": "Bobstay",
+    "slug": "bobstay",
+    "definition": "A stay that holds the bowsprit down against the upward pull of the forestay.",
+    "category": "Vessel Parts",
+    "context": "Crucial for bowsprit stability.",
+    "relatedSlugs": ["bowsprit", "forestay", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "body-plan",
+    "title": "Body Plan",
+    "slug": "body-plan",
+    "definition": "A drawing showing the transverse sections of a ship's hull.",
+    "category": "Technical",
+    "context": "Part of a ship's lines plan.",
+    "relatedSlugs": ["lines-plan", "hull", "naval-architecture"],
+    "sources": ["Ship Design"]
+  },
+  {
+    "id": "bollard-pull",
+    "title": "Bollard Pull",
+    "slug": "bollard-pull",
+    "definition": "A measure of the static pulling power of a tugboat.",
+    "category": "Technical",
+    "context": "Expressed in tonnes.",
+    "relatedSlugs": ["tug", "towing", "propulsion"],
+    "sources": ["Marine Engineering"]
+  },
+  {
+    "id": "bolster",
+    "title": "Bolster",
+    "slug": "bolster",
+    "definition": "A piece of wood or metal used to prevent chafing of a rope at a sharp turn.",
+    "category": "Vessel Parts",
+    "context": "Protects rigging.",
+    "relatedSlugs": ["chafing-gear", "rigging", "wear"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "bolt-rope",
+    "title": "Bolt Rope",
+    "slug": "bolt-rope",
+    "definition": "A rope sewn into the edge of a sail to strengthen it.",
+    "category": "Vessel Parts",
+    "context": "Takes the tension of the sail.",
+    "relatedSlugs": ["sail", "rigging", "sewing"],
+    "sources": ["Sailmaking"]
+  },
+  {
+    "id": "booby-hatch",
+    "title": "Booby Hatch",
+    "slug": "booby-hatch",
+    "definition": "A small hatch with a sliding cover, used for access to the crew's quarters.",
+    "category": "Vessel Parts",
+    "context": "Common on smaller vessels.",
+    "relatedSlugs": ["hatch", "companionway", "crew-quarters"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "boom-vang",
+    "title": "Boom Vang",
+    "slug": "boom-vang",
+    "definition": "A system of blocks and tackle used to hold the boom down and control sail twist.",
+    "category": "Vessel Parts",
+    "context": "Essential for sail trim.",
+    "relatedSlugs": ["boom", "sail-trim", "rigging"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "boot-top",
+    "title": "Boot Top",
+    "slug": "boot-top",
+    "definition": "The area of a ship's hull between the light and load waterlines, often painted a different color.",
+    "category": "Vessel Parts",
+    "context": "Subject to frequent wetting and drying.",
+    "relatedSlugs": ["waterline", "hull", "paint"],
+    "sources": ["Ship Maintenance"]
+  },
+  {
+    "id": "bottomry",
+    "title": "Bottomry",
+    "slug": "bottomry",
+    "definition": "A contract in which the owner of a ship borrows money for a voyage and pledges the ship as security.",
+    "category": "Regulations",
+    "context": "Historical maritime finance.",
+    "relatedSlugs": ["maritime-law", "finance", "insurance"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "bow-chaser",
+    "title": "Bow Chaser",
+    "slug": "bow-chaser",
+    "definition": "A gun placed in the bow of a ship to fire at a vessel being pursued.",
+    "category": "History",
+    "context": "Common on sailing warships.",
+    "relatedSlugs": ["warship", "armament", "pursuit"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "bow-line",
+    "title": "Bow Line",
+    "slug": "bow-line",
+    "definition": "A mooring line leading forward from the bow of a ship to a point on the pier.",
+    "category": "Operations",
+    "context": "One of the standard mooring lines.",
+    "relatedSlugs": ["mooring", "stern-line", "spring-line"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "bow-thruster",
+    "title": "Bow Thruster",
+    "slug": "bow-thruster",
+    "definition": "A propulsion device built into the bow to make the ship more maneuverable.",
+    "category": "Technical",
+    "context": "Used during docking and in tight spaces.",
+    "relatedSlugs": ["stern-thruster", "maneuvering", "propulsion"],
+    "sources": ["Marine Engineering"]
+  },
+  {
+    "id": "bowline",
+    "title": "Bowline",
+    "slug": "bowline",
+    "definition": "A versatile knot used to form a fixed loop at the end of a rope.",
+    "category": "Terminology",
+    "context": "Known as the 'king of knots'.",
+    "relatedSlugs": ["knot", "hitch", "clove-hitch"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "bowsprit",
+    "title": "Bowsprit",
+    "slug": "bowsprit",
+    "definition": "A spar extending forward from the ship's bow.",
+    "category": "Vessel Parts",
+    "context": "Used to extend the sail area forward.",
+    "relatedSlugs": ["jib-boom", "bobstay", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "box-the-compass",
+    "title": "Box the Compass",
+    "slug": "box-the-compass",
+    "definition": "To name all 32 points of the compass in order.",
+    "category": "Navigation",
+    "context": "A traditional test of a seaman's knowledge.",
+    "relatedSlugs": ["compass", "cardinal-points", "navigation"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "brace",
+    "title": "Brace",
+    "slug": "brace",
+    "definition": "A rope used to swing a yard and set it at the desired angle to the wind.",
+    "category": "Vessel Parts",
+    "context": "Essential for square-rigged ships.",
+    "relatedSlugs": ["yard", "rigging", "square-rig"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "brails",
+    "title": "Brails",
+    "slug": "brails",
+    "definition": "Ropes used to gather up a sail for furling.",
+    "category": "Vessel Parts",
+    "context": "Used on fore-and-aft sails.",
+    "relatedSlugs": ["furling", "sail", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "break-bulk",
+    "title": "Break Bulk",
+    "slug": "break-bulk",
+    "definition": "Cargo that is stowed in the hold as individual pieces rather than in containers.",
+    "category": "Cargo",
+    "context": "Traditional method of cargo handling.",
+    "relatedSlugs": ["containerization", "general-cargo", "stevedore"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "breaker",
+    "title": "Breaker",
+    "slug": "breaker",
+    "definition": "A wave that collapses into foam as it reaches shallow water.",
+    "category": "Environment",
+    "context": "Indicates shallow water or reefs.",
+    "relatedSlugs": ["surf", "shoal", "waves"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "breakwater",
+    "title": "Breakwater",
+    "slug": "breakwater",
+    "definition": "A structure built to protect a harbor or beach from the force of waves.",
+    "category": "Operations",
+    "context": "Creates a calm area for ships.",
+    "relatedSlugs": ["harbor", "jetty", "pier"],
+    "sources": ["Coastal Engineering"]
+  },
+  {
+    "id": "bridge",
+    "title": "Bridge",
+    "slug": "bridge",
+    "definition": "The platform or room from which a ship is steered and navigated.",
+    "category": "Vessel Parts",
+    "context": "The command center of the vessel.",
+    "relatedSlugs": ["wheelhouse", "chart-room", "navigation"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "bridle",
+    "title": "Bridle",
+    "slug": "bridle",
+    "definition": "A V-shaped arrangement of ropes or chains used for towing or mooring.",
+    "category": "Operations",
+    "context": "Distributes the load between two points.",
+    "relatedSlugs": ["towing", "mooring", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "brig",
+    "title": "Brig",
+    "slug": "brig",
+    "definition": "A two-masted sailing vessel, square-rigged on both masts.",
+    "category": "History",
+    "context": "Also refers to a ship's prison.",
+    "relatedSlugs": ["brigantine", "schooner", "warship"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "brigantine",
+    "title": "Brigantine",
+    "slug": "brigantine",
+    "definition": "A two-masted vessel, square-rigged on the foremast and fore-and-aft rigged on the mainmast.",
+    "category": "History",
+    "context": "A versatile historical vessel type.",
+    "relatedSlugs": ["brig", "schooner", "rigging"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "brightwork",
+    "title": "Brightwork",
+    "slug": "brightwork",
+    "definition": "Polished metal or varnished wood on a ship.",
+    "category": "Terminology",
+    "context": "Requires constant maintenance.",
+    "relatedSlugs": ["varnish", "brass", "maintenance"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "bring-to",
+    "title": "Bring To",
+    "slug": "bring-to",
+    "definition": "To stop a ship's way by heading into the wind or counter-bracing the yards.",
+    "category": "Operations",
+    "context": "Used to wait or communicate.",
+    "relatedSlugs": ["heave-to", "stop", "maneuvering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "broach",
+    "title": "Broach",
+    "slug": "broach",
+    "definition": "To swing broadside to the wind and waves, often leading to capsizing.",
+    "category": "Terminology",
+    "context": "A dangerous situation in heavy seas.",
+    "relatedSlugs": ["capsizing", "heavy-weather", "steering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "broadside",
+    "title": "Broadside",
+    "slug": "broadside",
+    "definition": "The side of a ship above the waterline; also the simultaneous firing of all guns on one side.",
+    "category": "History",
+    "context": "A key tactic in naval warfare.",
+    "relatedSlugs": ["warship", "armament", "salvo"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "brow",
+    "title": "Brow",
+    "slug": "brow",
+    "definition": "A portable gangway used for boarding a ship from a pier.",
+    "category": "Vessel Parts",
+    "context": "Commonly used in naval contexts.",
+    "relatedSlugs": ["gangway", "accommodation-ladder", "boarding"],
+    "sources": ["Naval Terminology"]
+  },
+  {
+    "id": "bulkhead",
+    "title": "Bulkhead",
+    "slug": "bulkhead",
+    "definition": "An upright wall within the hull of a ship.",
+    "category": "Vessel Parts",
+    "context": "Provides structural strength and watertight compartmentalization.",
+    "relatedSlugs": ["watertight-door", "hull", "compartment"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "bulwark",
+    "title": "Bulwark",
+    "slug": "bulwark",
+    "definition": "The extension of a ship's side above the level of the deck.",
+    "category": "Vessel Parts",
+    "context": "Acts as a railing for safety.",
+    "relatedSlugs": ["railing", "gunwale", "deck"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "bumboat",
+    "title": "Bumboat",
+    "slug": "bumboat",
+    "definition": "A small boat used to ferry supplies and provisions to ships at anchor.",
+    "category": "Operations",
+    "context": "Common in busy harbors.",
+    "relatedSlugs": ["provisions", "anchorage", "lighter"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "buntline",
+    "title": "Buntline",
+    "slug": "buntline",
+    "definition": "A rope used to haul up the body of a square sail for furling.",
+    "category": "Vessel Parts",
+    "context": "Attached to the foot of the sail.",
+    "relatedSlugs": ["clewline", "furling", "square-sail"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "buoy",
+    "title": "Buoy",
+    "slug": "buoy",
+    "definition": "A floating marker anchored to the bottom, used for navigation or mooring.",
+    "category": "Navigation",
+    "context": "Comes in various shapes and colors.",
+    "relatedSlugs": ["beacon", "mooring-buoy", "channel-marker"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "buoyancy",
+    "title": "Buoyancy",
+    "slug": "buoyancy",
+    "definition": "The upward force exerted by a fluid that opposes the weight of an immersed object.",
+    "category": "Technical",
+    "context": "The principle that allows ships to float.",
+    "relatedSlugs": ["displacement", "archimedes-principle", "stability"],
+    "sources": ["Physics"]
+  },
+  {
+    "id": "burdened-vessel",
+    "title": "Burdened Vessel",
+    "slug": "burdened-vessel",
+    "definition": "The vessel required by COLREGs to keep out of the way of another vessel.",
+    "category": "Navigation",
+    "context": "Now more commonly called the 'give-way vessel'.",
+    "relatedSlugs": ["give-way-vessel", "stand-on-vessel", "colregs"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "burgee",
+    "title": "Burgee",
+    "slug": "burgee",
+    "definition": "A small distinguishing flag flown by a yacht or a yacht club.",
+    "category": "Terminology",
+    "context": "Often triangular or swallow-tailed.",
+    "relatedSlugs": ["pennant", "ensign", "yachting"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "butt-joint",
+    "title": "Butt Joint",
+    "slug": "butt-joint",
+    "definition": "A joint formed by two pieces of material meeting end to end.",
+    "category": "Technical",
+    "context": "Common in hull planking and plating.",
+    "relatedSlugs": ["lap-joint", "planking", "shipbuilding"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "by-the-board",
+    "title": "By the Board",
+    "slug": "by-the-board",
+    "definition": "Overboard; specifically used when a mast falls over the side.",
+    "category": "Terminology",
+    "context": "Origin of the phrase 'go by the board'.",
+    "relatedSlugs": ["overboard", "dismasted", "wreck"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "cabin",
+    "title": "Cabin",
+    "slug": "cabin",
+    "definition": "A private room or compartment on a ship for passengers or crew.",
+    "category": "Vessel Parts",
+    "context": "Varies in size and luxury.",
+    "relatedSlugs": ["stateroom", "berth", "quarters"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "cable",
+    "title": "Cable",
+    "slug": "cable",
+    "definition": "A heavy rope or chain; also a unit of distance equal to one-tenth of a nautical mile.",
+    "category": "Terminology",
+    "context": "Used for anchoring and towing.",
+    "relatedSlugs": ["nautical-mile", "anchor-chain", "towing"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "cable-layer",
+    "title": "Cable Layer",
+    "slug": "cable-layer",
+    "definition": "A specialized ship designed to lay underwater cables for telecommunications or power.",
+    "category": "Technical",
+    "context": "Equipped with large cable drums.",
+    "relatedSlugs": ["vessel-types", "telecommunications", "subsea"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "caboose",
+    "title": "Caboose",
+    "slug": "caboose",
+    "definition": "The kitchen or galley on a small ship's deck.",
+    "category": "History",
+    "context": "Historical term for a deck-top galley.",
+    "relatedSlugs": ["galley", "cook", "provisions"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "caisson",
+    "title": "Caisson",
+    "slug": "caisson",
+    "definition": "A watertight structure used for underwater construction or as a dock gate.",
+    "category": "Technical",
+    "context": "Used in dry docks and bridge building.",
+    "relatedSlugs": ["dry-dock", "watertight", "engineering"],
+    "sources": ["Civil Engineering"]
+  },
+  {
+    "id": "camber",
+    "title": "Camber",
+    "slug": "camber",
+    "definition": "The slight arch or convexity of a ship's deck.",
+    "category": "Technical",
+    "context": "Allows water to drain off the deck.",
+    "relatedSlugs": ["deck", "drainage", "naval-architecture"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "camel",
+    "title": "Camel",
+    "slug": "camel",
+    "definition": "A hollow, watertight float used to lift a sunken vessel or to keep a ship off a pier.",
+    "category": "Operations",
+    "context": "Used in salvage and docking.",
+    "relatedSlugs": ["salvage", "pontoon", "fender"],
+    "sources": ["Marine Engineering"]
+  },
+  {
+    "id": "can-buoy",
+    "title": "Can Buoy",
+    "slug": "can-buoy",
+    "definition": "A cylindrical buoy with a flat top.",
+    "category": "Navigation",
+    "context": "Often used to mark the port side of a channel in the US.",
+    "relatedSlugs": ["buoy", "nun-buoy", "channel-marker"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "canal",
+    "title": "Canal",
+    "slug": "canal",
+    "definition": "An artificial waterway constructed for navigation or irrigation.",
+    "category": "Operations",
+    "context": "Examples include Suez and Panama canals.",
+    "relatedSlugs": ["lock", "waterway", "transit"],
+    "sources": ["Geography"]
+  },
+  {
+    "id": "canoe",
+    "title": "Canoe",
+    "slug": "canoe",
+    "definition": "A lightweight narrow boat, typically pointed at both ends and propelled by paddles.",
+    "category": "History",
+    "context": "One of the oldest types of watercraft.",
+    "relatedSlugs": ["paddle", "kayak", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "cant",
+    "title": "Cant",
+    "slug": "cant",
+    "definition": "To tilt or tip; also a timber that is not square with the centerline.",
+    "category": "Terminology",
+    "context": "Used in shipbuilding and maneuvering.",
+    "relatedSlugs": ["tilt", "list", "shipbuilding"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "canvas",
+    "title": "Canvas",
+    "slug": "canvas",
+    "definition": "A heavy, durable fabric used for making sails, covers, and bags.",
+    "category": "Terminology",
+    "context": "Traditionally made of hemp or flax.",
+    "relatedSlugs": ["sail", "duck", "rigging"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "capsize",
+    "title": "Capsize",
+    "slug": "capsize",
+    "definition": "To overturn a vessel in the water.",
+    "category": "Terminology",
+    "context": "A major safety hazard.",
+    "relatedSlugs": ["stability", "swamped", "turtle"],
+    "sources": ["Safety at Sea"]
+  },
+  {
+    "id": "capstan",
+    "title": "Capstan",
+    "slug": "capstan",
+    "definition": "A vertical-axle machine used on ships to apply force to ropes and cables.",
+    "category": "Vessel Parts",
+    "context": "Used for weighing anchor or warping.",
+    "relatedSlugs": ["windlass", "winch", "anchor"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "captain",
+    "title": "Captain",
+    "slug": "captain",
+    "definition": "The person in command of a ship.",
+    "category": "Crew",
+    "context": "Legally responsible for the vessel and its crew.",
+    "relatedSlugs": ["master", "skipper", "command"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "caravel",
+    "title": "Caravel",
+    "slug": "caravel",
+    "definition": "A small, highly maneuverable sailing ship developed in the 15th century by the Portuguese.",
+    "category": "History",
+    "context": "Used for exploration.",
+    "relatedSlugs": ["exploration", "carrack", "galleon"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "cardinal-points",
+    "title": "Cardinal Points",
+    "slug": "cardinal-points",
+    "definition": "The four main directions on a compass: North, South, East, and West.",
+    "category": "Navigation",
+    "context": "The basis of compass navigation.",
+    "relatedSlugs": ["compass", "bearing", "navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "careen",
+    "title": "Careen",
+    "slug": "careen",
+    "definition": "To tilt a ship on its side for cleaning or repairing the hull below the waterline.",
+    "category": "History",
+    "context": "Common before the widespread use of dry docks.",
+    "relatedSlugs": ["hull-cleaning", "dry-dock", "maintenance"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "cargo",
+    "title": "Cargo",
+    "slug": "cargo",
+    "definition": "Goods or produce carried on a ship, aircraft, or motor vehicle.",
+    "category": "Cargo",
+    "context": "The primary reason for commercial shipping.",
+    "relatedSlugs": ["freight", "payload", "shipment"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "cargo-manifest",
+    "title": "Cargo Manifest",
+    "slug": "cargo-manifest",
+    "definition": "A document listing the cargo, passengers, and crew of a ship for the use of customs.",
+    "category": "Cargo",
+    "context": "Required for port entry and exit.",
+    "relatedSlugs": ["bill-of-lading", "customs", "logistics"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "cargo-net",
+    "title": "Cargo Net",
+    "slug": "cargo-net",
+    "definition": "A net used for securing and lifting cargo.",
+    "category": "Operations",
+    "context": "Used with cranes and derricks.",
+    "relatedSlugs": ["stevedoring", "lifting", "cargo-handling"],
+    "sources": ["Port Operations"]
+  },
+  {
+    "id": "carrack",
+    "title": "Carrack",
+    "slug": "carrack",
+    "definition": "A large three- or four-masted sailing ship developed in the 14th and 15th centuries.",
+    "category": "History",
+    "context": "Used for ocean-going trade and exploration.",
+    "relatedSlugs": ["caravel", "galleon", "exploration"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "carrier",
+    "title": "Carrier",
+    "slug": "carrier",
+    "definition": "A person or company that transports goods or people for hire.",
+    "category": "Cargo",
+    "context": "Includes shipping lines and trucking companies.",
+    "relatedSlugs": ["shipper", "consignee", "logistics"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "carry-on",
+    "title": "Carry On",
+    "slug": "carry-on",
+    "definition": "To continue sailing under the same amount of canvas despite increasing wind.",
+    "category": "Operations",
+    "context": "A test of a ship's and crew's endurance.",
+    "relatedSlugs": ["sailing", "heavy-weather", "canvas"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "carvel-built",
+    "title": "Carvel Built",
+    "slug": "carvel-built",
+    "definition": "A method of shipbuilding where hull planks are laid side by side, meeting at the edges.",
+    "category": "Technical",
+    "context": "Creates a smooth hull surface.",
+    "relatedSlugs": ["clinker-built", "planking", "shipbuilding"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "cat-o-nine-tails",
+    "title": "Cat-o'-nine-tails",
+    "slug": "cat-o-nine-tails",
+    "definition": "A multi-tailed whip used for corporal punishment in the Royal Navy.",
+    "category": "History",
+    "context": "A symbol of harsh naval discipline.",
+    "relatedSlugs": ["flogging", "discipline", "naval-history"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "catamaran",
+    "title": "Catamaran",
+    "slug": "catamaran",
+    "definition": "A vessel with two parallel hulls of equal size.",
+    "category": "Technical",
+    "context": "Known for stability and speed.",
+    "relatedSlugs": ["multihull", "trimaran", "hull"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "cathead",
+    "title": "Cathead",
+    "slug": "cathead",
+    "definition": "A beam extending from each side of the bow, used for supporting the anchor.",
+    "category": "Vessel Parts",
+    "context": "Traditional sailing ship feature.",
+    "relatedSlugs": ["anchor", "bow", "rigging"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "catwalk",
+    "title": "Catwalk",
+    "slug": "catwalk",
+    "definition": "An elevated walkway on a ship, especially on tankers.",
+    "category": "Vessel Parts",
+    "context": "Allows safe passage over pipes and cargo.",
+    "relatedSlugs": ["tanker", "deck", "safety"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "caulk",
+    "title": "Caulk",
+    "slug": "caulk",
+    "definition": "To make a seam watertight by filling it with oakum and pitch.",
+    "category": "Technical",
+    "context": "Essential for wooden ship maintenance.",
+    "relatedSlugs": ["oakum", "pitch", "watertight"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "ceiling",
+    "title": "Ceiling",
+    "slug": "ceiling",
+    "definition": "The inner planking of a ship's hull.",
+    "category": "Vessel Parts",
+    "context": "Protects the cargo from the hull frames.",
+    "relatedSlugs": ["hull", "planking", "hold"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "celestial-navigation",
+    "title": "Celestial Navigation",
+    "slug": "celestial-navigation",
+    "definition": "The art and science of finding one's position by observing the sun, moon, stars, and planets.",
+    "category": "Navigation",
+    "context": "Traditional method used before GPS.",
+    "relatedSlugs": ["sextant", "almanac", "latitude"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "center-of-buoyancy",
+    "title": "Center of Buoyancy",
+    "slug": "center-of-buoyancy",
+    "definition": "The geometric center of the underwater volume of a ship.",
+    "category": "Technical",
+    "context": "Crucial for calculating stability.",
+    "relatedSlugs": ["buoyancy", "stability", "naval-architecture"],
+    "sources": ["Physics"]
+  },
+  {
+    "id": "center-of-gravity",
+    "title": "Center of Gravity",
+    "slug": "center-of-gravity",
+    "definition": "The point at which the entire weight of a ship is considered to be concentrated.",
+    "category": "Technical",
+    "context": "Must be below the metacenter for stability.",
+    "relatedSlugs": ["stability", "metacenter", "weight-distribution"],
+    "sources": ["Physics"]
+  },
+  {
+    "id": "centerboard",
+    "title": "Centerboard",
+    "slug": "centerboard",
+    "definition": "A retractable keel used to prevent a boat from drifting sideways.",
+    "category": "Vessel Parts",
+    "context": "Common on small sailing boats.",
+    "relatedSlugs": ["keel", "daggerboard", "leeway"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "centerline",
+    "title": "Centerline",
+    "slug": "centerline",
+    "definition": "An imaginary line running longitudinally through the middle of a ship.",
+    "category": "Technical",
+    "context": "The reference for many measurements.",
+    "relatedSlugs": ["amidships", "keel", "symmetry"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "certificate-of-registry",
+    "title": "Certificate of Registry",
+    "slug": "certificate-of-registry",
+    "definition": "A document issued by a government that identifies a ship and its owner.",
+    "category": "Regulations",
+    "context": "Proves the ship's nationality.",
+    "relatedSlugs": ["flag-state", "registration", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "chafing-gear",
+    "title": "Chafing Gear",
+    "slug": "chafing-gear",
+    "definition": "Material used to protect ropes and sails from wear caused by rubbing.",
+    "category": "Vessel Parts",
+    "context": "Includes baggywrinkle and leather covers.",
+    "relatedSlugs": ["baggywrinkle", "rigging", "maintenance"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "chain-locker",
+    "title": "Chain Locker",
+    "slug": "chain-locker",
+    "definition": "A compartment in the bow of a ship where the anchor chain is stored.",
+    "category": "Vessel Parts",
+    "context": "Located below the windlass.",
+    "relatedSlugs": ["anchor-chain", "windlass", "bow"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "chain-plate",
+    "title": "Chain Plate",
+    "slug": "chain-plate",
+    "definition": "A metal plate bolted to the hull to which the shrouds are attached.",
+    "category": "Vessel Parts",
+    "context": "Transfers rigging loads to the hull.",
+    "relatedSlugs": ["shrouds", "rigging", "hull"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "channel",
+    "title": "Channel",
+    "slug": "channel",
+    "definition": "The deepest part of a river or harbor, suitable for navigation.",
+    "category": "Navigation",
+    "context": "Marked by buoys and beacons.",
+    "relatedSlugs": ["buoy", "dredging", "fairway"],
+    "sources": ["Navigation Charts"]
+  },
+  {
+    "id": "charter",
+    "title": "Charter",
+    "slug": "charter",
+    "definition": "The hire of a ship or part of its cargo space for a specific voyage or period.",
+    "category": "Operations",
+    "context": "Governed by a charter party.",
+    "relatedSlugs": ["charter-party", "shipowner", "freight"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "chart-room",
+    "title": "Chart Room",
+    "slug": "chart-room",
+    "definition": "A room on the bridge where nautical charts and navigation instruments are kept.",
+    "category": "Vessel Parts",
+    "context": "The navigator's workspace.",
+    "relatedSlugs": ["bridge", "nautical-chart", "navigation"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "check",
+    "title": "Check",
+    "slug": "check",
+    "definition": "To ease a rope slowly and steadily.",
+    "category": "Terminology",
+    "context": "Used in line handling.",
+    "relatedSlugs": ["ease", "slack", "heave"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "cheek-block",
+    "title": "Cheek Block",
+    "slug": "cheek-block",
+    "definition": "A pulley with one side fixed to a spar or the deck.",
+    "category": "Vessel Parts",
+    "context": "Used to change the direction of a line.",
+    "relatedSlugs": ["block", "rigging", "sheave"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "chief-engineer",
+    "title": "Chief Engineer",
+    "slug": "chief-engineer",
+    "definition": "The senior officer in charge of the engine department.",
+    "category": "Crew",
+    "context": "Responsible for all machinery on board.",
+    "relatedSlugs": ["engine-room", "engineer", "machinery"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "chief-mate",
+    "title": "Chief Mate",
+    "slug": "chief-mate",
+    "definition": "The senior officer in the deck department, second in command after the master.",
+    "category": "Crew",
+    "context": "Often responsible for cargo operations.",
+    "relatedSlugs": ["master", "deck-department", "cargo-officer"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "chock",
+    "title": "Chock",
+    "slug": "chock",
+    "definition": "A heavy metal fitting through which mooring lines are passed.",
+    "category": "Vessel Parts",
+    "context": "Prevents chafing and guides the line.",
+    "relatedSlugs": ["mooring", "fairlead", "bollard"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "chronometer",
+    "title": "Chronometer",
+    "slug": "chronometer",
+    "definition": "A highly accurate timepiece used for determining longitude at sea.",
+    "category": "Technical",
+    "context": "Essential for celestial navigation.",
+    "relatedSlugs": ["longitude", "navigation", "timekeeping"],
+    "sources": ["Navigation History"]
+  },
+  {
+    "id": "ciguatera",
+    "title": "Ciguatera",
+    "slug": "ciguatera",
+    "definition": "A type of food poisoning caused by eating certain tropical reef fish.",
+    "category": "Safety",
+    "context": "A health hazard for sailors in tropical waters.",
+    "relatedSlugs": ["poisoning", "marine-life", "health"],
+    "sources": ["Medical Standards"]
+  },
+  {
+    "id": "clamp",
+    "title": "Clamp",
+    "slug": "clamp",
+    "definition": "A longitudinal timber used to support the deck beams.",
+    "category": "Vessel Parts",
+    "context": "Part of the internal structure of a wooden ship.",
+    "relatedSlugs": ["deck-beam", "shipbuilding", "timber"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "classification-society",
+    "title": "Classification Society",
+    "slug": "classification-society",
+    "definition": "An organization that establishes and maintains technical standards for the construction and operation of ships.",
+    "category": "Regulations",
+    "context": "Examples include Lloyd's Register and ABS.",
+    "relatedSlugs": ["imo", "survey", "ship-standards"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "claw-off",
+    "title": "Claw Off",
+    "slug": "claw-off",
+    "definition": "To work a vessel away from a lee shore by sailing close-hauled.",
+    "category": "Navigation",
+    "context": "A difficult and dangerous maneuver.",
+    "relatedSlugs": ["lee-shore", "close-hauled", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "cleat",
+    "title": "Cleat",
+    "slug": "cleat",
+    "definition": "A T-shaped fitting used for securing ropes.",
+    "category": "Vessel Parts",
+    "context": "Common on decks and spars.",
+    "relatedSlugs": ["bollard", "bitts", "mooring"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "clew",
+    "title": "Clew",
+    "slug": "clew",
+    "definition": "The lower corner of a sail; also the loops of rope used to support a hammock.",
+    "category": "Vessel Parts",
+    "context": "Where the sheets are attached.",
+    "relatedSlugs": ["sail", "sheet", "tack"],
+    "sources": ["Sailmaking"]
+  },
+  {
+    "id": "clewline",
+    "title": "Clewline",
+    "slug": "clewline",
+    "definition": "A rope used to haul up the clews of a square sail for furling.",
+    "category": "Vessel Parts",
+    "context": "Essential for sail handling.",
+    "relatedSlugs": ["buntline", "furling", "square-sail"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "clinker-built",
+    "title": "Clinker Built",
+    "slug": "clinker-built",
+    "definition": "A method of shipbuilding where hull planks overlap each other.",
+    "category": "Technical",
+    "context": "Also known as lapstrake construction.",
+    "relatedSlugs": ["carvel-built", "planking", "shipbuilding"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "clipper",
+    "title": "Clipper",
+    "slug": "clipper",
+    "definition": "A fast, multi-masted sailing ship of the 19th century.",
+    "category": "History",
+    "context": "Known for its speed and sleek lines.",
+    "relatedSlugs": ["tea-clipper", "sailing-ship", "speed"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "close-hauled",
+    "title": "Close-Hauled",
+    "slug": "close-hauled",
+    "definition": "Sailing as close to the wind as possible.",
+    "category": "Navigation",
+    "context": "Requires precise sail trim.",
+    "relatedSlugs": ["beating", "tacking", "windward"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "clove-hitch",
+    "title": "Clove Hitch",
+    "slug": "clove-hitch",
+    "definition": "A knot used to secure a rope to a spar or post.",
+    "category": "Terminology",
+    "context": "Simple and effective but can slip.",
+    "relatedSlugs": ["knot", "hitch", "bowline"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "coach-roof",
+    "title": "Coach Roof",
+    "slug": "coach-roof",
+    "definition": "The raised part of a boat's deck that provides headroom in the cabin.",
+    "category": "Vessel Parts",
+    "context": "Common on sailing yachts.",
+    "relatedSlugs": ["deck", "cabin", "headroom"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "coaming",
+    "title": "Coaming",
+    "slug": "coaming",
+    "definition": "A raised border around a hatch or opening to prevent water from entering.",
+    "category": "Vessel Parts",
+    "context": "Essential for keeping the interior dry.",
+    "relatedSlugs": ["hatch", "deck", "watertight"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "coast-guard",
+    "title": "Coast Guard",
+    "slug": "coast-guard",
+    "definition": "A national organization responsible for maritime safety, law enforcement, and search and rescue.",
+    "category": "Regulations",
+    "context": "Operates in coastal and territorial waters.",
+    "relatedSlugs": ["search-and-rescue", "maritime-law", "safety"],
+    "sources": ["Government Standards"]
+  },
+  {
+    "id": "coastal-navigation",
+    "title": "Coastal Navigation",
+    "slug": "coastal-navigation",
+    "definition": "Navigation within sight of land using landmarks and coastal features.",
+    "category": "Navigation",
+    "context": "Uses pilotage and dead reckoning.",
+    "relatedSlugs": ["pilotage", "landmark", "dead-reckoning"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "cockpit",
+    "title": "Cockpit",
+    "slug": "cockpit",
+    "definition": "A sunken area in the deck of a boat where the crew sits and steers.",
+    "category": "Vessel Parts",
+    "context": "The control area for small vessels.",
+    "relatedSlugs": ["helm", "deck", "steering"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "code-of-conduct",
+    "title": "Code of Conduct",
+    "slug": "code-of-conduct",
+    "definition": "A set of rules outlining the responsibilities and proper practices for individuals in the maritime industry.",
+    "category": "Regulations",
+    "context": "Ensures professionalism and safety.",
+    "relatedSlugs": ["ethics", "regulations", "professionalism"],
+    "sources": ["Industry Standards"]
+  },
+  {
+    "id": "cofferdam",
+    "title": "Cofferdam",
+    "slug": "cofferdam",
+    "definition": "A narrow void space between two bulkheads to prevent leakage or fire from spreading.",
+    "category": "Vessel Parts",
+    "context": "Common on tankers and cargo ships.",
+    "relatedSlugs": ["bulkhead", "tanker", "safety"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "collier",
+    "title": "Collier",
+    "slug": "collier",
+    "definition": "A ship designed for carrying coal.",
+    "category": "History",
+    "context": "Crucial during the age of steam.",
+    "relatedSlugs": ["bulk-carrier", "coal", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "collision-bulkhead",
+    "title": "Collision Bulkhead",
+    "slug": "collision-bulkhead",
+    "definition": "The forward-most watertight bulkhead in a ship, designed to contain flooding after a bow collision.",
+    "category": "Vessel Parts",
+    "context": "A critical safety feature.",
+    "relatedSlugs": ["bulkhead", "watertight", "safety"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "colregs",
+    "title": "COLREGs",
+    "slug": "colregs",
+    "definition": "The International Regulations for Preventing Collisions at Sea.",
+    "category": "Regulations",
+    "context": "The 'rules of the road' for all vessels.",
+    "relatedSlugs": ["navigation-rules", "imo", "safety"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "companionway",
+    "title": "Companionway",
+    "slug": "companionway",
+    "definition": "A set of steps or a ladder leading from a ship's deck down to a cabin or lower deck.",
+    "category": "Vessel Parts",
+    "context": "The main entrance to the interior.",
+    "relatedSlugs": ["ladder", "hatch", "deck"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "compass",
+    "title": "Compass",
+    "slug": "compass",
+    "definition": "An instrument used for navigation and orientation that shows direction relative to the geographic cardinal directions.",
+    "category": "Navigation",
+    "context": "The primary tool for steering a course.",
+    "relatedSlugs": ["magnetic-compass", "gyro-compass", "bearing"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "compass-card",
+    "title": "Compass Card",
+    "slug": "compass-card",
+    "definition": "The part of a compass that shows the directions.",
+    "category": "Technical",
+    "context": "Marked with degrees and cardinal points.",
+    "relatedSlugs": ["compass", "lubber-line", "navigation"],
+    "sources": ["Bridge Equipment"]
+  },
+  {
+    "id": "compass-error",
+    "title": "Compass Error",
+    "slug": "compass-error",
+    "definition": "The difference between the compass heading and the true heading.",
+    "category": "Navigation",
+    "context": "The sum of variation and deviation.",
+    "relatedSlugs": ["variation", "deviation", "true-heading"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "composite-build",
+    "title": "Composite Build",
+    "slug": "composite-build",
+    "definition": "A method of shipbuilding using both wood and iron or steel.",
+    "category": "History",
+    "context": "Common in the mid-19th century.",
+    "relatedSlugs": ["iron-hull", "wooden-ship", "shipbuilding"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "conning",
+    "title": "Conning",
+    "slug": "conning",
+    "definition": "The act of directing the steering of a ship.",
+    "category": "Operations",
+    "context": "Performed by the officer of the watch or pilot.",
+    "relatedSlugs": ["steering", "bridge", "pilotage"],
+    "sources": ["Bridge Procedures"]
+  },
+  {
+    "id": "consignee",
+    "title": "Consignee",
+    "slug": "consignee",
+    "definition": "The person or company to whom goods are shipped.",
+    "category": "Cargo",
+    "context": "The receiver of the cargo.",
+    "relatedSlugs": ["shipper", "carrier", "bill-of-lading"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "container-ship",
+    "title": "Container Ship",
+    "slug": "container-ship",
+    "definition": "A cargo ship that carries all of its load in truck-size intermodal containers.",
+    "category": "Cargo",
+    "context": "The backbone of modern global trade.",
+    "relatedSlugs": ["teu", "intermodal", "cargo"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "containerization",
+    "title": "Containerization",
+    "slug": "containerization",
+    "definition": "A system of intermodal freight transport using standard containers.",
+    "category": "Technical",
+    "context": "Revolutionized the shipping industry in the 20th century.",
+    "relatedSlugs": ["container-ship", "logistics", "teu"],
+    "sources": ["Logistics History"]
+  },
+  {
+    "id": "contraband",
+    "title": "Contraband",
+    "slug": "contraband",
+    "definition": "Goods that have been imported or exported illegally.",
+    "category": "Regulations",
+    "context": "Subject to seizure by customs.",
+    "relatedSlugs": ["smuggling", "customs", "maritime-law"],
+    "sources": ["Legal Standards"]
+  },
+  {
+    "id": "convoy",
+    "title": "Convoy",
+    "slug": "convoy",
+    "definition": "A group of ships traveling together for mutual support and protection.",
+    "category": "History",
+    "context": "Common during wartime.",
+    "relatedSlugs": ["escort", "warship", "merchant-marine"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "corvette",
+    "title": "Corvette",
+    "slug": "corvette",
+    "definition": "A small, fast warship, smaller than a frigate.",
+    "category": "History",
+    "context": "Used for escort and coastal patrol.",
+    "relatedSlugs": ["frigate", "destroyer", "warship"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "counter",
+    "title": "Counter",
+    "slug": "counter",
+    "definition": "The part of a ship's stern that overhangs the water.",
+    "category": "Vessel Parts",
+    "context": "A common feature of traditional ship design.",
+    "relatedSlugs": ["stern", "transom", "overhang"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "course",
+    "title": "Course",
+    "slug": "course",
+    "definition": "The direction in which a vessel is steered or intended to be steered.",
+    "category": "Navigation",
+    "context": "Expressed in degrees from 000 to 359.",
+    "relatedSlugs": ["heading", "track", "bearing"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "course-made-good",
+    "title": "Course Made Good",
+    "slug": "course-made-good",
+    "definition": "The actual direction traveled by a vessel over the ground.",
+    "category": "Navigation",
+    "context": "May differ from the steered course due to wind and current.",
+    "relatedSlugs": ["track", "drift", "leeway"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "coxswain",
+    "title": "Coxswain",
+    "slug": "coxswain",
+    "definition": "The person in charge of a small boat and its crew.",
+    "category": "Crew",
+    "context": "Usually the person who steers.",
+    "relatedSlugs": ["skipper", "crew", "steering"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "crab",
+    "title": "Crab",
+    "slug": "crab",
+    "definition": "To move sideways through the water due to wind or current.",
+    "category": "Terminology",
+    "context": "Common during docking in a crosswind.",
+    "relatedSlugs": ["leeway", "drift", "maneuvering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "crane",
+    "title": "Crane",
+    "slug": "crane",
+    "definition": "A machine used for lifting and moving heavy loads, especially cargo.",
+    "category": "Technical",
+    "context": "Found on ships and in ports.",
+    "relatedSlugs": ["derrick", "winch", "cargo-handling"],
+    "sources": ["Engineering"]
+  },
+  {
+    "id": "crew",
+    "title": "Crew",
+    "slug": "crew",
+    "definition": "The group of people who work on and operate a ship.",
+    "category": "Crew",
+    "context": "Includes officers and ratings.",
+    "relatedSlugs": ["seaman", "officer", "manning"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "cringle",
+    "title": "Cringle",
+    "slug": "cringle",
+    "definition": "A rope loop or metal eye in the edge of a sail.",
+    "category": "Vessel Parts",
+    "context": "Used for attaching lines.",
+    "relatedSlugs": ["grommet", "sail", "eye"],
+    "sources": ["Sailmaking"]
+  },
+  {
+    "id": "cross-jack",
+    "title": "Cross-jack",
+    "slug": "cross-jack",
+    "definition": "The lowest yard on the mizzenmast of a square-rigged ship.",
+    "category": "Vessel Parts",
+    "context": "Pronounced 'cro-jack'.",
+    "relatedSlugs": ["mizzenmast", "yard", "square-rig"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "cross-sea",
+    "title": "Cross Sea",
+    "slug": "cross-sea",
+    "definition": "A sea condition where waves from different directions meet.",
+    "category": "Environment",
+    "context": "Creates confused and dangerous waves.",
+    "relatedSlugs": ["waves", "swell", "confused-sea"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "crosstrees",
+    "title": "Crosstrees",
+    "slug": "crosstrees",
+    "definition": "Horizontal timbers at the head of a lower mast to spread the shrouds.",
+    "category": "Vessel Parts",
+    "context": "Supports the topmast.",
+    "relatedSlugs": ["mast", "shrouds", "trestle-trees"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "crow-foot",
+    "title": "Crow-foot",
+    "slug": "crow-foot",
+    "definition": "A number of small lines spreading out from a single rope.",
+    "category": "Terminology",
+    "context": "Used to support an awning or to prevent a sail from flapping.",
+    "relatedSlugs": ["rigging", "awning", "bridle"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "crow-nest",
+    "title": "Crow's Nest",
+    "slug": "crow-nest",
+    "definition": "A sheltered platform high on a mast used as a lookout point.",
+    "category": "Vessel Parts",
+    "context": "Provides a wide view of the horizon.",
+    "relatedSlugs": ["lookout", "mast", "horizon"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "crude-oil",
+    "title": "Crude Oil",
+    "slug": "crude-oil",
+    "definition": "Unrefined petroleum.",
+    "category": "Cargo",
+    "context": "The primary cargo for VLCCs and ULCCs.",
+    "relatedSlugs": ["tanker", "petroleum", "cargo"],
+    "sources": ["Energy Industry"]
+  },
+  {
+    "id": "cruise-ship",
+    "title": "Cruise Ship",
+    "slug": "cruise-ship",
+    "definition": "A passenger ship used for pleasure voyages.",
+    "category": "Cargo",
+    "context": "Focuses on onboard amenities and destinations.",
+    "relatedSlugs": ["passenger-ship", "tourism", "liner"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "crutch",
+    "title": "Crutch",
+    "slug": "crutch",
+    "definition": "A metal or wooden support for a boom or oar.",
+    "category": "Vessel Parts",
+    "context": "Commonly used for rowlocks.",
+    "relatedSlugs": ["rowlock", "boom", "oar"],
+    "sources": ["Boat Building"]
+  },
+  {
+    "id": "cuddy",
+    "title": "Cuddy",
+    "slug": "cuddy",
+    "definition": "A small cabin or locker on a boat.",
+    "category": "Vessel Parts",
+    "context": "Often used for storage or shelter on small craft.",
+    "relatedSlugs": ["cabin", "locker", "small-boat"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "current",
+    "title": "Current",
+    "slug": "current",
+    "definition": "The continuous, directed movement of sea water.",
+    "category": "Environment",
+    "context": "Caused by wind, temperature, and salinity differences.",
+    "relatedSlugs": ["tide", "drift", "oceanography"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "customs",
+    "title": "Customs",
+    "slug": "customs",
+    "definition": "The government department responsible for collecting duties and controlling the flow of goods into and out of a country.",
+    "category": "Regulations",
+    "context": "Ships must clear customs at every port.",
+    "relatedSlugs": ["duty", "smuggling", "port-entry"],
+    "sources": ["Government Standards"]
+  },
+  {
+    "id": "cut-of-the-jib",
+    "title": "Cut of the Jib",
+    "slug": "cut-of-the-jib",
+    "definition": "The appearance or character of a person or ship.",
+    "category": "Terminology",
+    "context": "Origin of the common idiom.",
+    "relatedSlugs": ["jib", "appearance", "character"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "cutter",
+    "title": "Cutter",
+    "slug": "cutter",
+    "definition": "A small, fast sailing vessel with a single mast and more than one headsail.",
+    "category": "History",
+    "context": "Also refers to a type of boat used by the Coast Guard.",
+    "relatedSlugs": ["sloop", "headsail", "coast-guard"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "daggerboard",
+    "title": "Daggerboard",
+    "slug": "daggerboard",
+    "definition": "A retractable keel that is lowered vertically through a slot in the hull.",
+    "category": "Vessel Parts",
+    "context": "Common on small racing dinghies.",
+    "relatedSlugs": ["centerboard", "keel", "leeway"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "davit",
+    "title": "Davit",
+    "slug": "davit",
+    "definition": "A small crane on a ship used for lowering lifeboats or anchors.",
+    "category": "Vessel Parts",
+    "context": "Essential for emergency evacuation.",
+    "relatedSlugs": ["lifeboat", "crane", "safety"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "davy-jones-locker",
+    "title": "Davy Jones' Locker",
+    "slug": "davy-jones-locker",
+    "definition": "An idiom for the bottom of the sea; the final resting place of sunken ships and drowned sailors.",
+    "category": "Terminology",
+    "context": "Common in maritime folklore.",
+    "relatedSlugs": ["ocean-floor", "shipwreck", "folklore"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "day-shape",
+    "title": "Day Shape",
+    "slug": "day-shape",
+    "definition": "A geometric object displayed by a vessel during the day to indicate its status.",
+    "category": "Navigation",
+    "context": "Includes balls, cones, and diamonds.",
+    "relatedSlugs": ["colregs", "anchor-ball", "navigation"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "daymark",
+    "title": "Daymark",
+    "slug": "daymark",
+    "definition": "A daytime identifier for a navigation aid.",
+    "category": "Navigation",
+    "context": "Helps in identifying beacons and buoys.",
+    "relatedSlugs": ["beacon", "buoy", "navigation"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "dead-ahead",
+    "title": "Dead Ahead",
+    "slug": "dead-ahead",
+    "definition": "Directly in front of the ship.",
+    "category": "Navigation",
+    "context": "On the ship's heading line.",
+    "relatedSlugs": ["ahead", "bearing", "heading"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "dead-reckoning",
+    "title": "Dead Reckoning (DR)",
+    "slug": "dead-reckoning",
+    "definition": "The process of calculating one's current position by using a previously determined position, and advancing that position based upon known or estimated speeds over elapsed time and course.",
+    "category": "Navigation",
+    "context": "A fundamental navigation skill.",
+    "relatedSlugs": ["navigation", "position-fixing", "speed"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "dead-water",
+    "title": "Dead Water",
+    "slug": "dead-water",
+    "definition": "The water that moves along with a ship's hull.",
+    "category": "Terminology",
+    "context": "Can affect propeller efficiency.",
+    "relatedSlugs": ["wake", "hull", "propulsion"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "deaden-the-way",
+    "title": "Deaden the Way",
+    "slug": "deaden-the-way",
+    "definition": "To slow down a vessel.",
+    "category": "Operations",
+    "context": "Used when approaching a berth or in restricted visibility.",
+    "relatedSlugs": ["slow-down", "maneuvering", "speed"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "deadhead",
+    "title": "Deadhead",
+    "slug": "deadhead",
+    "definition": "A floating log or timber that is mostly submerged.",
+    "category": "Environment",
+    "context": "A significant hazard to navigation.",
+    "relatedSlugs": ["hazard", "navigation", "submerged"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "deadlight",
+    "title": "Deadlight",
+    "slug": "deadlight",
+    "definition": "A strong metal cover for a porthole to prevent water from entering in heavy weather.",
+    "category": "Vessel Parts",
+    "context": "Ensures the ship remains watertight.",
+    "relatedSlugs": ["porthole", "watertight", "heavy-weather"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "deadweight",
+    "title": "Deadweight",
+    "slug": "deadweight",
+    "definition": "The total weight a ship can carry.",
+    "category": "Technical",
+    "context": "Includes cargo, fuel, and stores.",
+    "relatedSlugs": ["dwt", "displacement", "tonnage"],
+    "sources": ["Ship Design"]
+  },
+  {
+    "id": "deck",
+    "title": "Deck",
+    "slug": "deck",
+    "definition": "A permanent covering over a compartment or a hull.",
+    "category": "Vessel Parts",
+    "context": "The floor of a ship.",
+    "relatedSlugs": ["main-deck", "poop-deck", "forecastle"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "deck-hand",
+    "title": "Deck Hand",
+    "slug": "deck-hand",
+    "definition": "A seaman who works on the deck of a ship.",
+    "category": "Crew",
+    "context": "Responsible for maintenance and line handling.",
+    "relatedSlugs": ["seaman", "crew", "deck-department"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "deck-house",
+    "title": "Deck House",
+    "slug": "deck-house",
+    "definition": "A small structure on the deck of a ship.",
+    "category": "Vessel Parts",
+    "context": "Used for accommodation or equipment.",
+    "relatedSlugs": ["superstructure", "cabin", "deck"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "deck-log",
+    "title": "Deck Log",
+    "slug": "deck-log",
+    "definition": "A daily record of a ship's activities and navigation.",
+    "category": "Regulations",
+    "context": "A legal document.",
+    "relatedSlugs": ["logbook", "navigation", "records"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "deep-six",
+    "title": "Deep Six",
+    "slug": "deep-six",
+    "definition": "To throw something overboard.",
+    "category": "Terminology",
+    "context": "Originates from the depth of six fathoms.",
+    "relatedSlugs": ["overboard", "fathom", "discard"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "demurrage-rate",
+    "title": "Demurrage Rate",
+    "slug": "demurrage-rate",
+    "definition": "The daily rate at which demurrage is charged.",
+    "category": "Operations",
+    "context": "Agreed upon in the charter party.",
+    "relatedSlugs": ["demurrage", "charter-party", "laytime"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "derelict",
+    "title": "Derelict",
+    "slug": "derelict",
+    "definition": "A ship abandoned at sea.",
+    "category": "Terminology",
+    "context": "A hazard to other vessels.",
+    "relatedSlugs": ["adrift", "abandoned", "salvage"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "derrick",
+    "title": "Derrick",
+    "slug": "derrick",
+    "definition": "A lifting machine consisting of a mast or spar and a boom.",
+    "category": "Technical",
+    "context": "Used for loading and unloading cargo.",
+    "relatedSlugs": ["crane", "winch", "cargo-handling"],
+    "sources": ["Engineering"]
+  },
+  {
+    "id": "destroyer",
+    "title": "Destroyer",
+    "slug": "destroyer",
+    "definition": "A fast, maneuverable, long-endurance warship intended to escort larger vessels in a fleet.",
+    "category": "History",
+    "context": "Originally designed to defend against torpedo boats.",
+    "relatedSlugs": ["frigate", "corvette", "warship"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "deviation",
+    "title": "Deviation",
+    "slug": "deviation",
+    "definition": "The error in a magnetic compass caused by the local magnetic fields of the ship.",
+    "category": "Navigation",
+    "context": "Varies with the ship's heading.",
+    "relatedSlugs": ["variation", "compass-error", "magnetic-compass"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "devil-to-pay",
+    "title": "Devil to Pay",
+    "slug": "devil-to-pay",
+    "definition": "To caulk the longest seam on a wooden ship (the 'devil').",
+    "category": "Terminology",
+    "context": "Origin of the common idiom 'the devil to pay and no pitch hot'.",
+    "relatedSlugs": ["caulk", "oakum", "pitch"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "dew-point",
+    "title": "Dew Point",
+    "slug": "dew-point",
+    "definition": "The temperature at which air becomes saturated with water vapor.",
+    "category": "Environment",
+    "context": "Important for predicting fog.",
+    "relatedSlugs": ["fog", "humidity", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "diamond-shape",
+    "title": "Diamond Shape",
+    "slug": "diamond-shape",
+    "definition": "A black day shape displayed by a vessel to indicate it is towing or being towed.",
+    "category": "Navigation",
+    "context": "Required by COLREGs.",
+    "relatedSlugs": ["day-shape", "towing", "colregs"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "dinghy",
+    "title": "Dinghy",
+    "slug": "dinghy",
+    "definition": "A small boat, often carried or towed by a larger vessel.",
+    "category": "History",
+    "context": "Used for transport to shore or as a lifeboat.",
+    "relatedSlugs": ["tender", "lifeboat", "skiff"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "dip",
+    "title": "Dip",
+    "slug": "dip",
+    "definition": "To lower a flag partway as a salute.",
+    "category": "Terminology",
+    "context": "A common maritime courtesy.",
+    "relatedSlugs": ["salute", "ensign", "flag-etiquette"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "displacement",
+    "title": "Displacement",
+    "slug": "displacement",
+    "definition": "The weight of the water displaced by a floating ship, which is equal to the ship's weight.",
+    "category": "Technical",
+    "context": "A measure of a ship's size.",
+    "relatedSlugs": ["tonnage", "buoyancy", "draft"],
+    "sources": ["Physics"]
+  },
+  {
+    "id": "distress-signal",
+    "title": "Distress Signal",
+    "slug": "distress-signal",
+    "definition": "An internationally recognized means of obtaining help.",
+    "category": "Safety",
+    "context": "Includes flares, SOS, and Mayday.",
+    "relatedSlugs": ["mayday", "sos", "epirb"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "ditty-bag",
+    "title": "Ditty Bag",
+    "slug": "ditty-bag",
+    "definition": "A small bag used by sailors to carry sewing tools and personal items.",
+    "category": "Terminology",
+    "context": "Essential for maintenance and repair.",
+    "relatedSlugs": ["sewing", "crew", "personal-effects"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "dock",
+    "title": "Dock",
+    "slug": "dock",
+    "definition": "An enclosed area of water used for loading, unloading, or repairing ships.",
+    "category": "Operations",
+    "context": "Can be wet or dry.",
+    "relatedSlugs": ["pier", "wharf", "berth"],
+    "sources": ["Port Operations"]
+  },
+  {
+    "id": "dog-watch",
+    "title": "Dog Watch",
+    "slug": "dog-watch",
+    "definition": "A short watch period, usually two hours long.",
+    "category": "Crew",
+    "context": "Used to rotate the watch schedule so crew members don't have the same watch every day.",
+    "relatedSlugs": ["watchkeeping", "crew", "duty-roster"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "dogvane",
+    "title": "Dogvane",
+    "slug": "dogvane",
+    "definition": "A small, lightweight wind vane made of feathers or yarn.",
+    "category": "Vessel Parts",
+    "context": "Used on small sailing boats to show wind direction.",
+    "relatedSlugs": ["wind-vane", "anemometer", "sailing"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "doldrums",
+    "title": "Doldrums",
+    "slug": "doldrums",
+    "definition": "A region of the ocean near the equator characterized by calm winds and light breezes.",
+    "category": "Environment",
+    "context": "Technically known as the Intertropical Convergence Zone (ITCZ).",
+    "relatedSlugs": ["itcz", "becalmed", "equator"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "dolphin",
+    "title": "Dolphin",
+    "slug": "dolphin",
+    "definition": "A group of pilings driven into the seabed and bound together, used for mooring or as a navigation aid.",
+    "category": "Operations",
+    "context": "Common in ports and channels.",
+    "relatedSlugs": ["mooring", "piling", "pier"],
+    "sources": ["Port Engineering"]
+  },
+  {
+    "id": "donkey-engine",
+    "title": "Donkey Engine",
+    "slug": "donkey-engine",
+    "definition": "A small auxiliary steam engine used for secondary tasks like winching.",
+    "category": "History",
+    "context": "Common on 19th-century ships.",
+    "relatedSlugs": ["steam-engine", "winch", "auxiliary-machinery"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "dory",
+    "title": "Dory",
+    "slug": "dory",
+    "definition": "A small, shallow-draft boat with a flat bottom and high sides.",
+    "category": "History",
+    "context": "Traditionally used for fishing.",
+    "relatedSlugs": ["skiff", "fishing-boat", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "double-bottom",
+    "title": "Double Bottom",
+    "slug": "double-bottom",
+    "definition": "A ship construction feature where the hull has two watertight layers on the bottom.",
+    "category": "Technical",
+    "context": "Provides extra safety in case of grounding.",
+    "relatedSlugs": ["hull", "watertight", "safety"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "doubling",
+    "title": "Doubling",
+    "slug": "doubling",
+    "definition": "The part of a mast where the upper and lower sections overlap.",
+    "category": "Vessel Parts",
+    "context": "Provides strength to the mast joint.",
+    "relatedSlugs": ["mast", "topmast", "rigging"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "downhaul",
+    "title": "Downhaul",
+    "slug": "downhaul",
+    "definition": "A rope used to haul down a sail or a spar.",
+    "category": "Vessel Parts",
+    "context": "Essential for lowering sails quickly.",
+    "relatedSlugs": ["halyard", "sail", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "downwind",
+    "title": "Downwind",
+    "slug": "downwind",
+    "definition": "In the direction the wind is blowing.",
+    "category": "Navigation",
+    "context": "Also known as sailing 'off the wind'.",
+    "relatedSlugs": ["upwind", "leeward", "windward"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "drabbler",
+    "title": "Drabbler",
+    "slug": "drabbler",
+    "definition": "An additional piece of canvas laced to the bottom of a bonnet on a sail.",
+    "category": "History",
+    "context": "Used to increase sail area in light winds.",
+    "relatedSlugs": ["bonnet", "sail", "canvas"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "draft-marks",
+    "title": "Draft Marks",
+    "slug": "draft-marks",
+    "definition": "Numbers painted on the bow and stern of a ship to show the draft.",
+    "category": "Technical",
+    "context": "Used to monitor the ship's loading and trim.",
+    "relatedSlugs": ["draft", "trim", "waterline"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "drag",
+    "title": "Drag",
+    "slug": "drag",
+    "definition": "The resistance of water to a ship's motion; also the act of an anchor failing to hold.",
+    "category": "Technical",
+    "context": "Affects speed and fuel efficiency.",
+    "relatedSlugs": ["resistance", "hull-speed", "anchor-dragging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "dredge",
+    "title": "Dredge",
+    "slug": "dredge",
+    "definition": "A specialized vessel or machine used to remove sediment from the bottom of a body of water.",
+    "category": "Operations",
+    "context": "Used to maintain channel depths.",
+    "relatedSlugs": ["channel", "sediment", "harbor-maintenance"],
+    "sources": ["Port Operations"]
+  },
+  {
+    "id": "drift",
+    "title": "Drift",
+    "slug": "drift",
+    "definition": "The movement of a vessel caused by current or wind; also the speed of a current.",
+    "category": "Navigation",
+    "context": "Must be accounted for in dead reckoning.",
+    "relatedSlugs": ["leeway", "current", "dead-reckoning"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "driver",
+    "title": "Driver",
+    "slug": "driver",
+    "definition": "The large fore-and-aft sail on the mizzenmast of a square-rigged ship.",
+    "category": "Vessel Parts",
+    "context": "Also known as a spanker.",
+    "relatedSlugs": ["spanker", "mizzenmast", "sail"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "drogue",
+    "title": "Drogue",
+    "slug": "drogue",
+    "definition": "A device towed behind a vessel to slow it down or keep it from broaching in heavy seas.",
+    "category": "Safety",
+    "context": "A sea anchor for the stern.",
+    "relatedSlugs": ["sea-anchor", "broach", "heavy-weather"],
+    "sources": ["Safety at Sea"]
+  },
+  {
+    "id": "drum",
+    "title": "Drum",
+    "slug": "drum",
+    "definition": "The cylindrical part of a winch or capstan around which the rope is wound.",
+    "category": "Technical",
+    "context": "Essential part of deck machinery.",
+    "relatedSlugs": ["winch", "capstan", "machinery"],
+    "sources": ["Engineering"]
+  },
+  {
+    "id": "dry-bulk",
+    "title": "Dry Bulk",
+    "slug": "dry-bulk",
+    "definition": "Cargo that is carried in large quantities without packaging, such as grain or coal.",
+    "category": "Cargo",
+    "context": "Carried by bulk carriers.",
+    "relatedSlugs": ["bulk-carrier", "grain", "cargo"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "duck",
+    "title": "Duck",
+    "slug": "duck",
+    "definition": "A lightweight canvas fabric.",
+    "category": "Terminology",
+    "context": "Used for small sails and covers.",
+    "relatedSlugs": ["canvas", "sail", "fabric"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "duff",
+    "title": "Duff",
+    "slug": "duff",
+    "definition": "A traditional pudding made of flour and water, often with raisins.",
+    "category": "History",
+    "context": "A common treat for sailors in the age of sail.",
+    "relatedSlugs": ["provisions", "crew", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "dunnage",
+    "title": "Dunnage",
+    "slug": "dunnage",
+    "definition": "Loose material used to protect cargo from damage during transport.",
+    "category": "Cargo",
+    "context": "Includes wood, mats, and inflatable bags.",
+    "relatedSlugs": ["cargo-protection", "stowage", "logistics"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "dyneema",
+    "title": "Dyneema",
+    "slug": "dyneema",
+    "definition": "A high-performance synthetic fiber used for making extremely strong and lightweight ropes.",
+    "category": "Technical",
+    "context": "Common in modern racing yacht rigging.",
+    "relatedSlugs": ["synthetic-rope", "rigging", "spectra"],
+    "sources": ["Marine Engineering"]
+  },
+  {
+    "id": "earring",
+    "title": "Earring",
+    "slug": "earring",
+    "definition": "A small rope used to fasten the corners of a sail to a yard or stay.",
+    "category": "Vessel Parts",
+    "context": "Essential for sail attachment.",
+    "relatedSlugs": ["sail", "yard", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "ease",
+    "title": "Ease",
+    "slug": "ease",
+    "definition": "To let out a rope slowly and carefully.",
+    "category": "Terminology",
+    "context": "Used in line handling.",
+    "relatedSlugs": ["check", "slack", "heave"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "ebb-tide",
+    "title": "Ebb Tide",
+    "slug": "ebb-tide",
+    "definition": "The falling tide; the period between high water and the succeeding low water.",
+    "category": "Environment",
+    "context": "The opposite of flood tide.",
+    "relatedSlugs": ["flood-tide", "low-water", "tide"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "echo-sounder",
+    "title": "Echo Sounder",
+    "slug": "echo-sounder",
+    "definition": "An instrument used to measure the depth of water by sending sound pulses to the bottom.",
+    "category": "Technical",
+    "context": "Essential for safe navigation.",
+    "relatedSlugs": ["depth", "sonar", "navigation"],
+    "sources": ["Bridge Equipment"]
+  },
+  {
+    "id": "ecdis",
+    "title": "ECDIS",
+    "slug": "ecdis",
+    "definition": "Electronic Chart Display and Information System.",
+    "category": "Navigation",
+    "context": "A computer-based navigation system that uses electronic charts.",
+    "relatedSlugs": ["electronic-chart", "navigation", "gps"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "eight-bells",
+    "title": "Eight Bells",
+    "slug": "eight-bells",
+    "definition": "A signal indicating the end of a four-hour watch.",
+    "category": "Terminology",
+    "context": "Also used as a metaphor for a sailor's death.",
+    "relatedSlugs": ["watchkeeping", "bells", "maritime-tradition"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "embark",
+    "title": "Embark",
+    "slug": "embark",
+    "definition": "To go on board a ship.",
+    "category": "Operations",
+    "context": "The beginning of a voyage.",
+    "relatedSlugs": ["disembark", "board", "voyage"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "emergency-position-indicating-radio-beacon",
+    "title": "EPIRB",
+    "slug": "emergency-position-indicating-radio-beacon",
+    "definition": "A device that transmits a distress signal to satellites in an emergency.",
+    "category": "Safety",
+    "context": "Essential for search and rescue.",
+    "relatedSlugs": ["distress-signal", "sart", "safety"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "engine-room",
+    "title": "Engine Room",
+    "slug": "engine-room",
+    "definition": "The compartment on a ship where the main engines and auxiliary machinery are located.",
+    "category": "Vessel Parts",
+    "context": "The heart of the ship's propulsion.",
+    "relatedSlugs": ["machinery", "propulsion", "chief-engineer"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "ensign",
+    "title": "Ensign",
+    "slug": "ensign",
+    "definition": "The national flag flown by a ship.",
+    "category": "Terminology",
+    "context": "Flown from the stern or gaff.",
+    "relatedSlugs": ["flag", "nationality", "ensign-staff"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "entrance",
+    "title": "Entrance",
+    "slug": "entrance",
+    "definition": "The part of a ship's hull that first enters the water.",
+    "category": "Technical",
+    "context": "Affects the ship's resistance and speed.",
+    "relatedSlugs": ["bow", "hull", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "equator",
+    "title": "Equator",
+    "slug": "equator",
+    "definition": "The imaginary line around the middle of the earth at 0 degrees latitude.",
+    "category": "Environment",
+    "context": "Divides the northern and southern hemispheres.",
+    "relatedSlugs": ["latitude", "hemisphere", "doldrums"],
+    "sources": ["Geography"]
+  },
+  {
+    "id": "estimated-position",
+    "title": "Estimated Position (EP)",
+    "slug": "estimated-position",
+    "definition": "A dead reckoning position adjusted for the estimated effects of wind and current.",
+    "category": "Navigation",
+    "context": "More accurate than a simple DR position.",
+    "relatedSlugs": ["dead-reckoning", "drift", "leeway"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "estimated-time-of-arrival",
+    "title": "Estimated Time of Arrival (ETA)",
+    "slug": "estimated-time-of-arrival",
+    "definition": "The time when a ship is expected to reach its destination.",
+    "category": "Operations",
+    "context": "Crucial for port planning and logistics.",
+    "relatedSlugs": ["etd", "voyage", "logistics"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "estimated-time-of-departure",
+    "title": "Estimated Time of Departure (ETD)",
+    "slug": "estimated-time-of-departure",
+    "definition": "The time when a ship is expected to leave a port.",
+    "category": "Operations",
+    "context": "Used for scheduling and coordination.",
+    "relatedSlugs": ["eta", "voyage", "logistics"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "even-keel",
+    "title": "Even Keel",
+    "slug": "even-keel",
+    "definition": "A vessel is on an even keel when its draft is the same at the bow and stern.",
+    "category": "Terminology",
+    "context": "Indicates proper trim.",
+    "relatedSlugs": ["trim", "draft", "stability"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "exclusive-economic-zone",
+    "title": "Exclusive Economic Zone (EEZ)",
+    "slug": "exclusive-economic-zone",
+    "definition": "A sea zone over which a state has special rights regarding the exploration and use of marine resources.",
+    "category": "Regulations",
+    "context": "Extends up to 200 nautical miles from the coast.",
+    "relatedSlugs": ["territorial-waters", "unclos", "maritime-law"],
+    "sources": ["UNCLOS"]
+  },
+  {
+    "id": "eye-of-the-wind",
+    "title": "Eye of the Wind",
+    "slug": "eye-of-the-wind",
+    "definition": "The direction from which the wind is blowing.",
+    "category": "Environment",
+    "context": "A vessel cannot sail directly into the eye of the wind.",
+    "relatedSlugs": ["windward", "upwind", "tacking"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "eye-splice",
+    "title": "Eye Splice",
+    "slug": "eye-splice",
+    "definition": "A permanent loop formed at the end of a rope by interweaving its strands.",
+    "category": "Terminology",
+    "context": "Stronger than a knot.",
+    "relatedSlugs": ["splice", "knot", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fair-wind",
+    "title": "Fair Wind",
+    "slug": "fair-wind",
+    "definition": "A wind that allows a vessel to sail on its desired course.",
+    "category": "Environment",
+    "context": "Favorable for the voyage.",
+    "relatedSlugs": ["foul-wind", "wind", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "fairlead",
+    "title": "Fairlead",
+    "slug": "fairlead",
+    "definition": "A fitting used to guide a rope and prevent it from chafing.",
+    "category": "Vessel Parts",
+    "context": "Ensures lines lead cleanly to winches or cleats.",
+    "relatedSlugs": ["chock", "bollard", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "fairway",
+    "title": "Fairway",
+    "slug": "fairway",
+    "definition": "The main navigable channel in a body of water.",
+    "category": "Navigation",
+    "context": "Usually marked by buoys.",
+    "relatedSlugs": ["channel", "navigation", "buoy"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "fake",
+    "title": "Fake",
+    "slug": "fake",
+    "definition": "To lay a rope down in long, flat loops so it can run out freely.",
+    "category": "Terminology",
+    "context": "Used for anchor cables and mooring lines.",
+    "relatedSlugs": ["coil", "flake", "rope-handling"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fall",
+    "title": "Fall",
+    "slug": "fall",
+    "definition": "The part of a tackle to which power is applied.",
+    "category": "Technical",
+    "context": "The rope that is pulled.",
+    "relatedSlugs": ["tackle", "block", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fancy-work",
+    "title": "Fancy Work",
+    "slug": "fancy-work",
+    "definition": "Decorative knotting and ropework done by sailors.",
+    "category": "Terminology",
+    "context": "A traditional maritime craft.",
+    "relatedSlugs": ["ropework", "knot", "maritime-tradition"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "fashion-piece",
+    "title": "Fashion Piece",
+    "slug": "fashion-piece",
+    "definition": "A timber that forms the shape of a ship's stern.",
+    "category": "Vessel Parts",
+    "context": "Part of the stern frame.",
+    "relatedSlugs": ["stern", "transom", "shipbuilding"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "fathom",
+    "title": "Fathom",
+    "slug": "fathom",
+    "definition": "A unit of length equal to six feet, used for measuring the depth of water.",
+    "category": "Terminology",
+    "context": "Traditional maritime measurement.",
+    "relatedSlugs": ["depth", "sounding", "measurement"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "fathometer",
+    "title": "Fathometer",
+    "slug": "fathometer",
+    "definition": "An instrument used to measure the depth of water.",
+    "category": "Technical",
+    "context": "A type of echo sounder.",
+    "relatedSlugs": ["echo-sounder", "depth", "navigation"],
+    "sources": ["Bridge Equipment"]
+  },
+  {
+    "id": "fay",
+    "title": "Fay",
+    "slug": "fay",
+    "definition": "To join two pieces of timber together so closely that no light can pass between them.",
+    "category": "Technical",
+    "context": "Used in high-quality shipbuilding.",
+    "relatedSlugs": ["joint", "shipbuilding", "timber"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "feather",
+    "title": "Feather",
+    "slug": "feather",
+    "definition": "To turn an oar blade horizontal as it is moved forward for the next stroke.",
+    "category": "Terminology",
+    "context": "Reduces wind resistance.",
+    "relatedSlugs": ["rowing", "oar", "stroke"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fender",
+    "title": "Fender",
+    "slug": "fender",
+    "definition": "A cushion used to protect a ship's hull from damage when alongside a pier or another ship.",
+    "category": "Vessel Parts",
+    "context": "Can be inflatable, foam, or made of old tires.",
+    "relatedSlugs": ["mooring", "hull-protection", "alongside"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "fetch",
+    "title": "Fetch",
+    "slug": "fetch",
+    "definition": "The distance over which the wind has blown across open water to create waves.",
+    "category": "Environment",
+    "context": "Determines wave height and intensity.",
+    "relatedSlugs": ["waves", "wind", "oceanography"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "fid",
+    "title": "Fid",
+    "slug": "fid",
+    "definition": "A tapered wooden tool used for separating the strands of a rope for splicing.",
+    "category": "Technical",
+    "context": "Essential for ropework.",
+    "relatedSlugs": ["marlinespike", "splice", "ropework"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fife-rail",
+    "title": "Fife Rail",
+    "slug": "fife-rail",
+    "definition": "A rail around a mast with holes for belaying pins.",
+    "category": "Vessel Parts",
+    "context": "Used for securing rigging lines.",
+    "relatedSlugs": ["belaying-pin", "mast", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "figurehead",
+    "title": "Figurehead",
+    "slug": "figurehead",
+    "definition": "A carved wooden decoration at the bow of a sailing ship.",
+    "category": "History",
+    "context": "Often represented a person or a mythical creature.",
+    "relatedSlugs": ["bow", "decoration", "maritime-tradition"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "filler",
+    "title": "Filler",
+    "slug": "filler",
+    "definition": "A piece of material used to fill a gap or to provide a smooth surface.",
+    "category": "Technical",
+    "context": "Used in hull repair and maintenance.",
+    "relatedSlugs": ["repair", "maintenance", "hull"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "fire-main",
+    "title": "Fire Main",
+    "slug": "fire-main",
+    "definition": "A system of pipes and pumps on a ship used for firefighting.",
+    "category": "Safety",
+    "context": "Essential for safety at sea.",
+    "relatedSlugs": ["firefighting", "safety", "pumps"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "first-mate",
+    "title": "First Mate",
+    "slug": "first-mate",
+    "definition": "The officer next in rank to the master.",
+    "category": "Crew",
+    "context": "Also known as the chief mate.",
+    "relatedSlugs": ["chief-mate", "master", "officer"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "fish",
+    "title": "Fish",
+    "slug": "fish",
+    "definition": "To strengthen a damaged spar by lashing pieces of wood or metal to it.",
+    "category": "Terminology",
+    "context": "A temporary repair at sea.",
+    "relatedSlugs": ["repair", "spar", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fishing-vessel",
+    "title": "Fishing Vessel",
+    "slug": "fishing-vessel",
+    "definition": "A boat or ship used to catch fish in the wild.",
+    "category": "History",
+    "context": "Includes trawlers, seiners, and longliners.",
+    "relatedSlugs": ["trawler", "seiner", "vessel-types"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "fix",
+    "title": "Fix",
+    "slug": "fix",
+    "definition": "A vessel's position determined by observing landmarks or celestial bodies.",
+    "category": "Navigation",
+    "context": "The most accurate position available.",
+    "relatedSlugs": ["position", "navigation", "dead-reckoning"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "flag-of-convenience",
+    "title": "Flag of Convenience (FOC)",
+    "slug": "flag-of-convenience",
+    "definition": "The practice of registering a ship in a country other than that of its owners.",
+    "category": "Regulations",
+    "context": "Often done to reduce costs or avoid regulations.",
+    "relatedSlugs": ["registration", "flag-state", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "flag-state",
+    "title": "Flag State",
+    "slug": "flag-state",
+    "definition": "The country in which a ship is registered.",
+    "category": "Regulations",
+    "context": "Responsible for the ship's compliance with international rules.",
+    "relatedSlugs": ["registration", "imo", "maritime-law"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "flagship",
+    "title": "Flagship",
+    "slug": "flagship",
+    "definition": "The ship that carries the commander of a fleet and flies his flag.",
+    "category": "History",
+    "context": "The most important ship in a fleet.",
+    "relatedSlugs": ["fleet", "commander", "warship"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "flare",
+    "title": "Flare",
+    "slug": "flare",
+    "definition": "The outward curve of a ship's hull above the waterline.",
+    "category": "Technical",
+    "context": "Helps to keep the deck dry.",
+    "relatedSlugs": ["hull", "bow", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "flat-top",
+    "title": "Flat-top",
+    "slug": "flat-top",
+    "definition": "A slang term for an aircraft carrier.",
+    "category": "History",
+    "context": "Refers to the large flight deck.",
+    "relatedSlugs": ["aircraft-carrier", "warship", "naval-history"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "fleet",
+    "title": "Fleet",
+    "slug": "fleet",
+    "definition": "A group of ships traveling or operating together.",
+    "category": "Operations",
+    "context": "Can be naval or commercial.",
+    "relatedSlugs": ["convoy", "shipping-line", "navy"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "flemish-coil",
+    "title": "Flemish Coil",
+    "slug": "flemish-coil",
+    "definition": "A rope coiled in a flat, tight spiral on the deck.",
+    "category": "Terminology",
+    "context": "Used for neatness and decoration.",
+    "relatedSlugs": ["coil", "rope-handling", "maritime-tradition"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "flood-tide",
+    "title": "Flood Tide",
+    "slug": "flood-tide",
+    "definition": "The rising tide; the period between low water and the succeeding high water.",
+    "category": "Environment",
+    "context": "The opposite of ebb tide.",
+    "relatedSlugs": ["ebb-tide", "high-water", "tide"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "floor",
+    "title": "Floor",
+    "slug": "floor",
+    "definition": "The transverse structural members at the bottom of a ship's hull.",
+    "category": "Vessel Parts",
+    "context": "Connects the frames to the keel.",
+    "relatedSlugs": ["keel", "frame", "ship-construction"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "flotsam",
+    "title": "Flotsam",
+    "slug": "flotsam",
+    "definition": "Floating wreckage or cargo from a sunken ship.",
+    "category": "Terminology",
+    "context": "Legally distinct from jetsam.",
+    "relatedSlugs": ["jetsam", "derelict", "wreckage"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "fluke",
+    "title": "Fluke",
+    "slug": "fluke",
+    "definition": "The broad, triangular part of an anchor that digs into the bottom.",
+    "category": "Vessel Parts",
+    "context": "Provides the holding power.",
+    "relatedSlugs": ["anchor", "shank", "stock"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "flush-deck",
+    "title": "Flush Deck",
+    "slug": "flush-deck",
+    "definition": "A deck that runs from bow to stern without any breaks or raised sections.",
+    "category": "Vessel Parts",
+    "context": "Common on many modern ships.",
+    "relatedSlugs": ["deck", "naval-architecture", "hull"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "fly-by-night",
+    "title": "Fly-by-night",
+    "slug": "fly-by-night",
+    "definition": "A large, lightweight sail used for sailing downwind at night.",
+    "category": "History",
+    "context": "Origin of the common idiom.",
+    "relatedSlugs": ["sail", "downwind", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "flying-bridge",
+    "title": "Flying Bridge",
+    "slug": "flying-bridge",
+    "definition": "An open platform above the main bridge, used for better visibility.",
+    "category": "Vessel Parts",
+    "context": "Common on yachts and warships.",
+    "relatedSlugs": ["bridge", "wheelhouse", "visibility"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "flying-jib",
+    "title": "Flying Jib",
+    "slug": "flying-jib",
+    "definition": "The outermost jib on a sailing ship.",
+    "category": "Vessel Parts",
+    "context": "Set on the jib-boom.",
+    "relatedSlugs": ["jib", "jib-boom", "sail"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fog-horn",
+    "title": "Fog Horn",
+    "slug": "fog-horn",
+    "definition": "A device used to produce a loud sound signal in restricted visibility.",
+    "category": "Safety",
+    "context": "Required for safety in fog.",
+    "relatedSlugs": ["fog-signal", "visibility", "safety"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "fog-signal",
+    "title": "Fog Signal",
+    "slug": "fog-signal",
+    "definition": "A sound or light signal used by a vessel in restricted visibility.",
+    "category": "Navigation",
+    "context": "Outlined in COLREGs.",
+    "relatedSlugs": ["colregs", "fog-horn", "visibility"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "foot",
+    "title": "Foot",
+    "slug": "foot",
+    "definition": "The bottom edge of a sail.",
+    "category": "Vessel Parts",
+    "context": "Attached to a boom or yard.",
+    "relatedSlugs": ["sail", "head", "leach"],
+    "sources": ["Sailmaking"]
+  },
+  {
+    "id": "footrope",
+    "title": "Footrope",
+    "slug": "footrope",
+    "definition": "A rope suspended below a yard for sailors to stand on while furling sails.",
+    "category": "Vessel Parts",
+    "context": "Essential for work aloft.",
+    "relatedSlugs": ["yard", "aloft", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fore-and-aft",
+    "title": "Fore-and-Aft",
+    "slug": "fore-and-aft",
+    "definition": "Running in the direction of the ship's length.",
+    "category": "Terminology",
+    "context": "Opposite of athwartships.",
+    "relatedSlugs": ["longitudinal", "athwartships", "centerline"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "fore-and-aft-rig",
+    "title": "Fore-and-Aft Rig",
+    "slug": "fore-and-aft-rig",
+    "definition": "A sailing rig in which the sails are set parallel to the ship's centerline.",
+    "category": "History",
+    "context": "Common on sloops, schooners, and modern yachts.",
+    "relatedSlugs": ["sloop", "schooner", "rigging"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "fore-reach",
+    "title": "Fore-reach",
+    "slug": "fore-reach",
+    "definition": "The distance a vessel continues to move through the water after its sails have been furled or its engine stopped.",
+    "category": "Navigation",
+    "context": "Important for maneuvering and docking.",
+    "relatedSlugs": ["momentum", "maneuvering", "stopping-distance"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "fore-top",
+    "title": "Fore-top",
+    "slug": "fore-top",
+    "definition": "The platform at the head of the foremast.",
+    "category": "Vessel Parts",
+    "context": "Used as a lookout and for working sails.",
+    "relatedSlugs": ["foremast", "top", "lookout"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "forecastle",
+    "title": "Forecastle",
+    "slug": "forecastle",
+    "definition": "The forward part of the upper deck, or the crew's quarters located there.",
+    "category": "Vessel Parts",
+    "context": "Pronounced 'foc-sle'.",
+    "relatedSlugs": ["bow", "deck", "crew-quarters"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "forefoot",
+    "title": "Forefoot",
+    "slug": "forefoot",
+    "definition": "The part of a ship's hull where the stem joins the keel.",
+    "category": "Vessel Parts",
+    "context": "A critical structural joint.",
+    "relatedSlugs": ["stem", "keel", "hull"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "foremast",
+    "title": "Foremast",
+    "slug": "foremast",
+    "definition": "The forward-most mast on a ship with two or more masts.",
+    "category": "Vessel Parts",
+    "context": "Supports the headsails and forward square sails.",
+    "relatedSlugs": ["mast", "mainmast", "mizzenmast"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "forerunner",
+    "title": "Forerunner",
+    "slug": "forerunner",
+    "definition": "The first part of a log line, which is not marked.",
+    "category": "History",
+    "context": "Allows the log chip to clear the ship's wake before timing begins.",
+    "relatedSlugs": ["log-line", "chip-log", "speed"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "foresail",
+    "title": "Foresail",
+    "slug": "foresail",
+    "definition": "The lowest sail on the foremast.",
+    "category": "Vessel Parts",
+    "context": "A primary sail for propulsion.",
+    "relatedSlugs": ["foremast", "sail", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "forestay",
+    "title": "Forestay",
+    "slug": "forestay",
+    "definition": "A wire or rope that supports a mast from the front.",
+    "category": "Vessel Parts",
+    "context": "Part of the standing rigging.",
+    "relatedSlugs": ["stay", "backstay", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "fother",
+    "title": "Fother",
+    "slug": "fother",
+    "definition": "To stop a leak in a ship's hull by passing a sail covered with oakum and dung under the hull.",
+    "category": "History",
+    "context": "An old emergency repair technique.",
+    "relatedSlugs": ["leak", "repair", "hull"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "foul",
+    "title": "Foul",
+    "slug": "foul",
+    "definition": "To become tangled or obstructed; also, to collide with another vessel.",
+    "category": "Terminology",
+    "context": "Used for anchors, lines, and hulls.",
+    "relatedSlugs": ["tangled", "obstructed", "collision"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "foul-anchor",
+    "title": "Foul Anchor",
+    "slug": "foul-anchor",
+    "definition": "An anchor that has become tangled in its own cable or in an underwater obstruction.",
+    "category": "Terminology",
+    "context": "A common problem in poor holding ground.",
+    "relatedSlugs": ["anchor", "cable", "obstruction"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "foul-bottom",
+    "title": "Foul Bottom",
+    "slug": "foul-bottom",
+    "definition": "A seabed that is rocky or covered with obstructions, making it poor for anchoring.",
+    "category": "Environment",
+    "context": "Can damage anchors and cables.",
+    "relatedSlugs": ["anchorage", "seabed", "obstruction"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "foul-ground",
+    "title": "Foul Ground",
+    "slug": "foul-ground",
+    "definition": "An area of water that is dangerous for navigation due to rocks, wrecks, or other obstructions.",
+    "category": "Navigation",
+    "context": "Marked on charts.",
+    "relatedSlugs": ["hazard", "navigation", "chart"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "foul-hull",
+    "title": "Foul Hull",
+    "slug": "foul-hull",
+    "definition": "A ship's hull that is covered with marine growth like barnacles and weeds.",
+    "category": "Technical",
+    "context": "Increases drag and reduces speed.",
+    "relatedSlugs": ["barnacles", "drag", "hull-cleaning"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "foul-wind",
+    "title": "Foul Wind",
+    "slug": "foul-wind",
+    "definition": "A wind that blows from the direction in which a vessel wants to travel.",
+    "category": "Environment",
+    "context": "Forces the vessel to tack.",
+    "relatedSlugs": ["fair-wind", "windward", "tacking"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "founder",
+    "title": "Founder",
+    "slug": "founder",
+    "definition": "To sink; to fill with water and go to the bottom.",
+    "category": "Terminology",
+    "context": "Usually due to a leak or heavy seas.",
+    "relatedSlugs": ["sink", "wreck", "maritime-disaster"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "frame",
+    "title": "Frame",
+    "slug": "frame",
+    "definition": "The structural ribs of a ship's hull.",
+    "category": "Vessel Parts",
+    "context": "Provides the shape and strength to the hull.",
+    "relatedSlugs": ["rib", "hull", "ship-construction"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "freeboard",
+    "title": "Freeboard",
+    "slug": "freeboard",
+    "definition": "The distance from the waterline to the upper deck.",
+    "category": "Technical",
+    "context": "A measure of a ship's reserve buoyancy.",
+    "relatedSlugs": ["waterline", "deck", "buoyancy"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "freight",
+    "title": "Freight",
+    "slug": "freight",
+    "definition": "Goods carried by a ship; also the money paid for the transport of goods.",
+    "category": "Cargo",
+    "context": "The primary source of income for merchant ships.",
+    "relatedSlugs": ["cargo", "shipping", "logistics"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "freighter",
+    "title": "Freighter",
+    "slug": "freighter",
+    "definition": "A ship designed to carry cargo.",
+    "category": "History",
+    "context": "Includes bulk carriers, container ships, and tankers.",
+    "relatedSlugs": ["cargo-ship", "merchant-ship", "vessel-types"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "frigate",
+    "title": "Frigate",
+    "slug": "frigate",
+    "definition": "A medium-sized warship, larger than a corvette but smaller than a destroyer.",
+    "category": "History",
+    "context": "Used for escort and anti-submarine warfare.",
+    "relatedSlugs": ["destroyer", "corvette", "warship"],
+    "sources": ["Naval History"]
+  },
+  {
+    "id": "full-and-by",
+    "title": "Full and By",
+    "slug": "full-and-by",
+    "definition": "Sailing as close to the wind as possible with the sails full and drawing.",
+    "category": "Terminology",
+    "context": "A common point of sail.",
+    "relatedSlugs": ["close-hauled", "sailing", "windward"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "furl",
+    "title": "Furl",
+    "slug": "furl",
+    "definition": "To roll up and secure a sail.",
+    "category": "Terminology",
+    "context": "Done when the sail is no longer needed or in heavy weather.",
+    "relatedSlugs": ["stow", "reef", "sail-handling"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "futtock",
+    "title": "Futtock",
+    "slug": "futtock",
+    "definition": "One of the curved timbers that make up a frame in a wooden ship.",
+    "category": "Vessel Parts",
+    "context": "Part of the ship's skeleton.",
+    "relatedSlugs": ["frame", "timber", "shipbuilding"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "futtock-shrouds",
+    "title": "Futtock Shrouds",
+    "slug": "futtock-shrouds",
+    "definition": "Short ropes or chains that connect the topmast shrouds to the lower mast.",
+    "category": "Vessel Parts",
+    "context": "Provides support to the topmast.",
+    "relatedSlugs": ["shrouds", "mast", "rigging"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "gaff",
+    "title": "Gaff",
+    "slug": "gaff",
+    "definition": "A spar used to support the head of a fore-and-aft sail.",
+    "category": "Vessel Parts",
+    "context": "Common on schooners and traditional yachts.",
+    "relatedSlugs": ["spar", "boom", "gaff-rig"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "gaff-rig",
+    "title": "Gaff Rig",
+    "slug": "gaff-rig",
+    "definition": "A sailing rig in which the main sails are supported by gaffs.",
+    "category": "History",
+    "context": "A traditional fore-and-aft rig.",
+    "relatedSlugs": ["gaff", "rigging", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "gaff-topsail",
+    "title": "Gaff Topsail",
+    "slug": "gaff-topsail",
+    "definition": "A small, triangular sail set above a gaff sail.",
+    "category": "Vessel Parts",
+    "context": "Used to increase sail area in light winds.",
+    "relatedSlugs": ["gaff", "topsail", "sail"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "gale",
+    "title": "Gale",
+    "slug": "gale",
+    "definition": "A very strong wind, typically between 34 and 47 knots.",
+    "category": "Environment",
+    "context": "Force 8 or 9 on the Beaufort scale.",
+    "relatedSlugs": ["storm", "wind", "beaufort-scale"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "galleon",
+    "title": "Galleon",
+    "slug": "galleon",
+    "definition": "A large, multi-decked sailing ship used by European states from the 16th to 18th centuries.",
+    "category": "History",
+    "context": "Used for both war and commerce.",
+    "relatedSlugs": ["man-of-war", "carrack", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "gallery",
+    "title": "Gallery",
+    "slug": "gallery",
+    "definition": "A balcony-like structure at the stern of a large sailing ship.",
+    "category": "Vessel Parts",
+    "context": "Often highly decorated.",
+    "relatedSlugs": ["stern", "quarter-gallery", "decoration"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "galley",
+    "title": "Galley",
+    "slug": "galley",
+    "definition": "The kitchen on a ship; also a type of ancient ship propelled by oars.",
+    "category": "Vessel Parts",
+    "context": "Where food is prepared for the crew.",
+    "relatedSlugs": ["cook", "provisions", "ancient-ship"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "gangway",
+    "title": "Gangway",
+    "slug": "gangway",
+    "definition": "A movable bridge or ramp used for boarding or leaving a ship.",
+    "category": "Operations",
+    "context": "The main point of access to the ship.",
+    "relatedSlugs": ["boarding", "accommodation-ladder", "pier"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "garboard-strake",
+    "title": "Garboard Strake",
+    "slug": "garboard-strake",
+    "definition": "The first line of planking or plating on a ship's hull, next to the keel.",
+    "category": "Vessel Parts",
+    "context": "A critical part of the hull structure.",
+    "relatedSlugs": ["keel", "strake", "hull"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "gasket",
+    "title": "Gasket",
+    "slug": "gasket",
+    "definition": "A short rope or strap used to secure a furled sail to a yard or boom.",
+    "category": "Vessel Parts",
+    "context": "Ensures the sail remains neatly stowed.",
+    "relatedSlugs": ["furl", "sail", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "gear",
+    "title": "Gear",
+    "slug": "gear",
+    "definition": "A general term for equipment, tools, or rigging.",
+    "category": "Terminology",
+    "context": "Includes everything from fishing gear to deck gear.",
+    "relatedSlugs": ["equipment", "rigging", "tackle"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "general-average",
+    "title": "General Average",
+    "slug": "general-average",
+    "definition": "A legal principle in maritime law where all parties in a sea venture proportionally share any losses resulting from a voluntary sacrifice of part of the ship or cargo to save the whole in an emergency.",
+    "category": "Regulations",
+    "context": "A fundamental concept in marine insurance.",
+    "relatedSlugs": ["maritime-law", "insurance", "sacrifice"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "general-cargo",
+    "title": "General Cargo",
+    "slug": "general-cargo",
+    "definition": "Cargo that is carried in units like boxes, crates, or bags, rather than in bulk.",
+    "category": "Cargo",
+    "context": "Also known as break-bulk cargo.",
+    "relatedSlugs": ["break-bulk", "cargo", "logistics"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "gimbals",
+    "title": "Gimbals",
+    "slug": "gimbals",
+    "definition": "A support that allows an object, such as a compass or a stove, to remain horizontal even when the ship is pitching and rolling.",
+    "category": "Technical",
+    "context": "Essential for bridge equipment and the galley.",
+    "relatedSlugs": ["compass", "stove", "stability"],
+    "sources": ["Engineering"]
+  },
+  {
+    "id": "girtline",
+    "title": "Girtline",
+    "slug": "girtline",
+    "definition": "A single rope passed through a block at a masthead, used for hoisting people or equipment.",
+    "category": "Terminology",
+    "context": "A simple hoisting line.",
+    "relatedSlugs": ["hoist", "block", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "give-way",
+    "title": "Give Way",
+    "slug": "give-way",
+    "definition": "An order to start rowing; also, the requirement for one vessel to stay out of the way of another.",
+    "category": "Terminology",
+    "context": "Used in rowing and in COLREGs.",
+    "relatedSlugs": ["rowing", "colregs", "stand-on"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "give-way-vessel",
+    "title": "Give-way Vessel",
+    "slug": "give-way-vessel",
+    "definition": "The vessel that must stay out of the way of another vessel in a potential collision situation.",
+    "category": "Navigation",
+    "context": "Defined by COLREGs.",
+    "relatedSlugs": ["stand-on-vessel", "colregs", "navigation"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "glass",
+    "title": "Glass",
+    "slug": "glass",
+    "definition": "A slang term for a barometer; also an hourglass used for timing watches.",
+    "category": "Terminology",
+    "context": "Common in maritime history.",
+    "relatedSlugs": ["barometer", "hourglass", "watchkeeping"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "global-maritime-distress-and-safety-system",
+    "title": "GMDSS",
+    "slug": "global-maritime-distress-and-safety-system",
+    "definition": "An international system that uses terrestrial and satellite technology to ensure rapid alerting of rescue authorities in an emergency.",
+    "category": "Safety",
+    "context": "Mandatory for most commercial ships.",
+    "relatedSlugs": ["safety", "distress-signal", "imo"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "global-positioning-system",
+    "title": "GPS",
+    "slug": "global-positioning-system",
+    "definition": "A satellite-based navigation system that provides accurate position and time information.",
+    "category": "Navigation",
+    "context": "The primary navigation tool for modern vessels.",
+    "relatedSlugs": ["navigation", "satellite", "position"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "go-about",
+    "title": "Go About",
+    "slug": "go-about",
+    "definition": "To change tack by turning the bow through the wind.",
+    "category": "Terminology",
+    "context": "Also known as tacking.",
+    "relatedSlugs": ["tack", "wear", "sailing"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "gondola",
+    "title": "Gondola",
+    "slug": "gondola",
+    "definition": "A traditional, flat-bottomed Venetian rowing boat.",
+    "category": "History",
+    "context": "Propelled by a single oar.",
+    "relatedSlugs": ["rowing-boat", "venice", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "gooseneck",
+    "title": "Gooseneck",
+    "slug": "gooseneck",
+    "definition": "The universal joint that connects a boom to a mast.",
+    "category": "Vessel Parts",
+    "context": "Allows the boom to move in all directions.",
+    "relatedSlugs": ["boom", "mast", "joint"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "goosewing",
+    "title": "Goosewing",
+    "slug": "goosewing",
+    "definition": "To sail downwind with the mainsail on one side and the jib on the other.",
+    "category": "Terminology",
+    "context": "Also known as sailing 'wing and wing'.",
+    "relatedSlugs": ["wing-and-wing", "downwind", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "grapnel",
+    "title": "Grapnel",
+    "slug": "grapnel",
+    "definition": "A small anchor with several hooks, used for recovering objects from the bottom or for boarding other ships.",
+    "category": "Terminology",
+    "context": "Also known as a grappling hook.",
+    "relatedSlugs": ["anchor", "hook", "boarding"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "grating",
+    "title": "Grating",
+    "slug": "grating",
+    "definition": "An open lattice-work cover for a hatch or a platform.",
+    "category": "Vessel Parts",
+    "context": "Provides ventilation and drainage.",
+    "relatedSlugs": ["hatch", "deck", "ventilation"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "great-circle",
+    "title": "Great Circle",
+    "slug": "great-circle",
+    "definition": "The shortest distance between two points on the surface of a sphere.",
+    "category": "Navigation",
+    "context": "Used for long-distance voyage planning.",
+    "relatedSlugs": ["navigation", "rhumb-line", "voyage-planning"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "green-flash",
+    "title": "Green Flash",
+    "slug": "green-flash",
+    "definition": "A rare optical phenomenon that occurs shortly after sunset or before sunrise, where a green spot is visible on the upper rim of the sun.",
+    "category": "Environment",
+    "context": "Caused by atmospheric refraction.",
+    "relatedSlugs": ["sunset", "refraction", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "green-sea",
+    "title": "Green Sea",
+    "slug": "green-sea",
+    "definition": "A large volume of solid water that washes over a ship's deck.",
+    "category": "Environment",
+    "context": "More dangerous than spray.",
+    "relatedSlugs": ["waves", "heavy-weather", "deck-wash"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "gripe",
+    "title": "Gripe",
+    "slug": "gripe",
+    "definition": "The tendency of a sailing vessel to turn into the wind; also a lashing used to secure a boat in its davits.",
+    "category": "Terminology",
+    "context": "Affects the vessel's balance.",
+    "relatedSlugs": ["weather-helm", "lashing", "davits"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "grog",
+    "title": "Grog",
+    "slug": "grog",
+    "definition": "A mixture of rum and water, traditionally served to sailors in the Royal Navy.",
+    "category": "History",
+    "context": "Introduced by Admiral Vernon in 1740.",
+    "relatedSlugs": ["rum", "provisions", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "grommet",
+    "title": "Grommet",
+    "slug": "grommet",
+    "definition": "A ring of rope or metal used as an eyelet in a sail or cover.",
+    "category": "Vessel Parts",
+    "context": "Reinforces holes for lines.",
+    "relatedSlugs": ["cringle", "eyelet", "sail"],
+    "sources": ["Sailmaking"]
+  },
+  {
+    "id": "gross-tonnage",
+    "title": "Gross Tonnage (GT)",
+    "slug": "gross-tonnage",
+    "definition": "A measure of the total internal volume of a ship.",
+    "category": "Technical",
+    "context": "Used for calculating port fees and regulations.",
+    "relatedSlugs": ["net-tonnage", "displacement", "tonnage"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "ground-tackle",
+    "title": "Ground Tackle",
+    "slug": "ground-tackle",
+    "definition": "A general term for anchors, cables, and winches used for anchoring.",
+    "category": "Terminology",
+    "context": "Everything needed to anchor a ship.",
+    "relatedSlugs": ["anchor", "cable", "windlass"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "grounding",
+    "title": "Grounding",
+    "slug": "grounding",
+    "definition": "The act of a ship's hull touching the bottom.",
+    "category": "Terminology",
+    "context": "Can be accidental or intentional (beaching).",
+    "relatedSlugs": ["beaching", "stranding", "hull-damage"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "grow",
+    "title": "Grow",
+    "slug": "grow",
+    "definition": "The direction in which an anchor cable leads from the ship.",
+    "category": "Terminology",
+    "context": "Used when describing the state of the anchor.",
+    "relatedSlugs": ["anchor-cable", "scope", "anchoring"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "gudgeon",
+    "title": "Gudgeon",
+    "slug": "gudgeon",
+    "definition": "A metal eye on the sternpost of a ship into which the pintle of the rudder fits.",
+    "category": "Vessel Parts",
+    "context": "Part of the rudder hinge.",
+    "relatedSlugs": ["pintle", "rudder", "sternpost"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "gun-tackle",
+    "title": "Gun Tackle",
+    "slug": "gun-tackle",
+    "definition": "A simple tackle consisting of two single blocks.",
+    "category": "History",
+    "context": "Originally used for moving cannons on warships.",
+    "relatedSlugs": ["tackle", "block", "rigging"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "gunwale",
+    "title": "Gunwale",
+    "slug": "gunwale",
+    "definition": "The upper edge of a ship's side.",
+    "category": "Vessel Parts",
+    "context": "Pronounced 'gun-nel'.",
+    "relatedSlugs": ["rail", "hull", "deck"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "guy",
+    "title": "Guy",
+    "slug": "guy",
+    "definition": "A rope used to steady or guide a spar or a load.",
+    "category": "Vessel Parts",
+    "context": "Part of the running rigging.",
+    "relatedSlugs": ["stay", "rigging", "spar"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "gyro-compass",
+    "title": "Gyro Compass",
+    "slug": "gyro-compass",
+    "definition": "A compass that uses a gyroscope to find true north.",
+    "category": "Navigation",
+    "context": "Not affected by the ship's magnetic field.",
+    "relatedSlugs": ["magnetic-compass", "true-north", "navigation"],
+    "sources": ["Bridge Equipment"]
+  },
+  {
+    "id": "hail",
+    "title": "Hail",
+    "slug": "hail",
+    "definition": "To call out to another ship or person.",
+    "category": "Terminology",
+    "context": "A standard way of initiating communication.",
+    "relatedSlugs": ["communication", "radio", "signal"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "half-mast",
+    "title": "Half-mast",
+    "slug": "half-mast",
+    "definition": "The position of a flag flown halfway down a mast as a sign of mourning.",
+    "category": "Terminology",
+    "context": "A universal sign of respect.",
+    "relatedSlugs": ["flag", "mourning", "etiquette"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "halyard",
+    "title": "Halyard",
+    "slug": "halyard",
+    "definition": "A rope used for hoisting a sail, yard, or flag.",
+    "category": "Vessel Parts",
+    "context": "Part of the running rigging.",
+    "relatedSlugs": ["hoist", "sail", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hammock",
+    "title": "Hammock",
+    "slug": "hammock",
+    "definition": "A swinging bed made of canvas or netting, traditionally used by sailors.",
+    "category": "History",
+    "context": "Saved space on crowded warships.",
+    "relatedSlugs": ["berth", "crew", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "hand",
+    "title": "Hand",
+    "slug": "hand",
+    "definition": "A member of a ship's crew; also to furl a sail.",
+    "category": "Terminology",
+    "context": "Used in many maritime expressions.",
+    "relatedSlugs": ["crew", "furl", "seaman"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "hand-lead",
+    "title": "Hand Lead",
+    "slug": "hand-lead",
+    "definition": "A lead weight attached to a line, used for measuring the depth of water by hand.",
+    "category": "History",
+    "context": "A traditional sounding tool.",
+    "relatedSlugs": ["sounding", "depth", "lead-line"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "hand-over-hand",
+    "title": "Hand over Hand",
+    "slug": "hand-over-hand",
+    "definition": "To pull on a rope by alternating hands rapidly.",
+    "category": "Terminology",
+    "context": "A common way of hauling in a line.",
+    "relatedSlugs": ["haul", "rope-handling", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hand-tight",
+    "title": "Hand Tight",
+    "slug": "hand-tight",
+    "definition": "Tightened as much as possible by hand, without using tools.",
+    "category": "Terminology",
+    "context": "Used in maintenance and rigging.",
+    "relatedSlugs": ["tighten", "rigging", "maintenance"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "handspike",
+    "title": "Handspike",
+    "slug": "handspike",
+    "definition": "A wooden lever used for moving heavy objects or for turning a windlass.",
+    "category": "Terminology",
+    "context": "A simple manual tool.",
+    "relatedSlugs": ["lever", "windlass", "machinery"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "handy-billy",
+    "title": "Handy Billy",
+    "slug": "handy-billy",
+    "definition": "A small, portable tackle used for various tasks on deck.",
+    "category": "Terminology",
+    "context": "A versatile tool for sailors.",
+    "relatedSlugs": ["tackle", "block", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "harbor",
+    "title": "Harbor",
+    "slug": "harbor",
+    "definition": "A sheltered body of water where ships can anchor or dock safely.",
+    "category": "Operations",
+    "context": "Can be natural or artificial.",
+    "relatedSlugs": ["port", "anchorage", "shelter"],
+    "sources": ["Geography"]
+  },
+  {
+    "id": "harbor-master",
+    "title": "Harbor Master",
+    "slug": "harbor-master",
+    "definition": "The official in charge of a harbor and its operations.",
+    "category": "Operations",
+    "context": "Responsible for safety and traffic control.",
+    "relatedSlugs": ["port-authority", "harbor", "navigation"],
+    "sources": ["Port Operations"]
+  },
+  {
+    "id": "hard-a-lee",
+    "title": "Hard-a-lee",
+    "slug": "hard-a-lee",
+    "definition": "The command to put the helm all the way to the leeward side.",
+    "category": "Terminology",
+    "context": "Used when tacking.",
+    "relatedSlugs": ["tack", "helm", "leeward"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hard-a-port",
+    "title": "Hard-a-port",
+    "slug": "hard-a-port",
+    "definition": "The command to put the helm all the way to the port side.",
+    "category": "Terminology",
+    "context": "Used for rapid turning.",
+    "relatedSlugs": ["port", "helm", "steering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hard-a-starboard",
+    "title": "Hard-a-starboard",
+    "slug": "hard-a-starboard",
+    "definition": "The command to put the helm all the way to the starboard side.",
+    "category": "Terminology",
+    "context": "Used for rapid turning.",
+    "relatedSlugs": ["starboard", "helm", "steering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hard-over",
+    "title": "Hard Over",
+    "slug": "hard-over",
+    "definition": "Putting the helm all the way to one side.",
+    "category": "Terminology",
+    "context": "Maximum rudder angle.",
+    "relatedSlugs": ["helm", "rudder", "steering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "harness-cask",
+    "title": "Harness Cask",
+    "slug": "harness-cask",
+    "definition": "A large wooden tub used for storing salted meat on a ship.",
+    "category": "History",
+    "context": "Essential for long voyages in the age of sail.",
+    "relatedSlugs": ["provisions", "salt-meat", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "harpings",
+    "title": "Harpings",
+    "slug": "harpings",
+    "definition": "The forward part of a ship's wales, which are strengthened to resist the pressure of the bow.",
+    "category": "Vessel Parts",
+    "context": "Part of the hull structure.",
+    "relatedSlugs": ["wales", "hull", "bow"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "hatch",
+    "title": "Hatch",
+    "slug": "hatch",
+    "definition": "An opening in a ship's deck for access to the hold or other compartments.",
+    "category": "Vessel Parts",
+    "context": "Must be watertight when closed at sea.",
+    "relatedSlugs": ["hatchway", "deck", "hold"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "hatchway",
+    "title": "Hatchway",
+    "slug": "hatchway",
+    "definition": "The opening in the deck that leads to a hatch.",
+    "category": "Vessel Parts",
+    "context": "Surrounded by coamings.",
+    "relatedSlugs": ["hatch", "coaming", "deck"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "haul",
+    "title": "Haul",
+    "slug": "haul",
+    "definition": "To pull on a rope; also to change a vessel's course.",
+    "category": "Terminology",
+    "context": "A very common maritime verb.",
+    "relatedSlugs": ["pull", "heave", "course-change"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "haul-taut",
+    "title": "Haul Taut",
+    "slug": "haul-taut",
+    "definition": "To pull a rope until it is tight.",
+    "category": "Terminology",
+    "context": "Used in rigging and line handling.",
+    "relatedSlugs": ["tighten", "rope-handling", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hawse-hole",
+    "title": "Hawse Hole",
+    "slug": "hawse-hole",
+    "definition": "A hole in the bow of a ship through which an anchor cable passes.",
+    "category": "Vessel Parts",
+    "context": "Reinforced with a hawse pipe.",
+    "relatedSlugs": ["hawse-pipe", "anchor-cable", "bow"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "hawse-pipe",
+    "title": "Hawse Pipe",
+    "slug": "hawse-pipe",
+    "definition": "The iron or steel pipe that lines a hawse hole.",
+    "category": "Vessel Parts",
+    "context": "Protects the hull from the anchor cable.",
+    "relatedSlugs": ["hawse-hole", "anchor-cable", "hull"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "hawser",
+    "title": "Hawser",
+    "slug": "hawser",
+    "definition": "A thick, heavy rope used for mooring or towing a ship.",
+    "category": "Terminology",
+    "context": "Usually made of synthetic fiber or steel wire.",
+    "relatedSlugs": ["mooring-line", "tow-line", "rope"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "head",
+    "title": "Head",
+    "slug": "head",
+    "definition": "The bow of a ship; also the toilet on a ship.",
+    "category": "Vessel Parts",
+    "context": "Traditional term for the forward part of the vessel.",
+    "relatedSlugs": ["bow", "toilet", "forecastle"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "head-sea",
+    "title": "Head Sea",
+    "slug": "head-sea",
+    "definition": "A sea condition where the waves are coming from directly ahead of the ship.",
+    "category": "Environment",
+    "context": "Can cause heavy pitching.",
+    "relatedSlugs": ["following-sea", "pitching", "waves"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "head-to-wind",
+    "title": "Head to Wind",
+    "slug": "head-to-wind",
+    "definition": "A vessel is head to wind when its bow is pointing directly into the wind.",
+    "category": "Terminology",
+    "context": "Sails will flap and the vessel will lose headway.",
+    "relatedSlugs": ["in-irons", "windward", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "heading",
+    "title": "Heading",
+    "slug": "heading",
+    "definition": "The direction in which a ship's bow is pointing at any given moment.",
+    "category": "Navigation",
+    "context": "Expressed in degrees.",
+    "relatedSlugs": ["course", "bearing", "track"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "headsail",
+    "title": "Headsail",
+    "slug": "headsail",
+    "definition": "Any sail set forward of the foremast.",
+    "category": "Vessel Parts",
+    "context": "Includes jibs and staysails.",
+    "relatedSlugs": ["jib", "staysail", "foremast"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "headway",
+    "title": "Headway",
+    "slug": "headway",
+    "definition": "The forward motion of a ship through the water.",
+    "category": "Terminology",
+    "context": "Opposite of sternway.",
+    "relatedSlugs": ["sternway", "speed", "momentum"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "heart",
+    "title": "Heart",
+    "slug": "heart",
+    "definition": "The central strand of a rope.",
+    "category": "Technical",
+    "context": "Provides the core around which other strands are laid.",
+    "relatedSlugs": ["rope", "strand", "lay"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "heave",
+    "title": "Heave",
+    "slug": "heave",
+    "definition": "To pull or lift with effort; also the vertical motion of a ship in a seaway.",
+    "category": "Terminology",
+    "context": "One of the six degrees of freedom of a ship.",
+    "relatedSlugs": ["pull", "pitch", "roll"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "heave-short",
+    "title": "Heave Short",
+    "slug": "heave-short",
+    "definition": "To heave in the anchor cable until the ship is nearly over the anchor.",
+    "category": "Terminology",
+    "context": "The final stage before breaking the anchor out of the bottom.",
+    "relatedSlugs": ["anchoring", "windlass", "anchor-cable"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "heave-to",
+    "title": "Heave-to",
+    "slug": "heave-to",
+    "definition": "To stop a sailing vessel by backing some of the sails so they counteract each other.",
+    "category": "Terminology",
+    "context": "Used in heavy weather or to wait for a pilot.",
+    "relatedSlugs": ["becalmed", "heavy-weather", "maneuvering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "heaving-line",
+    "title": "Heaving Line",
+    "slug": "heaving-line",
+    "definition": "A lightweight line with a weighted end, used for throwing to a pier or another ship.",
+    "category": "Terminology",
+    "context": "Used to pass a heavier mooring hawser.",
+    "relatedSlugs": ["monkey-fist", "hawser", "mooring"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "heavy-weather",
+    "title": "Heavy Weather",
+    "slug": "heavy-weather",
+    "definition": "Rough sea conditions with strong winds and large waves.",
+    "category": "Environment",
+    "context": "Requires special precautions and seamanship.",
+    "relatedSlugs": ["storm", "gale", "seamanship"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "heel",
+    "title": "Heel",
+    "slug": "heel",
+    "definition": "The leaning of a ship to one side, caused by wind or weight; also the bottom of a mast.",
+    "category": "Technical",
+    "context": "A temporary inclination, unlike list.",
+    "relatedSlugs": ["list", "stability", "mast"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "helm",
+    "title": "Helm",
+    "slug": "helm",
+    "definition": "The steering apparatus of a ship, especially the tiller or wheel.",
+    "category": "Vessel Parts",
+    "context": "The control center for steering.",
+    "relatedSlugs": ["tiller", "wheel", "rudder"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "helmsman",
+    "title": "Helmsman",
+    "slug": "helmsman",
+    "definition": "The person who steers the ship.",
+    "category": "Crew",
+    "context": "Responsible for following the course given by the officer.",
+    "relatedSlugs": ["steering", "quartermaster", "crew"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "high-seas",
+    "title": "High Seas",
+    "slug": "high-seas",
+    "definition": "The open ocean, outside the territorial waters of any country.",
+    "category": "Regulations",
+    "context": "Governed by international law.",
+    "relatedSlugs": ["territorial-waters", "unclos", "maritime-law"],
+    "sources": ["UNCLOS"]
+  },
+  {
+    "id": "high-water",
+    "title": "High Water",
+    "slug": "high-water",
+    "definition": "The maximum level reached by a rising tide.",
+    "category": "Environment",
+    "context": "Important for port entry and clearance.",
+    "relatedSlugs": ["low-water", "tide", "flood-tide"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "hitch",
+    "title": "Hitch",
+    "slug": "hitch",
+    "definition": "A type of knot used to fasten a rope to an object like a post or a rail.",
+    "category": "Terminology",
+    "context": "Includes the clove hitch and rolling hitch.",
+    "relatedSlugs": ["knot", "bend", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hogging",
+    "title": "Hogging",
+    "slug": "hogging",
+    "definition": "A structural condition where a ship's hull curves upward in the middle.",
+    "category": "Technical",
+    "context": "Caused by uneven weight distribution or wave action.",
+    "relatedSlugs": ["sagging", "hull-stress", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "hoist",
+    "title": "Hoist",
+    "slug": "hoist",
+    "definition": "To lift or raise something; also the vertical dimension of a flag.",
+    "category": "Terminology",
+    "context": "Used for sails, flags, and cargo.",
+    "relatedSlugs": ["heave", "halyard", "flag"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "hold",
+    "title": "Hold",
+    "slug": "hold",
+    "definition": "The large compartment below the deck of a ship where cargo is stored.",
+    "category": "Vessel Parts",
+    "context": "The primary storage area.",
+    "relatedSlugs": ["cargo", "hatch", "stowage"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "holiday",
+    "title": "Holiday",
+    "slug": "holiday",
+    "definition": "A small area that has been missed during painting or cleaning.",
+    "category": "Terminology",
+    "context": "A sign of poor workmanship.",
+    "relatedSlugs": ["painting", "maintenance", "crew"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hollow-sea",
+    "title": "Hollow Sea",
+    "slug": "hollow-sea",
+    "definition": "A sea condition with deep troughs between waves.",
+    "category": "Environment",
+    "context": "Can be dangerous for small vessels.",
+    "relatedSlugs": ["waves", "trough", "heavy-weather"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "home-port",
+    "title": "Home Port",
+    "slug": "home-port",
+    "definition": "The port where a ship is registered and which is painted on its stern.",
+    "category": "Regulations",
+    "context": "The ship's official base.",
+    "relatedSlugs": ["registration", "stern", "port"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "homeward-bound",
+    "title": "Homeward Bound",
+    "slug": "homeward-bound",
+    "definition": "A ship that is on its way back to its home port.",
+    "category": "Terminology",
+    "context": "A common maritime expression.",
+    "relatedSlugs": ["voyage", "home-port", "arrival"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "hood-end",
+    "title": "Hood-end",
+    "slug": "hood-end",
+    "definition": "The end of a plank that fits into the rabbet of the stem or sternpost.",
+    "category": "Vessel Parts",
+    "context": "Part of the hull planking.",
+    "relatedSlugs": ["planking", "stem", "rabbet"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "horizon",
+    "title": "Horizon",
+    "slug": "horizon",
+    "definition": "The line where the sky and the sea appear to meet.",
+    "category": "Environment",
+    "context": "Used for celestial navigation.",
+    "relatedSlugs": ["celestial-navigation", "sextant", "visibility"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "horse-latitudes",
+    "title": "Horse Latitudes",
+    "slug": "horse-latitudes",
+    "definition": "Regions of the ocean at about 30 degrees north and south latitude, characterized by calm winds.",
+    "category": "Environment",
+    "context": "Subtropical high-pressure zones.",
+    "relatedSlugs": ["doldrums", "calm", "latitude"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "hospital-ship",
+    "title": "Hospital Ship",
+    "slug": "hospital-ship",
+    "definition": "A ship designated and equipped to provide medical treatment to the sick and wounded.",
+    "category": "History",
+    "context": "Protected by international law during wartime.",
+    "relatedSlugs": ["medical", "warship", "geneva-convention"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "hound",
+    "title": "Hound",
+    "slug": "hound",
+    "definition": "A projection on a mast that supports the trestle-trees.",
+    "category": "Vessel Parts",
+    "context": "Part of the mast structure.",
+    "relatedSlugs": ["mast", "trestle-trees", "rigging"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "house",
+    "title": "House",
+    "slug": "house",
+    "definition": "To lower a topmast or jib-boom and secure it.",
+    "category": "Terminology",
+    "context": "Done to reduce windage or for maintenance.",
+    "relatedSlugs": ["topmast", "jib-boom", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "house-flag",
+    "title": "House Flag",
+    "slug": "house-flag",
+    "definition": "The flag of a shipping company, flown from the mainmast.",
+    "category": "Terminology",
+    "context": "Identifies the ship's owner.",
+    "relatedSlugs": ["flag", "shipping-line", "owner"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "hove-to",
+    "title": "Hove-to",
+    "slug": "hove-to",
+    "definition": "The state of a vessel that has been heaved-to.",
+    "category": "Terminology",
+    "context": "Stationary in the water.",
+    "relatedSlugs": ["heave-to", "becalmed", "maneuvering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hovercraft",
+    "title": "Hovercraft",
+    "slug": "hovercraft",
+    "definition": "A vehicle that travels over water or land on a cushion of air.",
+    "category": "History",
+    "context": "Also known as an Air Cushion Vehicle (ACV).",
+    "relatedSlugs": ["acv", "vessel-types", "amphibious"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "hugging-the-shore",
+    "title": "Hugging the Shore",
+    "slug": "hugging-the-shore",
+    "definition": "Sailing as close to the coast as possible.",
+    "category": "Navigation",
+    "context": "Often done to avoid currents or for better visibility.",
+    "relatedSlugs": ["coastal-navigation", "shoreline", "navigation"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "hulk",
+    "title": "Hulk",
+    "slug": "hulk",
+    "definition": "The hull of an old ship that is no longer seaworthy and is used for storage or as a prison.",
+    "category": "History",
+    "context": "Common in the 18th and 19th centuries.",
+    "relatedSlugs": ["hull", "prison-ship", "storage"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "hull",
+    "title": "Hull",
+    "slug": "hull",
+    "definition": "The main body of a ship, including the bottom, sides, and deck.",
+    "category": "Vessel Parts",
+    "context": "The watertight shell of the vessel.",
+    "relatedSlugs": ["deck", "keel", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "hull-down",
+    "title": "Hull Down",
+    "slug": "hull-down",
+    "definition": "A vessel is hull down when only its masts and superstructure are visible above the horizon.",
+    "category": "Navigation",
+    "context": "Indicates the vessel is far away.",
+    "relatedSlugs": ["horizon", "visibility", "navigation"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "hull-speed",
+    "title": "Hull Speed",
+    "slug": "hull-speed",
+    "definition": "The maximum theoretical speed of a displacement hull.",
+    "category": "Technical",
+    "context": "Determined by the length of the waterline.",
+    "relatedSlugs": ["displacement", "waterline", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "humidity",
+    "title": "Humidity",
+    "slug": "humidity",
+    "definition": "The amount of water vapor in the air.",
+    "category": "Environment",
+    "context": "Affects visibility and comfort.",
+    "relatedSlugs": ["dew-point", "fog", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "hurricane",
+    "title": "Hurricane",
+    "slug": "hurricane",
+    "definition": "A severe tropical cyclone with winds of 64 knots or more.",
+    "category": "Environment",
+    "context": "Force 12 on the Beaufort scale.",
+    "relatedSlugs": ["cyclone", "typhoon", "storm"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "hydrofoil",
+    "title": "Hydrofoil",
+    "slug": "hydrofoil",
+    "definition": "A boat with wing-like structures that lift the hull out of the water at high speeds.",
+    "category": "History",
+    "context": "Reduces drag and increases speed.",
+    "relatedSlugs": ["vessel-types", "lift", "drag"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "hydrography",
+    "title": "Hydrography",
+    "slug": "hydrography",
+    "definition": "The science of measuring and mapping the physical features of bodies of water.",
+    "category": "Technical",
+    "context": "Essential for creating nautical charts.",
+    "relatedSlugs": ["charting", "oceanography", "navigation"],
+    "sources": ["IHO"]
+  },
+  {
+    "id": "ice-breaker",
+    "title": "Icebreaker",
+    "slug": "ice-breaker",
+    "definition": "A specialized vessel designed to break through ice and clear a path for other ships.",
+    "category": "History",
+    "context": "Essential for navigation in polar regions.",
+    "relatedSlugs": ["polar", "ice", "vessel-types"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "idlers",
+    "title": "Idlers",
+    "slug": "idlers",
+    "definition": "Crew members who do not stand watch, such as the cook or the carpenter.",
+    "category": "Crew",
+    "context": "They work during the day and sleep at night.",
+    "relatedSlugs": ["crew", "watchkeeping", "cook"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "in-irons",
+    "title": "In Irons",
+    "slug": "in-irons",
+    "definition": "The state of a sailing vessel that is pointing directly into the wind and has lost all headway.",
+    "category": "Terminology",
+    "context": "A difficult position to recover from.",
+    "relatedSlugs": ["head-to-wind", "tack", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "in-stays",
+    "title": "In Stays",
+    "slug": "in-stays",
+    "definition": "The moment when a sailing vessel is turning through the wind during a tack.",
+    "category": "Terminology",
+    "context": "Part of the tacking process.",
+    "relatedSlugs": ["tack", "head-to-wind", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "inboard",
+    "title": "Inboard",
+    "slug": "inboard",
+    "definition": "Toward the centerline of the ship.",
+    "category": "Terminology",
+    "context": "Opposite of outboard.",
+    "relatedSlugs": ["outboard", "centerline", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "inclining-experiment",
+    "title": "Inclining Experiment",
+    "slug": "inclining-experiment",
+    "definition": "A test performed on a ship to determine its center of gravity and stability.",
+    "category": "Technical",
+    "context": "Essential for safe operation.",
+    "relatedSlugs": ["stability", "center-of-gravity", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "inland-waters",
+    "title": "Inland Waters",
+    "slug": "inland-waters",
+    "definition": "Bodies of water like rivers, lakes, and canals that are inside a country's coastline.",
+    "category": "Regulations",
+    "context": "Governed by inland navigation rules.",
+    "relatedSlugs": ["territorial-waters", "navigation-rules", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "inner-bottom",
+    "title": "Inner Bottom",
+    "slug": "inner-bottom",
+    "definition": "The upper layer of a double bottom.",
+    "category": "Vessel Parts",
+    "context": "Also known as the tank top.",
+    "relatedSlugs": ["double-bottom", "tank-top", "hull"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "intermodal",
+    "title": "Intermodal",
+    "slug": "intermodal",
+    "definition": "The transport of goods using multiple modes of transport (e.g., ship, truck, rail) without handling the cargo itself.",
+    "category": "Cargo",
+    "context": "The basis of containerization.",
+    "relatedSlugs": ["containerization", "logistics", "shipping"],
+    "sources": ["Logistics"]
+  },
+  {
+    "id": "international-maritime-organization",
+    "title": "IMO",
+    "slug": "international-maritime-organization",
+    "definition": "The United Nations agency responsible for the safety and security of shipping and the prevention of marine pollution.",
+    "category": "Regulations",
+    "context": "The primary international regulatory body.",
+    "relatedSlugs": ["solas", "marpol", "un"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "international-regulations-for-preventing-collisions-at-sea",
+    "title": "COLREGs",
+    "slug": "international-regulations-for-preventing-collisions-at-sea",
+    "definition": "The 'rules of the road' for ships at sea.",
+    "category": "Navigation",
+    "context": "Mandatory for all vessels.",
+    "relatedSlugs": ["navigation-rules", "collision-avoidance", "imo"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "iron-bound",
+    "title": "Iron-bound",
+    "slug": "iron-bound",
+    "definition": "A coast that is rocky and has no safe harbors.",
+    "category": "Environment",
+    "context": "Dangerous for navigation.",
+    "relatedSlugs": ["coastline", "hazard", "harbor"],
+    "sources": ["Geography"]
+  },
+  {
+    "id": "iron-hull",
+    "title": "Iron Hull",
+    "slug": "iron-hull",
+    "definition": "A ship's hull made of iron plates.",
+    "category": "History",
+    "context": "The precursor to steel hulls.",
+    "relatedSlugs": ["steel-hull", "shipbuilding", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "isobar",
+    "title": "Isobar",
+    "slug": "isobar",
+    "definition": "A line on a weather map connecting points of equal atmospheric pressure.",
+    "category": "Environment",
+    "context": "Used to identify high and low pressure systems.",
+    "relatedSlugs": ["pressure", "weather-map", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "jack",
+    "title": "Jack",
+    "slug": "jack",
+    "definition": "A small flag flown from the bow of a ship; also a slang term for a sailor.",
+    "category": "Terminology",
+    "context": "Includes the Union Jack.",
+    "relatedSlugs": ["flag", "ensign", "sailor"],
+    "sources": ["Maritime Tradition"]
+  },
+  {
+    "id": "jack-staff",
+    "title": "Jack Staff",
+    "slug": "jack-staff",
+    "definition": "A small flagpole at the bow of a ship.",
+    "category": "Vessel Parts",
+    "context": "Used for flying the jack.",
+    "relatedSlugs": ["jack", "bow", "flagpole"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "jackstay",
+    "title": "Jackstay",
+    "slug": "jackstay",
+    "definition": "A rope or wire stretched along a yard or a deck to which sails or equipment can be attached.",
+    "category": "Vessel Parts",
+    "context": "Part of the rigging.",
+    "relatedSlugs": ["yard", "rigging", "sail"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "jacob-ladder",
+    "title": "Jacob's Ladder",
+    "slug": "jacob-ladder",
+    "definition": "A flexible rope or chain ladder with wooden rungs.",
+    "category": "Vessel Parts",
+    "context": "Used for boarding from a small boat.",
+    "relatedSlugs": ["ladder", "boarding", "pilot-ladder"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "jetsam",
+    "title": "Jetsam",
+    "slug": "jetsam",
+    "definition": "Cargo that has been thrown overboard to lighten a ship in an emergency.",
+    "category": "Terminology",
+    "context": "Legally distinct from flotsam.",
+    "relatedSlugs": ["flotsam", "jettison", "wreckage"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "jettison",
+    "title": "Jettison",
+    "slug": "jettison",
+    "definition": "To throw cargo overboard in an emergency.",
+    "category": "Operations",
+    "context": "Done to save the ship and crew.",
+    "relatedSlugs": ["jetsam", "emergency", "cargo"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "jetty",
+    "title": "Jetty",
+    "slug": "jetty",
+    "definition": "A structure built out from the shore into the water to protect a harbor or to direct a current.",
+    "category": "Operations",
+    "context": "Can also be used as a pier.",
+    "relatedSlugs": ["pier", "breakwater", "harbor"],
+    "sources": ["Port Engineering"]
+  },
+  {
+    "id": "jewel-block",
+    "title": "Jewel Block",
+    "slug": "jewel-block",
+    "definition": "A small block at the end of a yard used for the halyards of a studding sail.",
+    "category": "Vessel Parts",
+    "context": "Part of the square rig.",
+    "relatedSlugs": ["block", "yard", "studding-sail"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "jib",
+    "title": "Jib",
+    "slug": "jib",
+    "definition": "A triangular headsail set forward of the foremast.",
+    "category": "Vessel Parts",
+    "context": "A primary sail for balance and propulsion.",
+    "relatedSlugs": ["headsail", "staysail", "foremast"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "jib-boom",
+    "title": "Jib-boom",
+    "slug": "jib-boom",
+    "definition": "A spar that extends forward from the bowsprit.",
+    "category": "Vessel Parts",
+    "context": "Used to set the jibs.",
+    "relatedSlugs": ["bowsprit", "jib", "spar"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "jibe",
+    "title": "Jibe",
+    "slug": "jibe",
+    "definition": "To change tack by turning the stern through the wind.",
+    "category": "Terminology",
+    "context": "Also known as wearing.",
+    "relatedSlugs": ["tack", "wear", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "jigger",
+    "title": "Jigger",
+    "slug": "jigger",
+    "definition": "The small, fourth mast on a ship; also a small tackle.",
+    "category": "Vessel Parts",
+    "context": "Includes the jiggermast.",
+    "relatedSlugs": ["mast", "tackle", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "jolly-boat",
+    "title": "Jolly Boat",
+    "slug": "jolly-boat",
+    "definition": "A small boat carried by a ship for general use.",
+    "category": "History",
+    "context": "Often used for transport to shore.",
+    "relatedSlugs": ["dinghy", "tender", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "jolly-roger",
+    "title": "Jolly Roger",
+    "slug": "jolly-roger",
+    "definition": "The traditional pirate flag, usually featuring a skull and crossbones.",
+    "category": "History",
+    "context": "Used to intimidate victims.",
+    "relatedSlugs": ["piracy", "flag", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "junk",
+    "title": "Junk",
+    "slug": "junk",
+    "definition": "A traditional Chinese sailing ship; also old rope that is no longer useful.",
+    "category": "History",
+    "context": "Features fully battened sails.",
+    "relatedSlugs": ["vessel-types", "rope", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "jury-rig",
+    "title": "Jury Rig",
+    "slug": "jury-rig",
+    "definition": "A temporary, makeshift repair to a ship's rigging or machinery.",
+    "category": "Terminology",
+    "context": "Done to enable the ship to reach port.",
+    "relatedSlugs": ["repair", "makeshift", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "kayak",
+    "title": "Kayak",
+    "slug": "kayak",
+    "definition": "A small, narrow boat propelled by a double-bladed paddle.",
+    "category": "History",
+    "context": "Traditionally used by Inuit people.",
+    "relatedSlugs": ["canoe", "paddle", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "kedge",
+    "title": "Kedge",
+    "slug": "kedge",
+    "definition": "A small anchor used for moving a ship by hauling on its cable.",
+    "category": "Terminology",
+    "context": "The process is called kedging.",
+    "relatedSlugs": ["anchor", "kedging", "warping"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "kedging",
+    "title": "Kedging",
+    "slug": "kedging",
+    "definition": "The process of moving a ship by dropping a kedge anchor and hauling the ship toward it.",
+    "category": "Operations",
+    "context": "Used in calm winds or to move a grounded ship.",
+    "relatedSlugs": ["kedge", "warping", "maneuvering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "keel",
+    "title": "Keel",
+    "slug": "keel",
+    "definition": "The main structural member of a ship's hull, running along the centerline from bow to stern.",
+    "category": "Vessel Parts",
+    "context": "The 'backbone' of the ship.",
+    "relatedSlugs": ["hull", "stem", "sternpost"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "keel-haul",
+    "title": "Keelhaul",
+    "slug": "keel-haul",
+    "definition": "A severe form of punishment where a person was dragged under the hull of a ship from one side to the other.",
+    "category": "History",
+    "context": "Common in the 17th and 18th centuries.",
+    "relatedSlugs": ["punishment", "discipline", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "keelson",
+    "title": "Keelson",
+    "slug": "keelson",
+    "definition": "A structural member placed on top of the keel to strengthen it.",
+    "category": "Vessel Parts",
+    "context": "Part of the internal hull structure.",
+    "relatedSlugs": ["keel", "hull", "ship-construction"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "kelp",
+    "title": "Kelp",
+    "slug": "kelp",
+    "definition": "Large brown seaweed that grows in underwater forests.",
+    "category": "Environment",
+    "context": "Can foul propellers and intakes.",
+    "relatedSlugs": ["seaweed", "hazard", "oceanography"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "kentledge",
+    "title": "Kentledge",
+    "slug": "kentledge",
+    "definition": "Permanent iron ballast used to improve a ship's stability.",
+    "category": "Technical",
+    "context": "Placed low in the hull.",
+    "relatedSlugs": ["ballast", "stability", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "ketch",
+    "title": "Ketch",
+    "slug": "ketch",
+    "definition": "A two-masted sailing vessel with the smaller mizzenmast stepped forward of the rudder post.",
+    "category": "History",
+    "context": "Similar to a yawl but with a larger mizzen.",
+    "relatedSlugs": ["yawl", "schooner", "vessel-types"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "kevel",
+    "title": "Kevel",
+    "slug": "kevel",
+    "definition": "A large cleat or bollard used for securing heavy mooring lines.",
+    "category": "Vessel Parts",
+    "context": "Found on the deck of large ships.",
+    "relatedSlugs": ["cleat", "bollard", "mooring"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "killick",
+    "title": "Killick",
+    "slug": "killick",
+    "definition": "A small, primitive anchor made of a stone in a wooden frame.",
+    "category": "History",
+    "context": "Also a slang term for a leading seaman in the Royal Navy.",
+    "relatedSlugs": ["anchor", "seaman", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "king-post",
+    "title": "King Post",
+    "slug": "king-post",
+    "definition": "A strong vertical post used to support a derrick or crane.",
+    "category": "Technical",
+    "context": "Part of the cargo-handling machinery.",
+    "relatedSlugs": ["derrick", "crane", "cargo-handling"],
+    "sources": ["Engineering"]
+  },
+  {
+    "id": "knee",
+    "title": "Knee",
+    "slug": "knee",
+    "definition": "A bracket-shaped structural member used to connect and strengthen joints in a ship's hull.",
+    "category": "Vessel Parts",
+    "context": "Commonly used to connect deck beams to frames.",
+    "relatedSlugs": ["bracket", "hull", "ship-construction"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "knightheads",
+    "title": "Knightheads",
+    "slug": "knightheads",
+    "definition": "Two strong timbers at the bow of a ship that support the bowsprit.",
+    "category": "Vessel Parts",
+    "context": "Part of the bow structure.",
+    "relatedSlugs": ["bowsprit", "bow", "ship-construction"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "knot",
+    "title": "Knot",
+    "slug": "knot",
+    "definition": "A unit of speed equal to one nautical mile per hour.",
+    "category": "Terminology",
+    "context": "The standard measure of speed at sea.",
+    "relatedSlugs": ["speed", "nautical-mile", "measurement"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "knuckle",
+    "title": "Knuckle",
+    "slug": "knuckle",
+    "definition": "A sharp change in the direction of a ship's hull plating or frames.",
+    "category": "Technical",
+    "context": "A design feature in some hulls.",
+    "relatedSlugs": ["hull", "naval-architecture", "ship-construction"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "labor",
+    "title": "Labor",
+    "slug": "labor",
+    "definition": "A ship is said to labor when it is working heavily in rough seas.",
+    "category": "Terminology",
+    "context": "Indicates the ship is under stress.",
+    "relatedSlugs": ["heavy-weather", "pitching", "rolling"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lacing",
+    "title": "Lacing",
+    "slug": "lacing",
+    "definition": "A small rope used to fasten a sail to a spar or stay.",
+    "category": "Terminology",
+    "context": "Used for traditional sails.",
+    "relatedSlugs": ["sail", "spar", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "ladder-well",
+    "title": "Ladder Well",
+    "slug": "ladder-well",
+    "definition": "An opening in a deck for a ladder.",
+    "category": "Vessel Parts",
+    "context": "Provides vertical access between decks.",
+    "relatedSlugs": ["ladder", "deck", "access"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "laden",
+    "title": "Laden",
+    "slug": "laden",
+    "definition": "A ship that is loaded with cargo.",
+    "category": "Terminology",
+    "context": "Opposite of in ballast.",
+    "relatedSlugs": ["ballast", "cargo", "stowage"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "laid-up",
+    "title": "Laid Up",
+    "slug": "laid-up",
+    "definition": "A ship that is out of service for repairs or because of a lack of cargo.",
+    "category": "Terminology",
+    "context": "Often moored in a designated area.",
+    "relatedSlugs": ["maintenance", "repair", "mooring"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "land-breeze",
+    "title": "Land Breeze",
+    "slug": "land-breeze",
+    "definition": "A breeze that blows from the land toward the sea at night.",
+    "category": "Environment",
+    "context": "Caused by the land cooling faster than the sea.",
+    "relatedSlugs": ["sea-breeze", "wind", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "landfall",
+    "title": "Landfall",
+    "slug": "landfall",
+    "definition": "The first sighting of land at the end of a sea voyage.",
+    "category": "Navigation",
+    "context": "A significant event in traditional navigation.",
+    "relatedSlugs": ["voyage", "arrival", "navigation"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "landmark",
+    "title": "Landmark",
+    "slug": "landmark",
+    "definition": "A conspicuous object on land that is used as a reference for navigation.",
+    "category": "Navigation",
+    "context": "Includes towers, peaks, and buildings.",
+    "relatedSlugs": ["navigation", "bearing", "fix"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "lanyard",
+    "title": "Lanyard",
+    "slug": "lanyard",
+    "definition": "A short rope used for fastening or securing something.",
+    "category": "Terminology",
+    "context": "Includes the ropes used to tighten shrouds.",
+    "relatedSlugs": ["shroud", "deadeye", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "larboard",
+    "title": "Larboard",
+    "slug": "larboard",
+    "definition": "The old term for the left side of a ship (port).",
+    "category": "History",
+    "context": "Changed to 'port' to avoid confusion with 'starboard'.",
+    "relatedSlugs": ["port", "starboard", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "lash",
+    "title": "Lash",
+    "slug": "lash",
+    "definition": "To secure something with ropes or chains.",
+    "category": "Operations",
+    "context": "Essential for securing cargo and equipment.",
+    "relatedSlugs": ["lashing", "securing", "cargo"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lashing",
+    "title": "Lashing",
+    "slug": "lashing",
+    "definition": "The rope or chain used to lash something.",
+    "category": "Terminology",
+    "context": "Must be strong enough to withstand ship motion.",
+    "relatedSlugs": ["lash", "securing", "cargo"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lateen-sail",
+    "title": "Lateen Sail",
+    "slug": "lateen-sail",
+    "definition": "A triangular sail set on a long yard that is mounted at an angle to the mast.",
+    "category": "History",
+    "context": "Common in the Mediterranean and Indian Ocean.",
+    "relatedSlugs": ["sail", "yard", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "latitude",
+    "title": "Latitude",
+    "slug": "latitude",
+    "definition": "The distance north or south of the equator, measured in degrees.",
+    "category": "Navigation",
+    "context": "One of the two coordinates used to specify a position.",
+    "relatedSlugs": ["longitude", "equator", "meridian"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "launch",
+    "title": "Launch",
+    "slug": "launch",
+    "definition": "To move a new ship from the building slip into the water; also a large powerboat.",
+    "category": "Terminology",
+    "context": "A major milestone in shipbuilding.",
+    "relatedSlugs": ["shipbuilding", "vessel-types", "christening"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "lay",
+    "title": "Lay",
+    "slug": "lay",
+    "definition": "The direction in which the strands of a rope are twisted; also to go or move.",
+    "category": "Terminology",
+    "context": "Includes right-hand lay and left-hand lay.",
+    "relatedSlugs": ["rope", "strand", "twist"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lay-days",
+    "title": "Lay Days",
+    "slug": "lay-days",
+    "definition": "The number of days allowed in a charter party for loading and unloading cargo.",
+    "category": "Regulations",
+    "context": "Exceeding lay days results in demurrage.",
+    "relatedSlugs": ["charter-party", "demurrage", "cargo"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "lazarette",
+    "title": "Lazarette",
+    "slug": "lazarette",
+    "definition": "A storage compartment in the stern of a ship, used for provisions or equipment.",
+    "category": "Vessel Parts",
+    "context": "Usually located below the main deck.",
+    "relatedSlugs": ["storage", "stern", "provisions"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "leach",
+    "title": "Leach",
+    "slug": "leach",
+    "definition": "The vertical edge of a sail.",
+    "category": "Vessel Parts",
+    "context": "The after edge of a fore-and-aft sail.",
+    "relatedSlugs": ["sail", "luff", "foot"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "lead-line",
+    "title": "Lead Line",
+    "slug": "lead-line",
+    "definition": "A line with a lead weight at the end, used for measuring the depth of water.",
+    "category": "Terminology",
+    "context": "A traditional method of sounding.",
+    "relatedSlugs": ["sounding", "depth", "navigation"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "leading-lights",
+    "title": "Leading Lights",
+    "slug": "leading-lights",
+    "definition": "A pair of lights that, when aligned, indicate a safe channel for navigation.",
+    "category": "Navigation",
+    "context": "Also known as range lights.",
+    "relatedSlugs": ["range-lights", "channel", "buoyage"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "league",
+    "title": "League",
+    "slug": "league",
+    "definition": "An old unit of distance equal to three nautical miles.",
+    "category": "History",
+    "context": "Common in historical maritime accounts.",
+    "relatedSlugs": ["nautical-mile", "distance", "measurement"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "lee",
+    "title": "Lee",
+    "slug": "lee",
+    "definition": "The side of a ship or an object that is sheltered from the wind.",
+    "category": "Terminology",
+    "context": "Opposite of weather or windward.",
+    "relatedSlugs": ["leeward", "windward", "shelter"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lee-shore",
+    "title": "Lee Shore",
+    "slug": "lee-shore",
+    "definition": "A shore that is downwind of a ship.",
+    "category": "Environment",
+    "context": "Dangerous because the wind is blowing the ship toward the shore.",
+    "relatedSlugs": ["leeward", "hazard", "navigation"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lee-tide",
+    "title": "Lee Tide",
+    "slug": "lee-tide",
+    "definition": "A tide that is running in the same direction as the wind.",
+    "category": "Environment",
+    "context": "Can cause a ship to drift rapidly.",
+    "relatedSlugs": ["weather-tide", "tide", "wind"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "leeboard",
+    "title": "Leeboard",
+    "slug": "leeboard",
+    "definition": "A board lowered into the water on the leeward side of a shallow-draft vessel to reduce leeway.",
+    "category": "Vessel Parts",
+    "context": "Common on traditional Dutch vessels.",
+    "relatedSlugs": ["leeway", "centerboard", "vessel-types"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "leeway",
+    "title": "Leeway",
+    "slug": "leeway",
+    "definition": "The sideways drift of a ship caused by the wind.",
+    "category": "Navigation",
+    "context": "Must be accounted for when calculating a course.",
+    "relatedSlugs": ["drift", "wind", "navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "leeward",
+    "title": "Leeward",
+    "slug": "leeward",
+    "definition": "Toward the side sheltered from the wind.",
+    "category": "Terminology",
+    "context": "Pronounced 'loo-ard'.",
+    "relatedSlugs": ["lee", "windward", "direction"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "length-between-perpendiculars",
+    "title": "LBP",
+    "slug": "length-between-perpendiculars",
+    "definition": "The distance between the forward and after perpendiculars of a ship.",
+    "category": "Technical",
+    "context": "A standard measurement in naval architecture.",
+    "relatedSlugs": ["loa", "perpendicular", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "length-overall",
+    "title": "LOA",
+    "slug": "length-overall",
+    "definition": "The total length of a ship from the extreme forward point to the extreme after point.",
+    "category": "Technical",
+    "context": "Includes all projections.",
+    "relatedSlugs": ["lbp", "naval-architecture", "measurement"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "let-go",
+    "title": "Let Go",
+    "slug": "let-go",
+    "definition": "The command to release an anchor or a mooring line.",
+    "category": "Terminology",
+    "context": "A standard maritime command.",
+    "relatedSlugs": ["anchoring", "mooring", "command"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "liberty-ship",
+    "title": "Liberty Ship",
+    "slug": "liberty-ship",
+    "definition": "A type of cargo ship built in large numbers in the United States during World War II.",
+    "category": "History",
+    "context": "Known for their simple design and rapid construction.",
+    "relatedSlugs": ["victory-ship", "cargo-ship", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "life-belt",
+    "title": "Life Belt",
+    "slug": "life-belt",
+    "definition": "A wearable device designed to keep a person afloat in the water.",
+    "category": "Terminology",
+    "context": "Also known as a life jacket or PFD.",
+    "relatedSlugs": ["life-jacket", "pfd", "safety"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "life-boat",
+    "title": "Lifeboat",
+    "slug": "life-boat",
+    "definition": "A small, sturdy boat carried by a ship for use in an emergency.",
+    "category": "Terminology",
+    "context": "Must be equipped with survival gear.",
+    "relatedSlugs": ["liferaft", "emergency", "solas"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "life-buoy",
+    "title": "Life Buoy",
+    "slug": "life-buoy",
+    "definition": "A ring-shaped float used for rescuing people who have fallen overboard.",
+    "category": "Terminology",
+    "context": "Often equipped with a light and a smoke signal.",
+    "relatedSlugs": ["man-overboard", "rescue", "safety"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "life-jacket",
+    "title": "Life Jacket",
+    "slug": "life-jacket",
+    "definition": "A wearable device designed to keep a person afloat in the water.",
+    "category": "Terminology",
+    "context": "Essential safety equipment.",
+    "relatedSlugs": ["life-belt", "pfd", "safety"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "life-line",
+    "title": "Life Line",
+    "slug": "life-line",
+    "definition": "A rope or wire stretched along a deck to provide a handhold for the crew.",
+    "category": "Vessel Parts",
+    "context": "Essential for safety in heavy weather.",
+    "relatedSlugs": ["safety", "deck", "heavy-weather"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "life-raft",
+    "title": "Liferaft",
+    "slug": "life-raft",
+    "definition": "An inflatable raft used for survival in an emergency.",
+    "category": "Terminology",
+    "context": "Often stored in a canister on deck.",
+    "relatedSlugs": ["lifeboat", "emergency", "solas"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "lift",
+    "title": "Lift",
+    "slug": "lift",
+    "definition": "A rope used to support and move a yard.",
+    "category": "Vessel Parts",
+    "context": "Part of the standing or running rigging.",
+    "relatedSlugs": ["yard", "rigging", "spar"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "light-ship",
+    "title": "Lightship",
+    "slug": "light-ship",
+    "definition": "A ship that serves as a floating lighthouse.",
+    "category": "History",
+    "context": "Used in areas where a permanent lighthouse cannot be built.",
+    "relatedSlugs": ["lighthouse", "navigation-aid", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "light-vessel",
+    "title": "Light Vessel",
+    "slug": "light-vessel",
+    "definition": "Another term for a lightship.",
+    "category": "History",
+    "context": "Used as a navigational aid.",
+    "relatedSlugs": ["lightship", "navigation-aid", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "light-waterline",
+    "title": "Light Waterline",
+    "slug": "light-waterline",
+    "definition": "The waterline of a ship when it is empty of cargo and ballast.",
+    "category": "Technical",
+    "context": "Used for calculating displacement.",
+    "relatedSlugs": ["waterline", "displacement", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "lighter",
+    "title": "Lighter",
+    "slug": "lighter",
+    "definition": "A large, flat-bottomed barge used for transporting cargo between a ship and the shore.",
+    "category": "History",
+    "context": "The process is called lightering.",
+    "relatedSlugs": ["barge", "lightering", "cargo"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "lightering",
+    "title": "Lightering",
+    "slug": "lightering",
+    "definition": "The process of transferring cargo between a ship and a lighter.",
+    "category": "Operations",
+    "context": "Used when a ship cannot enter a shallow port.",
+    "relatedSlugs": ["lighter", "cargo-transfer", "port"],
+    "sources": ["Maritime Operations"]
+  },
+  {
+    "id": "lighthouse",
+    "title": "Lighthouse",
+    "slug": "lighthouse",
+    "definition": "A tower or other structure with a powerful light, used as a navigational aid.",
+    "category": "Terminology",
+    "context": "Warns of hazards and indicates position.",
+    "relatedSlugs": ["navigation-aid", "lightship", "hazard"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "limber-hole",
+    "title": "Limber Hole",
+    "slug": "limber-hole",
+    "definition": "A hole in a frame or floor that allows bilge water to flow to the pump suction.",
+    "category": "Vessel Parts",
+    "context": "Essential for drainage.",
+    "relatedSlugs": ["bilge", "drainage", "ship-construction"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "line",
+    "title": "Line",
+    "slug": "line",
+    "definition": "The maritime term for a rope that has a specific use.",
+    "category": "Terminology",
+    "context": "Includes mooring lines, halyards, and sheets.",
+    "relatedSlugs": ["rope", "mooring-line", "halyard"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "liner",
+    "title": "Liner",
+    "slug": "liner",
+    "definition": "A ship that operates on a regular schedule between specific ports.",
+    "category": "History",
+    "context": "Includes passenger liners and container liners.",
+    "relatedSlugs": ["tramp-ship", "shipping-line", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "list",
+    "title": "List",
+    "slug": "list",
+    "definition": "The permanent leaning of a ship to one side, caused by uneven weight distribution.",
+    "category": "Technical",
+    "context": "Different from heel, which is temporary.",
+    "relatedSlugs": ["heel", "stability", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "lizard",
+    "title": "Lizard",
+    "slug": "lizard",
+    "definition": "A short rope with a thimble or a ring at the end, used as a fairlead.",
+    "category": "Terminology",
+    "context": "Part of the rigging.",
+    "relatedSlugs": ["fairlead", "thimble", "rigging"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lloyd-register",
+    "title": "Lloyd's Register",
+    "slug": "lloyd-register",
+    "definition": "A classification society that provides technical standards for the design and construction of ships.",
+    "category": "Regulations",
+    "context": "One of the oldest and most respected societies.",
+    "relatedSlugs": ["classification-society", "ship-construction", "maritime-law"],
+    "sources": ["Lloyd's Register"]
+  },
+  {
+    "id": "load-line",
+    "title": "Load Line",
+    "slug": "load-line",
+    "definition": "A mark on the side of a ship that indicates the maximum depth to which it can be safely loaded.",
+    "category": "Regulations",
+    "context": "Also known as the Plimsoll mark.",
+    "relatedSlugs": ["plimsoll-mark", "draft", "freeboard"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "locker",
+    "title": "Locker",
+    "slug": "locker",
+    "definition": "A storage compartment on a ship.",
+    "category": "Vessel Parts",
+    "context": "Includes chain lockers and boatswain's lockers.",
+    "relatedSlugs": ["storage", "chain-locker", "vessel-parts"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "log",
+    "title": "Log",
+    "slug": "log",
+    "definition": "A device used for measuring a ship's speed through the water; also the official record of a ship's voyage.",
+    "category": "Terminology",
+    "context": "Includes the chip log and the logbook.",
+    "relatedSlugs": ["speed", "logbook", "navigation"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "logbook",
+    "title": "Logbook",
+    "slug": "logbook",
+    "definition": "The official record of a ship's voyage, including position, weather, and events.",
+    "category": "Regulations",
+    "context": "A legal document.",
+    "relatedSlugs": ["log", "voyage", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "longitude",
+    "title": "Longitude",
+    "slug": "longitude",
+    "definition": "The distance east or west of the prime meridian, measured in degrees.",
+    "category": "Navigation",
+    "context": "One of the two coordinates used to specify a position.",
+    "relatedSlugs": ["latitude", "prime-meridian", "equator"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "lookout",
+    "title": "Lookout",
+    "slug": "lookout",
+    "definition": "A crew member assigned to watch for hazards, other ships, and navigational aids.",
+    "category": "Crew",
+    "context": "Essential for safe navigation.",
+    "relatedSlugs": ["watchkeeping", "safety", "navigation"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "loom",
+    "title": "Loom",
+    "slug": "loom",
+    "definition": "The part of an oar that is inside the boat; also the glow of a light below the horizon.",
+    "category": "Terminology",
+    "context": "Used in rowing and navigation.",
+    "relatedSlugs": ["oar", "horizon", "visibility"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "loose-footed",
+    "title": "Loose-footed",
+    "slug": "loose-footed",
+    "definition": "A sail that is not attached to a boom along its foot.",
+    "category": "Terminology",
+    "context": "Allows for better sail shape in some conditions.",
+    "relatedSlugs": ["sail", "boom", "foot"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "low-water",
+    "title": "Low Water",
+    "slug": "low-water",
+    "definition": "The minimum level reached by a falling tide.",
+    "category": "Environment",
+    "context": "Important for navigation in shallow areas.",
+    "relatedSlugs": ["high-water", "tide", "ebb-tide"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "lubber",
+    "title": "Lubber",
+    "slug": "lubber",
+    "definition": "An inexperienced or clumsy sailor.",
+    "category": "Terminology",
+    "context": "Short for landlubber.",
+    "relatedSlugs": ["sailor", "inexperience", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "lubber-line",
+    "title": "Lubber's Line",
+    "slug": "lubber-line",
+    "definition": "A vertical line on a compass bowl that indicates the ship's heading.",
+    "category": "Navigation",
+    "context": "Used to read the course from the compass card.",
+    "relatedSlugs": ["compass", "heading", "navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "luff",
+    "title": "Luff",
+    "slug": "luff",
+    "definition": "The forward edge of a sail; also to turn a ship toward the wind.",
+    "category": "Terminology",
+    "context": "The luff is the edge that first meets the wind.",
+    "relatedSlugs": ["sail", "leach", "head-to-wind"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "luffing",
+    "title": "Luffing",
+    "slug": "luffing",
+    "definition": "The flapping of a sail when it is pointing too close to the wind.",
+    "category": "Terminology",
+    "context": "Indicates the sail is not generating lift.",
+    "relatedSlugs": ["luff", "head-to-wind", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "lumber",
+    "title": "Lumber",
+    "slug": "lumber",
+    "definition": "Timber that has been cut and prepared for use.",
+    "category": "Cargo",
+    "context": "A common maritime cargo.",
+    "relatedSlugs": ["timber", "cargo", "stowage"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "lurch",
+    "title": "Lurch",
+    "slug": "lurch",
+    "definition": "A sudden, heavy roll of a ship to one side.",
+    "category": "Terminology",
+    "context": "Caused by a large wave or a sudden change in wind.",
+    "relatedSlugs": ["roll", "pitch", "heavy-weather"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "lying-to",
+    "title": "Lying-to",
+    "slug": "lying-to",
+    "definition": "The state of a ship that is hove-to.",
+    "category": "Terminology",
+    "context": "Stationary in the water.",
+    "relatedSlugs": ["hove-to", "heave-to", "maneuvering"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "mackerel-sky",
+    "title": "Mackerel Sky",
+    "slug": "mackerel-sky",
+    "definition": "A sky covered with small, rippled clouds that look like the scales of a mackerel.",
+    "category": "Environment",
+    "context": "Often indicates an approaching change in weather.",
+    "relatedSlugs": ["clouds", "weather-forecast", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "magnetic-bearing",
+    "title": "Magnetic Bearing",
+    "slug": "magnetic-bearing",
+    "definition": "A bearing measured relative to magnetic north.",
+    "category": "Navigation",
+    "context": "Must be corrected for variation and deviation.",
+    "relatedSlugs": ["true-bearing", "magnetic-north", "variation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "magnetic-compass",
+    "title": "Magnetic Compass",
+    "slug": "magnetic-compass",
+    "definition": "A navigational instrument that uses the Earth's magnetic field to indicate direction.",
+    "category": "Navigation",
+    "context": "The most common type of compass.",
+    "relatedSlugs": ["compass", "magnetic-north", "navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "magnetic-north",
+    "title": "Magnetic North",
+    "slug": "magnetic-north",
+    "definition": "The direction toward the Earth's magnetic north pole.",
+    "category": "Navigation",
+    "context": "Different from true north.",
+    "relatedSlugs": ["true-north", "variation", "compass"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "magnetic-variation",
+    "title": "Magnetic Variation",
+    "slug": "magnetic-variation",
+    "definition": "The angle between true north and magnetic north at a given location.",
+    "category": "Navigation",
+    "context": "Also known as declination.",
+    "relatedSlugs": ["variation", "true-north", "magnetic-north"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "main-deck",
+    "title": "Main Deck",
+    "slug": "main-deck",
+    "definition": "The highest continuous watertight deck of a ship.",
+    "category": "Vessel Parts",
+    "context": "The primary deck for operations.",
+    "relatedSlugs": ["deck", "hull", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mainmast",
+    "title": "Mainmast",
+    "slug": "mainmast",
+    "definition": "The tallest mast of a ship.",
+    "category": "Vessel Parts",
+    "context": "The primary mast for propulsion.",
+    "relatedSlugs": ["mast", "foremast", "mizzenmast"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mainsail",
+    "title": "Mainsail",
+    "slug": "mainsail",
+    "definition": "The primary sail set on the mainmast.",
+    "category": "Vessel Parts",
+    "context": "The largest sail on the ship.",
+    "relatedSlugs": ["sail", "mainmast", "rigging"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "mainstay",
+    "title": "Mainstay",
+    "slug": "mainstay",
+    "definition": "A strong rope or wire that supports the mainmast from forward.",
+    "category": "Vessel Parts",
+    "context": "Part of the standing rigging.",
+    "relatedSlugs": ["stay", "mainmast", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "make-fast",
+    "title": "Make Fast",
+    "slug": "make-fast",
+    "definition": "To secure a rope or a line.",
+    "category": "Terminology",
+    "context": "A standard maritime command.",
+    "relatedSlugs": ["secure", "mooring", "command"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "make-water",
+    "title": "Make Water",
+    "slug": "make-water",
+    "definition": "A ship is said to make water when it is leaking.",
+    "category": "Terminology",
+    "context": "Indicates a breach in the hull.",
+    "relatedSlugs": ["leak", "hull", "damage"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "man-overboard",
+    "title": "Man Overboard",
+    "slug": "man-overboard",
+    "definition": "An emergency situation where a person has fallen into the water from a ship.",
+    "category": "Terminology",
+    "context": "Requires immediate rescue action.",
+    "relatedSlugs": ["rescue", "life-buoy", "safety"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "manifest",
+    "title": "Manifest",
+    "slug": "manifest",
+    "definition": "A document that lists all the cargo, passengers, and crew on a ship.",
+    "category": "Regulations",
+    "context": "Required for customs clearance.",
+    "relatedSlugs": ["cargo", "customs", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "manila-rope",
+    "title": "Manila Rope",
+    "slug": "manila-rope",
+    "definition": "A type of rope made from the fibers of the abaca plant.",
+    "category": "Terminology",
+    "context": "Known for its strength and durability.",
+    "relatedSlugs": ["rope", "fiber", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "marina",
+    "title": "Marina",
+    "slug": "marina",
+    "definition": "A specialized harbor for small boats and yachts.",
+    "category": "Operations",
+    "context": "Provides mooring, fuel, and other services.",
+    "relatedSlugs": ["harbor", "mooring", "yacht"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "marine",
+    "title": "Marine",
+    "slug": "marine",
+    "definition": "Relating to the sea or to shipping.",
+    "category": "Terminology",
+    "context": "A broad term used in many contexts.",
+    "relatedSlugs": ["maritime", "nautical", "ocean"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "marine-insurance",
+    "title": "Marine Insurance",
+    "slug": "marine-insurance",
+    "definition": "Insurance that covers loss or damage to ships, cargo, and terminals.",
+    "category": "Regulations",
+    "context": "Essential for international trade.",
+    "relatedSlugs": ["insurance", "cargo", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "mariner",
+    "title": "Mariner",
+    "slug": "mariner",
+    "definition": "A person who works on a ship; a sailor.",
+    "category": "Crew",
+    "context": "A formal term for a seafarer.",
+    "relatedSlugs": ["sailor", "seafarer", "crew"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "maritime",
+    "title": "Maritime",
+    "slug": "maritime",
+    "definition": "Relating to the sea, shipping, or navigation.",
+    "category": "Terminology",
+    "context": "Similar to marine.",
+    "relatedSlugs": ["marine", "nautical", "shipping"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "maritime-law",
+    "title": "Maritime Law",
+    "slug": "maritime-law",
+    "definition": "The body of law that governs maritime activities and disputes.",
+    "category": "Regulations",
+    "context": "Also known as admiralty law.",
+    "relatedSlugs": ["admiralty-law", "unclos", "imo"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "marl",
+    "title": "Marl",
+    "slug": "marl",
+    "definition": "To fasten a rope with a series of hitches.",
+    "category": "Terminology",
+    "context": "Used for securing sails to yards.",
+    "relatedSlugs": ["hitch", "rope", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "marline",
+    "title": "Marline",
+    "slug": "marline",
+    "definition": "A small, two-stranded rope used for marling and other light work.",
+    "category": "Terminology",
+    "context": "Often tarred for durability.",
+    "relatedSlugs": ["rope", "marl", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "marline-spike",
+    "title": "Marline Spike",
+    "slug": "marline-spike",
+    "definition": "A pointed metal tool used for splicing rope and opening strands.",
+    "category": "Terminology",
+    "context": "A basic tool for sailors.",
+    "relatedSlugs": ["splicing", "rope", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "maroon",
+    "title": "Maroon",
+    "slug": "maroon",
+    "definition": "To abandon a person on a deserted island as a punishment.",
+    "category": "History",
+    "context": "Common in pirate lore.",
+    "relatedSlugs": ["punishment", "piracy", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "marpol",
+    "title": "MARPOL",
+    "slug": "marpol",
+    "definition": "The International Convention for the Prevention of Pollution from Ships.",
+    "category": "Regulations",
+    "context": "The main international convention on marine pollution.",
+    "relatedSlugs": ["pollution", "imo", "environment"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "martingale",
+    "title": "Martingale",
+    "slug": "martingale",
+    "definition": "A stay that supports the jib-boom from below.",
+    "category": "Vessel Parts",
+    "context": "Also known as a dolphin striker.",
+    "relatedSlugs": ["jib-boom", "dolphin-striker", "rigging"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mast",
+    "title": "Mast",
+    "slug": "mast",
+    "definition": "A tall vertical spar used to support sails, rigging, and navigational equipment.",
+    "category": "Vessel Parts",
+    "context": "The primary structure for sailing.",
+    "relatedSlugs": ["spar", "rigging", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mast-head",
+    "title": "Masthead",
+    "slug": "mast-head",
+    "definition": "The top of a mast.",
+    "category": "Vessel Parts",
+    "context": "Used for lookouts and navigational lights.",
+    "relatedSlugs": ["mast", "lookout", "navigation-aid"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mast-step",
+    "title": "Mast Step",
+    "slug": "mast-step",
+    "definition": "The structural member that supports the bottom of a mast.",
+    "category": "Vessel Parts",
+    "context": "Part of the hull structure.",
+    "relatedSlugs": ["mast", "keel", "ship-construction"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "master",
+    "title": "Master",
+    "slug": "master",
+    "definition": "The person in command of a merchant ship; the captain.",
+    "category": "Crew",
+    "context": "The highest authority on board.",
+    "relatedSlugs": ["captain", "officer", "crew"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "mate",
+    "title": "Mate",
+    "slug": "mate",
+    "definition": "An officer on a merchant ship who is subordinate to the master.",
+    "category": "Crew",
+    "context": "Includes first mate, second mate, etc.",
+    "relatedSlugs": ["officer", "master", "crew"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "mayday",
+    "title": "Mayday",
+    "slug": "mayday",
+    "definition": "The international distress signal used in voice radio communications.",
+    "category": "Terminology",
+    "context": "Indicates a life-threatening emergency.",
+    "relatedSlugs": ["distress", "emergency", "radio"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "mean-sea-level",
+    "title": "Mean Sea Level",
+    "slug": "mean-sea-level",
+    "definition": "The average level of the sea surface over a long period.",
+    "category": "Environment",
+    "context": "Used as a reference for elevations and depths.",
+    "relatedSlugs": ["sea-level", "tide", "geodesy"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "measured-mile",
+    "title": "Measured Mile",
+    "slug": "measured-mile",
+    "definition": "A distance of one nautical mile marked on the shore, used for testing a ship's speed.",
+    "category": "Technical",
+    "context": "Used during sea trials.",
+    "relatedSlugs": ["speed", "sea-trial", "nautical-mile"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "merchant-marine",
+    "title": "Merchant Marine",
+    "slug": "merchant-marine",
+    "definition": "The fleet of commercial ships of a country.",
+    "category": "Regulations",
+    "context": "Essential for national economy and security.",
+    "relatedSlugs": ["shipping", "commerce", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "meridian",
+    "title": "Meridian",
+    "slug": "meridian",
+    "definition": "A line of longitude running from the North Pole to the South Pole.",
+    "category": "Navigation",
+    "context": "Includes the prime meridian.",
+    "relatedSlugs": ["longitude", "prime-meridian", "navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "messenger",
+    "title": "Messenger",
+    "slug": "messenger",
+    "definition": "A light line used to pull a heavier rope or cable.",
+    "category": "Terminology",
+    "context": "Used in mooring and towing.",
+    "relatedSlugs": ["heaving-line", "rope", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "midships",
+    "title": "Midships",
+    "slug": "midships",
+    "definition": "The middle part of a ship, halfway between the bow and the stern.",
+    "category": "Terminology",
+    "context": "Also known as amidships.",
+    "relatedSlugs": ["amidships", "bow", "stern"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mile",
+    "title": "Mile",
+    "slug": "mile",
+    "definition": "In maritime context, a nautical mile, equal to 1,852 meters.",
+    "category": "Terminology",
+    "context": "The standard unit of distance at sea.",
+    "relatedSlugs": ["nautical-mile", "knot", "measurement"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "mizzenmast",
+    "title": "Mizzenmast",
+    "slug": "mizzenmast",
+    "definition": "The third mast of a ship, or the aftermast of a two-masted vessel like a ketch or yawl.",
+    "category": "Vessel Parts",
+    "context": "Smaller than the mainmast.",
+    "relatedSlugs": ["mainmast", "foremast", "jiggermast"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mizzen-sail",
+    "title": "Mizzen Sail",
+    "slug": "mizzen-sail",
+    "definition": "The sail set on the mizzenmast.",
+    "category": "Vessel Parts",
+    "context": "Used for balance and steering.",
+    "relatedSlugs": ["mizzenmast", "sail", "rigging"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "monkey-fist",
+    "title": "Monkey's Fist",
+    "slug": "monkey-fist",
+    "definition": "A heavy, ball-shaped knot at the end of a heaving line.",
+    "category": "Terminology",
+    "context": "Used to provide weight for throwing.",
+    "relatedSlugs": ["heaving-line", "knot", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "monkey-gaff",
+    "title": "Monkey Gaff",
+    "slug": "monkey-gaff",
+    "definition": "A small gaff on the mizzenmast used for flying signals.",
+    "category": "Vessel Parts",
+    "context": "Part of the signal rigging.",
+    "relatedSlugs": ["gaff", "mizzenmast", "flag"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "monkey-jacket",
+    "title": "Monkey Jacket",
+    "slug": "monkey-jacket",
+    "definition": "A short, heavy coat worn by sailors.",
+    "category": "History",
+    "context": "Traditional maritime clothing.",
+    "relatedSlugs": ["sailor", "clothing", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "monsoon",
+    "title": "Monsoon",
+    "slug": "monsoon",
+    "definition": "A seasonal wind that blows in the Indian Ocean and southern Asia.",
+    "category": "Environment",
+    "context": "Characterized by heavy rain and strong winds.",
+    "relatedSlugs": ["wind", "trade-winds", "meteorology"],
+    "sources": ["Meteorology"]
+  },
+  {
+    "id": "moon-sail",
+    "title": "Moonsail",
+    "slug": "moon-sail",
+    "definition": "A small sail set above the skysail.",
+    "category": "History",
+    "context": "The highest sail on a square-rigged ship.",
+    "relatedSlugs": ["skysail", "sail", "rigging"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "moor",
+    "title": "Moor",
+    "slug": "moor",
+    "definition": "To secure a ship to a pier, a buoy, or the bottom with anchors.",
+    "category": "Terminology",
+    "context": "The process is called mooring.",
+    "relatedSlugs": ["mooring", "anchor", "pier"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "mooring",
+    "title": "Mooring",
+    "slug": "mooring",
+    "definition": "The act of securing a ship; also the equipment used for this purpose.",
+    "category": "Operations",
+    "context": "Includes lines, anchors, and buoys.",
+    "relatedSlugs": ["moor", "mooring-line", "bollard"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "mooring-line",
+    "title": "Mooring Line",
+    "slug": "mooring-line",
+    "definition": "A rope or cable used to secure a ship to a pier or a buoy.",
+    "category": "Terminology",
+    "context": "Includes bow lines, stern lines, and springs.",
+    "relatedSlugs": ["hawser", "spring-line", "mooring"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "mother-ship",
+    "title": "Mothership",
+    "slug": "mother-ship",
+    "definition": "A large ship that supports and services smaller vessels or aircraft.",
+    "category": "History",
+    "context": "Used in fishing, research, and naval operations.",
+    "relatedSlugs": ["tender", "vessel-types", "support-ship"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "moulded-breadth",
+    "title": "Moulded Breadth",
+    "slug": "moulded-breadth",
+    "definition": "The maximum width of a ship's hull, measured to the outside of the frames.",
+    "category": "Technical",
+    "context": "A standard measurement in naval architecture.",
+    "relatedSlugs": ["beam", "naval-architecture", "measurement"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "moulded-depth",
+    "title": "Moulded Depth",
+    "slug": "moulded-depth",
+    "definition": "The vertical distance from the top of the keel to the top of the main deck beams.",
+    "category": "Technical",
+    "context": "Measured at the side of the ship.",
+    "relatedSlugs": ["depth", "naval-architecture", "measurement"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "mouse",
+    "title": "Mouse",
+    "slug": "mouse",
+    "definition": "To wrap small rope around a hook to prevent it from unhooking.",
+    "category": "Terminology",
+    "context": "A safety precaution in rigging.",
+    "relatedSlugs": ["hook", "rigging", "safety"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "mud-pilot",
+    "title": "Mud Pilot",
+    "slug": "mud-pilot",
+    "definition": "A pilot who specializes in navigating shallow rivers and estuaries.",
+    "category": "Crew",
+    "context": "Requires local knowledge of shifting banks.",
+    "relatedSlugs": ["pilot", "navigation", "river"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "multi-hull",
+    "title": "Multihull",
+    "slug": "multi-hull",
+    "definition": "A vessel with more than one hull, such as a catamaran or trimaran.",
+    "category": "History",
+    "context": "Known for stability and speed.",
+    "relatedSlugs": ["catamaran", "trimaran", "vessel-types"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "mushroom-anchor",
+    "title": "Mushroom Anchor",
+    "slug": "mushroom-anchor",
+    "definition": "An anchor shaped like an inverted mushroom, used for permanent moorings.",
+    "category": "Terminology",
+    "context": "Buries itself in soft mud or sand.",
+    "relatedSlugs": ["anchor", "mooring", "seabed"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "muster",
+    "title": "Muster",
+    "slug": "muster",
+    "definition": "To assemble the crew and passengers for inspection or in an emergency.",
+    "category": "Operations",
+    "context": "The location is called a muster station.",
+    "relatedSlugs": ["muster-station", "emergency", "crew"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "muster-station",
+    "title": "Muster Station",
+    "slug": "muster-station",
+    "definition": "A designated area on a ship where passengers and crew assemble in an emergency.",
+    "category": "Terminology",
+    "context": "Clearly marked and essential for safety.",
+    "relatedSlugs": ["muster", "emergency", "safety"],
+    "sources": ["SOLAS"]
+  },
+  {
+    "id": "mutiny",
+    "title": "Mutiny",
+    "slug": "mutiny",
+    "definition": "An open rebellion against the authority of the master or officers of a ship.",
+    "category": "History",
+    "context": "A serious crime under maritime law.",
+    "relatedSlugs": ["rebellion", "discipline", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "nadir",
+    "title": "Nadir",
+    "slug": "nadir",
+    "definition": "The point on the celestial sphere directly below an observer.",
+    "category": "Navigation",
+    "context": "Opposite of zenith.",
+    "relatedSlugs": ["zenith", "celestial-navigation", "astronomy"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "narrow-channel",
+    "title": "Narrow Channel",
+    "slug": "narrow-channel",
+    "definition": "A restricted waterway where special navigation rules apply.",
+    "category": "Navigation",
+    "context": "Vessels must stay to the starboard side.",
+    "relatedSlugs": ["channel", "navigation-rules", "colregs"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "narrows",
+    "title": "Narrows",
+    "slug": "narrows",
+    "definition": "A narrow part of a river, strait, or harbor entrance.",
+    "category": "Environment",
+    "context": "Often has strong currents.",
+    "relatedSlugs": ["strait", "channel", "geography"],
+    "sources": ["Geography"]
+  },
+  {
+    "id": "nautical",
+    "title": "Nautical",
+    "slug": "nautical",
+    "definition": "Relating to sailors, ships, or navigation.",
+    "category": "Terminology",
+    "context": "Similar to maritime and marine.",
+    "relatedSlugs": ["maritime", "marine", "navigation"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "nautical-almanac",
+    "title": "Nautical Almanac",
+    "slug": "nautical-almanac",
+    "definition": "A publication containing astronomical data used for celestial navigation.",
+    "category": "Navigation",
+    "context": "Essential for determining position from the stars.",
+    "relatedSlugs": ["celestial-navigation", "astronomy", "navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "nautical-chart",
+    "title": "Nautical Chart",
+    "slug": "nautical-chart",
+    "definition": "A map specifically designed for navigation at sea.",
+    "category": "Navigation",
+    "context": "Shows depths, hazards, and navigational aids.",
+    "relatedSlugs": ["chart", "hydrography", "navigation"],
+    "sources": ["IHO"]
+  },
+  {
+    "id": "nautical-mile",
+    "title": "Nautical Mile",
+    "slug": "nautical-mile",
+    "definition": "A unit of distance equal to one minute of latitude, or 1,852 meters.",
+    "category": "Terminology",
+    "context": "The standard unit of distance at sea.",
+    "relatedSlugs": ["knot", "latitude", "measurement"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "naval",
+    "title": "Naval",
+    "slug": "naval",
+    "definition": "Relating to a navy or to warships.",
+    "category": "Terminology",
+    "context": "Specifically refers to military maritime matters.",
+    "relatedSlugs": ["navy", "warship", "maritime"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "naval-architecture",
+    "title": "Naval Architecture",
+    "slug": "naval-architecture",
+    "definition": "The science and art of designing and constructing ships.",
+    "category": "Technical",
+    "context": "Includes stability, propulsion, and structure.",
+    "relatedSlugs": ["shipbuilding", "engineering", "naval-architect"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "naval-stores",
+    "title": "Naval Stores",
+    "slug": "naval-stores",
+    "definition": "Materials used in shipbuilding and maintenance, such as tar, pitch, and turpentine.",
+    "category": "History",
+    "context": "Originally derived from pine trees.",
+    "relatedSlugs": ["tar", "pitch", "shipbuilding"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "navigable",
+    "title": "Navigable",
+    "slug": "navigable",
+    "definition": "A body of water that is deep and wide enough for ships to travel through.",
+    "category": "Terminology",
+    "context": "Essential for maritime commerce.",
+    "relatedSlugs": ["navigation", "waterway", "channel"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "navigation",
+    "title": "Navigation",
+    "slug": "navigation",
+    "definition": "The science and art of determining a ship's position and directing its course.",
+    "category": "Navigation",
+    "context": "Includes pilotage, dead reckoning, and celestial navigation.",
+    "relatedSlugs": ["pilotage", "dead-reckoning", "celestial-navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "navigation-aid",
+    "title": "Navigation Aid",
+    "slug": "navigation-aid",
+    "definition": "An object or system external to a ship that helps in navigation.",
+    "category": "Navigation",
+    "context": "Includes buoys, beacons, and lighthouses.",
+    "relatedSlugs": ["buoy", "beacon", "lighthouse"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "navigation-rules",
+    "title": "Navigation Rules",
+    "slug": "navigation-rules",
+    "definition": "The 'rules of the road' for ships at sea.",
+    "category": "Navigation",
+    "context": "Includes COLREGs and inland rules.",
+    "relatedSlugs": ["colregs", "collision-avoidance", "imo"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "navigator",
+    "title": "Navigator",
+    "slug": "navigator",
+    "definition": "The officer responsible for a ship's navigation.",
+    "category": "Crew",
+    "context": "Maintains charts and plans the voyage.",
+    "relatedSlugs": ["navigation", "officer", "crew"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "navy",
+    "title": "Navy",
+    "slug": "navy",
+    "definition": "The military organization of a country that operates at sea.",
+    "category": "Regulations",
+    "context": "Responsible for national defense and maritime security.",
+    "relatedSlugs": ["naval", "warship", "maritime"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "neap-tide",
+    "title": "Neap Tide",
+    "slug": "neap-tide",
+    "definition": "A tide with the minimum range between high and low water.",
+    "category": "Environment",
+    "context": "Occurs when the sun and moon are at right angles to the Earth.",
+    "relatedSlugs": ["spring-tide", "tide", "oceanography"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "neptune",
+    "title": "Neptune",
+    "slug": "neptune",
+    "definition": "The Roman god of the sea.",
+    "category": "History",
+    "context": "Often featured in crossing-the-line ceremonies.",
+    "relatedSlugs": ["maritime-history", "tradition", "mythology"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "net-tonnage",
+    "title": "Net Tonnage",
+    "slug": "net-tonnage",
+    "definition": "A measure of a ship's cargo-carrying capacity.",
+    "category": "Technical",
+    "context": "Calculated by subtracting non-cargo spaces from gross tonnage.",
+    "relatedSlugs": ["gross-tonnage", "tonnage", "measurement"],
+    "sources": ["IMO"]
+  },
+  {
+    "id": "nipper",
+    "title": "Nipper",
+    "slug": "nipper",
+    "definition": "A short rope used to fasten an anchor cable to a messenger.",
+    "category": "History",
+    "context": "Used in the days of manual windlasses.",
+    "relatedSlugs": ["anchor-cable", "messenger", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "no-go-zone",
+    "title": "No-go Zone",
+    "slug": "no-go-zone",
+    "definition": "The area directly into the wind where a sailing vessel cannot sail.",
+    "category": "Terminology",
+    "context": "Usually about 45 degrees on either side of the wind.",
+    "relatedSlugs": ["head-to-wind", "sailing", "wind"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "non-displacement-hull",
+    "title": "Non-displacement Hull",
+    "slug": "non-displacement-hull",
+    "definition": "A hull designed to plane on the surface of the water at high speeds.",
+    "category": "Technical",
+    "context": "Includes planing hulls and hydrofoils.",
+    "relatedSlugs": ["planing-hull", "hydrofoil", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "not-under-command",
+    "title": "NUC",
+    "slug": "not-under-command",
+    "definition": "A vessel that is unable to maneuver as required by the navigation rules.",
+    "category": "Navigation",
+    "context": "Must display specific lights or shapes.",
+    "relatedSlugs": ["maneuvering", "navigation-rules", "colregs"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "notice-of-readiness",
+    "title": "NOR",
+    "slug": "notice-of-readiness",
+    "definition": "A document issued by a ship's master to indicate that the ship is ready to load or unload cargo.",
+    "category": "Regulations",
+    "context": "Starts the counting of lay days.",
+    "relatedSlugs": ["lay-days", "charter-party", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "notice-to-mariners",
+    "title": "NOTAM",
+    "slug": "notice-to-mariners",
+    "definition": "A publication containing urgent information about changes to navigational aids and hazards.",
+    "category": "Navigation",
+    "context": "Essential for keeping charts up to date.",
+    "relatedSlugs": ["navigation", "chart", "safety"],
+    "sources": ["IHO"]
+  },
+  {
+    "id": "nun-buoy",
+    "title": "Nun Buoy",
+    "slug": "nun-buoy",
+    "definition": "A conical buoy used as a navigational aid.",
+    "category": "Navigation",
+    "context": "Usually red and marks the starboard side of a channel when returning from sea.",
+    "relatedSlugs": ["buoy", "can-buoy", "navigation-aid"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "oakum",
+    "title": "Oakum",
+    "slug": "oakum",
+    "definition": "Untwisted old rope fibers mixed with tar, used for caulking the seams of wooden ships.",
+    "category": "History",
+    "context": "Essential for making wooden hulls watertight.",
+    "relatedSlugs": ["caulking", "tar", "shipbuilding"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "oar",
+    "title": "Oar",
+    "slug": "oar",
+    "definition": "A long pole with a flat blade at one end, used for rowing a boat.",
+    "category": "Terminology",
+    "context": "Includes the blade, loom, and handle.",
+    "relatedSlugs": ["rowing", "paddle", "boat"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "oarlock",
+    "title": "Oarlock",
+    "slug": "oarlock",
+    "definition": "A device on the gunwale of a boat that holds an oar in place.",
+    "category": "Vessel Parts",
+    "context": "Also known as a rowlock.",
+    "relatedSlugs": ["rowlock", "oar", "gunwale"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "observation",
+    "title": "Observation",
+    "slug": "observation",
+    "definition": "The act of measuring the altitude of a celestial body with a sextant.",
+    "category": "Navigation",
+    "context": "Used for celestial navigation.",
+    "relatedSlugs": ["sextant", "celestial-navigation", "altitude"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "occulting-light",
+    "title": "Occulting Light",
+    "slug": "occulting-light",
+    "definition": "A navigational light where the period of light is longer than the period of darkness.",
+    "category": "Navigation",
+    "context": "Opposite of a flashing light.",
+    "relatedSlugs": ["flashing-light", "navigation-aid", "lighthouse"],
+    "sources": ["IALA"]
+  },
+  {
+    "id": "ocean",
+    "title": "Ocean",
+    "slug": "ocean",
+    "definition": "A vast body of salt water that covers most of the Earth's surface.",
+    "category": "Environment",
+    "context": "Includes the Atlantic, Pacific, Indian, Southern, and Arctic oceans.",
+    "relatedSlugs": ["sea", "oceanography", "marine"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "ocean-liner",
+    "title": "Ocean Liner",
+    "slug": "ocean-liner",
+    "definition": "A large passenger ship designed for long-distance voyages across the ocean.",
+    "category": "History",
+    "context": "Known for luxury and speed.",
+    "relatedSlugs": ["liner", "passenger-ship", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "oceanography",
+    "title": "Oceanography",
+    "slug": "oceanography",
+    "definition": "The scientific study of the ocean.",
+    "category": "Technical",
+    "context": "Includes physical, chemical, and biological aspects.",
+    "relatedSlugs": ["marine-biology", "hydrography", "ocean"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "off-and-on",
+    "title": "Off and On",
+    "slug": "off-and-on",
+    "definition": "Sailing toward and away from the shore alternately.",
+    "category": "Navigation",
+    "context": "Done while waiting for a pilot or for daylight.",
+    "relatedSlugs": ["navigation", "shoreline", "pilot"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "off-the-wind",
+    "title": "Off the Wind",
+    "slug": "off-the-wind",
+    "definition": "Sailing with the wind coming from anywhere except directly ahead.",
+    "category": "Terminology",
+    "context": "Includes reaching and running.",
+    "relatedSlugs": ["reaching", "running", "sailing"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "officer",
+    "title": "Officer",
+    "slug": "officer",
+    "definition": "A person who holds a position of authority on a ship.",
+    "category": "Crew",
+    "context": "Includes the master, mates, and engineers.",
+    "relatedSlugs": ["master", "mate", "engineer"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "offing",
+    "title": "Offing",
+    "slug": "offing",
+    "definition": "The part of the sea that is visible from the shore but is beyond the coastal waters.",
+    "category": "Terminology",
+    "context": "To 'keep a good offing' is to stay well away from the shore.",
+    "relatedSlugs": ["shoreline", "navigation", "visibility"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "offshore",
+    "title": "Offshore",
+    "slug": "offshore",
+    "definition": "Away from the shore; also relating to activities in the open sea.",
+    "category": "Terminology",
+    "context": "Includes offshore drilling and wind farms.",
+    "relatedSlugs": ["onshore", "open-sea", "navigation"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "oil-tanker",
+    "title": "Oil Tanker",
+    "slug": "oil-tanker",
+    "definition": "A ship designed for transporting bulk quantities of oil.",
+    "category": "History",
+    "context": "Includes VLCCs and ULCCs.",
+    "relatedSlugs": ["tanker", "vlcc", "vessel-types"],
+    "sources": ["Vessel Types"]
+  },
+  {
+    "id": "on-the-beam",
+    "title": "On the Beam",
+    "slug": "on-the-beam",
+    "definition": "At right angles to the ship's centerline.",
+    "category": "Terminology",
+    "context": "A direction for sightings and bearings.",
+    "relatedSlugs": ["beam", "bearing", "centerline"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "on-the-bow",
+    "title": "On the Bow",
+    "slug": "on-the-bow",
+    "definition": "Within 45 degrees of the ship's heading.",
+    "category": "Terminology",
+    "context": "A direction for sightings.",
+    "relatedSlugs": ["bow", "bearing", "heading"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "on-the-quarter",
+    "title": "On the Quarter",
+    "slug": "on-the-quarter",
+    "definition": "Within 45 degrees of the ship's stern.",
+    "category": "Terminology",
+    "context": "A direction for sightings.",
+    "relatedSlugs": ["quarter", "bearing", "stern"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "on-the-wind",
+    "title": "On the Wind",
+    "slug": "on-the-wind",
+    "definition": "Sailing as close to the wind as possible.",
+    "category": "Terminology",
+    "context": "Also known as close-hauled.",
+    "relatedSlugs": ["close-hauled", "sailing", "wind"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "onshore",
+    "title": "Onshore",
+    "slug": "onshore",
+    "definition": "Toward the shore; also relating to activities on land.",
+    "category": "Terminology",
+    "context": "Opposite of offshore.",
+    "relatedSlugs": ["offshore", "shoreline", "navigation"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "open-boat",
+    "title": "Open Boat",
+    "slug": "open-boat",
+    "definition": "A boat that has no deck.",
+    "category": "History",
+    "context": "Common for small fishing and utility boats.",
+    "relatedSlugs": ["boat", "deck", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "open-sea",
+    "title": "Open Sea",
+    "slug": "open-sea",
+    "definition": "The part of the ocean that is far from land.",
+    "category": "Environment",
+    "context": "Also known as the high seas.",
+    "relatedSlugs": ["high-seas", "ocean", "navigation"],
+    "sources": ["Oceanography"]
+  },
+  {
+    "id": "ordinary-seaman",
+    "title": "Ordinary Seaman",
+    "slug": "ordinary-seaman",
+    "definition": "An entry-level rating in the deck department of a merchant ship.",
+    "category": "Crew",
+    "context": "Subordinate to an able seaman.",
+    "relatedSlugs": ["able-seaman", "deck-department", "crew"],
+    "sources": ["Maritime Ranks"]
+  },
+  {
+    "id": "out-of-trim",
+    "title": "Out of Trim",
+    "slug": "out-of-trim",
+    "definition": "A ship that is not floating at its designed draft and attitude.",
+    "category": "Technical",
+    "context": "Caused by uneven weight distribution.",
+    "relatedSlugs": ["trim", "draft", "stability"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "outboard",
+    "title": "Outboard",
+    "slug": "outboard",
+    "definition": "Away from the centerline of the ship; also a motor mounted on the stern of a boat.",
+    "category": "Terminology",
+    "context": "Opposite of inboard.",
+    "relatedSlugs": ["inboard", "centerline", "motor"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "outhaul",
+    "title": "Outhaul",
+    "slug": "outhaul",
+    "definition": "A rope used to pull the corner of a sail out along a spar.",
+    "category": "Vessel Parts",
+    "context": "Part of the running rigging.",
+    "relatedSlugs": ["sail", "spar", "rigging"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "outrigger",
+    "title": "Outrigger",
+    "slug": "outrigger",
+    "definition": "A structural member that extends from the side of a boat to provide stability or to support equipment.",
+    "category": "History",
+    "context": "Common on traditional Pacific canoes.",
+    "relatedSlugs": ["canoe", "stability", "vessel-types"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "over-all",
+    "title": "Over-all",
+    "slug": "over-all",
+    "definition": "The total length of a ship (LOA).",
+    "category": "Technical",
+    "context": "A standard measurement.",
+    "relatedSlugs": ["loa", "length", "measurement"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "overboard",
+    "title": "Overboard",
+    "slug": "overboard",
+    "definition": "Over the side of a ship into the water.",
+    "category": "Terminology",
+    "context": "A common maritime term.",
+    "relatedSlugs": ["man-overboard", "water", "safety"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "overhaul",
+    "title": "Overhaul",
+    "slug": "overhaul",
+    "definition": "To inspect and repair something thoroughly; also to catch up with another ship.",
+    "category": "Terminology",
+    "context": "Used for machinery and in chasing.",
+    "relatedSlugs": ["repair", "maintenance", "chase"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "overhead",
+    "title": "Overhead",
+    "slug": "overhead",
+    "definition": "The maritime term for a ceiling.",
+    "category": "Vessel Parts",
+    "context": "The underside of the deck above.",
+    "relatedSlugs": ["deck", "bulkhead", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "overlap",
+    "title": "Overlap",
+    "slug": "overlap",
+    "definition": "The part of one sail that extends past the mast of another.",
+    "category": "Terminology",
+    "context": "Important for sail efficiency.",
+    "relatedSlugs": ["sail", "mast", "rigging"],
+    "sources": ["Sailing Theory"]
+  },
+  {
+    "id": "overtake",
+    "title": "Overtake",
+    "slug": "overtake",
+    "definition": "To catch up with and pass another ship.",
+    "category": "Navigation",
+    "context": "Special navigation rules apply to overtaking vessels.",
+    "relatedSlugs": ["navigation-rules", "collision-avoidance", "colregs"],
+    "sources": ["COLREGs"]
+  },
+  {
+    "id": "owner",
+    "title": "Owner",
+    "slug": "owner",
+    "definition": "The person or company that owns a ship.",
+    "category": "Regulations",
+    "context": "Responsible for the ship's operation and compliance.",
+    "relatedSlugs": ["shipping-line", "registration", "maritime-law"],
+    "sources": ["Maritime Law"]
+  },
+  {
+    "id": "oxter-plate",
+    "title": "Oxter Plate",
+    "slug": "oxter-plate",
+    "definition": "A curved hull plate located under the counter.",
+    "category": "Vessel Parts",
+    "context": "Part of the stern structure.",
+    "relatedSlugs": ["hull", "stern", "counter"],
+    "sources": ["Ship Construction"]
+  },
+  {
+    "id": "packet",
+    "title": "Packet",
+    "slug": "packet",
+    "definition": "A ship that carries mail, passengers, and cargo on a regular schedule.",
+    "category": "History",
+    "context": "Common in the 18th and 19th centuries.",
+    "relatedSlugs": ["liner", "mail-ship", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "pad-eye",
+    "title": "Pad-eye",
+    "slug": "pad-eye",
+    "definition": "A metal fitting with an eye, bolted to a deck or bulkhead, used for securing equipment.",
+    "category": "Vessel Parts",
+    "context": "A common attachment point.",
+    "relatedSlugs": ["fitting", "deck", "securing"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "paddle",
+    "title": "Paddle",
+    "slug": "paddle",
+    "definition": "A short oar with a wide blade, used for propelling a canoe or kayak.",
+    "category": "Terminology",
+    "context": "Held with both hands and not attached to the boat.",
+    "relatedSlugs": ["oar", "canoe", "kayak"],
+    "sources": ["Maritime Lexicon"]
+  },
+  {
+    "id": "paddle-wheel",
+    "title": "Paddle Wheel",
+    "slug": "paddle-wheel",
+    "definition": "A large wheel with paddles, used for propelling a steamboat.",
+    "category": "History",
+    "context": "Includes side-wheels and stern-wheels.",
+    "relatedSlugs": ["steamboat", "propulsion", "maritime-history"],
+    "sources": ["Maritime History"]
+  },
+  {
+    "id": "painter",
+    "title": "Painter",
+    "slug": "painter",
+    "definition": "A short rope at the bow of a small boat, used for towing or securing it.",
+    "category": "Terminology",
+    "context": "Essential for small boat handling.",
+    "relatedSlugs": ["rope", "towing", "small-boat"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "palm",
+    "title": "Palm",
+    "slug": "palm",
+    "definition": "A leather tool worn on the hand, used for pushing a needle through heavy canvas.",
+    "category": "Terminology",
+    "context": "Used by sailmakers.",
+    "relatedSlugs": ["sailmaking", "needle", "canvas"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "pan-pan",
+    "title": "Pan-pan",
+    "slug": "pan-pan",
+    "definition": "The international urgency signal used in voice radio communications.",
+    "category": "Terminology",
+    "context": "Indicates a serious but not life-threatening situation.",
+    "relatedSlugs": ["mayday", "emergency", "radio"],
+    "sources": ["Maritime Safety"]
+  },
+  {
+    "id": "panting",
+    "title": "Panting",
+    "slug": "panting",
+    "definition": "The in-and-out movement of a ship's hull plating caused by wave pressure.",
+    "category": "Technical",
+    "context": "Occurs mainly at the bow.",
+    "relatedSlugs": ["hull", "wave-pressure", "naval-architecture"],
+    "sources": ["Naval Architecture"]
+  },
+  {
+    "id": "parallax",
+    "title": "Parallax",
+    "slug": "parallax",
+    "definition": "The apparent change in the position of an object caused by a change in the observer's position.",
+    "category": "Navigation",
+    "context": "Must be corrected for in celestial navigation.",
+    "relatedSlugs": ["celestial-navigation", "observation", "astronomy"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "parallel-ruler",
+    "title": "Parallel Ruler",
+    "slug": "parallel-ruler",
+    "definition": "A navigational instrument used for drawing parallel lines on a chart.",
+    "category": "Navigation",
+    "context": "Used to transfer courses and bearings.",
+    "relatedSlugs": ["chart", "course", "navigation"],
+    "sources": ["Navigation Manual"]
+  },
+  {
+    "id": "parbuckle",
+    "title": "Parbuckle",
+    "slug": "parbuckle",
+    "definition": "A method of lifting or lowering a heavy cylindrical object using two ropes.",
+    "category": "Terminology",
+    "context": "Used for barrels and spars.",
+    "relatedSlugs": ["lifting", "rope", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "parrel",
+    "title": "Parrel",
+    "slug": "parrel",
+    "definition": "A sliding fitting that holds a yard or a gaff to a mast.",
+    "category": "Vessel Parts",
+    "context": "Includes parrel beads and parrel trucks.",
+    "relatedSlugs": ["yard", "gaff", "mast"],
+    "sources": ["Shipbuilding History"]
+  },
+  {
+    "id": "part",
+    "title": "Part",
+    "slug": "part",
+    "definition": "To break, especially a rope or a cable.",
+    "category": "Terminology",
+    "context": "A serious event in mooring or towing.",
+    "relatedSlugs": ["break", "rope", "seamanship"],
+    "sources": ["Seamanship"]
+  },
+  {
+    "id": "partners",
+    "title": "Partners",
+    "slug": "partners",
+    "definition": "Structural members that strengthen the deck where a mast or a pump passes through.",
+    "category": "Vessel Parts",
+    "context": "Part of the deck structure.",
+    "relatedSlugs": ["deck", "mast", "ship-construction"],
+    "sources": ["Ship Construction"]
   }
 
 ];

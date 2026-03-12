@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { terms, type Term } from '../data/terms';
 import { CheckCircle2, XCircle, Trophy, RefreshCcw, ArrowRight, Brain } from 'lucide-react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 interface Question {
   term: Term;

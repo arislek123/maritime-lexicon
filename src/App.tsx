@@ -4,8 +4,9 @@ import {
   ArrowLeft, Info, Compass, Waves, FileText, ShieldCheck, 
   Cpu, Leaf, Box, Users, History, Calendar, ChevronDown, 
   ExternalLink, Share2, Bookmark, Globe, MessageSquare, Mail, Shield, Scale, Cookie, CloudRain,
-  Sun, Moon, Linkedin, Twitter, MessageCircle, Volume2, Brain, Layers, Monitor
+  Sun, Moon, Linkedin, Twitter, MessageCircle, Volume2, Brain, Layers, Monitor, Download, Settings
 } from 'lucide-react';
+import { jsPDF } from 'jspdf';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -15,7 +16,7 @@ import {
 } from 'react-router';
 import { List } from 'react-window';
 import { terms, type Term } from './data/terms';
-import { maritimeHistoryEvents } from './data/maritimeHistory';
+import { getEventsForDay } from './data/maritimeHistory';
 import { useAuth } from './lib/AuthContext';
 import { cn } from './lib/utils';
 import { AuthModal } from './components/AuthModal';
@@ -23,90 +24,49 @@ import { ContributionModal } from './components/ContributionModal';
 import { ModerationDashboard } from './components/ModerationDashboard';
 import { VesselDiagram3D } from './components/VesselDiagram3D';
 import { BridgeDiagram3D } from './components/BridgeDiagram3D';
+import EngineRoomPlatform from './components/EngineRoomPlatform';
 import { Quiz } from './components/Quiz';
+import { MaritimeHistoryTimeline } from './components/MaritimeHistoryTimeline';
 import { db } from './lib/firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
 
-const HistoryPage = React.memo(({ onShowHistory }: any) => {
-  const [selectedMonth, setSelectedMonth] = useState<number>(new Date().getMonth() + 1);
+// --- Lexicon Auto-linking Logic ---
+const termMap = new Map(terms.map(t => [t.title.toLowerCase(), t.slug]));
+const termTitles = terms.map(t => t.title).sort((a, b) => b.length - a.length);
+const pattern = termTitles.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+const termRegex = new RegExp(`\\b(${pattern})\\b`, 'gi');
+
+const VESSEL_DIAGRAM_SLUGS = [
+  'plimsoll-line', 'hatch-cover', 'windlass', 'anchor', 'bow-thruster', 
+  'funnel', 'superstructure', 'lifeboat', 'propeller', 'bunker', 
+  'draft', 'accommodation-ladder', 'radar', 'forecastle', 'bulwark'
+];
+
+const LinkifiedText = React.memo(({ text, currentSlug }: { text: string; currentSlug?: string }) => {
+  if (!text) return null;
   
-  const months = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
-
-  const filteredEvents = useMemo(() => {
-    return maritimeHistoryEvents
-      .filter(e => e.month === selectedMonth)
-      .sort((a, b) => a.day - b.day);
-  }, [selectedMonth]);
-
+  const parts = text.split(termRegex);
+  
   return (
-    <div className="max-w-4xl mx-auto p-8">
-      <SEO title="Maritime History" description="Explore significant events in maritime history through our interactive timeline." />
-      
-      <div className="mb-12 text-center">
-        <div className="inline-flex items-center justify-center p-3 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl mb-4">
-          <History size={32} />
-        </div>
-        <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">Maritime History Timeline</h1>
-        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-          From ancient voyages to modern maritime law, explore the events that shaped the world's oceans.
-        </p>
-      </div>
-
-      <div className="flex flex-wrap justify-center gap-2 mb-12">
-        {months.map((month, i) => (
-          <button
-            key={month}
-            onClick={() => setSelectedMonth(i + 1)}
-            className={cn(
-              "px-4 py-2 rounded-xl text-xs font-bold transition-all border",
-              selectedMonth === i + 1
-                ? "bg-amber-600 text-white border-amber-600 shadow-md"
-                : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-amber-500"
-            )}
-          >
-            {month}
-          </button>
-        ))}
-      </div>
-
-      <div className="space-y-6">
-        {filteredEvents.length > 0 ? (
-          filteredEvents.map((event) => (
-            <motion.button
-              key={event.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              onClick={() => onShowHistory(event)}
-              className="w-full text-left p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-amber-500 dark:hover:border-amber-500 transition-all group flex items-start gap-6"
+    <>
+      {parts.map((part, i) => {
+        const lowerPart = part.toLowerCase();
+        const slug = termMap.get(lowerPart);
+        
+        if (slug && slug !== currentSlug) {
+          return (
+            <Link 
+              key={`${slug}-${i}`}
+              to={`/term/${slug}/`}
+              className="text-blue-600 dark:text-blue-400 font-semibold hover:underline decoration-blue-500/30 underline-offset-4 transition-colors"
             >
-              <div className="flex flex-col items-center">
-                <div className="text-2xl font-black text-amber-600 dark:text-amber-400">{event.day}</div>
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{months[event.month - 1].slice(0, 3)}</div>
-                <div className="mt-2 h-full w-px bg-slate-100 dark:bg-slate-800 group-hover:bg-amber-200 dark:group-hover:bg-amber-800 transition-colors" />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/50 px-2 py-0.5 rounded">Year {event.year}</span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">{event.title}</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed">{event.description}</p>
-              </div>
-              <div className="self-center p-2 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:bg-amber-50 dark:group-hover:bg-amber-900 group-hover:text-amber-600 transition-all">
-                <ArrowLeft className="rotate-180" size={16} />
-              </div>
-            </motion.button>
-          ))
-        ) : (
-          <div className="text-center py-20 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border border-dashed border-slate-200 dark:border-slate-800">
-            <History size={48} className="mx-auto text-slate-300 dark:text-slate-700 mb-4" />
-            <p className="text-slate-500 dark:text-slate-400">No events recorded for {months[selectedMonth - 1]} yet.</p>
-          </div>
-        )}
-      </div>
-    </div>
+              {part}
+            </Link>
+          );
+        }
+        return part;
+      })}
+    </>
   );
 });
 
@@ -232,6 +192,75 @@ const TermPage = React.memo(() => {
     }
   };
 
+  const downloadPDF = () => {
+    if (!term) return;
+    const doc = new jsPDF();
+    
+    // Header
+    doc.setFillColor(37, 99, 235); // Blue-600
+    doc.rect(0, 0, 210, 40, 'F');
+    
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(24);
+    doc.text('Maritime Lexicon', 20, 25);
+    
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.text('The definitive guide to nautical terminology', 20, 32);
+    
+    // Content
+    doc.setTextColor(15, 23, 42); // Slate-900
+    doc.setFontSize(32);
+    doc.setFont('helvetica', 'bold');
+    doc.text(term.title, 20, 65);
+    
+    doc.setDrawColor(37, 99, 235);
+    doc.setLineWidth(1.5);
+    doc.line(20, 72, 45, 72);
+    
+    doc.setFontSize(12);
+    doc.setTextColor(71, 85, 105); // Slate-600
+    doc.setFont('helvetica', 'bold');
+    doc.text(`CATEGORY: ${term.category.toUpperCase()}`, 20, 85);
+    
+    doc.setTextColor(15, 23, 42);
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Definition', 20, 105);
+    
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(13);
+    doc.setTextColor(51, 65, 85); // Slate-700
+    const splitDefinition = doc.splitTextToSize(term.definition, 170);
+    doc.text(splitDefinition, 20, 115);
+    
+    let currentY = 115 + (splitDefinition.length * 8);
+    
+    if (term.context) {
+      currentY += 20;
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(16);
+      doc.setTextColor(15, 23, 42);
+      doc.text('Context & Usage', 20, currentY);
+      
+      currentY += 10;
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(12);
+      doc.setTextColor(71, 85, 105);
+      const splitContext = doc.splitTextToSize(term.context, 170);
+      doc.text(splitContext, 20, currentY);
+      currentY += (splitContext.length * 7);
+    }
+    
+    // Footer
+    doc.setFontSize(9);
+    doc.setTextColor(148, 163, 184); // Slate-400
+    doc.text('Generated by Maritime Lexicon - maritime-lexicon.com', 105, 285, { align: 'center' });
+    
+    doc.save(`${term.slug}-maritime-definition.pdf`);
+  };
+
   if (!term) {
     return (
       <div className="flex flex-col items-center justify-center h-full p-8 text-center">
@@ -323,6 +352,23 @@ const TermPage = React.memo(() => {
             <MessageSquare size={16} />
             Propose Edit
           </button>
+          <button
+            onClick={downloadPDF}
+            className="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-xl text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
+          >
+            <Download size={16} />
+            Download PDF
+          </button>
+
+          {VESSEL_DIAGRAM_SLUGS.includes(term.slug) && (
+            <Link
+              to="/diagram"
+              className="flex items-center gap-2 px-4 py-2 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl text-sm font-bold hover:bg-amber-100 dark:hover:bg-amber-900/50 border border-amber-200 dark:border-amber-800 transition-all"
+            >
+              <Ship size={16} />
+              View in Vessel Diagram
+            </Link>
+          )}
         </div>
       </header>
 
@@ -346,7 +392,7 @@ const TermPage = React.memo(() => {
 
       <section className="prose prose-slate dark:prose-invert prose-lg max-w-none">
         <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 leading-relaxed text-slate-700 dark:text-slate-300 text-xl font-light italic">
-          {term.definition}
+          <LinkifiedText text={term.definition} currentSlug={term.slug} />
         </div>
         
         {term.context && (
@@ -354,7 +400,9 @@ const TermPage = React.memo(() => {
             <h3 className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 flex items-center gap-2">
               <Info size={14} /> Context
             </h3>
-            <p className="text-slate-600 dark:text-slate-400 text-base">{term.context}</p>
+            <p className="text-slate-600 dark:text-slate-400 text-base">
+              <LinkifiedText text={term.context} currentSlug={term.slug} />
+            </p>
           </div>
         )}
       </section>
@@ -396,13 +444,20 @@ const TermPage = React.memo(() => {
 });
 
 const HomePage = React.memo(({ searchQuery, setSearchQuery, filteredTerms, categories, activeCategory, setActiveCategory, onShowHistory }: any) => {
-  const today = useMemo(() => new Date(), []);
-  const formattedDate = useMemo(() => today.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }), [today]);
-  const todayEvents = useMemo(() => {
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
-    return maritimeHistoryEvents.filter(e => e.month === month && e.day === day);
-  }, [today]);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const formattedDate = useMemo(() => {
+    if (!mounted) return '';
+    return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+  }, [mounted]);
+
+  const todayEvent = useMemo(() => {
+    if (!mounted) return null;
+    const now = new Date();
+    const events = getEventsForDay(now.getMonth() + 1, now.getDate());
+    return events.length > 0 ? events[0] : null;
+  }, [mounted]);
 
   return (
     <div className="h-full overflow-y-auto custom-scrollbar">
@@ -485,58 +540,41 @@ const HomePage = React.memo(({ searchQuery, setSearchQuery, filteredTerms, categ
             Explore the vast world of nautical terminology. Select a term from the index or search for specific maritime concepts.
           </p>
 
-          {todayEvents.length > 0 ? (
-            <div className="w-full max-w-md mb-12 group">
-              <button 
-                onClick={() => onShowHistory(todayEvents[0])}
-                className="w-full bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-amber-200 dark:hover:border-amber-500 transition-all flex items-center gap-4 text-left overflow-hidden relative"
-              >
-                <div className="absolute top-0 right-0 p-2 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <History size={40} />
+          <div className="w-full max-w-md mb-12 group">
+            <Link 
+              to="/history"
+              className="w-full bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-amber-200 dark:hover:border-amber-500 transition-all flex items-center gap-4 text-left overflow-hidden relative"
+            >
+              <div className="absolute top-0 right-0 p-2 opacity-5 group-hover:opacity-10 transition-opacity">
+                <History size={40} />
+              </div>
+              <div className="bg-amber-100 dark:bg-amber-900/30 p-2.5 rounded-xl text-amber-600 dark:text-amber-400 group-hover:scale-110 transition-transform">
+                <History size={20} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <h3 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">Maritime History – {formattedDate}</h3>
                 </div>
-                <div className="bg-amber-100 dark:bg-amber-900/30 p-2.5 rounded-xl text-amber-600 dark:text-amber-400 group-hover:scale-110 transition-transform">
-                  <Calendar size={20} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <h3 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">Today in History</h3>
-                    <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/50 px-1.5 py-0.5 rounded">{formattedDate}</span>
-                  </div>
-                  <p className="text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors">
-                    {todayEvents[0].title}
-                  </p>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 flex items-center gap-1">
-                    <Info size={10} /> Click for more info
-                  </p>
-                </div>
-              </button>
-            </div>
-          ) : (
-            <div className="w-full max-w-md mb-12 group">
-              <Link 
-                to="/history"
-                className="w-full bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-amber-200 dark:hover:border-amber-500 transition-all flex items-center gap-4 text-left overflow-hidden relative"
-              >
-                <div className="absolute top-0 right-0 p-2 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <History size={40} />
-                </div>
-                <div className="bg-amber-100 dark:bg-amber-900/30 p-2.5 rounded-xl text-amber-600 dark:text-amber-400 group-hover:scale-110 transition-transform">
-                  <History size={20} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <h3 className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">Maritime History</h3>
-                  </div>
+                {todayEvent ? (
+                  <>
+                    <p className="text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors">
+                      {todayEvent.year}: {todayEvent.title}
+                    </p>
+                    <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 line-clamp-1">
+                      {todayEvent.description}
+                    </p>
+                  </>
+                ) : (
                   <p className="text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors">
                     Explore the Timeline
                   </p>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 flex items-center gap-1">
-                    <Info size={10} /> View all historical events
-                  </p>
-                </div>
-              </Link>
-            </div>
-          )}
+                )}
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 flex items-center gap-1">
+                  <Info size={10} /> View all historical events
+                </p>
+              </div>
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-3xl">
             {categories.filter((c: string) => c !== 'All').map((cat: string, i: number) => (
@@ -574,6 +612,11 @@ const categoryIcons: Record<string, React.ReactNode> = {
   'Environment': <Leaf size={14} />,
   'History': <History size={14} />,
   'Meteorology': <CloudRain size={14} />,
+  'Logistics': <Layers size={14} />,
+  'Legal': <Scale size={14} />,
+  'Vessel Types': <Ship size={14} />,
+  'Economics': <Scale size={14} />,
+  'Law': <Scale size={14} />,
 };
 
 export default function App() {
@@ -634,15 +677,18 @@ export default function App() {
     }));
   }, [dynamicTerms]);
 
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('maritime-lexicon-dark-mode');
-      return saved ? JSON.parse(saved) : false;
-    }
-    return false;
-  });
+  const [darkMode, setDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [modalContent, setModalContent] = useState<{ title: string; content: React.ReactNode } | null>(null);
   const [toast, setToast] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+    const saved = localStorage.getItem('maritime-lexicon-dark-mode');
+    if (saved) {
+      setDarkMode(JSON.parse(saved));
+    }
+  }, []);
 
   useEffect(() => {
     if (toast) {
@@ -822,21 +868,10 @@ export default function App() {
     });
   }, [searchQuery, activeCategory, allTerms]);
 
-  const categories = useMemo(() => [
-    'All', 
-    'Terminology', 
-    'Vessel Parts', 
-    'Navigation', 
-    'Operations', 
-    'Regulations', 
-    'Technical', 
-    'Safety', 
-    'Crew', 
-    'Cargo', 
-    'Environment', 
-    'History', 
-    'Meteorology'
-  ], []);
+  const categories = useMemo(() => {
+    const cats = new Set(allTerms.map(t => t.category));
+    return ['All', ...Array.from(cats).sort()];
+  }, [allTerms]);
 
   const handleShare = () => {
     const shareData = {
@@ -872,7 +907,7 @@ export default function App() {
   return (
     <div className={cn(
       "min-h-screen bg-[#F8FAFC] dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-300",
-      darkMode && "dark"
+      mounted && darkMode && "dark"
     )}>
         {/* Header */}
         <header className="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between shadow-sm">
@@ -896,7 +931,7 @@ export default function App() {
               <div className="bg-blue-600 p-1.5 rounded-lg text-white group-hover:rotate-12 transition-transform">
                 <Anchor size={20} />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white hidden sm:block">
+              <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white hidden sm:block select-none">
                 Maritime Lexicon
               </h1>
             </Link>
@@ -909,7 +944,7 @@ export default function App() {
               </div>
               <input
                 type="text"
-                placeholder="Search 3,700+ maritime terms..."
+                placeholder={`Search ${allTerms.length.toLocaleString()}+ maritime terms...`}
                 value={searchQuery}
                 onChange={(e) => {
                   const val = e.target.value;
@@ -1101,6 +1136,18 @@ export default function App() {
                     Navigation Room
                   </Link>
                   <Link
+                    to="/engine"
+                    className={cn(
+                      "w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all font-medium text-sm",
+                      location.pathname === '/engine'
+                        ? "bg-blue-600 text-white shadow-md"
+                        : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    )}
+                  >
+                    <Settings size={18} />
+                    Engine Room
+                  </Link>
+                  <Link
                     to="/history"
                     className={cn(
                       "w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all font-medium text-sm",
@@ -1201,7 +1248,8 @@ export default function App() {
                 <Route path="/term/:slug/" element={<TermPage />} />
                 <Route path="/diagram" element={<div className="max-w-6xl mx-auto p-8"><VesselDiagram3D /></div>} />
                 <Route path="/bridge" element={<div className="max-w-6xl mx-auto p-8"><BridgeDiagram3D /></div>} />
-                <Route path="/history" element={<HistoryPage onShowHistory={showHistoryDetail} />} />
+                <Route path="/engine" element={<EngineRoomPlatform />} />
+                <Route path="/history" element={<MaritimeHistoryTimeline />} />
                 <Route path="/quiz" element={<Quiz />} />
                 <Route path="/moderation" element={isAdmin ? <ModerationDashboard /> : <HomePage />} />
               </Routes>
@@ -1249,7 +1297,7 @@ export default function App() {
                     This site uses cookies for analytics and to improve your experience.
                   </p>
                   <p className="text-[10px] text-slate-300 dark:text-slate-600 uppercase tracking-[0.2em] text-center">
-                    &copy; {new Date().getFullYear()} Maritime Lexicon. Designed for the high seas.
+                    &copy; {mounted ? new Date().getFullYear() : '2026'} Maritime Lexicon. Designed for the high seas.
                   </p>
                 </div>
               </div>

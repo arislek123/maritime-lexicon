@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { motion, AnimatePresence } from 'motion/react';
-import { Link } from 'react-router';
 import { 
   Navigation, Monitor, Settings, Users, Info, X, 
-  Compass, Shield, Activity, Gauge, Maximize2, Minimize2, 
-  Eye, EyeOff, Radio, Cpu, Zap, ExternalLink, Ship
+  Compass, Shield, Activity, Eye, EyeOff, Radio, Cpu, Zap, Ship, BookOpen
 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { terms } from '../data/terms';
 
 // --- TYPES ---
 interface BridgeHotspotData {
@@ -61,8 +60,26 @@ export const BridgeDiagram3D: React.FC = () => {
   
   const [selectedHotspot, setSelectedHotspot] = useState<BridgeHotspotData | null>(null);
   const [isAutoRotate, setIsAutoRotate] = useState(false);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const isAutoRotateRef = useRef(isAutoRotate);
   const [hoveredHotspot, setHoveredHotspot] = useState<string | null>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    isAutoRotateRef.current = isAutoRotate;
+  }, [isAutoRotate]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (selectedHotspot) {
+          setSelectedHotspot(null);
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -94,6 +111,7 @@ export const BridgeDiagram3D: React.FC = () => {
     controls.minDistance = 5;
     controls.maxDistance = 40;
     controls.autoRotate = isAutoRotate;
+    controls.autoRotateSpeed = 3.0; // Increased speed for better visibility
     controlsRef.current = controls;
 
     // --- LIGHTING ---
@@ -171,6 +189,15 @@ export const BridgeDiagram3D: React.FC = () => {
     const rightPillar = new THREE.Mesh(new THREE.BoxGeometry(2, 10, 1.2), wallMat);
     rightPillar.position.set(29, 0, 0);
     bulkheadGroup.add(rightPillar);
+
+    // Central Pillars for 3-window look
+    const midPillar1 = new THREE.Mesh(new THREE.BoxGeometry(1.5, 10, 1.2), wallMat);
+    midPillar1.position.set(-10, 0, 0);
+    bulkheadGroup.add(midPillar1);
+
+    const midPillar2 = new THREE.Mesh(new THREE.BoxGeometry(1.5, 10, 1.2), wallMat);
+    midPillar2.position.set(10, 0, 0);
+    bulkheadGroup.add(midPillar2);
 
     // Ceiling
     const ceiling = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), mats.floor);
@@ -381,30 +408,30 @@ export const BridgeDiagram3D: React.FC = () => {
 
     // --- HOTSPOTS ---
     const addHotspot = (x: number, y: number, z: number, data: BridgeHotspotData) => {
-      const g = new THREE.SphereGeometry(1.2, 32, 32); // Even larger hotspots
+      const g = new THREE.SphereGeometry(2.2, 32, 32); // Even larger hit area
       const m = new THREE.MeshBasicMaterial({ 
         color: 0x00aaff, 
         transparent: true, 
-        opacity: 0.4, 
-        depthTest: false,
+        opacity: 0.3, 
+        depthTest: false, // Always on top for better interaction
         depthWrite: false 
       });
       const mesh = new THREE.Mesh(g, m);
       mesh.position.set(x, y, z);
-      mesh.userData = data;
+      mesh.userData = { ...data, isHotspot: true };
       bridgeGroup.add(mesh);
       hotspotsRef.current.push(mesh);
 
       // Core point
       const core = new THREE.Mesh(
-        new THREE.SphereGeometry(0.3, 16, 16),
+        new THREE.SphereGeometry(0.4, 16, 16),
         new THREE.MeshBasicMaterial({ color: 0xffffff })
       );
       mesh.add(core);
 
       // Glowing ring
-      const ringGeo = new THREE.TorusGeometry(1.4, 0.05, 16, 64);
-      const ringMat = new THREE.MeshBasicMaterial({ color: 0x00aaff, transparent: true, opacity: 0.6 });
+      const ringGeo = new THREE.TorusGeometry(1.8, 0.1, 16, 64);
+      const ringMat = new THREE.MeshBasicMaterial({ color: 0x00aaff, transparent: true, opacity: 0.8 });
       const ring = new THREE.Mesh(ringGeo, ringMat);
       mesh.add(ring);
       (mesh as any).ring = ring;
@@ -487,77 +514,109 @@ export const BridgeDiagram3D: React.FC = () => {
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
     let pointerDownPos = { x: 0, y: 0 };
+    let potentialHotspot: THREE.Object3D | null = null;
 
     const onPointerDown = (event: PointerEvent) => {
+      if (!containerRef.current) return;
       pointerDownPos = { x: event.clientX, y: event.clientY };
-    };
-
-    const onPointerMove = (event: PointerEvent) => {
-      const rect = renderer.domElement.getBoundingClientRect();
-      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
+      
+      // Raycast on down to "capture" the hotspot and prevent OrbitControls from dragging
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      mouse.set(x, y);
       raycaster.setFromCamera(mouse, camera);
-      // Use recursive: true to catch children
+      
       const intersects = raycaster.intersectObjects(hotspotsRef.current, true);
-
       if (intersects.length > 0) {
-        // Find the parent hotspot object that has the userData
         let target: THREE.Object3D | null = intersects[0].object;
-        while (target && !target.userData.name && target.parent) {
+        while (target && !target.userData.isHotspot && target.parent) {
           target = target.parent;
         }
-        if (target && target.userData.name) {
-          setHoveredHotspot(target.userData.name);
-          document.body.style.cursor = 'pointer';
+        if (target && target.userData.isHotspot) {
+          potentialHotspot = target;
+          // FOOLPROOF: Disable OrbitControls so it doesn't rotate the camera
+          controls.enabled = false;
+          event.stopPropagation();
         }
       } else {
-        setHoveredHotspot(null);
-        document.body.style.cursor = 'auto';
+        potentialHotspot = null;
       }
     };
 
+    const onPointerMove = (event: PointerEvent) => {
+      if (!containerRef.current || !rendererRef.current) return;
+      
+      // Update mouse position for UI label
+      setMousePos({ x: event.clientX, y: event.clientY });
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      mouse.set(x, y);
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(hotspotsRef.current, true);
+
+      if (intersects.length > 0) {
+        let target: THREE.Object3D | null = intersects[0].object;
+        while (target && !target.userData.isHotspot && target.parent) {
+          target = target.parent;
+        }
+        if (target && target.userData.isHotspot) {
+          setHoveredHotspot(target.userData.name);
+          containerRef.current.style.cursor = 'pointer';
+          return;
+        }
+      }
+      
+      setHoveredHotspot(null);
+      containerRef.current.style.cursor = 'grab';
+    };
+
     const onPointerUp = (event: PointerEvent) => {
+      // Always re-enable controls on up
+      controls.enabled = true;
+
+      if (!containerRef.current || !rendererRef.current) return;
+      
       const moveDist = Math.sqrt(
         Math.pow(event.clientX - pointerDownPos.x, 2) + 
         Math.pow(event.clientY - pointerDownPos.y, 2)
       );
       
-      // Be more lenient with movement threshold
-      if (moveDist > 50) return; 
-
-      const rect = renderer.domElement.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
-      mouse.set(x, y);
-      raycaster.setFromCamera(mouse, camera);
-      // Use recursive: true to ensure we catch clicks on children (core/ring)
-      const intersects = raycaster.intersectObjects(hotspotsRef.current, true);
-
-      if (intersects.length > 0) {
-        // Traverse up to find the object with userData
-        let target: THREE.Object3D | null = intersects[0].object;
-        while (target && !target.userData.name && target.parent) {
-          target = target.parent;
-        }
-
-        if (target && target.userData.name) {
-          setSelectedHotspot(target.userData as BridgeHotspotData);
-          setIsAutoRotate(false);
-          document.body.style.cursor = 'auto';
-        }
+      // If we were "down" on a hotspot, we trigger it on up. 
+      // Since we disabled OrbitControls on down, the camera hasn't moved, 
+      // so we can be very lenient with the "click" distance.
+      if (potentialHotspot && moveDist < 100) {
+        const data = potentialHotspot.userData as BridgeHotspotData;
+        setSelectedHotspot(data);
+        setIsAutoRotate(false);
+        event.stopPropagation();
+      } else if (moveDist < 10 && !potentialHotspot) {
+        // Clicked empty space, close current selection
+        setSelectedHotspot(null);
       }
+      
+      potentialHotspot = null;
     };
 
-    renderer.domElement.addEventListener('pointerdown', onPointerDown);
-    renderer.domElement.addEventListener('pointermove', onPointerMove);
-    renderer.domElement.addEventListener('pointerup', onPointerUp);
+    const canvas = renderer.domElement;
+    canvas.style.touchAction = 'none';
+    // Use capture phase to ensure we get the event before OrbitControls
+    canvas.addEventListener('pointerdown', onPointerDown, { capture: true });
+    canvas.addEventListener('pointermove', onPointerMove as any);
+    canvas.addEventListener('pointerup', onPointerUp, { capture: true });
 
     // --- ANIMATION LOOP ---
     const animate = () => {
       requestAnimationFrame(animate);
+      
+      // Sync auto-rotate state
+      controls.autoRotate = isAutoRotateRef.current;
+      controls.autoRotateSpeed = 4.0;
       controls.update();
+      
       updateMarquee();
       
       // Radar sweep rotation
@@ -587,20 +646,23 @@ export const BridgeDiagram3D: React.FC = () => {
     animate();
 
     // --- RESIZE HANDLER ---
-    const handleResize = () => {
-      if (!containerRef.current || !camera || !renderer) return;
-      camera.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-    };
-    window.addEventListener('resize', handleResize);
+    const resizeObserver = new ResizeObserver(() => {
+      if (!containerRef.current || !cameraRef.current || !rendererRef.current) return;
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+      cameraRef.current.aspect = width / height;
+      cameraRef.current.updateProjectionMatrix();
+      rendererRef.current.setSize(width, height);
+    });
+    resizeObserver.observe(containerRef.current);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      renderer.domElement.removeEventListener('pointerdown', onPointerDown);
-      renderer.domElement.removeEventListener('pointermove', onPointerMove);
-      renderer.domElement.removeEventListener('pointerup', onPointerUp);
-      document.body.style.cursor = 'auto';
+      resizeObserver.disconnect();
+      if (canvas) {
+        canvas.removeEventListener('pointerdown', onPointerDown);
+        canvas.removeEventListener('pointermove', onPointerMove as any);
+        canvas.removeEventListener('pointerup', onPointerUp);
+      }
       renderer.dispose();
       if (containerRef.current) {
         containerRef.current.removeChild(renderer.domElement);
@@ -611,22 +673,13 @@ export const BridgeDiagram3D: React.FC = () => {
   useEffect(() => {
     if (controlsRef.current) {
       controlsRef.current.autoRotate = isAutoRotate;
+      controlsRef.current.autoRotateSpeed = 4.0;
+      controlsRef.current.update();
     }
   }, [isAutoRotate]);
 
-  const toggleFullscreen = () => {
-    if (!containerRef.current) return;
-    if (!document.fullscreenElement) {
-      containerRef.current.requestFullscreen();
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen();
-      setIsFullscreen(false);
-    }
-  };
-
   return (
-    <div className="relative w-full h-[600px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 group">
+    <div className="relative bg-slate-900 overflow-hidden transition-all duration-500 w-full h-[600px] rounded-3xl shadow-2xl border border-slate-800 group">
       <div ref={containerRef} className="w-full h-full cursor-move" />
 
       {/* UI Overlay */}
@@ -648,8 +701,7 @@ export const BridgeDiagram3D: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Controls */}
-      <div className="absolute bottom-6 right-6 flex gap-2">
+      <div className="absolute bottom-6 right-6 flex gap-2 z-10">
         <button
           onClick={() => setIsAutoRotate(!isAutoRotate)}
           className={cn(
@@ -662,13 +714,6 @@ export const BridgeDiagram3D: React.FC = () => {
         >
           {isAutoRotate ? <EyeOff size={20} /> : <Eye size={20} />}
         </button>
-        <button
-          onClick={toggleFullscreen}
-          className="p-3 bg-slate-900/80 backdrop-blur-md border border-white/10 text-slate-400 hover:text-white rounded-xl transition-all shadow-lg"
-          title="Toggle Fullscreen"
-        >
-          {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
-        </button>
       </div>
 
       {/* Hotspot Detail Modal */}
@@ -678,48 +723,52 @@ export const BridgeDiagram3D: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="absolute inset-x-4 bottom-20 md:inset-x-auto md:right-8 md:bottom-8 md:w-96 z-[100] pointer-events-none"
+            className="absolute z-[100] pointer-events-none inset-x-4 bottom-20 md:inset-x-auto md:right-8 md:bottom-8 md:w-96"
           >
-            <div className="bg-white/95 backdrop-blur-2xl p-8 rounded-[2rem] border border-slate-200 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] relative overflow-hidden pointer-events-auto">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600" />
+            <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative overflow-hidden pointer-events-auto">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600" />
               
               <button 
                 onClick={() => setSelectedHotspot(null)}
-                className="absolute top-6 right-6 p-2 hover:bg-slate-100 rounded-full text-slate-400 hover:text-slate-900 transition-all"
+                className="absolute top-6 right-6 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all"
               >
                 <X size={20} />
               </button>
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-3xl shadow-inner border border-blue-500/5">
+              <div className="flex items-center gap-5 mb-8">
+                <div className="w-16 h-16 bg-blue-500/10 rounded-3xl flex items-center justify-center text-4xl shadow-inner border border-blue-500/10">
                   {selectedHotspot.ico}
                 </div>
                 <div>
-                  <span className="text-xs font-black text-blue-600 uppercase tracking-[0.2em] mb-1 block">{selectedHotspot.cat}</span>
-                  <h4 className="text-2xl font-bold text-slate-900 tracking-tight">{selectedHotspot.name}</h4>
+                  <span className="text-xs font-black text-blue-600 dark:text-blue-400 uppercase tracking-[0.3em] mb-1.5 block">{selectedHotspot.cat}</span>
+                  <h4 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight leading-none">{selectedHotspot.name}</h4>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <p className="text-slate-600 text-lg leading-relaxed font-light">
-                  {selectedHotspot.txt}
-                </p>
+              <div className="space-y-6">
+                <div className="bg-blue-50/50 dark:bg-blue-900/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-900/30">
+                  <p className="text-blue-900 dark:text-blue-300 text-[10px] font-black uppercase tracking-[0.15em] mb-3 flex items-center gap-2">
+                    <BookOpen size={14} />
+                    Lexicon Explanation
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed font-medium">
+                    {terms.find(t => t.slug === selectedHotspot.slug)?.definition || selectedHotspot.txt}
+                  </p>
+                </div>
                 
-                <div className="pt-6 flex flex-col gap-3">
-                  {selectedHotspot.slug && (
-                    <Link 
-                      to={`/term/${selectedHotspot.slug}/`}
-                      className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-sm text-center transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20"
-                    >
-                      <ExternalLink size={16} />
-                      View in Lexicon
-                    </Link>
-                  )}
+                <div className="flex items-start gap-3 text-slate-500 dark:text-slate-400">
+                  <Info size={16} className="mt-1 shrink-0" />
+                  <p className="text-xs italic leading-relaxed">
+                    {selectedHotspot.txt}
+                  </p>
+                </div>
+                
+                <div className="pt-4">
                   <button 
                     onClick={() => setSelectedHotspot(null)}
-                    className="w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-xl font-bold text-sm transition-all border border-slate-200"
+                    className="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl"
                   >
-                    Close
+                    Dismiss Console
                   </button>
                 </div>
               </div>
@@ -728,19 +777,27 @@ export const BridgeDiagram3D: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Hover Label */}
+      {/* Hover Label - Now follows mouse */}
       <AnimatePresence>
         {hoveredHotspot && !selectedHotspot && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1,
+              x: mousePos.x,
+              y: mousePos.y - 40
+            }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ type: 'spring', damping: 20, stiffness: 300, mass: 0.5 }}
+            className="fixed top-0 left-0 pointer-events-none z-[200] -translate-x-1/2 -translate-y-full"
           >
-            <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl border border-blue-400/50 flex items-center gap-2">
+            <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-2xl border border-blue-400/50 flex items-center gap-2 whitespace-nowrap">
               <Activity size={14} className="animate-pulse" />
               {hoveredHotspot}
             </div>
+            {/* Arrow */}
+            <div className="w-3 h-3 bg-blue-600 rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r border-b border-blue-400/50" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -753,34 +810,7 @@ export const BridgeDiagram3D: React.FC = () => {
             <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider">Interactive Hotspots</span>
           </div>
           <div className="w-px h-3 bg-slate-200" />
-          <span className="text-[10px] text-slate-500">Drag to rotate • Scroll to zoom</span>
-        </div>
-      </div>
-
-      {/* Vessel Overview Widget */}
-      <div className="absolute top-24 left-6 hidden md:block">
-        <div className="bg-white/80 backdrop-blur-md p-4 rounded-3xl border border-slate-200 shadow-xl w-48">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Vessel Overview</span>
-            <Ship size={14} className="text-blue-500" />
-          </div>
-          <div className="relative h-12 bg-slate-100 rounded-xl overflow-hidden mb-3">
-            {/* Simple 2D Vessel Shape */}
-            <div className="absolute inset-y-2 left-4 right-4 bg-blue-600/20 rounded-full border border-blue-600/30 flex items-center justify-center">
-              <div className="w-full h-0.5 bg-blue-600/40" />
-              <div className="absolute left-1/4 w-1 h-3 bg-blue-600/60 rounded-full" />
-            </div>
-          </div>
-          <div className="space-y-2">
-            <div className="flex justify-between text-[10px]">
-              <span className="text-slate-400">Heading</span>
-              <span className="text-slate-900 font-bold">284°</span>
-            </div>
-            <div className="flex justify-between text-[10px]">
-              <span className="text-slate-400">Speed</span>
-              <span className="text-slate-900 font-bold">18.5 kts</span>
-            </div>
-          </div>
+          <span className="text-[10px] text-slate-500">Drag to rotate • Scroll to zoom • Click to View Lexicon</span>
         </div>
       </div>
     </div>

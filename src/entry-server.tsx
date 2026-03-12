@@ -9,7 +9,7 @@ export function render(url: string, helmetContext: any) {
   return ReactDOMServer.renderToString(
     <React.StrictMode>
       <HelmetProvider context={helmetContext}>
-        <StaticRouter location={url} basename="/maritime-lexicon">
+        <StaticRouter location={url} basename="/">
           <AuthProvider>
             <App />
           </AuthProvider>
